@@ -1,0 +1,510 @@
+package CSToSS;
+
+enum MsgId{
+	eMsgToSSFromCS_Begin = 16384;
+	eMsgToSSFromCS_AskPingRet = 16385;
+	eMsgToSSFromCS_AskRegisteRet = 16386;
+	eMsgToSSFromCS_NotifyUserInfo = 16387;
+	eMsgToSSFromCS_OrderBeginNewBattle = 16388;
+	eMsgToSSFromCS_NotifyBattleStateChange = 16389;
+	eMsgToSSFromCS_NotifyUsetNetInfoChange = 16390;
+	
+	eMsgToSSFromCS_NotifyBuffCfgList = 16391;
+	eMsgToSSFromCS_NotifySkillCfgList = 16392;
+	eMsgToSSFromCS_NotifyNPCCfgList = 16393;
+	eMsgToSSFromCS_NotifyHeroCfgList = 16394;
+	eMsgToSSFromCS_NotifyShopCfgList = 16395;
+	eMsgToSSFromCS_NotifyGoodsCfgList = 16396;
+	eMsgToSSFromCS_NotifyPublicLuaStr = 16397;
+	eMsgToSSFromCS_NotifyMapCfgList = 16398;
+	eMsgToSSFromCS_NotifyMapCfgData = 16399;
+	eMsgToSSFromCS_NotifyRunesCfgList = 16400;
+	eMsgToSSFromCS_NotifyRunesSlotCfgList = 16401;
+	eMsgToSSFromCS_NotifyWildMonsterCfgList = 16402;
+	eMsgToSSFromCS_NotifyNewSkillCfgList = 16404;
+	eMsgToSSFromCS_NotifySkillModelAccountCfgCfgList = 16405;
+	eMsgToSSFromCS_NotifySkillModelEmitCfgList = 16406;
+	eMsgToSSFromCS_NotifySkillModelRangeCfgList = 16407;
+	eMsgToSSFromCS_NotifySkillModelLeadingCfgList = 16408;
+	eMsgToSSFromCS_NotifySkillModelBufCfgList = 16409;
+	eMsgToSSFromCS_NotifySkillModelSummonCfgList = 16410;
+	eMsgToSSFromCS_NotifySkillModelMoveCfgList = 16411;
+	eMsgToSSFromCS_NotifySkillModelSwitchCfgList = 16412;
+	eMsgToSSFromCS_NotifyPassitiveSkillCfgList = 16413;
+	eMsgToSSFromCS_NotifyPassitiveEffectBloodSeekCfgList = 16414;
+	eMsgToSSFromCS_NotifyPassitiveEffectReboundCfgList = 16415;
+	eMsgToSSFromCS_NotifyPassitiveEffectReliveCfgList = 16416;
+	eMsgToSSFromCS_NotifyRobotAICfgList = 16417;
+	eMsgToSSFromCS_NotifySkillModelPurificationCfgList = 16418;
+	eMsgToSSFromCS_NotifyRobotAIPathCfgList = 16419;
+	eMsgToSSFromCS_NotifySkillModelLinkCfgList = 16420;
+	eMsgToSSFromCS_NotifySSGameSwitch = 16426;
+	eMsgToSSFromCS_NotifyOBEnterBattle = 16427;
+	eMsgToSSFromCS_NotifyUserReconnect = 16428;
+	eMsgToSSFromCS_NotifyOBUser = 16429;
+	eMsgToSSFromCS_NotifyUserReconnectGame = 16430;
+	eMsgToSSFromCS_NotifyUserOffline = 16431;
+	eMsgToSSFromCS_ReportSSMsg	= 16432;
+	eMsgToSSFromCS_BattleKickOneUser = 16433;
+	eMsgToSSFromCS_NotifySSGuideBattleEnd = 16434;
+	
+	eMsgToSSFromCS_NotifyUserInfoChange = 16436;
+	
+	
+
+	eMsgToSSFromCS_CreateBattle = 16500;
+	eMsgToSSFromCS_OneUserOnline = 16501;
+	eMsgToSSFromCS_OneUserOffline = 16502;
+	eMsgToSSFromCS_FinishBattleResponse = 16510;
+	
+	eMsgToSSFromCS_End = 17000;
+}
+
+
+//eMsgToSSFromCS_NotifySSGameSwitch
+message SSGameFuncSwitch
+{
+	optional MsgId msgid = 1[default = eMsgToSSFromCS_NotifySSGameSwitch]; 
+	optional uint32 log_witch = 2;
+	optional uint32 gm_witch = 3;
+	optional uint32 solderwitch = 4;
+	optional uint32 monsterwitch = 5;
+	optional uint32 altarsolderwitch = 6;
+	optional uint32 logrefshtime = 7;
+}
+
+//eMsgToSSFromCS_NotifySSGuideBattleEnd
+message NotifySSGuideBattleEnd
+{
+	optional MsgId msgid = 1[default = eMsgToSSFromCS_NotifySSGuideBattleEnd];
+	optional uint64 battleid = 2;
+	optional uint64 guid = 3;
+}
+message ReportSSMsg
+{
+	optional MsgId msgid = 1[default = eMsgToSSFromCS_ReportSSMsg];
+	optional uint64 battleid = 2;
+	optional string othermsg = 3;
+}
+
+message AskRegisteRet
+{
+	optional MsgId msgid = 1[default = eMsgToSSFromCS_AskRegisteRet];
+	optional int32 ret = 2;
+	optional int64 time = 3;
+	optional int32 basegsid = 4;
+	message GSInfo
+	{
+		optional int32 gsid = 1;
+		optional string userpwd = 2;
+	}
+	repeated GSInfo gsinfo = 5;
+}
+
+	message SUserNetInfo
+	{
+		optional  int32 n32GSID = 1;
+		optional  int32 n32GCNSID = 2;
+	}
+	
+message UserInfo
+{
+	optional SUserNetInfo usernetinfo = 2;
+	optional SUserDBData userdata = 3;
+	repeated int32	herolist = 4;
+	repeated SUserRunesRuntimeData	RunesBag = 5;
+	repeated SUserRunesRuntimeData	RunesSlot = 6;
+	optional bool ifGuide = 7;
+	message SUserDBData
+	{
+		optional  EObjectType		eObjType = 1;
+		optional  int64			un64ObjIdx = 2;
+		optional  EUserCate		eUserCate = 3;
+		optional  EUserPlatform		eUserPlatform = 4;
+		optional  string			szUserName = 5;
+		optional  string			szUserPwd = 6;
+
+		optional  string			szNickName = 7;
+		optional  int32			un32HeaderID = 8;
+		optional  int32			n8Sex = 9;
+		optional  int64			n64Score = 10;
+		optional  int64			n64Diamond = 11;
+		optional  int64			n64Gold = 12;
+		optional  int64			tRegisteUTCMillisec = 13;
+		optional  int64			tLastLoginUTCMillisec = 14;
+		optional  int64			n32HeroNum = 15;
+		optional  int64			n32RunesSlotOpenNum = 16;
+		optional  int32			n32RunesBagNum = 17;
+		optional  int32			n32RunesSlotNum = 18;
+		optional  int32			n32FriendsNum = 19;
+		optional  int32			n32BlacklistNum = 20;
+
+		optional  int32			un32TotalGameInns = 21;
+		optional  int32			un32TotalWinInns = 22;
+		optional  int32			un32TotalHeroKills = 23;
+		optional  int32			un32TotalDestoryBuildings = 24;
+		optional  int32			un32TotalDeadTimes = 25;
+		optional  int32			un16UserLv = 26;
+		optional  int32			un32UserCurLvExp = 27;
+		optional  int64			tLastFirstWinTime = 28;   
+		optional  SUserGuideSteps		mGuideSteps = 29;
+		optional  string			szFriends = 30;
+
+		message SUserGuideSteps
+		{
+			optional  string  szCSContinueGuide = 1;
+			optional  string  szCSNoContinueGuide = 2;
+			optional  string  szSSGuides = 3;
+		}
+
+		enum	EObjectType
+		{
+			eObjectType_None = 0;
+			eObjectType_Guild = 1;
+			eObjectType_User = 2;
+
+			eObjectType_HeroBegin = 10000;
+			eObjectType_NPCBegin = 20000;
+			eObjectType_GoodsBegin = 30000;
+		}
+
+		enum EUserCate
+		{
+			eUserCate_Admin = 0;
+			eUserCate_GM = 1;
+			eUserCate_Robot = 2;
+			eUserCate_DiamondVIP = 3;
+			eUserCate_GloldVIP = 4;
+			eUserCate_SilverVIP = 5;
+			eUserCate_CopperVIP = 6;
+			eUserCate_Normal = 7;
+		}
+
+		enum  EUserPlatform
+		{
+			eUP_None = 0;
+			eUP_Apple = 1;
+			eUP_QQ = 2;
+			eUP_360 = 3;
+		}
+	}
+	message SUserRunesRuntimeData
+	{
+		optional  int32 un32RunesTypeID = 1;
+		optional  int32	n16Pos = 2;
+		optional  int32	n16Num = 3;
+		optional  int32	n16RemainTimes = 4;
+	}
+}
+
+message UserRoomInfo
+{
+	optional bool ifmaster = 1;
+	optional uint32 heroid = 2;
+	optional uint64 guid = 3;
+	optional int32 pos = 4;
+}
+message OrderBeginNewBattle
+{
+	optional MsgId msgid = 1 [default = eMsgToSSFromCS_OrderBeginNewBattle];
+	optional uint64 battleid = 2;
+	optional int32 state = 3;
+	optional int32 mapid = 4;
+	optional int32 ssid = 5;
+	repeated UserRoomInfo userRoomInfo = 6;
+	repeated UserInfo userinfo = 7;
+}
+
+message NotifyBattleStateChange
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyBattleStateChange];
+optional uint64 battleid = 2;
+optional int32 state = 3;
+}
+
+
+message NotifyUsetNetInfoChange
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyUsetNetInfoChange];
+optional uint64 guid = 2;
+optional SUserNetInfo netinfo = 3; 
+}
+
+message PingRet
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_AskPingRet];
+optional int64 time = 2;
+}
+
+message NotifyBuffCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyBuffCfgList];
+optional int64 time = 2;
+}
+
+message NotifySkillCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifySkillCfgList];
+optional int64 time = 2;
+}
+
+message NotifyNPCCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyNPCCfgList];
+repeated string cfg = 2;
+}
+
+
+message NotifyHeroCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyHeroCfgList];
+repeated string cfg = 2;
+}
+
+message NotifyShopCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyShopCfgList];
+repeated string cfg = 2;
+}
+
+message NotifyGoodsCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyGoodsCfgList];
+repeated string cfg = 2;
+}
+
+message NotifyPublicLuaStr
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyPublicLuaStr];
+repeated string cfg = 2;
+}
+
+message NotifyRunesCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyRunesCfgList];
+repeated string cfg = 2;
+}
+
+message NotifyRunesSlotCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyRunesSlotCfgList];
+repeated string cfg = 2;
+}
+
+message NotifyWildMonsterCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyWildMonsterCfgList];
+repeated string cfg = 2;
+}
+
+message NotifyUserInfoChange
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyUserInfoChange];
+optional uint64 guid = 2;
+optional int64 gold = 3;
+}
+
+message NotifyNewSkillCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyNewSkillCfgList];
+repeated string cfg = 2;
+}
+
+message NotifySkillModelAccountCfgCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifySkillModelAccountCfgCfgList];
+repeated string cfg = 2;
+}
+
+message NotifySkillModelRangeCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifySkillModelRangeCfgList];
+repeated string cfg = 2;
+}
+
+message NotifySkillModelLeadingCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifySkillModelLeadingCfgList];
+repeated string cfg = 2;
+}
+
+message NotifySkillModelEmitCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifySkillModelEmitCfgList];
+repeated string cfg = 2;
+}
+
+message NotifySkillModelBufCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifySkillModelBufCfgList];
+repeated string cfg = 2;
+}
+
+message NotifySkillModelSummonCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifySkillModelSummonCfgList];
+repeated string cfg = 2;
+}
+
+message NotifySkillModelMoveCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifySkillModelMoveCfgList];
+repeated string cfg = 2;
+}
+
+message NotifySkillModelSwitchCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifySkillModelSwitchCfgList];
+repeated string cfg = 2;
+}
+
+message NotifySkillModelPurificationCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifySkillModelPurificationCfgList];
+repeated string cfg = 2;
+}
+
+message NotifySkillModelLinkCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifySkillModelLinkCfgList];
+repeated string cfg = 2;
+}
+
+message NotifyPassitiveSkillCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyPassitiveSkillCfgList];
+repeated string cfg = 2;
+}
+
+message NotifyPassitiveEffectBloodSeekCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyPassitiveEffectBloodSeekCfgList];
+repeated string cfg = 2;
+}
+
+message NotifyPassitiveEffectReboundCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyPassitiveEffectReboundCfgList];
+repeated string cfg = 2;
+}
+
+message NotifyPassitiveEffectReliveCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyPassitiveEffectReliveCfgList];
+repeated string cfg = 2;
+}
+
+message NotifyRobotAICfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyRobotAICfgList];
+repeated string cfg = 2;
+}
+
+message NotifyRobotAIPathCfgList
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyRobotAIPathCfgList];
+repeated string cfg = 2;
+}
+
+message NotifyOBUser
+{
+	optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyOBUser];
+	message OBPosInfo
+	{
+		optional int32 pos = 1;
+		optional uint64 guid = 2;
+	}
+	repeated OBPosInfo obinfo = 2;
+	optional uint64 battleid = 3;
+}
+
+message NotifyUserReconnectGame
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_NotifyUserReconnectGame];
+optional uint64 guid = 2;
+optional uint64 battleid = 3;
+}
+
+message BattleKickOneUser
+{
+optional MsgId msgid = 1 [default = eMsgToSSFromCS_BattleKickOneUser];
+optional uint64 battleid = 2;
+optional uint64 userkey  = 3;
+}
+
+
+message CreateBattle
+{
+	optional MsgId msgid = 1 [default = eMsgToSSFromCS_CreateBattle];
+	optional uint64 battleid = 2;
+	optional int32 mapid = 3;
+	optional BattleType battletype = 4;
+	repeated CreateBattleUserInfo userinfo = 5;
+	repeated AiRobotInfo aiRobotList = 6;
+
+	enum BattleType
+	{
+		eBattleType_Free = 0;
+		eBattleType_Room = 1;
+		eBattleType_Match = 2;
+		eBattleType_Guide1 = 3;
+		eBattleType_Guide2 = 4;
+	}
+	
+	message CreateBattleUserInfo 
+	{
+		optional	SUserNetInfo	usernetinfo = 1;
+		optional	int64			guid = 2;
+		optional	int32			seat = 3;
+		optional	int32			grpID = 4;
+		optional	string			nickName = 5;
+		optional	int64			diamond = 6;
+		optional	int64			gold = 7;
+		optional	int32			vipLv = 8;
+		optional	bool			ifOB = 9;
+		optional	bool			ifGM = 10;
+		repeated	int32			canUseHeroList = 11;
+		repeated	RunePage		runePages = 12;
+		optional	bool			ifAiRobot = 13;
+		message RunePage
+		{
+			optional	int32	runePage = 1;
+			repeated	RuneInfo runeEffects = 2;
+			message RuneInfo
+			{
+				optional	int32	effectId = 1;
+				optional	string	effectName = 2;
+				optional	float	effectValue = 3;
+				optional	float	effectPer = 4;
+			}
+		}
+	}
+
+	message AiRobotInfo
+	{
+		optional uint32 seat = 1;
+		optional uint32 aitype = 2;
+	}
+}
+
+message NotifyUserOnline
+{
+	optional MsgId msgid = 1 [default = eMsgToSSFromCS_OneUserOnline];
+	optional uint64 battleid = 2;
+	optional uint64 userguid = 3;
+	optional SUserNetInfo usernetinfo = 4;
+}
+
+message NotifyUserOffline
+{
+	optional MsgId msgid = 1 [default = eMsgToSSFromCS_OneUserOffline];
+	optional uint64 battleid = 2;
+	optional uint64 userguid = 3;
+}
+
+message FinishBattleResponse
+{
+	optional MsgId msgid = 1 [default = eMsgToSSFromCS_FinishBattleResponse];
+	optional uint64 battleid = 2;
+	optional bool rst = 3;
+}

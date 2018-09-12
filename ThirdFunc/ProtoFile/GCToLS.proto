@@ -1,0 +1,16 @@
+package GCToLS;
+
+enum MsgID
+{
+	eMsgToLSFromGC_Begin = 40960;
+	eMsgToLSFromGC_AskLogin = 40961;
+	eMsgToLSFromGC_End = 40970;
+}
+
+message AskLogin
+{
+	optional MsgID msgid = 1[default = eMsgToLSFromGC_AskLogin];
+	optional uint32 platform = 2;
+	optional string uin = 3;
+	optional string sessionid = 4;
+}

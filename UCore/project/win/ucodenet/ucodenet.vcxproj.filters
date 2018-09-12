@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\interface">
+      <UniqueIdentifier>{468e71c1-c3a7-40af-972e-69519cab4a1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Windows">
+      <UniqueIdentifier>{a7c1cea7-9ee1-4246-96b4-4f7f76ef68f8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\net\bufpool.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\conndataallocator.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\conndatamgr.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\simpleloopbuffer.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\connectctrl.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\connectionmgr.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\cplistener.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\cpsock.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\cpsockmgr.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\eventmgr.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\iocpctrl.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\netevent.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\netrequest.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\resource.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\thread_buffer_pool.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\net\ucnet.h">
+      <Filter>头文件\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\net\ucnetopt.h">
+      <Filter>头文件\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\ucconnection.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\ucconnector.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\uclistener.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\win\ucnetwin.h">
+      <Filter>源文件\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\net\ucnetconfig.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\net\bufpool.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\conndataallocator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\conndatamgr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\simpleloopbuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\win\connectctrl.cpp">
+      <Filter>源文件\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\win\connectionmgr.cpp">
+      <Filter>源文件\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\win\cplistener.cpp">
+      <Filter>源文件\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\win\cpsock.cpp">
+      <Filter>源文件\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\win\cpsockmgr.cpp">
+      <Filter>源文件\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\win\eventmgr.cpp">
+      <Filter>源文件\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\win\iocpctrl.cpp">
+      <Filter>源文件\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\win\ucconnection.cpp">
+      <Filter>源文件\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\win\ucconnector.cpp">
+      <Filter>源文件\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\win\uclistener.cpp">
+      <Filter>源文件\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\win\ucnetwin.cpp">
+      <Filter>源文件\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\net\ucnetconfig.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

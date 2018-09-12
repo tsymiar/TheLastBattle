@@ -1,0 +1,22 @@
+package GSToBS;
+
+enum MsgID
+{
+	eMsgToBSFromGS_Begin = 32768;
+	eMsgToBSFromGS_AskRegister = 32769;
+	eMsgToBSFromGS_ReportAllClientInfo = 32770;
+	eMsgToBSFromGS_OneUserLoginTokenRet = 32771;
+	eMsgToBSFromGS_End = 32800;
+}
+message AskRegister
+{
+	optional MsgID mgsid = 1 [default = eMsgToBSFromGS_AskRegister];
+	optional int32 gsid = 2;
+	optional int32 listenport = 3;
+}
+
+message ReportAllClientInf
+{
+	optional MsgID msgid = 1 [default = eMsgToBSFromGS_ReportAllClientInfo];
+	optional uint32 tokenlist_size = 2;
+}

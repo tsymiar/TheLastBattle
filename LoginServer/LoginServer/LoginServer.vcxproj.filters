@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Net">
+      <UniqueIdentifier>{0cd4f740-91d1-4957-bbfc-c91fbd6afd1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share">
+      <UniqueIdentifier>{9359252e-ef3c-4a04-b625-dec2fd3e9dce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\Net">
+      <UniqueIdentifier>{58496b9c-0724-4119-a033-7c55ad7d3302}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProtobufMsg">
+      <UniqueIdentifier>{8ebad850-5c6c-42b4-9491-e6185fa09351}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\CNetBuffer.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\ICliSession.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\IMsgHandle.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\INetSession.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\INetSessionMgr.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\ISrvCliSession.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\logger.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\BalanceSession.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\ClientSession.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\LSNetSessionMgr.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ELogging\DefLogging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ELogging\ELoggingHeader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToLS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\LSToBS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\BSToLS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="SdkConnector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="json\value.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="json\reader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="json\writer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\LSToGC.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="LSDefine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToBS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\LSToSDK.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\SDKToLS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\ParseProto.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="SDKAsynHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SDKSession.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="md5Handler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ELogging\ELogging\SSActive.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ELogging\ELogging\Timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginServer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\ICliSession.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\IMsgHandle.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\INetSession.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\INetSessionMgr.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\ISrvCliSession.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\logger.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\BalanceSession.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\ClientSession.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\LSNetSessionMgr.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ELogging\DefLogging.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToLS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\LSToBS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\BSToLS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="SdkConnector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="json_reader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="json_value.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="json_writer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\LSToGC.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToBS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\LSToSDK.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\SDKToLS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\ParseProto.cpp">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="SDKAsynHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SDKSession.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="md5Hanlder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ELogging\ELogging\SSActive.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ELogging\ELogging\Timer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

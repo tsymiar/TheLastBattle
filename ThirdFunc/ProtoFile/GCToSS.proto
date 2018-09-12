@@ -1,0 +1,300 @@
+package GCToSS;
+
+enum MsgNum
+{
+	eMsgToGSToSSFromGC_Begin = 16384;
+	eMsgToGSToSSFromGC_AskPingSS = 16385;
+	eMsgToGSToSSFromGC_AskEnterBattle = 16386;
+	eMsgToGSToSSFromGC_AskMoveDir = 16387;
+	eMsgToGSToSSFromGC_AskStopMove = 16388;
+	eMsgToGSToSSFromGC_AskBuyGoods = 16389;
+	eMsgToGSToSSFromGC_AskUseGoods = 16390;
+	eMsgToGSToSSFromGC_AskSellGoods= 16391;
+	eMsgToGSToSSFromGC_AskMoveGoods = 16392;
+	eMsgToGSToSSFromGC_ReportBattleLoadingState = 16393;
+	eMsgToGSToSSFromGC_AskAttack = 16394;
+	eMsgToGSToSSFromGC_AskUseSkill = 16395;
+	eMsgToGSToSSFromGC_AskLockTarget = 16396;
+	eMsgToGSToSSFromGC_ReportAltarStrawSolder = 16397;
+	eMsgToGSToSSFromGC_AskAbsorbMonster = 16398;
+	eMsgToGSToSSFromGC_AskCancelAbsorbSkill = 16399;
+	eMsgToGSToSSFromGC_AskGasExplosion = 16400;
+	eMsgToGSToSSFromGC_AskBuyRebornHero = 16401;
+	eMsgToGSToSSFromGC_GMCmd = 16402;
+	eMsgToGSToSSFromGC_AskOBBattle = 16403;
+	eMsgToGSToSSFromGC_StepId = 16404;
+	eMsgToGSToSSFromGC_AskBornNPC = 16405;
+	eMsgToGSToSSFromGC_AskAutoAttack = 16406;
+	eMsgToGSToSSFromGC_AskGuideEndJumpToHall = 16407;
+	eMsgToGSToSSFromGC_AskReconnect = 16408;
+	eMsgToGSToSSFromGC_AskMovePos = 16409;
+	eMsgToGSToSSFromGC_AskAlwaysAutoAtk = 16410;
+	eMsgToSSFromGS_ReportSSMsg= 16411;
+	eMsgToSSFromGS_AskQuickBattleEnd = 16412;
+	
+	eMsgToGSToSSFromGC_AskTrySelectHero = 16505;
+	eMsgToGSToSSFromGC_AskSelectHero = 16506;
+	eMsgToGSToSSFromGC_AskSelectRunePage = 16507;
+	eMsgToGSToSSFromGC_ReportLoadBattleComplete = 16520; 
+	eMsgToGSToSSFromGC_AskHeroAttributesInfo = 16521;
+	eMsgToGSToSSFromGC_AskHerosBattleInfo = 16522;
+	//新手引导16540-16550
+	eMsgToGSToSSFromGC_AskGuideStepComp = 16540; 
+	eMsgToGSToSSFromGC_End = 17000;
+}
+
+//eMsgToGSToSSFromGC_AskGuideStepComp
+
+message AskSSGuideStepComp
+{
+	optional MsgNum msgid = 1[default = eMsgToGSToSSFromGC_AskGuideStepComp];  
+	enum edotype{
+			ecomptask = 1;
+			ebuygoods = 2; 
+			ebornsolder = 3;
+			ebornhero = 4;	
+			nextstep = 5;		
+	} 
+	message taskinfo
+	{
+		optional edotype  dtype = 1; 
+		optional int32  stepid = 2; 
+	}
+	repeated	taskinfo  info = 3;  
+}
+
+//eMsgToGSToSSFromGC_AskHerosBattleInfo
+message HerosBattleInfo
+{
+	optional MsgNum msgid = 1[default = eMsgToGSToSSFromGC_AskHerosBattleInfo];
+}
+
+//eMsgToGSToSSFromGC_AskHeroAttributesInfo
+message AskHeroAttributesInfo
+{
+	optional MsgNum msgid = 1[default = eMsgToGSToSSFromGC_AskHeroAttributesInfo];
+}
+
+//eMsgToSSFromGS_AskQuickBattleEnd
+message AskQuickBattleEnd
+{
+	optional MsgNum msgid = 1[default = eMsgToSSFromGS_AskQuickBattleEnd];
+	optional int32  other = 2; 
+}
+
+message AskPingSS
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskPingSS];
+optional int64 time = 2;
+}
+
+//已换EmsgToss_AskEnterBattle
+//eMsgToGSToSSFromGC_AskEnterBattle
+message AskEnterBattle
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskEnterBattle];
+optional int64 clientTime = 2;
+optional uint64 battleid = 3;
+optional int32 obuserstate = 4;
+}
+
+//已换，同MoveDir
+message Dir
+{
+optional float x = 1;
+optional float z = 2;
+optional float angle = 3;
+}
+
+//已换EmsgToss_AskMoveDir
+//eMsgToGSToSSFromGC_AskMoveDir
+message MoveDir
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskMoveDir];
+
+optional Dir dir = 3;
+}
+
+//已换EmsgToss_AskStopMove
+//eMsgToGSToSSFromGC_AskStopMove
+message StopMove
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskStopMove];
+}
+
+//已换EmsgToss_AskBuyGoods
+//eMsgToGSToSSFromGC_AskBuyGoods
+message BuyGoods
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskBuyGoods];
+optional int32 typeid = 3;
+}
+
+//已换EmsgToss_AskUseGoods
+//eMsgToGSToSSFromGC_AskUseGoods
+message UseGoods
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskUseGoods];
+optional int32 goodspos = 3;
+}
+
+//已换EmsgToss_AskSellGoods
+//eMsgToGSToSSFromGC_AskSellGoods
+message SellGoods
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskSellGoods];
+optional int32 goodspos = 3;
+}
+
+//已换EmsgToss_AskMoveGoods
+//eMsgToGSToSSFromGC_AskMoveGoods
+message MoveGoods
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskMoveGoods];
+optional int32 frompos = 3;
+optional int32 topos=4;
+}
+
+
+message ReportBattleLoadingState
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_ReportBattleLoadingState];
+optional int32 loadingnum = 3;
+}
+
+//已换EmsgToss_AskUseSkill
+//eMsgToGSToSSFromGC_AskUseSkill
+message UseSkill
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskUseSkill];
+optional int32 skillid = 3;
+}
+
+//已换EmsgToss_AskLockTarget
+//名不一致eMsgToGSToSSFromGC_AskLockTargt->eMsgToGSToSSFromGC_AskLockTarget
+message LockTar
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskLockTarget];
+optional int64 guid = 3;
+}
+
+//已换EmsgToss_ReportAltarStrawSolder
+//eMsgToGSToSSFromGC_ReportAltarStrawSolder
+message ReportAltarStrawSolder
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_ReportAltarStrawSolder];
+optional int32 type = 2;
+optional int32 index = 3;
+}
+
+//已换EmsgToss_AskAbsorb
+//eMsgToGSToSSFromGC_AskAbsorbMonster
+message Absorb
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskAbsorbMonster];
+optional int32 removeid = 2[default = -1];
+}
+
+//已换AskGasExplosion
+//协议名不一致eMsgToGSToCSFromGC_AskGasExplosion->eMsgToGSToSSFromGC_AskGasExplosion
+message GasExplosion
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskGasExplosion];
+}
+
+//已换Resurrection
+//eMsgToGSToSSFromGC_AskBuyRebornHero
+message BuReborn
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskBuyRebornHero];
+}
+
+//已换EmsgToss_eMsgToGSToCSFromGC_GMCmd
+//协议名不一致eMsgToGSToCSFromGC_GMCmd->eMsgToGSToSSFromGC_GMCmd
+message GMCmd
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_GMCmd];
+optional string cmd = 2;
+}
+
+//已换EmsgToss_GuideFinishStep
+//eMsgToGsToCSFromGC_GuideStep->eMsgToGSToSSFromGC_StepId
+message StepID
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_StepId];
+optional int32 stepid = 3;
+optional int32 type = 4;
+}
+
+//已换GameAutoFight
+//eMsgToGSToSSFromGC_AskAutoAttack
+message AutoAtk
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskAutoAttack];
+}
+
+//已换EmsgToss_FinishAllGuideToLobby
+//eMsgToGSToSSFromGC_AskGuideEndJumpToHall
+message GuideJumpToHall
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskGuideEndJumpToHall];
+}
+
+//已换EmsgToss_AskReconnectInfo
+//协议名不一致eMsgToGSToSSFromGC_AskReconnectInfo->eMsgToGSToSSFromGC_AskReconnect
+message AskReconnect
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskReconnect];
+}
+
+message Pos
+{
+optional float x = 1;
+optional float z = 2;
+}
+message MoveTar
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskMovePos];
+optional Pos pos = 3;
+}
+
+//已换EmsgToss_GuideAskBornNpc
+//协议名不一致eMsgToGsToCSFromGC_GuideSendNpc->eMsgToGSToSSFromGC_AskBornNPC
+message AskBornNPC
+{
+	optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskBornNPC];
+	optional int32 stepid = 2;
+	optional int32 state = 3;
+}
+message AlwaysAutoAtk
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskAlwaysAutoAtk];
+optional bool flag = 2;
+}
+
+//eMsgToGSToSSFromGC_AskTrySelectHero
+message TrySeleceHero
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskTrySelectHero];
+optional uint32 heroid = 2;
+}
+
+//eMsgToGSToSSFromGC_AskSelectHero
+message SelectHero
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskSelectHero];
+optional int32 heroid = 2;
+}
+
+//eMsgToGSToSSFromGC_AskSelectRunePage
+message SelectRunePage
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_AskSelectRunePage];
+optional int32 pageindex = 2;
+}
+
+//eMsgToGSToSSFromGC_ReportLoadBattleComplete
+message LoadComplete
+{
+optional MsgNum msgnum = 1 [default = eMsgToGSToSSFromGC_ReportLoadBattleComplete];
+}

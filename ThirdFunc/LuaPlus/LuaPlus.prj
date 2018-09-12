@@ -1,0 +1,71 @@
+[Include]
+/usr/include
+../../Share/Header/LuaPlus
+../../Share/Header/LuaPlus/src
+
+[Config Debug]
+Product		Lib ../../Share/llibd/luaplus
+Options		Debug
+Defines		_DEBUG
+ObjDir		Debug
+LibDir
+Libraries
+
+[Config PDebug]
+Product		Lib ../../Share/llibpd/luaplus
+Options		PDebug
+Defines		_DEBUG
+ObjDir		PDebug
+LibDir
+Libraries
+
+[Config Release]
+Product		Lib ../../Share/llib/luaplus
+Options		Release
+Defines	 	NDEBUG
+ObjDir		Release
+LibDir
+Libraries
+
+[Source]
+LuaObject.cpp
+LuaPlus.cpp
+LuaPlus_Libs.cpp
+LuaPlusAddons.c
+LuaState.cpp
+LuaState_DumpObject.cpp
+LuaStateOutFile.cpp
+LuaTableIterator.cpp
+lwstrlib.c
+popen.c
+src/lapi.c
+src/lauxlib.c
+src/lbaselib.c
+src/lcode.c
+src/ldblib.c
+src/ldebug.c
+src/ldo.c
+src/ldump.c
+src/lfunc.c
+src/lgc.c
+src/linit.c
+src/liolib.c
+src/llex.c
+src/lmathlib.c
+src/lmem.c
+src/loadlib.c
+src/lobject.c
+src/lopcodes.c
+src/loslib.c
+src/lparser.c
+src/lstate.c
+src/lstring.c
+src/lstrlib.c
+src/ltable.c
+src/ltablib.c
+src/ltm.c
+src/lua.c
+src/lundump.c
+src/lvm.c
+src/lzio.c
+src/print.c

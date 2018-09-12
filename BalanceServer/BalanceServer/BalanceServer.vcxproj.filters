@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Net">
+      <UniqueIdentifier>{44e328e0-a790-4917-b41e-3a0ba0e40aeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share">
+      <UniqueIdentifier>{9a7bdd02-dcec-436e-94b3-f4617f653d1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\Net">
+      <UniqueIdentifier>{34f2aa2c-ba39-45c4-a27a-e63bfffcc130}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProtobufMsg">
+      <UniqueIdentifier>{c6b656e0-959f-450d-8e5b-3b5c4b62d4c5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\CNetBuffer.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\ICliSession.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\IMsgHandle.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\INetSession.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\INetSessionMgr.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\ISrvCliSession.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\logger.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\BSNetSessionMgr.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\GateSession.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\ClientSession.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ELogging\DefLogging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ELogging\ELoggingHeader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\BSToGS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\BSToGC.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToBS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToBS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\B2LSession.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\ParseProto.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\BSToLS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BalanceServer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\ICliSession.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\IMsgHandle.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\INetSession.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\INetSessionMgr.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\ISrvCliSession.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\logger.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\BSNetSessionMgr.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\GateSession.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\ClientSession.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ELogging\DefLogging.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\BSToGS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\BSToGC.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToBS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToBS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\B2LSession.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\ParseProto.cpp">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\BSToLS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

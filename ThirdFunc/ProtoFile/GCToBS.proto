@@ -1,0 +1,29 @@
+package GCToBS;
+
+enum MsgNum
+{
+	eMsgToBSFromGC_Begin = 32768;
+	eMsgToBSFromGC_AskGateAddress = 32769;
+	eMsgToBSFromGC_OneClinetLogin = 32770;
+	eMsgToBSFromGC_End = 33000;
+}
+
+//已换GameAskGateAddress
+//eMsgToBSFromGC_AskGateAddress
+message AskGateAddress
+{
+	optional MsgNum msgnum = 1 [default = eMsgToBSFromGC_AskGateAddress];
+	optional int32 plat = 2;
+	optional string username = 3;
+	optional string token = 4;
+}
+
+message OneClinetLogin
+{
+	optional MsgNum msgnum = 1 [default = eMsgToBSFromGC_OneClinetLogin];
+	optional string uin = 2;
+	optional string sessionid = 3;
+	optional uint32 plat = 4;
+	optional uint32 login_success = 5;
+	optional uint32 nsid = 6;
+}

@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\CommonCPlus\CommLog.cpp" />
+    <ClCompile Include="..\..\ELogging\DefLogging.cpp" />
+    <ClCompile Include="..\..\ELogging\ELogging\SSActive.cpp" />
+    <ClCompile Include="..\..\ELogging\ELogging\Timer.cpp" />
+    <ClCompile Include="..\..\Share\Net\ICliSession.cpp" />
+    <ClCompile Include="..\..\Share\Net\IMsgHandle.cpp" />
+    <ClCompile Include="..\..\Share\Net\INetSession.cpp" />
+    <ClCompile Include="..\..\Share\Net\INetSessionMgr.cpp" />
+    <ClCompile Include="..\..\Share\Net\ISrvCliSession.cpp" />
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\LuaObject.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\LuaPlus.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\LuaPlusAddons.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\LuaPlus_Libs.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\LuaState.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\LuaStateOutFile.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\LuaState_DumpObject.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\LuaTableIterator.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\lwstrlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\popen.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lapi.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lauxlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lbaselib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lcode.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\ldblib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\ldebug.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\ldo.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\ldump.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lfunc.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lgc.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\linit.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\liolib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\llex.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lmathlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lmem.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\loadlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lobject.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lopcodes.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\loslib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lparser.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lstate.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lstring.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lstrlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\ltable.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\ltablib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\ltm.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lua.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lundump.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lvm.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\lzio.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\LuaPlus\src\print.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\CSToSS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToSS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToGC.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToSS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\ParseProto.cpp" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\SSToCS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\SSToGS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\ToLog.pb.cc" />
+    <ClCompile Include="BattleLogicThreadActor.cpp" />
+    <ClCompile Include="SSBattleMgr_CSGMMsg.cpp" />
+    <ClCompile Include="SSBattleMgr_GCGuideMsg.cpp" />
+    <ClCompile Include="SSBattle_Log.cpp" />
+    <ClCompile Include="SSBTreeAct_Absorb.cpp" />
+    <ClCompile Include="SSBTreeAct_BuyItem.cpp" />
+    <ClCompile Include="SSBTreeAct_FuryExpersion.cpp" />
+    <ClCompile Include="SSBTreeAct_MoveByPath.cpp" />
+    <ClCompile Include="SSBTreeAct_NormalAttack.cpp" />
+    <ClCompile Include="SSBTreeAct_PutAltarMonster.cpp" />
+    <ClCompile Include="SSBTreeAct_TransHome.cpp" />
+    <ClCompile Include="SSBTreeAct_UseSkill.cpp" />
+    <ClCompile Include="SSBTreeCon_Absorbing.cpp" />
+    <ClCompile Include="SSBTreeCon_AutoAttacking.cpp" />
+    <ClCompile Include="SSBTreeCon_BeHurted.cpp" />
+    <ClCompile Include="SSBTreeCon_CheckAttackTarget.cpp" />
+    <ClCompile Include="SSBTreeCon_CpBigger.cpp" />
+    <ClCompile Include="SSBTreeCon_EnemyHeroAttackFriendHero.cpp" />
+    <ClCompile Include="SSBTreeCon_EnemyHeroHPLower.cpp" />
+    <ClCompile Include="SSBTreeCon_EnemyTargetHpLowerThanHit.cpp" />
+    <ClCompile Include="SSBTreeCon_FriendHeroHurted.cpp" />
+    <ClCompile Include="SSBTreeCon_FullFury.cpp" />
+    <ClCompile Include="SSBTreeCon_GameInStartTime.cpp" />
+    <ClCompile Include="SSBTreeCon_HasAbsorbMonster.cpp" />
+    <ClCompile Include="SSBTreeCon_HasCpForAbsorb.cpp" />
+    <ClCompile Include="SSBTreeCon_HasCpToBuyItem.cpp" />
+    <ClCompile Include="SSBTreeCon_HasEmptyAbsorbSlot.cpp" />
+    <ClCompile Include="SSBTreeCon_HasEnemyHero.cpp" />
+    <ClCompile Include="SSBTreeCon_HasItemToBuy.cpp" />
+    <ClCompile Include="SSBTreeCon_HasTarget.cpp" />
+    <ClCompile Include="SSBTreeCon_HasSelfAltar.cpp" />
+    <ClCompile Include="SSBTreeCon_HeroInSpring.cpp" />
+    <ClCompile Include="SSBTreeCon_LevelBigger.cpp" />
+    <ClCompile Include="SSBTreeCon_MonsterType.cpp" />
+    <ClCompile Include="SSBTreeCon_NoEnemy.cpp" />
+    <ClCompile Include="SSBTreeCon_NoEnemyHero.cpp" />
+    <ClCompile Include="SSBTreeCon_NotBeHurt.cpp" />
+    <ClCompile Include="SSBTreeCon_NotSilence.cpp" />
+    <ClCompile Include="SSBTreeCon_PrepareSkill.cpp" />
+    <ClCompile Include="SSBTreeCon_Random.cpp" />
+    <ClCompile Include="SSBTreeCon_SkillHasCost.cpp" />
+    <ClCompile Include="SSBTreeCon_Attacking.cpp" />
+    <ClCompile Include="SSBTreeCon_Dead.cpp" />
+    <ClCompile Include="log\SSGameLogMgr.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Net\CentralSession.cpp" />
+    <ClCompile Include="Net\GateSession.cpp" />
+    <ClCompile Include="Net\SSBattleNetSessionMgr.cpp" />
+    <ClCompile Include="Net\SSLogSession.cpp" />
+    <ClCompile Include="SSAI.cpp" />
+    <ClCompile Include="SSAI_Building.cpp" />
+    <ClCompile Include="SSAI_Hero.cpp" />
+    <ClCompile Include="SSAI_HeroRobot.cpp" />
+    <ClCompile Include="SSAI_Soldier.cpp" />
+    <ClCompile Include="SSAI_Wild.cpp" />
+    <ClCompile Include="SSBTreeCon_Control.cpp" />
+    <ClCompile Include="SSBTreeCon_HaveSkillByType.cpp" />
+    <ClCompile Include="SSBTreeCon_HeroNumLower.cpp" />
+    <ClCompile Include="SSBTreeCon_SelfHPLower.cpp" />
+    <ClCompile Include="SSBTreeCon_Moving.cpp" />
+    <ClCompile Include="SSBTreeCon_Restrain.cpp" />
+    <ClCompile Include="SSBTreeCon_SkillInDist.cpp" />
+    <ClCompile Include="SSBTreeCon_SkillNotCD.cpp" />
+    <ClCompile Include="SSBTreeCon_SkillOutDist.cpp" />
+    <ClCompile Include="SSBTreeCon_SkillTypeCheck.cpp" />
+    <ClCompile Include="SSBTreeCon_TransHome.cpp" />
+    <ClCompile Include="SSBTreeCon_UsingSkill.cpp" />
+    <ClCompile Include="SSCfgMgrExt.cpp" />
+    <ClCompile Include="SSGSInfo.cpp" />
+    <ClCompile Include="SSGuideBattle.cpp" />
+    <ClCompile Include="SSGUParameter.cpp" />
+    <ClCompile Include="SSGUParameterMgr.cpp" />
+    <ClCompile Include="SSight.cpp" />
+    <ClCompile Include="SSightLight.cpp" />
+    <ClCompile Include="SSightMgr.cpp" />
+    <ClCompile Include="SSAltarSev.cpp" />
+    <ClCompile Include="SSAStar.cpp" />
+    <ClCompile Include="SSBattle.cpp" />
+    <ClCompile Include="SSBattleMgr.cpp" />
+    <ClCompile Include="SSBattleMgr_CSMsg.cpp" />
+    <ClCompile Include="SSBattleMgr_GCMsg.cpp" />
+    <ClCompile Include="SSBattleMgr_GSMsg.cpp" />
+    <ClCompile Include="SSBattleMgr_MsgPoster.cpp" />
+    <ClCompile Include="SSBattle_AskHandler.cpp" />
+    <ClCompile Include="SSBattle_MsgPoster.cpp" />
+    <ClCompile Include="SSBattle_Scene.cpp" />
+    <ClCompile Include="SSBattle_Script.cpp" />
+    <ClCompile Include="SSBattle_Func.cpp" />
+    <ClCompile Include="SSCfgMgr.cpp" />
+    <ClCompile Include="SSEffectMgr.cpp" />
+    <ClCompile Include="SSGameObject.cpp" />
+    <ClCompile Include="SSGameUnit.cpp" />
+    <ClCompile Include="SSHero.cpp" />
+    <ClCompile Include="SSMoveMgr.cpp" />
+    <ClCompile Include="SSMoveTool.cpp" />
+    <ClCompile Include="SSOBSev.cpp" />
+    <ClCompile Include="SSPassitiveEffect.cpp" />
+    <ClCompile Include="SSPassitiveEffect_BloodSeek.cpp" />
+    <ClCompile Include="SSPassitiveEffect_Rebound.cpp" />
+    <ClCompile Include="SSPassitiveEffect_Relive.cpp" />
+    <ClCompile Include="SSPassiveSkill.cpp" />
+    <ClCompile Include="SSPassiveSkillMgr.cpp" />
+    <ClCompile Include="SSProfileStatics.cpp" />
+    <ClCompile Include="SSSkill.cpp" />
+    <ClCompile Include="SSSkillEffect_Leading.cpp" />
+    <ClCompile Include="SSNPC.cpp" />
+    <ClCompile Include="SSSkillEffect.cpp" />
+    <ClCompile Include="SSSkillEffect_Buf.cpp" />
+    <ClCompile Include="SSSkillEffect_Caculate.cpp" />
+    <ClCompile Include="SSSkillEffect_Fly.cpp" />
+    <ClCompile Include="SSSkillEffect_Link.cpp" />
+    <ClCompile Include="SSSkillEffect_Move.cpp" />
+    <ClCompile Include="SSSkillEffect_Purification.cpp" />
+    <ClCompile Include="SSSkillEffect_Range.cpp" />
+    <ClCompile Include="SSSkillEffect_Summon.cpp" />
+    <ClCompile Include="SSSkillEffect_Switch.cpp" />
+    <ClCompile Include="SSSolderSev.cpp" />
+    <ClCompile Include="SSUser.cpp" />
+    <ClCompile Include="SSUserMgr.cpp" />
+    <ClCompile Include="SSUserMgr_CSMsg.cpp" />
+    <ClCompile Include="SSUserMgr_GCMsg.cpp" />
+    <ClCompile Include="SSVMMgr.cpp" />
+    <ClCompile Include="SSWorkThreadMgr.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\CommonCPlus\CommLog.h" />
+    <ClInclude Include="..\..\CommonCPlus\SafeRefPtr.h" />
+    <ClInclude Include="..\..\CommonCPlus\SSElementArr.h" />
+    <ClInclude Include="..\..\CommonCPlus\Tools.h" />
+    <ClInclude Include="..\..\ELogging\DefLogging.h" />
+    <ClInclude Include="..\..\ELogging\ELoggingHeader.h" />
+    <ClInclude Include="..\..\ELogging\ELogging\SSActive.h" />
+    <ClInclude Include="..\..\ELogging\ELogging\Timer.h" />
+    <ClInclude Include="..\..\Share\Net\CNetBuffer.h" />
+    <ClInclude Include="..\..\Share\Net\ICliSession.h" />
+    <ClInclude Include="..\..\Share\Net\IMsgHandle.h" />
+    <ClInclude Include="..\..\Share\Net\INetSession.h" />
+    <ClInclude Include="..\..\Share\Net\INetSessionMgr.h" />
+    <ClInclude Include="..\..\Share\Net\ISrvCliSession.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\CSToSS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToSS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToGC.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToSS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\ParseProto.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\SSToCS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\SSToGS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\ToLog.pb.h" />
+    <ClInclude Include="ISSParameterChangeCallBack.h" />
+    <ClInclude Include="SSBTreeAct_Absorb.h" />
+    <ClInclude Include="SSBTreeAct_BuyItem.h" />
+    <ClInclude Include="SSBTreeAct_FuryExpersion.h" />
+    <ClInclude Include="SSBTreeAct_MoveByPath.h" />
+    <ClInclude Include="SSBTreeAct_NormalAttack.h" />
+    <ClInclude Include="SSBTreeAct_PutAltarMonster.h" />
+    <ClInclude Include="SSBTreeAct_TransHome.h" />
+    <ClInclude Include="SSBTreeAct_UseSkill.h" />
+    <ClInclude Include="SSBTreeCon_Absorbing.h" />
+    <ClInclude Include="SSBTreeCon_AutoAttacking.h" />
+    <ClInclude Include="SSBTreeCon_BeHurted.h" />
+    <ClInclude Include="SSBTreeCon_CheckAttackTarget.h" />
+    <ClInclude Include="SSBTreeCon_CpBigger.h" />
+    <ClInclude Include="SSBTreeCon_EnemyHeroAttackFriendHero.h" />
+    <ClInclude Include="SSBTreeCon_EnemyHeroHPLower.h" />
+    <ClInclude Include="SSBTreeCon_EnemyTargetHpLowerThanHit.h" />
+    <ClInclude Include="SSBTreeCon_FriendHeroHurted.h" />
+    <ClInclude Include="SSBTreeCon_FullFury.h" />
+    <ClInclude Include="SSBTreeCon_GameInStartTime.h" />
+    <ClInclude Include="SSBTreeCon_HasAbsorbMonster.h" />
+    <ClInclude Include="SSBTreeCon_HasCpForAbsorb.h" />
+    <ClInclude Include="SSBTreeCon_HasCpToBuyItem.h" />
+    <ClInclude Include="SSBTreeCon_HasEmptyAbsorbSlot.h" />
+    <ClInclude Include="SSBTreeCon_HasEnemyHero.h" />
+    <ClInclude Include="SSBTreeCon_HasItemToBuy.h" />
+    <ClInclude Include="SSBTreeCon_HasTarget.h" />
+    <ClInclude Include="SSBTreeCon_HasSelfAltar.h" />
+    <ClInclude Include="SSBTreeCon_HeroInSpring.h" />
+    <ClInclude Include="SSBTreeCon_LevelBigger.h" />
+    <ClInclude Include="SSBTreeCon_MonsterType.h" />
+    <ClInclude Include="SSBTreeCon_NoEnemy.h" />
+    <ClInclude Include="SSBTreeCon_NoEnemyHero.h" />
+    <ClInclude Include="SSBTreeCon_NotBeHurt.h" />
+    <ClInclude Include="SSBTreeCon_NotSilence.h" />
+    <ClInclude Include="SSBTreeCon_PrepareSkill.h" />
+    <ClInclude Include="SSBTreeCon_Random.h" />
+    <ClInclude Include="SSBTreeCon_SkillHasCost.h" />
+    <ClInclude Include="SSBTreeCon_Attacking.h" />
+    <ClInclude Include="SSBTreeCon_Dead.h" />
+    <ClInclude Include="SSBTreeAction.h" />
+    <ClInclude Include="SSBTreeAct_Wait.h" />
+    <ClInclude Include="SSBTreeCondition.h" />
+    <ClInclude Include="SSBTreeCon_Control.h" />
+    <ClInclude Include="SSBTreeCon_HaveSkillByType.h" />
+    <ClInclude Include="SSBTreeCon_HeroNumLower.h" />
+    <ClInclude Include="SSBTreeCon_SelfHPLower.h" />
+    <ClInclude Include="SSBTreeCon_Moving.h" />
+    <ClInclude Include="SSBTreeCon_Restrain.h" />
+    <ClInclude Include="SSBTreeCon_SkillInDist.h" />
+    <ClInclude Include="SSBTreeCon_SkillNotCD.h" />
+    <ClInclude Include="SSBTreeCon_SkillOutDist.h" />
+    <ClInclude Include="SSBTreeCon_SkillTypeCheck.h" />
+    <ClInclude Include="SSBTreeCon_TransHome.h" />
+    <ClInclude Include="SSBTreeCon_UsingSkill.h" />
+    <ClInclude Include="SSBTreeNode.h" />
+    <ClInclude Include="ISSightLight.h" />
+    <ClInclude Include="log\SSGameLogMgr.h" />
+    <ClInclude Include="Net\CentralSession.h" />
+    <ClInclude Include="Net\GateSession.h" />
+    <ClInclude Include="Net\SSBattleNetSessionMgr.h" />
+    <ClInclude Include="Net\SSLogSession.h" />
+    <ClInclude Include="SSAI.h" />
+    <ClInclude Include="SSAI_Building.h" />
+    <ClInclude Include="SSAI_Hero.h" />
+    <ClInclude Include="SSAI_HeroRobot.h" />
+    <ClInclude Include="SSAI_Soldier.h" />
+    <ClInclude Include="SSAI_Wild.h" />
+    <ClInclude Include="SSBattle_Script.h" />
+    <ClInclude Include="SSBTreeSelector.h" />
+    <ClInclude Include="SSBTreeSequence.h" />
+    <ClInclude Include="SSDataStructure.h" />
+    <ClInclude Include="SSGSInfo.h" />
+    <ClInclude Include="SSGuideBattle.h" />
+    <ClInclude Include="SSGUParameter.h" />
+    <ClInclude Include="SSGUParameterMgr.h" />
+    <ClInclude Include="SSight.h" />
+    <ClInclude Include="SSightLight.h" />
+    <ClInclude Include="SSightMgr.h" />
+    <ClInclude Include="SSAltarSev.h" />
+    <ClInclude Include="SSAStar.h" />
+    <ClInclude Include="SSBattle.h" />
+    <ClInclude Include="SSBattleMgr.h" />
+    <ClInclude Include="SSCfgMgr.h" />
+    <ClInclude Include="SSEffectMgr.h" />
+    <ClInclude Include="SSGameObject.h" />
+    <ClInclude Include="SSGameUnit.h" />
+    <ClInclude Include="SSHero.h" />
+    <ClInclude Include="SSightObject.h" />
+    <ClInclude Include="SSightTool.h" />
+    <ClInclude Include="SSIntersectObject.h" />
+    <ClInclude Include="SSMoveMgr.h" />
+    <ClInclude Include="SSMoveObject.h" />
+    <ClInclude Include="SSMoveObjectHolder.h" />
+    <ClInclude Include="SSMoveTool.h" />
+    <ClInclude Include="SSNPC.h" />
+    <ClInclude Include="SSObjectPool.h" />
+    <ClInclude Include="SSOBSev.h" />
+    <ClInclude Include="SSPassitiveEffect.h" />
+    <ClInclude Include="SSPassitiveEffect_BloodSeek.h" />
+    <ClInclude Include="SSPassitiveEffect_Rebound.h" />
+    <ClInclude Include="SSPassitiveEffect_Relive.h" />
+    <ClInclude Include="SSPassiveSkill.h" />
+    <ClInclude Include="SSPassiveSkillMgr.h" />
+    <ClInclude Include="SSProfileStatics.h" />
+    <ClInclude Include="SSSkill.h" />
+    <ClInclude Include="SSSkillEffect.h" />
+    <ClInclude Include="SSSkillEffect_Buf.h" />
+    <ClInclude Include="SSSkillEffect_Caculate.h" />
+    <ClInclude Include="SSSkillEffect_Fly.h" />
+    <ClInclude Include="SSSkillEffect_Leading.h" />
+    <ClInclude Include="SSSkillEffect_Link.h" />
+    <ClInclude Include="SSSkillEffect_Move.h" />
+    <ClInclude Include="SSSkillEffect_Purification.h" />
+    <ClInclude Include="SSSkillEffect_Range.h" />
+    <ClInclude Include="SSSkillEffect_Summon.h" />
+    <ClInclude Include="SSSkillEffect_Switch.h" />
+    <ClInclude Include="SSSolderSev.h" />
+    <ClInclude Include="SSUser.h" />
+    <ClInclude Include="SSVMMgr.h" />
+    <ClInclude Include="SSWorkThreadMgr.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\CommonCPlus\SSElementArr.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5F5105AE-91E4-47B2-ABDD-648961F9DB84}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CSDataSource</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\Bin\$(Platform)\$(Configuration)\</OutDir>
+    <LibraryPath>$(OutDir);..\..\..\..\CommonCPlus\trunk\Bin\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\CommonCPlus\CommonCPlus;..\..\CommonCPlus\CommonCPlus\Boost;..\..\CommonCPlus\CommonCPlus\LuaPlus;..\..\CommonCPlus\CommonCPlus\LuaPlus\src</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\Bin\$(Platform)\$(Configuration)\</OutDir>
+    <LibraryPath>$(OutDir);..\..\..\..\CommonCPlus\trunk\Bin\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <GenerateManifest>false</GenerateManifest>
+    <IncludePath>..\..\CommonCPlus\CommonCPlus;..\..\CommonCPlus\CommonCPlus\LuaPlus;..\..\CommonCPlus\CommonCPlus\LuaPlus\src;..\..\CommonCPlus\CommonCPlus\Boost;..\..\CommonCPlus\CommonCPlus\WYYTools;..\..\CommonCPlus\CommonCPlus\ice;..\..\ELogging\ELogging;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\Bin\$(Platform)\$(Configuration)\</OutDir>
+    <LibraryPath>$(OutDir);..\..\..\..\CommonCPlus\trunk\Bin\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\CommonCPlus\CommonCPlus;..\..\CommonCPlus\CommonCPlus\Boost;..\..\CommonCPlus\CommonCPlus\LuaPlus;..\..\CommonCPlus\CommonCPlus\LuaPlus\src</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\Bin\$(Platform)\$(Configuration)\</OutDir>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CSDATASOURCE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>..\..\Lib\$(Platform)\$(Configuration)\vld.lib;..\..\Lib\$(Platform)\$(Configuration)\libmysql.lib;..\..\Lib\$(Platform)\$(Configuration)\WYYTools.lib;$(OutDir)\SSKernel.lib</AdditionalDependencies>
+      <Profile>true</Profile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CSDATASOURCE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>..\..\Lib\$(Platform)\$(Configuration)\vld.lib;..\..\Lib\$(Platform)\$(Configuration)\libmysql.lib;..\..\Lib\$(Platform)\$(Configuration)\WYYTools.lib;$(OutDir)\SSKernel.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_atomic-vc100-mt-gd-1_55.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_chrono-vc100-mt-gd-1_55.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_system-vc100-mt-gd-1_55.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_date_time-vc100-mt-gd-1_55.lib</AdditionalDependencies>
+      <Profile>true</Profile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;CSDATASOURCE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>..\..\Lib\$(Platform)\$(Configuration)\vld.lib;..\..\Lib\$(Platform)\$(Configuration)\libmysql.lib;..\..\Lib\$(Platform)\$(Configuration)\WYYTools.lib;$(OutDir)\SSKernel.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_WINDOWS;_USRDLL;CSDATASOURCE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Share;..\..\Share/Lib;..\..\Share/Net;..\..\ucore\include\base;..\..\CommonCPlus;..\..\CommonCPlus\CommonCPlus;..\..\CommonCPlus\CommonCPlus\WYYTools;..\..\ThirdFunc;..\..\ThirdFunc\LuaPlus;..\..\ThirdFunc\tinyxml;..\..\ThirdFunc\LuaPlus\src;..\..\ThirdFunc\google\protobuf</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libprotobuf.lib;libtcmalloc_minimal.lib;DbgLib.lib;tinyxml.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Lib\x64\Release;..\..\Share\DbgLib\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ForceSymbolReferences>
+      </ForceSymbolReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

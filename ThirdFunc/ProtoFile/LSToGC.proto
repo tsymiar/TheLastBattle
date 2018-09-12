@@ -1,0 +1,27 @@
+package LSToGC;
+
+enum MsgID
+{
+	eMsgToGCFromLS_NotifyLoginResult = 512;
+	eMsgToGCFromLS_NotifyServerBSAddr = 513;
+}
+
+message LoginResult
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromLS_NotifyLoginResult];
+	optional int32 result = 2;
+}
+
+message ServerInfo
+{
+	optional string ServerName = 1;
+	optional string ServerAddr = 2;
+	optional int32 ServerPort = 3;
+	optional int32 ServerState = 4;
+}
+
+message ServerBSAddr
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromLS_NotifyServerBSAddr];
+	repeated ServerInfo serverinfo = 2;
+}

@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Cfg">
+      <UniqueIdentifier>{657850c8-0fde-48cf-a55b-dbc1dfed260f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GO">
+      <UniqueIdentifier>{05b7a0dc-e118-4442-99bb-c00c7e86ccac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlayerAI">
+      <UniqueIdentifier>{e0cc68c0-a9ef-4434-9551-9e697138d0c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Net">
+      <UniqueIdentifier>{5cbf421d-457f-4b1f-9bee-6cc96a7afa74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share">
+      <UniqueIdentifier>{9956849e-7c7f-4e60-b5c9-ae7cfc8ad40a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Share\Net">
+      <UniqueIdentifier>{58111a4a-559d-44dd-a344-9a1922d6c21b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProtobufMsg">
+      <UniqueIdentifier>{93b2ff13-1dcb-41d9-8424-294afbce5fcb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RobotMgr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Robot.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonCPlus\ELogging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ELogging\DefLogging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ELogging\ELoggingHeader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CfgMgr.h">
+      <Filter>Cfg</Filter>
+    </ClInclude>
+    <ClInclude Include="GameUnit.h">
+      <Filter>GO</Filter>
+    </ClInclude>
+    <ClInclude Include="Hero.h">
+      <Filter>GO</Filter>
+    </ClInclude>
+    <ClInclude Include="RobotNPC.h">
+      <Filter>GO</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>GO</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAtkAI.h">
+      <Filter>PlayerAI</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerAI.h">
+      <Filter>PlayerAI</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMoveAI.h">
+      <Filter>PlayerAI</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerOccupyAI.h">
+      <Filter>PlayerAI</Filter>
+    </ClInclude>
+    <ClInclude Include="AbsorbAI.h">
+      <Filter>PlayerAI</Filter>
+    </ClInclude>
+    <ClInclude Include="ReportAltarStrawSolderAI.h">
+      <Filter>PlayerAI</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\RobotNetSessionMgr.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="Net\RobotSession.h">
+      <Filter>Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\CNetBuffer.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\ICliSession.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\IMsgHandle.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\INetSession.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\INetSessionMgr.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\Net\ISrvCliSession.h">
+      <Filter>Share\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Share\logger.h">
+      <Filter>Share</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\BSToGC.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\BSToGS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\CSToGS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\CSToSS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToBS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToCS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToSS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToBS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToCS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToGC.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToSS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\SSToCS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\SSToGS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\LSToBS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\LSToGC.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\LSToSDK.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToLS.pb.h">
+      <Filter>ProtobufMsg</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RobotConsole.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RobotMgr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Robot.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Robot_MsgHandler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Robot_PostMsg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ELogging\DefLogging.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CfgMgr.cpp">
+      <Filter>Cfg</Filter>
+    </ClCompile>
+    <ClCompile Include="GameUnit.cpp">
+      <Filter>GO</Filter>
+    </ClCompile>
+    <ClCompile Include="Hero.cpp">
+      <Filter>GO</Filter>
+    </ClCompile>
+    <ClCompile Include="RobotNPC.cpp">
+      <Filter>GO</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>GO</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerAtkAI.cpp">
+      <Filter>PlayerAI</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerAI.cpp">
+      <Filter>PlayerAI</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMoveAI.cpp">
+      <Filter>PlayerAI</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerOccupyAI.cpp">
+      <Filter>PlayerAI</Filter>
+    </ClCompile>
+    <ClCompile Include="AbsorbAI.cpp">
+      <Filter>PlayerAI</Filter>
+    </ClCompile>
+    <ClCompile Include="ReportAltarStrawSolderAI.cpp">
+      <Filter>PlayerAI</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\RobotSession.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="Net\RobotNetSessionMgr.cpp">
+      <Filter>Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\BSToGC.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\BSToGS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\CSToGS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\CSToSS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToBS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToCS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToSS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToBS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToCS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToGC.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToSS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\SSToCS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\SSToGS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\LSToBS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\LSToGC.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\LSToSDK.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToLS.pb.cc">
+      <Filter>ProtobufMsg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\logger.cpp">
+      <Filter>Share</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\ISrvCliSession.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\ICliSession.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\IMsgHandle.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\INetSession.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\INetSessionMgr.cpp">
+      <Filter>Share\Net</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

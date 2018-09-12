@@ -1,0 +1,98 @@
+package RCToCS;
+
+enum MsgID
+{
+	eMsgRC2CS_Begin = 33000;
+	eMsgRC2CS_AskRegist = 33001;
+	eMsgRC2CS_AskServerInfo = 33002;
+	eMsgRC2CS_AskServerUserInfo = 33003;
+	eMsgRC2CS_AskNoticeInfo = 33004;
+	eMsgRC2CS_AskAddNotice = 33005;
+	eMsgRC2CS_AskDeleteNotice = 33006;
+	
+	eMsgRC2CS_AskAddOneMail = 33007;
+	eMsgRC2CS_AskCreateCDKey = 33008;
+	eMsgRC2CS_AskQueryCDkey = 33009; 
+	
+	eMsgRC2CS_End = 33499;
+}
+
+ 
+message QueryCDKey
+{
+	optional MsgID msgid = 1 [default = eMsgRC2CS_AskQueryCDkey];
+}
+
+message CreateCDKey
+{
+	optional MsgID msgid = 1 [default = eMsgRC2CS_AskCreateCDKey];
+	optional string title = 2;
+	optional int32 platform = 3;
+	optional uint64 end_time = 4;
+	optional string content = 5;
+	optional int32 gift_type = 6;
+	message giftInfo
+	{
+		optional int32 item_id = 1;
+		optional int32 item_num = 2;
+	}
+	repeated giftInfo gift = 7;
+	optional int32 code_len = 8;
+	repeated string cdkey = 9;
+}
+ 
+//eMsgRC2CS_AskAddOneMail
+message AskAddMailReq
+{
+	optional MsgID msgid = 1 [default = eMsgRC2CS_AskAddOneMail];
+	optional int32 type = 2; 
+	optional int32 sdk = 3; 
+	optional string title = 4;
+	optional string content = 5;
+	optional string gift = 6;
+	optional string createtime = 7; 
+	optional string  endtime = 8;  
+	optional string sender = 9;
+	repeated int64	userIdlist = 10;
+	optional int32  day = 11;
+}
+
+message AskRegist
+{
+	optional MsgID msgid = 1 [default = eMsgRC2CS_AskRegist];
+	optional bytes key = 2;
+}
+
+message AskServerInfo
+{
+	optional MsgID msgid = 1 [default = eMsgRC2CS_AskServerInfo];
+}
+
+message AskServerUserInfo
+{
+	optional MsgID msgid = 1 [default = eMsgRC2CS_AskServerUserInfo];
+}
+
+message AskNoticeInfo
+{
+	optional MsgID msgid = 1 [default = eMsgRC2CS_AskNoticeInfo];
+}
+
+message AskAddNotice
+{
+	optional MsgID msgid = 1 [default = eMsgRC2CS_AskAddNotice];
+	optional int32 platform = 2;
+	optional bytes title = 3;
+	optional int32 flag = 4;
+	optional int32 state = 5;
+	optional int32 priority = 6;
+	optional bytes noticeMsg = 7;
+	optional uint64 star_time = 8;
+	optional uint64 end_time = 9;
+}
+
+message AskDeleteNotice
+{
+	optional MsgID msgid = 1 [default = eMsgRC2CS_AskDeleteNotice];
+	optional int32 noticeId = 2;
+}

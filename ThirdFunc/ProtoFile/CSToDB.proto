@@ -1,0 +1,269 @@
+package CSToDB;
+
+enum MsgID
+{
+	eCheckNickNameDBCallBack = 100;
+	eQueryUser_DBCallBack = 101;
+	eLogStore_DBCallBack = 102;
+	eUpdateUser_DBCallBack = 103;
+	eInsertUser_DBCallBack = 104;
+	eUpdateGameMail_DBCallBack = 105;
+	eBuyGoods_DBCallBack = 106;
+	eNicknameConflict_DBCallBack = 107;
+	eQueryObjId_DBCallBack = 108;
+	eAlterSNSList_DBCall = 109;
+	eInsertNotice_DBCall = 110;
+	eDeleteNotice_DBCall = 111;
+	eAlterItem_DBCall = 112;
+	eChangeNickName_DBCall = 113;
+	eExeSQL_Call = 114;
+	eQueryNotice_DBCall = 115;
+	eStoreUserData = 116; 
+	eUpdateUserGameMail_DBCallBack = 117;
+	eInsertCDKeyEvents = 118;
+	eInsertCDKeyInfo = 119;
+	eUpdateCDKeyInfo = 120;
+}
+
+message UpdateCDKeyInfo
+{
+	optional MsgID msgid = 1 [default = eUpdateCDKeyInfo];
+	optional string sql_str = 2;
+}
+
+message InsertCDKeyInfo
+{
+	optional MsgID msgid = 1 [default = eInsertCDKeyInfo];
+	optional string sql_str = 2;
+}
+
+//eInsertCDKeyEvents
+message CDKeyEvents
+{
+	optional MsgID msgid = 1 [default = eInsertCDKeyEvents];
+	optional string sql_str = 2;
+}
+
+
+//eUpdateUserGameMail_DBCallBack
+message UpdateUserMail
+{
+	optional MsgID  msgid = 1 [default = eUpdateUserGameMail_DBCallBack];
+	optional int64  objid = 2;
+	optional int32  mailid = 3;
+	optional int32  cstate = 4;	
+}
+
+message StoreUserdata
+{
+	optional int64				un64ObjIdx = 1;
+	optional int32				eUserPlatform = 2;
+	optional int32				un32HeaderID = 3;
+	optional int32				n8Sex = 4; 
+	optional int64				n64Diamond = 5;
+	optional int64				n64Gold = 6;
+	optional int64				tRegisteUTCMillisec = 7;	//注册时间(s)
+	optional int64				tLastLoginUTCMillisec = 8;	//上次登录时间(s)
+	optional int64				tLastLogOutUTCTime = 9;		//下线时间(主动退出，断线s)
+	optional int64				n64Score = 10;
+	optional int32				un32TotalGameInns = 11;
+	optional int32				un32TotalWinInns = 12;
+	optional int32				un32TotalHeroKills = 13;
+	optional int32				un32TotalDestoryBuildings = 14;
+	optional int32				un32TotalDeadTimes = 15;
+	optional int32				un32TotalAssist = 16;
+	optional int32				un16UserLv = 17;
+	optional int32				un32UserCurLvExp = 18;
+	optional int64				tLastFirstWinTime = 19; 
+	optional int32				un16Cldays = 20;
+	optional string				tLastGetLoginReward = 21;
+	optional int32				un16VipLv = 22;
+	optional int32				vipScore = 23;
+	optional string				mGuideSteps = 24;
+	
+	message SUserHeroDBData
+	{
+			optional int32			un32HeroID = 1;
+			optional int64			endTime = 2; // time(NULL)
+			optional int64			buyTime = 3; //购买时间   time(NULL)
+	}
+	repeated SUserHeroDBData sSUserHeroDBData = 25;
+	message SUserRelationshipInfo
+	{
+			optional string	stNickName = 1; 
+		optional int32	nHeadId = 2;
+	optional int64	guididx = 3;
+	optional int32 eRelationShip = 4;
+	optional int64 tMilSec = 5;
+	}
+	message	SUserItemInfo
+	{
+		optional int32	item_id = 1;
+		optional bool	ifusing = 2;
+		optional int32	item_num = 3;
+		optional int64	buy_time = 4;
+		optional int64	end_time = 6;
+		optional int32	n32EffectValue = 7;
+		optional int32	n32EffectID = 8;
+	}
+	repeated SUserRelationshipInfo friendList = 26;
+	repeated SUserRelationshipInfo blackList = 27;
+	repeated SUserItemInfo itemlist = 28;
+	message UserMailDBData
+	{
+		optional	int32		mailId = 1;
+		optional	int32 mState = 2;
+	}
+	repeated UserMailDBData mailList = 29;
+	optional string nickname = 30;
+	optional string username = 31;
+	optional string pwd = 32;
+	optional string runestr = 33;
+	optional string slotstr = 34;
+}
+message QueryNotice
+{
+	optional MsgID msgid = 1 [default = eQueryNotice_DBCall];
+}
+
+message ExeSQL_Call
+{
+	optional MsgID msgid = 1 [default = eExeSQL_Call];
+	optional string sql = 2;
+}
+message ChangeNickName
+{
+	optional MsgID msgid = 1 [default = eChangeNickName_DBCall];
+	optional string nickname = 2;
+	optional int64 guid = 3;
+}
+message AlterItem
+{
+	optional MsgID mgsid = 1 [default = eAlterItem_DBCall];
+	optional string sql_str = 2;
+}
+
+message DeleteNotice
+{
+	optional MsgID mgsid = 1 [default = eDeleteNotice_DBCall];
+	optional uint32 id = 2;
+}
+
+message InsertNotice
+{
+	optional MsgID mgsid = 1 [default = eInsertNotice_DBCall];
+	optional string sql_str = 2;
+}
+
+message AlterSNSList
+{
+	optional MsgID mgsid = 1 [default = eAlterSNSList_DBCall];
+	optional uint64 user_id = 2;
+	optional uint64 related_id = 3;
+	optional uint32 related = 4;
+	optional uint32 opration = 5;
+}
+
+//eQueryObjId_DBCallBack
+message QueryObjIdxReq
+{
+	optional MsgID msgid = 1 [default = eQueryObjId_DBCallBack];
+	optional string Logininfo = 2;
+	optional int32	gsid = 3;
+	optional int32 gcnetid = 4;
+	optional int32 csid = 5; 
+}
+
+message NicknameConflict
+{
+	optional MsgID mgsid = 1 [default = eNicknameConflict_DBCallBack];
+	optional string newnickname = 2;
+	optional int32 gsid = 3;
+	optional int32 gcnetid = 4;
+	optional uint64 guid = 5;
+	optional int32 sdkid = 6;
+	optional int32 csid = 7;
+	optional string cdk = 8;
+	optional string oldnickname = 9;
+}
+
+message BuyGoods
+{
+	optional MsgID mgsid = 1 [default = eBuyGoods_DBCallBack];
+	optional string buygoodsmag = 2;
+}
+
+enum MailType
+{
+	mailType_None = 0;
+	mailType_1 = 1;
+	mailType_2 = 2;
+	mailType_3 = 3;
+	mailType_4 = 4;
+}
+
+enum EMailCurtState
+{
+	eMailState_None = 0;
+	eMailState_New = 1;
+	eMailState_LookedButNotGotGift = 2;
+	eMailState_Look = 3;
+	eMailState_Del = 4;
+}
+
+message  GameMailInfo
+{
+	optional MailType  type = 1;
+	optional int32 mailId = 2;
+	optional int64 userid = 3;
+	optional EMailCurtState curtstate = 4;
+	optional int32 sdkidx = 5; 
+	optional string title = 6;
+	optional string content = 7;
+	optional string giftstr = 8;
+	optional string createtime = 9;
+	optional string overtime = 10;
+	optional string sender = 11; 
+}
+//eUpdateGameMail_DBCallBack
+message UpdateGameMail
+{
+	optional MsgID mgsid = 1 [default = eUpdateGameMail_DBCallBack]; 
+	repeated GameMailInfo maillist = 2; 
+}
+
+message InsertUser
+{
+	optional MsgID mgsid = 1 [default = eInsertUser_DBCallBack]; 
+	optional int64  guid = 2;
+	optional string sqlstr = 3;
+}
+message UpdateUser
+{
+	optional MsgID mgsid = 1 [default = eUpdateUser_DBCallBack];
+	optional int64  guid = 2;
+	optional string sqlstr = 3;
+}
+
+message CheckNameReq
+{
+	optional MsgID mgsid = 1 [default = eCheckNickNameDBCallBack]; 
+	optional int32 gsid = 2;
+	optional int32 gcnetid = 3;
+	optional int32 gsnetid = 4;
+	optional int32 sdkid = 5;
+	optional int32 csid = 6;
+	optional string cdk = 7;
+	optional string completeInfo = 8;
+}
+
+message QueryUserReq
+{
+	optional MsgID msgid = 1 [default = eQueryUser_DBCallBack];
+	optional string Logininfo = 2;
+	optional int32	gsid = 3;
+	optional int32 gcnetid = 4;
+	optional int32 csid = 5; 
+	optional int64 objid = 6; 
+	optional string uname = 7;
+}

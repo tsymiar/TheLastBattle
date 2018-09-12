@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1EA99A92-D8F9-48B4-8A1C-8A23E16462DA}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GSKernel</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\Bin\$(Platform)\$(Configuration)</OutDir>
+    <LibraryPath>..\..\..\..\CommonCPlus\trunk\Bin\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\Bin\$(Platform)\$(Configuration)</OutDir>
+    <LibraryPath>..\..\..\..\CommonCPlus\trunk\Bin\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <GenerateManifest>false</GenerateManifest>
+    <IncludePath>..\..\ELogging\ELogging;..\..\ELogging;..\..\ucore\include\base;..\..\ThirdFunc\google\protobuf;..\..\ThirdFunc;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\Bin\$(Platform)\$(Configuration)</OutDir>
+    <LibraryPath>..\..\..\..\CommonCPlus\trunk\Bin\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\Bin\$(Platform)\$(Configuration)</OutDir>
+    <LibraryPath>..\..\..\..\CommonCPlus\trunk\Bin\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\ELogging\ELogging;..\..\ELogging;..\..\ThirdFunc\tinyxml;..\..\ucore\include\base;..\..\ThirdFunc\google\protobuf;..\..\CommonCPlus\CommonCPlus;..\..\ThirdFunc;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GSKERNEL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;..\..\Lib\$(Platform)\$(Configuration)\vld.lib;..\..\Lib\$(Platform)\$(Configuration)\libmysql.lib;..\..\Lib\$(Platform)\$(Configuration)\WYYTools.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GSKERNEL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;Winmm.lib;..\..\Lib\$(Platform)\$(Configuration)\vld.lib;..\..\Lib\$(Platform)\$(Configuration)\WYYTools.lib;..\..\Lib\$(Platform)\$(Configuration)\libprotobuf.lib</AdditionalDependencies>
+      <PerUserRedirection>false</PerUserRedirection>
+      <AdditionalLibraryDirectories>..\..\Bin\$(SolutionName)\$(Platform)\$(Configuration)\GSKernel.lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;GSKERNEL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;..\..\Lib\$(Platform)\$(Configuration)\vld.lib;..\..\Lib\$(Platform)\$(Configuration)\libmysql.lib;..\..\Lib\$(Platform)\$(Configuration)\WYYTools.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_CONSOLE;USE_PROFILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;Winmm.lib;..\..\Lib\$(Platform)\$(Configuration)\libprotobuf.lib;..\..\Lib\$(Platform)\$(Configuration)\tinyxml.lib;..\..\Share\DbgLib\Lib\DbgLib.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_thread-vc100-mt-1_55.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_atomic-vc100-mt-1_55.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_chrono-vc100-mt-1_55.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_system-vc100-mt-1_55.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_date_time-vc100-mt-1_55.lib;..\..\Lib\$(Platform)\$(Configuration)\libtcmalloc_minimal.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ForceSymbolReferences>
+      </ForceSymbolReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\ELogging\DefLogging.h" />
+    <ClInclude Include="..\..\ELogging\ELoggingHeader.h" />
+    <ClInclude Include="..\..\Share\logger.h" />
+    <ClInclude Include="..\..\Share\Net\CNetBuffer.h" />
+    <ClInclude Include="..\..\Share\Net\ICliSession.h" />
+    <ClInclude Include="..\..\Share\Net\IMsgHandle.h" />
+    <ClInclude Include="..\..\Share\Net\INetSession.h" />
+    <ClInclude Include="..\..\Share\Net\INetSessionMgr.h" />
+    <ClInclude Include="..\..\Share\Net\ISrvCliSession.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\BSToGC.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\BSToGS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\CSToGS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\CSToSS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToBS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToCS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToSS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToBS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToCS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToGC.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToSS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\ParseProto.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\SSToCS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\SSToGS.pb.h" />
+    <ClInclude Include="GSKernel.h" />
+    <ClInclude Include="GSSSInfo.h" />
+    <ClInclude Include="Net\ClientSession.h" />
+    <ClInclude Include="Net\GSNetSessionMgr.h" />
+    <ClInclude Include="Net\M2BSession.h" />
+    <ClInclude Include="Net\M2CSession.h" />
+    <ClInclude Include="Net\M2SSession.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\ELogging\DefLogging.cpp" />
+    <ClCompile Include="..\..\Share\logger.cpp" />
+    <ClCompile Include="..\..\Share\Net\ICliSession.cpp" />
+    <ClCompile Include="..\..\Share\Net\IMsgHandle.cpp" />
+    <ClCompile Include="..\..\Share\Net\INetSession.cpp" />
+    <ClCompile Include="..\..\Share\Net\INetSessionMgr.cpp" />
+    <ClCompile Include="..\..\Share\Net\ISrvCliSession.cpp" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\BSToGC.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\BSToGS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\CSToGS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\CSToSS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToBS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToCS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToSS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToBS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToCS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToGC.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToSS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\ParseProto.cpp" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\SSToCS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\SSToGS.pb.cc" />
+    <ClCompile Include="GSKernel.cpp" />
+    <ClCompile Include="GSKernel_MainThread.cpp" />
+    <ClCompile Include="GSKernel_MainThread_CSMsgHandler.cpp" />
+    <ClCompile Include="GSKernel_MainThread_GCMsgHandler.cpp" />
+    <ClCompile Include="GSKernel_MainThread_SSMsgHandler.cpp" />
+    <ClCompile Include="GSSSInfo.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Net\ClientSession.cpp" />
+    <ClCompile Include="Net\GSNetSessionMgr.cpp" />
+    <ClCompile Include="Net\M2BSession.cpp" />
+    <ClCompile Include="Net\M2CSession.cpp" />
+    <ClCompile Include="Net\M2SSession.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

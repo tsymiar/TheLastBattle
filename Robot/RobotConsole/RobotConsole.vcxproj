@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{11774003-EE71-4DF0-AB25-57F0244454DD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>RobotConsole</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\Bin\$(Platform)\$(Configuration)</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\Bin\$(Platform)\$(Configuration)</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <LibraryPath>$(OutDir);..\..\..\..\CommonCPlus\trunk\Bin\$(Platform)\$(Configuration)\;..\..\..\..\CommonCPlus\trunk\Bin\$(Platform)\Release\;$(LibraryPath)</LibraryPath>
+    <GenerateManifest>false</GenerateManifest>
+    <IncludePath>..\..\ELogging\ELogging;..\..\ELogging;..\..\SenceServer;..\..\SenceServer\SSBattleMgr;..\..\SenceServer\Include;..\..\CommonCPlus\CommonCPlus\LuaPlus;..\..\CommonCPlus\CommonCPlus\LuaPlus\src;..\..\CommonCPlus;..\..\CommonCPlus\CommonCPlus;..\..\ThirdFunc\tinyxml;..\..\CommonCPlus\CommonCPlus\Boost;..\..\CommonCPlus\CommonCPlus\WYYTools;..\..\ucore\include\base;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\Bin\$(Platform)\$(Configuration)</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\Bin\$(Platform)\$(Configuration)</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>..\..\ThirdFunc\Google-Breakpad-master\src;..\..\ThirdFunc\Google-Breakpad-master\src\client\windows\handler;..\..\ELogging\ELogging;..\..\ELogging;..\..\SenceServer;..\..\SenceServer\SSBattleMgr;..\..\SenceServer\Include;..\..\CommonCPlus;..\..\CommonCPlus\CommonCPlus;..\..\ThirdFunc\MsgLists;..\..\ThirdFunc;..\..\ThirdFunc\tinyxml;..\..\CommonCPlus\CommonCPlus\Boost;..\..\CommonCPlus\CommonCPlus\Boost\property_tree\detail;..\..\CommonCPlus\CommonCPlus\WYYTools;..\..\ucore\include\base;$(IncludePath)</IncludePath>
+    <GenerateManifest>false</GenerateManifest>
+    <LibraryPath>$(OutDir);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_CONSOLE</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>..\..\..\..\CommonCPlus\trunk\Bin\$(Platform)\$(Configuration)\WYYTools.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)inc;E:\Workspace\FBAII\CommonCPlus\Include;E:\Workspace\FBAII\Lib\X64\Debug</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>..\..\Lib\$(Platform)\$(Configuration)\WYYTools.lib;..\..\Lib\$(Platform)\$(Configuration)\vld.lib;..\..\Lib\$(Platform)\$(Configuration)\tinyxml.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>..\..\Lib\$(Platform)\$(Configuration)\WYYTools.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalOptions>/Zm300 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>..\..\Lib\$(Platform)\$(Configuration)\WYYTools.lib;..\..\Lib\$(Platform)\$(Configuration)\exception_handler.lib;..\..\Lib\$(Platform)\$(Configuration)\libprotobuf.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_thread-vc100-mt-1_55.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_atomic-vc100-mt-1_55.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_chrono-vc100-mt-1_55.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_system-vc100-mt-1_55.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_date_time-vc100-mt-1_55.lib;..\..\Lib\$(Platform)\$(Configuration)\tinyxml.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Lib\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\CommonCPlus\ELogging.h" />
+    <ClInclude Include="..\..\ELogging\DefLogging.h" />
+    <ClInclude Include="..\..\ELogging\ELoggingHeader.h" />
+    <ClInclude Include="..\..\Share\logger.h" />
+    <ClInclude Include="..\..\Share\Net\CNetBuffer.h" />
+    <ClInclude Include="..\..\Share\Net\ICliSession.h" />
+    <ClInclude Include="..\..\Share\Net\IMsgHandle.h" />
+    <ClInclude Include="..\..\Share\Net\INetSession.h" />
+    <ClInclude Include="..\..\Share\Net\INetSessionMgr.h" />
+    <ClInclude Include="..\..\Share\Net\ISrvCliSession.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\BSToGC.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\BSToGS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\CSToGS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\CSToSS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToBS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToCS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToLS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GCToSS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToBS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToCS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToGC.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\GSToSS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\LSToBS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\LSToGC.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\LSToSDK.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\SSToCS.pb.h" />
+    <ClInclude Include="..\..\ThirdFunc\MsgLists\SSToGS.pb.h" />
+    <ClInclude Include="AbsorbAI.h" />
+    <ClInclude Include="CfgMgr.h" />
+    <ClInclude Include="Hero.h" />
+    <ClInclude Include="GameUnit.h" />
+    <ClInclude Include="Net\RobotNetSessionMgr.h" />
+    <ClInclude Include="Net\RobotSession.h" />
+    <ClInclude Include="PlayerAI.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerAtkAI.h" />
+    <ClInclude Include="PlayerMoveAI.h" />
+    <ClInclude Include="PlayerOccupyAI.h" />
+    <ClInclude Include="ReportAltarStrawSolderAI.h" />
+    <ClInclude Include="Robot.h" />
+    <ClInclude Include="RobotMgr.h" />
+    <ClInclude Include="RobotNPC.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\ELogging\DefLogging.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\logger.cpp" />
+    <ClCompile Include="..\..\Share\Net\ICliSession.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\IMsgHandle.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\INetSession.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\INetSessionMgr.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\Share\Net\ISrvCliSession.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\BSToGC.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\BSToGS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\CSToGS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\CSToSS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToBS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToCS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToLS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GCToSS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToBS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToCS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToGC.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\GSToSS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\LSToBS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\LSToGC.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\LSToSDK.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\SSToCS.pb.cc" />
+    <ClCompile Include="..\..\ThirdFunc\MsgLists\SSToGS.pb.cc" />
+    <ClCompile Include="AbsorbAI.cpp" />
+    <ClCompile Include="CfgMgr.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="GameUnit.cpp" />
+    <ClCompile Include="Net\RobotNetSessionMgr.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Net\RobotSession.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="PlayerAI.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerAtkAI.cpp" />
+    <ClCompile Include="PlayerMoveAI.cpp" />
+    <ClCompile Include="PlayerOccupyAI.cpp" />
+    <ClCompile Include="ReportAltarStrawSolderAI.cpp" />
+    <ClCompile Include="Robot.cpp" />
+    <ClCompile Include="RobotConsole.cpp" />
+    <ClCompile Include="RobotMgr.cpp" />
+    <ClCompile Include="RobotNPC.cpp" />
+    <ClCompile Include="Robot_MsgHandler.cpp" />
+    <ClCompile Include="Robot_PostMsg.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

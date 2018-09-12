@@ -1,0 +1,75 @@
+package CSToGS;
+
+enum MsgID
+{
+	eMsgToGSFromCS_Begin = 24576;
+	eMsgToGSFromCS_AskPingRet = 24577;
+	eMsgToGSFromCS_AskRegisteRet = 24578;
+	eMsgToGSFromCS_OrderOpenListen = 24579;
+	eMsgToGSFromCS_OrderCloseListen = 24580;
+	eMsgToGSFromCS_OrderPostToGC = 24581;
+	eMsgToGSFromCS_OrderKickoutGC = 24582;
+	eMsgToGSFromCS_OneSSConnected = 24583;
+	eMsgToGSFromCS_UserConnectedSS = 24584;
+	
+	eMsgToGSFromCS_End = 25000;
+}
+message AskPing
+{
+	optional MsgID mgsid = 1 [default = eMsgToGSFromCS_AskPingRet];
+	optional int64 time = 2;
+}
+
+message AskRegisteRet
+{
+	optional MsgID msgid = 1 [default = eMsgToGSFromCS_AskRegisteRet];
+	optional int32 registe = 2;
+	optional int64 curtime = 3;
+	optional uint32 ssbaseid = 4;
+	message SSInfo
+	{
+		optional int32 ssid = 1;
+		optional string ip = 2;
+		optional int32 port = 3;
+		optional int32 netstate = 4;
+	}
+	repeated SSInfo ssinfo = 5;
+}
+
+message OrderPostToGC
+{
+	message UserNetInfo
+	{
+		optional int32 gsid = 1;
+		optional int32 gcnid = 2;
+	}
+	optional MsgID msgid = 1 [default = eMsgToGSFromCS_OrderPostToGC];
+	repeated UserNetInfo usernetinfo = 2;
+	optional int32 othermsgid = 3;
+	optional bytes othermsg = 4;
+}
+
+message OrderKickoutGC
+{
+	optional MsgID msgid = 1 [default = eMsgToGSFromCS_OrderKickoutGC];
+	optional int32 gcnid = 2;
+}
+
+message OneSSConnected
+{
+	optional MsgID msgid = 1 [default = eMsgToGSFromCS_OneSSConnected];
+	optional int32 state = 2;
+	optional int64 time = 3;
+	optional int32 ssid = 4;
+	optional string ip = 5;
+	optional int32 port = 6;
+	optional int32 netstate = 7;
+	optional int32 basessid = 8;
+}
+
+message UserConnectedSS
+{
+	optional MsgID msgid = 1 [default = eMsgToGSFromCS_UserConnectedSS];
+	optional int32 ssid = 2;
+	repeated int32 gcnid = 3;
+}

@@ -1,0 +1,18 @@
+
+ enum MsgID
+{
+	eMsg_AskNickNameMailListRes = 30000;
+	eMsg_AskNickNameMailListReq = 30001;
+	eMsg_AskMailInfo = 30002;
+}
+//eMsg_AskNickNameMailListReq
+message UserMailReq
+{
+	optional MsgID mgsid = 1 [default = eMsg_AskNickNameMailListReq]; 
+	optional string name = 2;
+}
+message UserMailRes
+{
+	optional MsgID mgsid = 1 [default = eMsg_AskNickNameMailListRes]; 
+	 
+}

@@ -1,0 +1,14 @@
+package BSToLS;
+
+enum MsgID
+{
+	eMsgToLSFromBS_Begin = 40960;
+	eMsgToLSFromBS_AskRegister = 40961;
+	eMsgToLSFromBC_OneClinetLoginCheck = 40962;
+	eMsgToLSFromBS_End = 41000;
+}
+
+message AskRegister
+{
+	optional MsgID msgid = 1[default = eMsgToLSFromBS_AskRegister];
+}

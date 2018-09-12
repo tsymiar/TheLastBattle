@@ -1,0 +1,140 @@
+Creating DEB packages for Ice
+=============================
+
+This file describes how to create source and binary DEBs for Ice as a
+regular (non-root) user on your Ubuntu Linux system.
+
+
+Table of Contents
+-----------------
+
+  1. Setup the packaging software
+  2. Install ZeroC Ice DEB repository
+  3. Install Ice third-party dependencies
+  4. Building the Ice packages
+  5. Building the Berkeley DB packages
+
+
+======================================================================
+1. Setup the packaging software
+======================================================================
+
+First we will install all the tools needed to build the Ice packages
+in your Ubuntu system.
+
+$ sudo apt-get install packaging-dev
+
+
+======================================================================
+2. Install ZeroC Ice DEB repository
+======================================================================
+
+Some of the third-party packages required to build Ice are not
+available through Ubuntu repositories, so you need to add the ZeroC
+Ice repository to be able to install these packages.
+
+First you need to install the GPG key used to sign the packages:
+
+  $ wget http://www.zeroc.com/download/RPM-GPG-KEY-zeroc-release
+  $ sudo apt-key add RPM-GPG-KEY-zeroc-release
+
+After installing the GPG key, add the repository corresponding
+to a specific distribution to the system apt sources as shown below.
+
+For Ubuntu 13.04 (Raring Ringtail):
+
+  $ cd /etc/apt/sources.list.d
+  $ sudo wget http://zeroc.com/download/Ice/3.5/ubuntu/ice3.5-raring.list
+  $ sudo apt-get update
+
+For Ubuntu 14.04 (Trusty Tahr):
+
+  $ cd /etc/apt/sources.list.d
+  $ sudo wget http://zeroc.com/download/Ice/3.5/ubuntu/ice3.5-trusty.list
+  $ sudo apt-get update
+
+
+======================================================================
+3. Install Ice third-party dependencies
+======================================================================
+
+Now we will install the necessary third-party packages from the Ubuntu
+Software repository:
+
+  sudo apt-get install libmcpp-dev libbz2-dev libexpat1-dev libssl-dev \
+    libdb5.3++-dev proguard libjgoodies-common-java libjgoodies-forms-java \
+    libjgoodies-looks-java libdb5.3-java ant python2.7-dev ruby1.9.1-dev \
+    mono-devel php5-dev
+
+A Java Development Kit is also required. We recommend that you use
+Oracle Java 7 to build Ice because the Metrics Graph feature of the
+IceGrid Administrative console requires JavaFX. If you build Ice using
+another Java 7 JDK, or any Java 6 JDK, the Metrics Graph functionality
+will not be available.
+
+Note: The resulting JAR files produced by the build are compatible
+with Java 6 regardless of the JDK you use.
+
+There are several ways to get Oracle Java 7 installed in Ubuntu, but
+the simplest is to use the webupd8team ppa repository:
+  sudo apt-et install python-software-properties
+Note:64bit ubuntu need execute following command more:
+  sudo apt-get install software-properties-common
+
+  sudo add-apt-repository ppa:webupd8team/java
+  sudo apt-get update
+  sudo apt-get install oracle-java7-installer
+  sudo apt-get install oracle-java7-set-default
+
+
+======================================================================
+4. Building the Ice packages
+======================================================================
+
+Install the Ice 3.5.1 source distribution:
+
+  $ mkdir ~/ice3.5
+  $ cd ~/ice3.5
+  $ apt-get source ice3.5
+
+Change the working directory to ice3.5-3.5.1:
+
+  $ cd ice3.5-3.5.1
+
+Now you're ready to build Ice packages:
+	
+  $sudo apt-get install mono-gmcs
+
+  $sudo dpkg-buildpackage -us -uc
+
+When finished, the .deb files will be in the ice3.5 directory.
+
+
+======================================================================
+5. Building the Berkeley DB packages
+======================================================================
+
+This is only required for Ubuntu 13.04 (Raring Ringtail). On Ubuntu
+14.04 (Trusty Tahr) we use the system's default Berkeley DB packages.
+
+Note that you do not need to build these packages yourself, as ZeroC
+supplies them in the Ubuntu 13.04 (Raring Ringtail) repository.
+
+If you prefer to compile the Berkeley DB packages from source code,
+follow the instructions below.
+
+Install Oracle DB source distribution:
+
+  $ mkdir ~/db5.3
+  $ cd ~/db5.3
+  $ apt-get source db5.3
+
+Change the working directory to db5.3-5.3.21:
+
+  $ cd db5.3-5.3.21
+
+Now you're ready to build the Berkeley DB packages:
+
+  $ dpkg-buildpackage -us -uc
+
+When finished, the .deb files will be in the db5.3 directory.

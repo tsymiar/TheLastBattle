@@ -1,0 +1,13 @@
+package SDKToLS;
+
+enum MsgID
+{
+	eMsgToGCFromBS_91UserLoginRes = 1;
+}
+
+message UserLoginRes91
+{
+	optional MsgID mgsid = 1 [default = eMsgToGCFromBS_91UserLoginRes];
+	optional int32	gcid = 2;
+	optional int32 res = 3;
+}

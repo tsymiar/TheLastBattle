@@ -1,0 +1,15 @@
+package ToLog;
+
+enum MsgID
+{
+	eMsgToLog_Begin = 0;
+	eMsgToLog_WriteLog = 1;
+	eMsgToLog_End = 100;
+}
+
+message WriteLog
+{
+	optional MsgID msgid = 1 [default = eMsgToLog_WriteLog];
+	optional int32 log_type = 2;
+	optional string log_str = 3;
+}

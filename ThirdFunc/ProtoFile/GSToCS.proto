@@ -1,0 +1,46 @@
+package GSToCS;
+
+enum MsgID
+{
+	eMsgToCSFromGS_Begin = 8192;
+	eMsgToCSFromGS_AskPing = 8193;
+	eMsgToCSFromGS_AskRegiste = 8194;
+	eMsgToCSFromGS_ReportGCMsg = 8195;
+	eMsgToCSFromGS_ReportGetSomeMsg = 8196;
+	eMsgToCSFromGS_UserOffLine = 8197;
+	eMsgToCSFromGS_End = 8200;
+}
+message UserOffLine
+{
+	optional MsgID mgsid = 1 [default = eMsgToCSFromGS_UserOffLine];
+	optional int32 usernetid = 2;
+}
+message Asking
+{
+	optional MsgID mgsid = 1 [default = eMsgToCSFromGS_AskPing];
+	optional int64 time = 2;
+}
+
+message ReportGetSomeMsg
+{
+	optional MsgID mgsid = 1 [default = eMsgToCSFromGS_ReportGetSomeMsg];
+	optional int32 gotmsgid = 2;
+	optional uint64 otherval = 3;
+}
+
+message AskRegiste
+{
+	optional MsgID msgid = 1 [default = eMsgToCSFromGS_AskRegiste];
+	optional int32 gsid = 2;
+	optional string ip = 3;
+	optional int32 port = 4;
+	optional string usepwd = 5;
+}
+
+message ReportGCMsg
+{
+	optional MsgID msgid = 1 [default = eMsgToCSFromGS_ReportGCMsg];
+	optional int32 nsid = 2;
+	optional int32 othermsgid = 3;
+	optional bytes othermsg = 4;
+}

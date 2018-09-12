@@ -1,0 +1,22 @@
+package LSToBS;
+
+enum MsgID
+{
+	eMsgToBSFromLS_Begin = 32768;
+	eMsgToBSFromLS_AskRegisterRet = 32769;
+	eMsgToBSFromLS_OneClinetLoginCheckRet = 32770;
+	eMsgToBSFromLS_End = 32800;
+}
+
+message AskRegisterRet
+{
+	optional MsgID msgid = 1[default = eMsgToBSFromLS_AskRegisterRet];
+}
+
+message UserLoginToken
+{
+	optional MsgID msgid = 1[default = eMsgToBSFromLS_OneClinetLoginCheckRet];
+	optional string uin = 2;
+	optional string sessionid = 3;
+	optional uint32 platform = 4;
+}

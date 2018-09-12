@@ -1,0 +1,27 @@
+SET(ProjectName GSKernel)
+PROJECT(${ProjectName})
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+INCLUDE_DIRECTORIES( ../../../CommonCPlus )
+INCLUDE_DIRECTORIES( ../../../ELogging )
+INCLUDE_DIRECTORIES(..)
+AUX_SOURCE_DIRECTORY(. DIR_SRCS)
+AUX_SOURCE_DIRECTORY(../../../ELogging Logging)
+
+SET(CMAKE_CXX_COMPILER ${CompilerSetting})
+
+IF ($ENV{Configuration} STREQUAL Debug)
+	SET(CMAKE_BUILD_TYPE Debug)
+ELSE()
+	SET(CMAKE_BUILD_TYPE Release)
+ENDIF()
+
+LINK_DIRECTORIES(${LINK_LIBPATH})
+
+IF ($ENV{Configuration} STREQUAL Debug)
+	add_definitions(-g -lpthread)
+	SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -ggdb3")
+ELSE()
+	SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+ENDIF()
+
+ADD_LIBRARY(${ProjectName} SHARED ${DIR_SRCS} ${Logging})

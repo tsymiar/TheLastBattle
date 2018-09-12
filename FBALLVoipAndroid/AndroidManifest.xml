@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bolong.fball"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="18" />
+    
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+	<uses-permission android:name="android.permission.GET_TASKS"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.bolong.fball.VoipActivity"
+            android:label="@string/title_activity_voip"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- 社交Activity -->
+		<activity
+            android:name="com.socialsdk.activity.HomeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+		</activity>
+        <!-- 社交公用窗体，注：不要设置android:launchMode -->
+		<activity
+            android:name="com.socialsdk.activity.SocialActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+		</activity>
+        <!-- 社交服务的service,社区里的浮标的默认位置，meta-data可不添加(默认为右上角) -->
+        <service android:name="com.socialsdk.service.SocialService" >
+            <!--社区浮标的位置 value值参考android.view.Gravity的值(变量名)不区分大小写-->
+            <meta-data android:name="gravity" android:value="right|top"/>
+            <meta-data android:name="x" android:value="0"/> <!--可不填-->
+            <meta-data android:name="y" android:value="0"/> <!--可不填-->
+        </service>
+
+        <!-- sdk -->
+		<meta-data
+		android:name="PROJECT_ID"
+		android:value="P10003A"/>
+
+        <!-- 社交对应的游戏，请在社交后台进行申请 -->
+		<meta-data
+		android:name="SOCIAL_PRODUCT_ID"
+		android:value="30"/>
+    </application>
+
+</manifest>

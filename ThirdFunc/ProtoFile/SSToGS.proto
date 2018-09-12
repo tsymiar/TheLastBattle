@@ -1,0 +1,42 @@
+package SSToGS;
+
+enum MsgID
+{
+	eMsgToGSFromSS_Begin = 24576;
+	eMsgToGSFromSS_AskPingRet = 24577;
+	eMsgToGSFromSS_AskRegisteRet = 24578;
+	eMsgToGSFromSS_OrderPostToGC = 24579;
+	eMsgToGSFromSS_OrderKickoutGC = 24580;
+	eMsgToGSFromSS_End = 25000;
+}
+message AskPingRet
+{
+	optional MsgID mgsid = 1 [default = eMsgToGSFromSS_AskPingRet];
+	optional int64 time = 2;
+}
+
+message AskRegisteRet 
+{
+	optional MsgID mgsid = 1 [default = eMsgToGSFromSS_AskRegisteRet];
+	optional int32 state = 2;
+}
+
+message OrderPostToGC
+{
+	message UserNetInfo
+	{
+		optional int32 gsid = 1;
+		optional int32 gcnid = 2;
+	}
+	optional MsgID msgid = 1 [default = eMsgToGSFromSS_OrderPostToGC];
+	repeated UserNetInfo usernetinfo = 2;
+	optional int32 othermsgid = 3;
+	optional string othermsg = 4;
+}
+
+message OrderKickoutGC
+{
+	optional MsgID mgsid = 1 [default = eMsgToGSFromSS_OrderKickoutGC];
+	optional int32 gsnid = 2;
+}
+

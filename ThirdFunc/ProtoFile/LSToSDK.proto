@@ -1,0 +1,13 @@
+package LSToSDK;
+
+enum MsgID
+{
+	eMsgToGCFromBS_91UserLogin = 1;
+}
+
+message UserLogin91
+{
+	optional MsgID mgsid = 1 [default = eMsgToGCFromBS_91UserLogin];
+	optional string logininfo = 2;
+	optional int32	gcid = 4;
+}

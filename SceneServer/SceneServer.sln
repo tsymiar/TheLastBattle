@@ -1,0 +1,121 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Include", "Include", "{CA2EAC4E-459F-4958-A80B-1C079957EE2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonCPlus", "CommonCPlus", "{7421032D-39FF-470E-9F7B-5F565FC65306}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\CommonCPlus\trunk\Include\PreDefine.h = ..\..\CommonCPlus\trunk\Include\PreDefine.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FBAll", "FBAll", "{3CBA543B-715B-44CA-A2B7-BAEAEE374846}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonCPlus", "CommonCPlus", "{A0AF2174-E693-41A7-959F-806D60C3513E}"
+	ProjectSection(SolutionItems) = preProject
+		..\CommonCPlus\Include\CommonCPlusIni.h = ..\CommonCPlus\Include\CommonCPlusIni.h
+		..\CommonCPlus\Include\FBAll_Cfg.h = ..\CommonCPlus\Include\FBAll_Cfg.h
+		..\CommonCPlus\Include\FBAll_Const.h = ..\CommonCPlus\Include\FBAll_Const.h
+		..\CommonCPlus\Include\FBAll_DBHeader.h = ..\CommonCPlus\Include\FBAll_DBHeader.h
+		..\CommonCPlus\Include\FBAll_Function.h = ..\CommonCPlus\Include\FBAll_Function.h
+		..\CommonCPlus\Include\FBAll_Interface.h = ..\CommonCPlus\Include\FBAll_Interface.h
+		..\CommonCPlus\Include\FBAll_Protocol_ToCS.h = ..\CommonCPlus\Include\FBAll_Protocol_ToCS.h
+		..\CommonCPlus\Include\FBAll_Protocol_ToGC.h = ..\CommonCPlus\Include\FBAll_Protocol_ToGC.h
+		..\CommonCPlus\Include\FBAll_Protocol_ToGS.h = ..\CommonCPlus\Include\FBAll_Protocol_ToGS.h
+		..\CommonCPlus\Include\FBAll_Protocol_ToSS.h = ..\CommonCPlus\Include\FBAll_Protocol_ToSS.h
+		..\CommonCPlus\Include\FBAll_RunTime.h = ..\CommonCPlus\Include\FBAll_RunTime.h
+		..\CommonCPlus\Include\tinystr.h = ..\CommonCPlus\Include\tinystr.h
+		..\CommonCPlus\Include\tinyxml.h = ..\CommonCPlus\Include\tinyxml.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SceneServer", "SceneServer", "{5FABE80E-82AB-4BA8-B2FA-3E4083B9F281}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSKernel", "SSKernel", "{3FE6DA1A-FBDA-4748-97A4-25FDD55D4B37}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WYYTools", "WYYTools", "{7C51492C-4E7A-4C72-AD60-F6191BB49D83}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\CommonCPlus\trunk\Include\WYYTools\DBMgr.h = ..\..\CommonCPlus\trunk\Include\WYYTools\DBMgr.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\FastObjectCache.h = ..\..\CommonCPlus\trunk\Include\WYYTools\FastObjectCache.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\FileMgr.h = ..\..\CommonCPlus\trunk\Include\WYYTools\FileMgr.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\IniFile.h = ..\..\CommonCPlus\trunk\Include\WYYTools\IniFile.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\LogMgr.h = ..\..\CommonCPlus\trunk\Include\WYYTools\LogMgr.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\MemBuffer.h = ..\..\CommonCPlus\trunk\Include\WYYTools\MemBuffer.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\MemList.h = ..\..\CommonCPlus\trunk\Include\WYYTools\MemList.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\MemMgr.h = ..\..\CommonCPlus\trunk\Include\WYYTools\MemMgr.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\MemQueue.h = ..\..\CommonCPlus\trunk\Include\WYYTools\MemQueue.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\MsgMgr.h = ..\..\CommonCPlus\trunk\Include\WYYTools\MsgMgr.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\MultiThreadQueue.h = ..\..\CommonCPlus\trunk\Include\WYYTools\MultiThreadQueue.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\NetMgr.h = ..\..\CommonCPlus\trunk\Include\WYYTools\NetMgr.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\Quaternion.h = ..\..\CommonCPlus\trunk\Include\WYYTools\Quaternion.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\SecurityMgr.h = ..\..\CommonCPlus\trunk\Include\WYYTools\SecurityMgr.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\StrMgr.h = ..\..\CommonCPlus\trunk\Include\WYYTools\StrMgr.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\ThreadSync.h = ..\..\CommonCPlus\trunk\Include\WYYTools\ThreadSync.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\Vector3D.h = ..\..\CommonCPlus\trunk\Include\WYYTools\Vector3D.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\vld.h = ..\..\CommonCPlus\trunk\Include\WYYTools\vld.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\vld_def.h = ..\..\CommonCPlus\trunk\Include\WYYTools\vld_def.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\WYYTools.h = ..\..\CommonCPlus\trunk\Include\WYYTools\WYYTools.h
+		..\..\CommonCPlus\trunk\Include\WYYTools\WYYToolsIni.h = ..\..\CommonCPlus\trunk\Include\WYYTools\WYYToolsIni.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LuaPlus", "LuaPlus", "{F57E141F-9698-42FA-8E31-D09C2D937AFE}"
+	ProjectSection(SolutionItems) = preProject
+		..\CommonCPlus\CommonCPlus\LuaPlus\LuaPlusInternal.h = ..\CommonCPlus\CommonCPlus\LuaPlus\LuaPlusInternal.h
+		..\CommonCPlus\CommonCPlus\LuaPlus\LuaStateCD.h = ..\CommonCPlus\CommonCPlus\LuaPlus\LuaStateCD.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSUserMgr", "SSUserMgr", "{213C4BAE-7D50-44CC-ADB3-D18D9BE9F183}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSBattleMgr", "SSBattleMgr", "{775C39C7-A86D-4FB2-B863-C448EE62B924}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SSBattleMgr", "SSBattleMgr\SSBattleMgr.vcxproj", "{5F5105AE-91E4-47B2-ABDD-648961F9DB84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lua", "Lua", "{693DCC60-C940-4D30-A4C4-984FFE788315}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CBA9692C-C489-4928-8268-203A6B17272F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ELogging", "..\ELogging\ELogging\ELogging.vcxproj", "{C5FF4E1B-23D5-42F9-91DA-063A3855618B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F5105AE-91E4-47B2-ABDD-648961F9DB84}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5F5105AE-91E4-47B2-ABDD-648961F9DB84}.Debug|Win32.Build.0 = Debug|Win32
+		{5F5105AE-91E4-47B2-ABDD-648961F9DB84}.Debug|x64.ActiveCfg = Debug|x64
+		{5F5105AE-91E4-47B2-ABDD-648961F9DB84}.Debug|x64.Build.0 = Debug|x64
+		{5F5105AE-91E4-47B2-ABDD-648961F9DB84}.Release|Win32.ActiveCfg = Release|Win32
+		{5F5105AE-91E4-47B2-ABDD-648961F9DB84}.Release|Win32.Build.0 = Release|Win32
+		{5F5105AE-91E4-47B2-ABDD-648961F9DB84}.Release|x64.ActiveCfg = Release|x64
+		{5F5105AE-91E4-47B2-ABDD-648961F9DB84}.Release|x64.Build.0 = Release|x64
+		{C5FF4E1B-23D5-42F9-91DA-063A3855618B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C5FF4E1B-23D5-42F9-91DA-063A3855618B}.Debug|Win32.Build.0 = Debug|Win32
+		{C5FF4E1B-23D5-42F9-91DA-063A3855618B}.Debug|x64.ActiveCfg = Debug|x64
+		{C5FF4E1B-23D5-42F9-91DA-063A3855618B}.Debug|x64.Build.0 = Debug|x64
+		{C5FF4E1B-23D5-42F9-91DA-063A3855618B}.Release|Win32.ActiveCfg = Release|Win32
+		{C5FF4E1B-23D5-42F9-91DA-063A3855618B}.Release|Win32.Build.0 = Release|Win32
+		{C5FF4E1B-23D5-42F9-91DA-063A3855618B}.Release|x64.ActiveCfg = Release|x64
+		{C5FF4E1B-23D5-42F9-91DA-063A3855618B}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CA2EAC4E-459F-4958-A80B-1C079957EE2D} = {CBA9692C-C489-4928-8268-203A6B17272F}
+		{3CBA543B-715B-44CA-A2B7-BAEAEE374846} = {CA2EAC4E-459F-4958-A80B-1C079957EE2D}
+		{7421032D-39FF-470E-9F7B-5F565FC65306} = {CA2EAC4E-459F-4958-A80B-1C079957EE2D}
+		{A0AF2174-E693-41A7-959F-806D60C3513E} = {3CBA543B-715B-44CA-A2B7-BAEAEE374846}
+		{5FABE80E-82AB-4BA8-B2FA-3E4083B9F281} = {3CBA543B-715B-44CA-A2B7-BAEAEE374846}
+		{3FE6DA1A-FBDA-4748-97A4-25FDD55D4B37} = {5FABE80E-82AB-4BA8-B2FA-3E4083B9F281}
+		{213C4BAE-7D50-44CC-ADB3-D18D9BE9F183} = {5FABE80E-82AB-4BA8-B2FA-3E4083B9F281}
+		{775C39C7-A86D-4FB2-B863-C448EE62B924} = {5FABE80E-82AB-4BA8-B2FA-3E4083B9F281}
+		{F57E141F-9698-42FA-8E31-D09C2D937AFE} = {7421032D-39FF-470E-9F7B-5F565FC65306}
+		{7C51492C-4E7A-4C72-AD60-F6191BB49D83} = {7421032D-39FF-470E-9F7B-5F565FC65306}
+		{693DCC60-C940-4D30-A4C4-984FFE788315} = {F57E141F-9698-42FA-8E31-D09C2D937AFE}
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal

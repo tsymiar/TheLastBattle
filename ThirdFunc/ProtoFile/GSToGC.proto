@@ -1,0 +1,1819 @@
+package GSToGC;
+
+enum MsgID
+{
+	eMsgToGCFromGS_Begin = 0;
+	eMsgToGCFromGS_GCAskPingRet = 1;
+	eMsgToGCFromGS_NotifyUserBaseInfo = 2;
+	eMsgToGCFromGS_NotifySystemAnnounce = 3;
+	eMsgToGCFromGS_NotifyNetClash = 4;
+	eMsgToGCFromGS_GCAskRet = 5;
+	eMsgToGCFromGS_NotifyHeroList = 7;
+	eMsgToGCFromGS_NotifyBattleBaseInfo = 8;
+	eMsgToGCFromGS_NotifyBattleSeatPosInfo = 9;
+	eMsgToGCFromGS_NotifyBattleStateChange = 10;
+	eMsgToGCFromGS_NotifyCurBattleChange = 11;
+	eMsgToGCFromGS_NotifyGameObjectAppear = 12;
+	eMsgToGCFromGS_NotifyGameObjectDisappear = 13;
+	eMsgToGCFromGS_NotifyGameObjectFreeState = 14;
+	eMsgToGCFromGS_NotifyGameObjectRunState = 15;
+	eMsgToGCFromGS_NotifyGameObjectPrepareSkillState = 16;
+	eMsgToGCFromGS_NotifyGameObjectReleaseSkillState = 17;
+	eMsgToGCFromGS_NotifyGameObjectDeadState = 18;
+	eMsgToGCFromGS_NotifyGoodsInf = 19;
+	eMsgToGCFromGS_NotifyBattleLoadingState = 20;
+	eMsgToGCFromGS_NotifyBattleHeroInfo = 21;
+	eMsgToGCFromGS_BagRunesInfoChange = 22;
+	eMsgToGCFromGS_ExchangeGold = 23;
+	eMsgToGCFromGS_ChatInRoom = 24;
+	eMsgToGCFromGS_NotifySkillHitTarget = 25;
+	eMsgToGCFromGS_NotifyHPChange = 26;
+	eMsgToGCFromGS_NotifyMPChange = 27;
+	eMsgToGCFromGS_NotifyTryToChooseHero = 28;
+	eMsgToGCFromGS_NotifyChooseHeroTimeEnd = 29;
+	eMsgToGCFromGS_NotifySkillEntityInfo = 30;
+	eMsgToGCFromGS_NotifyFightPropertyInfo = 31;
+	eMsgToGCFromGS_NotifyHPInfo = 34;
+	eMsgToGCFromGS_NotifyMPInfo = 35;
+	eMsgToGCFromGS_NotifyHeroInfo = 36;
+	eMsgToGCFromGS_NotifyBuffInfo = 37;
+	eMsgToGCFromGS_NotifyBuffRemove = 38;
+	eMsgToGCFromGS_NotifySkillInfo = 39;
+	eMsgToGCFromGS_NotifyBattleFinish = 40;
+	eMsgToGCFromGS_NotifyExpInfo = 41;
+	eMsgToGCFromGS_NotifyHeroLevelInfo = 42;	
+	eMsgToGCFromGS_NotifyAbsorbBegin= 43;
+	eMsgToGCFromGS_NotifyAbsorbMonsterResult= 44;
+	eMsgToGCFromGS_NotifyCancelAbsorbSkill=45;
+	eMsgToGCFromGS_NotifyUserGameInfo = 46;
+	eMsgToGCFromGS_NotifyHeroKills = 47;
+	eMsgToGCFromGS_NotifyCurDeadTimes = 48;
+	eMsgToGCFromGS_NotifyCurCP = 49;
+	eMsgToGCFromGS_NotifyCurAtkSpeed = 50 ;
+	eMsgToGCFromGS_NotifyFuryValue = 51;
+	eMsgToGCFromGS_NotifyFuryState = 52;
+	eMsgToGCFromGS_NotifyHeroRebornTimes = 53;
+	eMsgToGCFromGS_NotifyBuyRebornSuccess = 54;
+	eMsgToGCFromGS_BroadcastBattleHeroInfo = 55;
+	eMsgToGCFromGS_NotifyPersonalCPChange = 56;
+	eMsgToGCFromGS_BroadCurBattleResult = 57;
+	eMsgToGCFromGS_BroadBuildingDestroyByWho = 58;
+	eMsgToGCFromGS_NotifyVoipRoomId = 59;
+	eMsgToGCFromGS_NotifyHeroDisplacementInfo = 60;
+	eMsgToGCFromGS_BroadcastPlayFinishVedio = 61;
+	eMsgToGCFromGS_NotifyLeaveBattleSuccess = 62;
+	eMsgToGCFromGS_NotifyBornSolder = 63;
+	eMsgToGCFromGS_NotifySkillEnd = 64;
+	eMsgToGCFromGS_NotifyAltarBSIco = 65;
+	eMsgToGCFromGS_WarningToSelectHero = 66;
+	eMsgToGCFromGS_NotifyGameObjectReleaseSkill = 67;
+	eMsgToGCFromGS_NotifyGameObjectSkillCD = 68;
+	eMsgToGCFromGS_NotifySkillModelEmit = 69;
+	eMsgToGCFromGS_NotifySkillModelEmitDestroy = 70;
+	eMsgToGCFromGS_NotifySkillModelHitTarget = 71;
+	eMsgToGCFromGS_NotifySkillModelRange = 72;
+	eMsgToGCFromGS_NotifySkillModelRangeEnd = 73;
+	eMsgToGCFromGS_NotifySkillModelLeading = 74;
+	eMsgToGCFromGS_NotifySkillModelSummonEffect = 75;
+	eMsgToGCFromGS_NotifySkillModelBufEffect = 76;
+	eMsgToGCFromGS_NotifySummonLifeTime = 77;
+	eMsgToGCFromGS_NotifySkillModelStartForceMove = 78;
+	eMsgToGCFromGS_NotifySkillModelStartForceMoveStop = 79;
+	eMsgToGCFromGS_NotifySkillModelStartForceMoveTeleport = 80;
+	eMsgToGCFromGS_NotifyPassitiveSkillRelease = 81;
+	eMsgToGCFromGS_NotifyPassitiveSkillLoad = 82;
+	eMsgToGCFromGS_NotifyPassitiveSkillUnload = 83;
+	eMsgToGCFromGS_NotifySkillModelEmitTurn = 84;
+	eMsgToGCFromGS_NotifyAFPData = 85;
+	eMsgToGCFromGS_NotifyBattleManagerChange = 86;
+	eMsgToGCFromGS_NotifyBornObj = 87;
+	eMsgToGCFromGS_NotifyReconnectInfo = 88;
+	eMsgToGCFromGS_NotifyHeroGoodsInfo = 89;
+	eMsgToGCFromGS_NotifyOBReturnBattleRoom = 90;
+	eMsgToGCFromGS_NotifyUserReturnBattleRoom = 91;
+	eMsgToGCFromGS_NotifyBattleAllUserInfo = 92;
+	eMsgToGCFromGS_NotifyUserBeAddedFirendInfo = 93;
+	eMsgToGCFromCS_NotifyDefaultHeros = 94;
+	eMsgToGCFromGS_NotifyOBAppear = 95;
+	eMsgToGCFromGS_NotifyKillNPC = 96;
+	eMsgToGCFromGS_NotifyAltarBSOk = 97;
+	eMsgToGCFromGS_NotifySkillUpLv = 98;
+	eMsgToGCFromGS_NotifyUserSNSList = 99;
+	eMsgToGCFromGS_NotifyUserSNSListChange = 100;
+	eMsgToGCFromGS_UserBeInvitedToBattle = 101;
+	eMsgToGCFromGS_NotifyMsgFromUser = 102;
+	eMsgToGCFromGS_NotifyBeAddFriendMsg = 103;
+	eMsgToGCFromGS_NotifyQueryNickNameRet = 104;
+	
+	eMsgToGCFromCS_NotifyGuideLastComStep = 106;
+	eMsgToGCFromGS_NotifyBlastHurt = 107;
+	eMsgToGCFromGS_NotifyHeroReborn = 110;
+	eMsgToGCFromGS_NotifyGameObjectReliveState = 111; 
+	eMsgToGCFromGS_NotifyUserGuideSetups = 112;
+	eMsgToGCFromBS_AskGateAddressRet = 113;
+	eMsgToGCFromGS_NotifyUserName = 114;
+	eMsgToGCFromCS_NotifyReconnectInfo = 115;
+	eMsgToSSFromCS_NotifyBornObj = 116;
+	eMsgToGCFromGS_NotifyNotice = 117;
+	eMsgToGCFromGS_NotifyGuideTips = 118;
+	eMsgToGCFromGS_NotifyUserCLDays = 119;
+	eMsgToGCFromGs_NotifySecondaryGuideTask = 121;
+	eMsgToGCFromGs_NotifyCurGold = 122;
+	eMsgToGCFromGs_NotifyCurDiamond = 123;
+	eMsgToGCFromGS_NotifyGetloginRewardSuccess = 124;
+	eMsgToGCFromGS_NotifyGetloginReward_Skin = 125;
+	eMsgToGCFromGS_NotifyGetloginReward_Rune = 126;
+	eMsgToGCFromGS_NotifyGetloginReward_Hero = 127;
+	eMsgToGCFromGS_NotifyUserBaseUpLv = 128;
+	eMsgToGCFromGS_NotifyBattleSpanTime = 129;
+	eMsgToGCFromGS_NotifyBattleMatherCount = 130;
+	eMsgToGCFromGS_NotifyHeroAssist = 131;
+	eMsgToGCFromGS_NotifyHeroAttributes = 132;
+	eMsgToGCFromGS_NotifyGoodsCfgInfo = 133;
+	eMsgToGCFromGS_NotifyUserMail = 134;
+	eMsgToGCFromGS_NotifyMailInfo = 135;
+	eMsgToGCFromGS_NotifyIfMailDelAndSort = 136;
+	eMsgToGCFromGS_NotifyRoomBaseInfo = 140;
+	eMsgToGCFromBS_NotifyCanInviteFriends = 141;
+	eMsgToGCFromBS_NotifyCurLastHitNum = 142;
+	eMsgToGCFromGS_AskRoomListRet = 143;
+	eMsgToGCFromBS_NotifyHerosInfo = 144;
+	eMsgToGCFromBS_NotifyGoodsExpired = 145;
+	eMsgToGCFromGS_NotifySkillModelPurification = 220;
+	eMsgToGCFromGS_NotifyCSHeroList = 221;
+	eMsgToGCFromGS_NotifyMatchTeamBaseInfo = 222;
+	eMsgToGCFromGS_NotifyMatchTeamPlayerInfo = 223;
+	eMsgToGCFromGS_NotifyMatchTeamSwitch = 224;
+	eMsgToGCFromGS_NotifyMatchInviteJoin = 225;
+	eMsgToGCFromGS_NotifyGetNewCommodity = 226;
+	eMsgToGCFromGS_NotifyRemoveCommodity = 227;
+	eMsgToGCFromGS_NotifyRunesList = 228;
+	eMsgToGCFromGS_NotifyNewNickname = 229;
+	eMsgToGCFromGS_NotifyOneMatchNeedOne = 230;
+	eMsgToGCFromGS_NotifyNewHeaderid = 231;
+	eMsgToGCFromGS_NotifyUserLvInfo = 232;
+	eMsgToGCFromGS_BroadBattlePersonalResult = 233;
+	eMsgToGCFromGS_UnloadRune = 234; 
+	eMsgToGCFromGS_NotifyBattleDelayTime = 235;
+	eMsgToGCFromGS_RecoinRuneRet = 236;
+	eMsgToGCFromGS_NotifyOtherItemInfo = 237;
+	eMsgToGCFromCS_NotifyIsOnSS = 238;
+	eMsgToGCFromGS_NotifyGameObjectUsingSkillState = 240;
+	eMsgToGCFromGS_NotifyGameObjectLastingSkillState = 241;
+	
+	//新手引导 300-350
+	eMsgToGCFromGS_GuideResp = 300; 
+	eMsgToGCFromCS_GuideKillsInfo = 301;
+	eMsgToGCFromGS_GuideAward = 302;
+	//任务系统 400-450
+	eMsgToGCFromGS_UpdateAllTask = 400;
+	eMsgToGCFromGS_UpdateAllDailyTask = 401;
+	eMsgToGCFromGS_AddOneTask = 402;
+	eMsgToGCFromGS_UpdateOneTask = 403;
+	eMsgToGCFromGS_DelOneTask = 404;
+	eMsgToGCFromGS_RewardsOneTask = 405;
+	//技能模块后续 550-600
+	eMsgToGCFromGS_NotifySkillModelStartLink = 550;
+	eMsgToGCFromGS_NotifySkillModelStopLink = 551;
+	//邮件返回值601-605
+	eMsgToGCFromGS_NotifyMailRet = 601;
+	
+	eMsgToGCFromGS_End = 1000;
+}
+
+message TaskData
+{
+	optional uint32 task_id = 1;
+	optional uint32 task_guid = 2;
+	optional uint32 task_curCount = 3;
+}
+
+message NotifyUpdateAllTask
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_UpdateAllTask];  
+	repeated TaskData taskList = 2;
+}
+
+message NotifyUpdateAllDailyTask
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_UpdateAllDailyTask];  
+	repeated TaskData taskList = 2;
+}
+
+message NotifyAddOneTask
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_AddOneTask];
+	optional TaskData oneTask = 2;
+}
+
+message NotifyUpdateOneTask
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_UpdateOneTask];
+	optional TaskData oneTask = 2;
+}
+
+message NotifyDelOneTask
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_DelOneTask];
+	optional uint32 task_guid = 2;
+}
+
+message NotifyRewardsOneTask
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_RewardsOneTask];
+	optional uint32 task_guid = 2;
+}
+
+//eMsgToGCFromGS_NotifyMailRet
+message NotifyMailRet
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyMailRet];  
+	optional int32 mailid = 2;
+	optional int32 errcode = 3;
+}
+
+message NotifyIsOnSS
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromCS_NotifyIsOnSS];
+	optional uint32 ssid = 2;
+}
+
+message NotifyOtherItemInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyOtherItemInfo]; 
+	message OtherItem{
+		optional uint32 item_id = 1;
+		optional uint32 item_num = 2;
+		optional int64 expired_time = 3;
+	}
+	repeated OtherItem item = 2;
+}
+
+
+message RecoinRuneRet
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_RecoinRuneRet]; 
+	optional uint32 rune_id = 2;
+}
+
+message UnloadRune
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_UnloadRune]; 
+	optional int32 page = 2;
+	optional int32 pos = 3;
+}
+ 
+message GuideCSStepInfo
+{
+	optional MsgID 	 msgid = 1[default = eMsgToGCFromGS_GuideResp]; 
+	optional bool    allcomp = 2;
+	repeated uint32  taskid = 3;
+}
+//新手奖励ntype:1 金币，2钻石，3商品id
+message GuideAward
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_GuideAward];
+	enum dtype
+	{
+		type_gold = 1;
+		type_diamond = 2;	
+		type_goodsid = 3;	
+	} 
+	message awardtype
+	{
+		optional dtype dt = 1;
+		optional uint32 idxn = 2;
+	}
+	repeated awardtype awardlist = 2;		
+}
+//???
+message GuideKillsInfo
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromCS_GuideKillsInfo];
+	optional uint64 guid = 2;		//killerGuid
+	optional int32 npctype = 3;		//击杀英雄，击杀祭坛 
+}
+
+
+message NotifyUserLvInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyUserLvInfo];
+	optional uint32 curlv = 2;
+	optional uint32 curexp = 3;
+}
+
+message NotifyNewHeaderid
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyNewHeaderid];
+	optional uint64 guid = 2;
+	optional uint32 newheaderid = 3;
+}
+
+message NotifyOneMatchNeedOne
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyOneMatchNeedOne];
+	optional uint32 mapid = 2;
+	optional uint32 fightid = 3;
+}
+
+message NotifyNewNickname
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyNewNickname];
+	optional uint64 guid = 2;
+	optional string newnickname = 3;
+}
+
+message RunesSlot
+{
+	optional int32 slotpos = 1;
+	optional uint32 runeid = 2;
+	optional int32 page = 3;
+}
+
+message RunesBagInfo
+{
+	optional uint32 runeid = 1;
+	optional int32 num = 2;
+	optional int64 gottime = 3;
+}
+message NotifyRunesList
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyRunesList];
+	repeated RunesBagInfo runesbaginfo = 2;
+	repeated RunesSlot runes_slot_info = 3;
+}
+message NotifyRemoveCommodity
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyRemoveCommodity];
+	repeated uint32 Commodityid = 2;
+}
+message NotifyGetNewCommodity
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyGetNewCommodity];
+	optional uint32 Commodityid = 2;	
+}
+
+message NotifyMatchTeamBaseInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyMatchTeamBaseInfo];
+	optional uint32 teamid = 2;
+	optional uint32 matchtype = 3;
+	optional uint32 mapid = 4;
+}
+
+message NotifyMatchTeamPlayerInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyMatchTeamPlayerInfo];
+	optional uint32 postion = 2;
+	optional bool isInsert = 3;
+	optional string nickname = 4;
+	optional uint32 headid = 5;
+	optional uint32 userlevel = 6;
+}
+
+message NotifyMatchTeamSwitch
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyMatchTeamSwitch];
+	optional bool startflag = 2;
+}
+
+message NotifyMatchInviteJoin
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyMatchInviteJoin];
+	optional string nickname = 2;
+}
+
+////////////////////////////////////////////////////
+
+//eMsgToGCFromBS_NotifyHerosInfo
+message NotifyHerosInfo{
+	optional MsgID msgid = 1[default = eMsgToGCFromBS_NotifyHerosInfo]; 
+	message heropanelinfo{
+		optional int32 camgpid = 1;
+		optional int64 guid = 2;
+		optional int32 herolv = 3;
+		optional string nickname = 4;
+		optional int32 killnum = 5;
+		optional int32 deadtimes = 6;
+		optional int32 asstimes = 7;
+		optional int32 lasthit = 8;
+		
+		message goodsmsg{
+			optional int32 grid = 1;
+			optional int32 goodid = 2;		
+		}
+		repeated goodsmsg goods = 9;
+		optional uint32 heroid = 10;
+	}
+	repeated heropanelinfo info = 2;
+}
+
+message NotifyGoodsExpired{
+	optional MsgID msgid = 1[default = eMsgToGCFromBS_NotifyGoodsExpired]; 
+	repeated int32 commondityid = 2;
+}
+
+enum MailType
+{
+	mailType_None = 0;
+	mailType_1 = 1;
+	mailType_2 = 2;
+	mailType_3 = 3;
+	mailType_4 = 4;
+}
+enum EMailCurtState
+{
+	eMailState_None = 0;
+	eMailState_New = 1;
+	eMailState_LookedButNotGotGift = 2;
+	eMailState_Look = 3;
+	eMailState_Del = 4;
+}
+
+
+message ShortMail
+{ 
+	optional int32 mailid = 1;
+	optional MailType mailType = 2;
+	optional string mailTitle = 3;
+	optional EMailCurtState  mailState = 4; 
+}
+
+message DelAndSortMail
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyIfMailDelAndSort]; 
+	optional int32 mailid = 2;
+	optional bool mailidDel = 3;
+	optional bool sort = 4;
+}
+
+message MailInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyMailInfo]; 
+	optional int32 mailid = 2; 
+	optional string mailcontent = 3; 
+	optional string sender = 4; 
+	optional string createTime = 5; 
+	optional string mailgift = 6; 
+}
+
+message NotifyMailList
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyUserMail]; 
+	repeated ShortMail mailList = 2;
+}
+
+message GoodsCfgInfo
+{
+	enum CfgType
+	{
+		CfgType_Common = 0;
+		CfgType_Discount = 1;
+		CfgType_hot = 2;
+		CfgType_New = 3;
+	}
+	optional int32 goodid = 1;
+	message Consume
+	{
+		optional int32 consumetype = 1;
+		optional int32 price = 2;
+	}
+	repeated Consume consume = 2;
+	optional CfgType cfg_type = 3;
+}
+
+message GoodsBuyCfgInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyGoodsCfgInfo];
+	repeated GoodsCfgInfo info = 2;
+}
+
+message HeroAttributes
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyHeroAttributes];
+	optional uint64 guid = 2;
+	optional int32 PlayerSpeed = 3;
+    optional int32 AttackInterval = 4;
+    optional int32 AttackRange = 5;
+    optional int32 ResurgenceTime = 6;
+    optional int32 PhysicAttack = 7;
+    optional int32 SpellsAttack = 8;
+    optional int32 PhysicDef = 9;
+    optional int32 SpellsDef = 10;
+}
+
+message HeroAssist
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyHeroAssist];
+	optional uint64 guid = 2;
+	optional int32 assist = 3;
+}
+message BattleMatcherCount
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyBattleMatherCount];
+	optional int32 count = 2;
+	optional int32 maxcount = 3;
+}
+
+message BattleSpanTime
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyBattleSpanTime];
+	optional int64 spanTime = 2;
+}
+
+message BattleDelayTime
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyBattleDelayTime];
+	optional int64 delayTime = 2;
+}
+
+//eMsgToGCFromGS_NotifyUserBaseUpLv
+message UserBaseUpLv
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyUserBaseUpLv];
+	optional int32 lv = 2;
+} 
+//eMsgToGCFromGs_NotifySecondaryGuideTask
+message SecondGuideTask
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGs_NotifySecondaryGuideTask];  
+	message task_info
+	{
+	optional int32 taskid = 1;
+	optional int32 num = 2;
+	}
+	repeated task_info taskinfo = 2;
+}
+ 
+//eMsgToGCFromGS_NotifyGuideTips
+message GameTips
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyGuideTips]; 
+	optional int32 errocode =2;
+	optional int32 campid = 3;
+}
+
+message NotifyUserReturnBattleRoom
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyUserReturnBattleRoom];
+}
+
+message BroadcastBattleHeroInfo
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_BroadcastBattleHeroInfo];
+	message HeroInfo
+	{
+		optional uint64 guid = 1;
+		optional string nickname = 2;
+		optional int32 level = 3;
+		optional int32 deadtimes = 4;
+		optional int32 campid = 5;
+		optional int32 headid = 6;
+		optional int32 hp = 7;
+		optional int32 mp = 8;
+		optional int32 pos = 9;
+		optional uint64 masterguid = 10;
+		optional int32 kills = 11;
+		optional int32 assist = 12;
+		optional int32 heroid = 13;
+	}
+	message BaseGoodsInfo
+	{
+		optional int32 index = 13;
+		optional int32 id = 14;
+	}
+	repeated HeroInfo heroinfo = 2;
+	repeated BaseGoodsInfo goodsinfo = 3;
+}
+
+//eMsgToGCFromCS_NotifyGuideLastComStep
+message GuideLastStep
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromCS_NotifyGuideLastComStep]; 
+	optional bool  ifComp = 2;
+	optional int32 stepid = 3;
+}
+
+//eMsgToGCFromGS_NotifyUserCLDays
+message NotifyUserCLDays
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyUserCLDays];
+	optional uint32 month = 2;
+	optional uint32 today = 3;
+	optional uint32 totalCldays = 4;
+	optional uint32 cldays = 5;
+	optional bool isTodayCan = 6;
+}
+
+//eMsgToGCFromGS_NotifyNotice
+message GameNotice
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyNotice]; 
+	message Notice{
+		optional string title = 1;
+		optional uint32 flag = 2;
+		optional uint32 status = 3;
+		optional uint32 priority = 4;
+		optional string notice = 5;	
+	}
+	repeated Notice notice = 2;
+}
+//eMsgToGCFromGS_NotifyUserGuideSetups
+message GuideSteps
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyUserGuideSetups]; 
+	optional uint64 guid = 2;
+	optional int32  type = 3;	
+	optional bool   ifComp = 4;	 
+    optional string steps = 5; 
+}
+
+//???OnNetMsg_NotifyPing
+//eMsgToGCFromGS_GCAskPingRet
+message PingRet
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_GCAskPingRet];
+	optional int64 time = 2;
+	optional int32 flag = 3;
+}
+
+//???OnNetMsg_NotifyQueryNickNameRet
+message NotifyQueryNickNameRet
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyQueryNickNameRet];
+	message QueryInfo
+	{
+		optional string nickname = 1;
+		optional int32 headid = 2;
+	}
+	
+	repeated QueryInfo info = 2;
+}
+
+message SNSInfo
+{
+	optional int32 type = 1;
+	optional string nickname = 2;
+	optional uint32 headid = 3;
+	optional int32 status = 4;
+	optional uint64 guididx = 5;
+	optional uint32 viplv = 6;
+}
+
+//???OnNetMsg_NotifyUserFriendsList
+message NotifyUserSNSList
+{
+	optional MsgID msgnum = 1 [default = eMsgToGCFromGS_NotifyUserSNSList];
+	repeated SNSInfo info = 2;
+}
+
+//???OnNetMsg__NotifyBattleManagerChange
+message NotifyBattleManagerChange
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyBattleManagerChange];
+}
+
+//???OnNetMsg_NotifyBeAddFriendMsg
+message NotifyBeAddFriendMs
+{
+	optional MsgID msgnum = 1 [default = eMsgToGCFromGS_NotifyBeAddFriendMsg];
+	optional string sendnickname = 2;
+	optional string recnickname = 3;
+	optional uint64 sdnder_guididx = 4;
+}
+
+//???OnNetMsg_NotifyMsgFromUser
+message NotifyMsgFromUser
+{
+	optional MsgID msgnum = 1 [default = eMsgToGCFromGS_NotifyMsgFromUser];
+	optional uint64 guididx = 2;
+	optional string nickname = 3;
+	optional int32 headid = 4;
+	optional string chatstr = 5;
+}
+
+//???OnNetMsg_NotifyUserRemoveList
+message NotifyUserSNSListChange
+{
+	optional MsgID msgnum = 1 [default = eMsgToGCFromGS_NotifyUserSNSListChange];
+	optional uint64 guididx = 2;
+	optional uint32 type = 3;
+}
+
+//eMsgToGCFromGS_UserBeInvitedToBattle
+message UserBeInvitedToBattle
+{
+	optional MsgID msgnum = 1 [default = eMsgToGCFromGS_UserBeInvitedToBattle];
+	optional int32 battleid = 2;
+	optional string pwd = 3;
+	optional string Invitor = 4;
+}
+
+//???OnNetMsg__NotifyAFPData
+message NotifyAFPData
+{
+	optional MsgID msgnum = 1 [default = eMsgToGCFromGS_NotifyAFPData];
+	optional uint64 guid = 2;
+	
+	enum EnumFpType{
+		PhyHurt = 1;//物理伤害
+		MagicHurt = 2;//魔法伤害
+		CurHP = 3;//当前HP
+		CurMP = 4;//当前MP
+		PhyAttack = 5;//物攻
+		MagicAttack = 6;//魔攻
+		PhyDefense = 7;//物抗
+		MagicDefense = 8;//魔抗
+		MoveSpeed = 9;//移动速度
+		AttackSpeed = 10;//攻速
+		MaxHP = 11;//最大MP
+		MaxMP = 12;//最大HP
+		HPRecoverRate = 13;//HP回复
+		MPRecoverRate = 14;//MP回复
+		ReliveTime = 15;//复活时间	
+		Dizziness = 16;//昏迷
+		Silence = 17;//沉默
+		PosMove = 18;//未使用
+		Rebound = 19;//未使用
+		PhySuckBlood = 20;//物理吸血
+		Disarm = 21;//缴械
+		Restrain = 22;//束缚
+		CriPersent = 23;//暴击概率
+		CriHarm = 24;//暴击伤害加成
+		CPRecover = 25;//金钱回复
+		PassitiveSkill = 26;//被动
+		Invisible = 27;//隐身
+		AttackDist = 28;//射程
+		TrueHurt = 29;//真实伤害
+		PhyPassNum = 30;//物理穿透数值
+		PhyPassPercent = 31;//物理穿透比例
+		MagicPassNum = 32;//魔法穿透数值
+		MagicPassPercent = 33;//魔法穿透比例
+		CooldownReduce = 34;//冷却缩减
+		PhyDmgReduce = 35;//物理减伤千分比
+		MagicDmgReduce = 36;//魔法减伤千分比
+		TrueDmgReduce = 37;//真实减伤千分比
+		PhyDmgReduceNum = 38;//物理减伤数值
+		MagicDmgReduceNum = 39;//魔法减伤数值
+		TrueDmgReduceNum = 40;//真实减伤数值
+		MagicSuckBlood = 41;//法术吸血
+	}
+	message FPInfo
+	{
+		optional int32 type = 1;
+		optional int32 value = 2;
+	}
+	repeated FPInfo info = 3;
+}
+
+
+//???nNetMsg_NotifyUserBaseInfo
+//eMsgToGCFromGS_NotifyUserBaseInfo
+message UserBaseInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyUserBaseInfo];
+	optional uint64 guid = 2;
+	optional string name = 3;
+	optional string nickname = 4;
+	optional int32 headid = 5;
+	optional int32 sex = 6;
+	optional int64 curscore = 7;
+	optional int64 curdiamoand = 8;
+	optional int64 curgold = 9;
+	optional int32 mapid = 11;
+	optional bool ifreconnect = 12;
+	optional uint64 battleid = 13;
+	optional int32 level = 14;
+	optional int32 vip_level = 15;
+	optional int32 vip_score = 16;
+	optional int32 cur_exp = 17;
+}
+
+message NotifySystemAnnounce
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySystemAnnounce];
+	optional int32 type = 2;
+	optional string announce = 3;
+}
+
+//???OnNetMsg_NotifyNetClash
+//eMsgToGCFromGS_NotifyNetClash
+message NetClash
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyNetClash];
+}
+
+//???OnNetMsg_WarningToSelectHero
+message WarningToSelectHero
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_WarningToSelectHero];
+}
+
+//???OnNetMsg_NotifySkillModelLeading
+message NotifySkillModelLeading
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillModelLeading];
+	optional uint64 guid = 2;
+	optional uint32 effectid = 3;
+	optional int32 uniqueid = 4;
+	optional uint64 targuid = 5;
+	optional int32 state = 6;
+}
+
+//???OnNetMsg_NotifyErrorCode
+//eMsgToGCFromGS_GCAskRet
+message AskRet
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_GCAskRet];
+	optional int32 askid = 2;
+	optional int32 errorcode = 3;
+}
+
+message NotifyCSHeroList
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyCSHeroList];
+	message HeroListCfg
+	{
+		optional uint32 heroid = 1;
+		optional int64 expired_time = 2;
+		optional bool if_free = 3;
+	}
+	repeated HeroListCfg herocfg = 2;
+}
+message HeroList
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyHeroList];
+	repeated uint32 heroid = 2;
+	optional int64 timeDiff = 3;
+}
+
+message BattleBaseInfo
+{
+optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyBattleBaseInfo];
+optional uint64 battleid = 2;
+optional uint32 mapid = 3;
+optional bool ifReconnect = 4;
+}
+
+message RoomBaseInfo
+{
+optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyRoomBaseInfo];
+optional uint64 roomid = 2;
+optional uint32 mapid = 3;
+}
+
+//???OnNetMsg_NotifyBattleBaseInfo
+//eMsgToGCFromGS_NotifyBattleSeatPosInfo
+message BattleSeatPosInfo
+{
+  message PosInfo{
+	optional int32 pos = 1;
+	optional uint64 guid = 2;
+	optional string nickname = 3;
+	optional bool ifmaster = 4;
+	optional bool ifready = 5;
+	optional int32 headid = 6;
+	optional int64 gold = 7;
+	}
+optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyBattleSeatPosInfo];
+repeated PosInfo posinfo = 2;
+}
+
+enum BattleState
+{
+free = 0;
+waiting = 1;
+selecthero = 2;
+loading = 3;
+playing = 4;
+finish = 5;
+}
+
+//???OnNetMsg_NotifyBattleStateChange
+message BattleStateChange
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyBattleStateChange];
+	optional int32 state = 2;
+	optional int32 statetimeleft = 3;
+}
+
+//???OnNetMsg_NotifyCurBattleChange
+message CurBattleChange
+{
+optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyCurBattleChange];
+optional int32 ssid = 2;
+optional uint64 battleid = 3;
+optional int32 mapid = 4;
+}
+
+message Pos
+{
+	optional int32 x = 1;
+	optional int32 z = 3;
+}
+
+message Dir
+{
+	optional int32 angle = 4;
+}
+
+
+//???OnNetMsg_NotifyGameObjectAppear
+
+enum ObjType
+{
+	ObjType_Hero = 1;
+	ObjType_NPC = 2;
+}
+message GOAppear
+{
+optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyGameObjectAppear];
+message AppearInfo
+{
+	optional uint64 masterguid = 1;
+	optional uint64 objguid = 2;
+	optional int32 camp = 3;
+	optional Pos pos = 4;
+	optional Dir dir = 5;
+	optional uint32 hp = 6;
+	optional uint32 mp = 7;
+	optional ObjType obj_type = 8;
+	optional uint32 obj_type_id = 9;
+}
+repeated AppearInfo info = 2;
+}
+
+//???OnNetMsg_NotifyGameObjectDisAppear
+message DisappearInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyGameObjectDisappear];
+	repeated uint64 guid = 2;
+}
+
+//???OnNetMsg_NotifyGameObjectFreeState
+message FreeState
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyGameObjectFreeState];
+	optional uint64 objguid = 2;
+	optional Pos pos = 3;
+	optional Dir dir = 4;
+}
+
+//???OnNetMsg_NotifyGameObjectRunState
+message RunningState
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyGameObjectRunState];
+	optional uint64 objguid = 2;
+	optional Pos pos = 3;
+	optional Dir dir = 4;
+	optional int32 movespeed = 5;
+}
+
+//???OnNetMsg_NotifyPrepareSkill
+message PrepareSkillState
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyGameObjectPrepareSkillState];
+	optional uint64 objguid = 2;
+	optional int32 skillid = 3;
+	optional Pos pos = 4;
+	optional Dir dir = 5;
+	optional uint64 targuid = 6;
+	optional int32 speed = 7;
+}
+
+//???OnNetMsg_NotifyReleaseSkill
+message ReleasingSkillState
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyGameObjectReleaseSkillState];
+	optional uint64 objguid = 2;
+	optional int32 skillid = 3;
+	optional Pos pos = 4;
+	optional Dir dir = 5;
+	optional uint64 targuid = 6;
+}
+
+//???OnNetMsg_NotifyUsingSkill
+message UsingSkillState
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyGameObjectUsingSkillState];
+	optional uint64 objguid = 2;
+	optional int32 skillid = 3;
+	optional Pos pos = 4;
+	optional Dir dir = 5;
+	optional uint64 targuid = 6;
+}
+
+//???OnNetMsg_NotifyLastingSkill
+message LastingSkillState
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyGameObjectLastingSkillState];
+	optional uint64 objguid = 2;
+	optional int32 skillid = 3;
+	optional Pos pos = 4;
+	optional Dir dir = 5;
+	optional uint64 targuid = 6;
+}
+
+//???OnNetMsg_NotifyGameObjectDeadState
+message DeadState
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyGameObjectDeadState];
+	optional uint64 objguid = 2;
+	optional Pos pos = 3;
+	optional Dir dir = 4;
+	optional bool spot = 5;
+}
+
+//???OnNetMsg_NotifyGoodsInfo
+message NotifyGoodsInfo
+{
+	message GoodsInfo
+	{
+		optional int32 num = 1;
+		optional int32 pos = 2;
+		optional bool ifComposed = 3;
+		optional int32 tyepid = 4;
+		optional int32 state = 5;
+		optional int32 statetime = 6;
+	}
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyGoodsInf];
+	optional uint64 guid = 2;
+	repeated GoodsInfo info = 3;
+}
+
+//???OnNetMsg_NotifyBattleStart
+message BattleLoadingState
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyBattleLoadingState];
+	optional int64 guid = 2;
+	optional int32 loadper = 3;
+}
+
+message HeroPosInfo
+{
+	optional int32 pos = 2;
+	optional int32 heroid = 3;
+}
+
+//???OnNetMsg_NotifyBattleHeroInfo
+message HeroInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyBattleHeroInfo];
+	optional HeroPosInfo heroposinfo = 2;
+}
+
+//???OnNetMsg_NotifyRoomChat
+message ChatInRoom
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_ChatInRoom];
+	optional int32 pos = 2;
+	optional string chat = 3;
+}
+
+//???OnNetMsg_NotifySkillHitTarget
+message SkillHitTar
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillHitTarget];
+	optional int64 guid = 2;
+	optional int32 skillid = 3;
+	optional int64 targuid = 4;
+}
+enum HPMPChangeReason
+{
+NormalHurt = 0;
+BloastHurt = 1;
+SkillHurt = 2;
+RecoverHurt = 3;
+SkillConsume = 4;
+BuffEffectReason = 5;
+}
+
+//???OnNetMsg_NotifyHPChange
+message HPChange
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyHPChange];
+	optional uint64 guid = 2;
+	optional int32 hp = 3;
+	optional HPMPChangeReason reason = 4;
+}
+
+//???OnNetMsg_NotifyMPChange
+message MpChange
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyMPChange];
+	optional uint64 guid = 2;
+	optional int32 mp = 3;
+	optional HPMPChangeReason reason = 4;
+}
+
+message TryToChooseHero
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyTryToChooseHero];
+	optional int32 pos = 2;
+	optional int32 heroid = 3;
+}
+
+//???OnNetMsg_NotifyToChooseHero
+message NotifyChooseHeroTimeEnd
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyChooseHeroTimeEnd];
+	repeated HeroPosInfo heroposinfo = 2; 
+}
+
+//???OnNetMsg_NotifySkillUnitInfo
+message SkillEntityInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillEntityInfo];
+	optional int64 guid = 2;
+	optional int32 skillid = 3;
+	optional Dir dir = 4;
+	optional int64 targuid = 5;
+	optional int64 uniqueid = 6;
+	optional Dir tardir = 7;
+}
+
+//???OnNetMsg_NotifyFightPropertyInfo
+message FPInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyFightPropertyInfo];
+	optional uint64 guid = 2;
+	repeated int32 info = 3;
+}
+
+//???OnNetMsg_NotifyHpInfo
+message NotifyHPInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyHPInfo];
+	message HPInfo
+	{
+		optional uint64 guid = 1;
+		optional int32 curhp = 2;
+		optional int32 maxhp = 3;
+	}
+
+	repeated HPInfo hpinfo = 2;
+}
+
+//???OnNetMsg_NotifyMpInfo
+message NotifyMPInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyMPInfo];
+	message MPInfo
+	{
+		optional uint64 guid = 1;
+		optional int32 curmp = 2;
+		optional int32 maxmp = 3;
+	}
+
+	repeated MPInfo mpinfo = 2;
+} 
+
+//???OnNetMsg_NotifyHeroInfo
+message NotifyHeroInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyHeroInfo];
+	optional uint64 guid = 2;
+	optional int32 level = 3;
+	optional int32 exp = 4;
+	optional int32 fury = 5;
+	optional int32 absorb1 = 6;
+	optional int32 absorb2 = 7;
+}
+
+//???OnNetMsg_NotifySkillInfo
+message NotifySkillInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillInfo];
+	optional uint64 guid = 2;
+	optional int32 skillslot = 3;
+	optional int32 skillid = 4;
+//	enum SkillState
+//	{
+//		free = 0;
+//		prepare = 1;
+//		release = 2;
+//		cooldown = 3;
+//	}
+//	optional SkillState state = 5;
+	optional int32 time = 5;
+}
+
+//???OnNetMsg_NotifyBattleFinish
+message BattleFinish
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyBattleFinish];
+	optional uint64 bulidguid = 2;
+}
+
+//???OnNetMsg_NotifyExpInfo
+message Exp
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyExpInfo];
+	optional uint64 guid = 2;
+	optional int32 exp = 3;
+}
+
+//???OnNetMsg_NotifyLvInfo
+message LevelInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyHeroLevelInfo];
+	optional uint64 guid = 2;
+	optional int32 level = 3;
+}
+
+//???OnNetMsg_NotifyAbsorbBegin
+message AbsorbBegin
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyAbsorbBegin];
+	optional uint64 guid = 2;
+	optional uint64 monsterguid = 3;
+}
+
+//???OnNetMsg_NotifyAbsorbMonsterResult
+message AbsorbRes
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyAbsorbMonsterResult];
+	optional uint64 guid = 2;
+	optional bool res = 3;
+	optional int32 absorb1 = 4;
+	optional int32 absorb2 = 5;
+}
+
+//CancelAbsorb?????
+message CancelAbsorb
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyCancelAbsorbSkill];
+	optional int32 monsterid = 2;
+}
+
+//???OnNetMst_NotifyUserGameInfo
+message UserGameInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyUserGameInfo];
+	optional int32 headid = 2;
+	optional string nickname = 3;
+	optional int32 level = 4;
+	optional int32 upgradeexp = 5;
+	optional int32 curexp = 6;
+	optional int32 totalgameinns = 7;
+	optional int32 totalwintimes = 8;
+	optional int32 herokills = 9;
+	optional int32 destorybuildings = 10;
+	optional int32 deadtimes = 11;
+	optional int32 total_achnum = 12;
+	optional int32 achnum = 13;
+	optional int32 vipscore = 14;
+	optional int32 assistnum = 15;
+	optional int32	ladderscore = 16;
+	optional string guildname = 17;
+	optional int64 exp_adtime = 18;
+	optional int64 gold_addtime = 19;
+}
+
+//???OnNetMsg_NotifyHeroKills
+message HeroKills
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyHeroKills];
+	optional uint64 guid = 2;
+	optional int32 kills = 3;
+}
+
+//???OnNetMsg_NotifyCurDeadTimes
+message CurDeadTimes
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyCurDeadTimes];
+	optional uint64 objguid = 2;
+	optional int32 deadtimes = 3;
+	optional int32 killer_camp = 4;
+	optional uint64 reasonheroguid = 5;
+	optional bool ifAced = 6;
+	optional int32 camp = 7;
+	optional int32 herostate = 8;
+	optional int32 herotitle = 9;
+}
+
+//???OnNetMsg_NotifyCurCP
+message CurCP
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyCurCP];
+	optional uint64 targetguid = 2;
+	optional int32 person_cp = 3;
+	optional int32 team_cp = 4;
+}
+
+//???
+message CurAtkSpeed
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyCurAtkSpeed];
+	message SpeedInfo
+	{
+		optional uint64 guid = 1;
+		optional int32 speed = 2;
+	}
+
+	repeated SpeedInfo info = 2;
+}
+
+//???OnNetMsg_NotifyFuryValue
+message FuryVal
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyFuryValue];
+	optional uint64 guid = 2;
+	optional int32 fury = 3;
+}
+
+//???OnNetMsg_NotifyFuryState
+message FuryState
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyFuryState];
+	optional uint64 guid = 2;
+	optional int32 state = 3;
+}
+
+message NotifyHeroReborn
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyHeroReborn];
+}
+//???OnNetMsg_NotifyHeroRebornTimes
+message RebornTimes
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyHeroRebornTimes];
+	optional uint64 masterguid = 2;
+	optional int64 sendtimes = 3;
+	optional int64 gold = 4;
+	optional int32 remain_times = 5;
+	optional int32 reborn_time = 6;
+}
+
+//???OnNetMsg_NotifyBuyRebornSuccess
+message RebornSuccess
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyBuyRebornSuccess];
+	optional uint64 guid = 2;
+}
+
+//???OnNetMsg_NotifyCPChange
+message PersonCPChange
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyPersonalCPChange];
+	optional uint64 guid = 2;
+	optional int32 cp = 3;
+}
+
+//???OnNetMsg_BroadCurBattleResult
+message BroadcastBatteleRes
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_BroadCurBattleResult];
+	optional bool  ifwin = 2;
+	repeated ResInfo resinfo = 3;
+	message ResInfo
+	{
+		optional uint64 objguid = 1;
+		optional int32 heroid = 2;
+		optional string nickname = 3;
+		optional int32 curlevel = 4;
+		optional int32 killtimes = 5;
+		optional int32 deadtimes = 6;
+		optional int32 asstimes = 7;
+		optional int32 totalcp = 8;
+		optional int32 lasthit = 9;
+		optional int32 camgpid = 10;
+	}
+}
+
+message BroadcastBattelePersonalRes
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_BroadBattlePersonalResult];
+	optional int64 got_gold = 2;
+	optional int32 old_lv = 3;
+	optional int32 old_exp = 4;
+	optional int32 cur_lv = 5;
+	optional int32 cur_exp = 6;
+	optional int32 got_exp = 7;
+}
+
+//???OnNetMst_BroadBuildingDestroyByWho
+message BroadcastBuildingDestory
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_BroadBuildingDestroyByWho];
+	optional uint64 buildingguid = 2;
+	optional int32 building_camp = 3;
+	optional uint64 killer_guid = 4;
+	optional int32 killer_camp = 5;
+}
+
+//??????????BattleSeatPosInfo????????????????????????
+message HeroMoveInfo
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyBattleSeatPosInfo];
+	optional uint64 guid = 2;
+	optional Dir dir = 3;
+	optional Pos pos = 4;
+}
+
+//???OnNetMsg_BroadcastPlayFinishVedio
+message PlayFinishVedio
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_BroadcastPlayFinishVedio];
+	
+	optional int32 wincamp = 2;
+	optional int32 losercamp = 3;
+	optional int32 mapid = 4;
+	optional uint64 guid = 5;
+}
+
+//???OnNetMsg_NotifyLeaveBattleSuccess
+message LeaveBattleSuccess
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyLeaveBattleSuccess];
+}
+
+//???OnNotifyBornSoldier
+message BornSoler
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyBornSolder];
+	optional int32 type = 2;
+	optional int32 camp = 3;
+	optional Pos pos = 4;
+	optional uint64 guid = 5;
+}
+
+//???OnNetMsg_NotifySkillEnd
+message SkillEnd
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillEnd];
+	optional int64 guid = 2;
+	optional int32 skillid = 3;
+	optional int64 targuid = 4;
+	optional int32 uniqueid = 5;
+}
+
+message AltarBSIco
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyAltarBSIco];
+	optional int32 index = 2;
+	optional int32 type = 3;
+	optional int32 optype = 4;
+}
+
+enum SkillState
+{
+	sing = 0;
+	prepare = 1;
+	release = 2;
+	end = 3;
+}
+
+//???OnNetMsg_NotifyGameOjectReleaseSkill
+message GOReleaseSkill
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyGameObjectReleaseSkill];
+	optional uint64 guid = 2;
+	optional int32 skillid = 3;
+	optional SkillState state = 4;
+	optional Pos curPos = 5;
+	optional Dir curDir = 6;
+	optional uint64 targuid = 7;
+	optional Pos tarpos = 8; 
+}
+
+//???OnNetMsg_NotifyGameObjectSkillCD
+message GOSkillCD
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyGameObjectSkillCD];
+	optional uint64 guid = 2;
+	optional int32 skillid = 3;
+	optional int32 time = 4;
+}
+
+//???OnNetMsg_NotifySkillModelEmit
+message EmitSkill
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillModelEmit];
+	optional uint64 guid = 2;
+	optional uint32 effectid = 3;
+	optional int32 uniqueid = 4;
+	optional Dir dir = 5;
+	optional uint64 targuid = 6;
+	optional Pos tarpos = 7;
+	optional bool ifAbsorbSkill = 8;
+}
+
+//???OnNetMsg_NotifySkillModelEmitDestroy
+message DestroyEmitEffect
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillModelEmitDestroy];
+	optional int32 uniqueid = 2;
+}
+
+message HitTar
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillModelHitTarget];
+	optional uint64 guid = 2;
+	optional uint32 effectid = 3;
+	optional uint64 targuid = 4;
+}
+
+//???OnNetMsg_NotifySkillModelRange
+message RangeEffect
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillModelRange];
+	optional uint64 guid = 2;
+	optional uint32 effectid = 3;
+	optional uint32 uniqueid = 4;	//?????????????????
+	optional Dir dir = 5;
+	optional Pos pos = 6;
+}
+
+//???OnNetMsg_NotifySkillModelRangeEnd
+message RangeEffectEnd
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillModelRangeEnd];
+	optional uint64 guid = 2;
+	optional uint32 uniqueid = 3;
+}
+
+//???OnNetMsg_NotifySkillModelSummonEffect
+message SummonEffect
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillModelSummonEffect];
+	optional uint64 guid = 2;
+	optional uint32 effectid = 3;
+	optional uint64 npcguid = 4;
+}
+
+//???OnNetMsg_NotifySkillModelBuf
+message BuffEffect
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillModelBufEffect];
+	optional uint64 guid = 2;
+	optional uint32 effectid = 3;
+	optional uint32 uniqueid = 4;
+	optional uint64 targuid = 5;
+	optional int32 time = 6;
+	optional int32 state = 7;
+}
+
+//???OnNetMsg_NotifySummonLifeTime
+message NotifySummonLifeTime
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySummonLifeTime];
+	optional uint64 guid = 2;
+	optional int32 lifetime = 3;
+	optional int32 resttime = 4;
+	optional Pos pos = 5;
+	optional Dir dir = 6;
+}
+
+//???OnNetMsg_NotifySkillModelStartForceMove
+message NotifySkillModelStartForceMove
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillModelStartForceMove];
+	optional uint64 guid = 2;
+	optional int32 effectid = 3;
+	optional Dir dir = 4;
+	optional Pos pod = 5;
+	optional int32 speed = 6;
+}
+
+//???OnNetMsg_NotifySkillModelStartForceMoveStop
+message NotifySkillModelStartForceMoveStop
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillModelStartForceMoveStop];
+	optional uint64 guid = 2;
+	optional int32 effectid = 3;
+	optional Pos pos = 4;
+}
+
+//???OnNetMsg_NotifySkillModelStartForceMoveTeleport
+message NotifySkillModelStartForceMoveTeleport
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillModelStartForceMoveTeleport];
+	optional uint64 guid = 2;
+	optional int32 effectid = 3;
+	optional Pos beginpos = 4;
+	optional Dir begindir = 5;
+	optional Pos tarpos = 6;
+}
+
+//??OnNetMsg_NotifySkillModelPurification
+message NotifySkillModelPurification
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillModelPurification];
+	optional uint64 guid = 2;
+	optional uint64 targetguid = 3;
+	optional int32 effectid = 4;
+}
+
+message NotifySkillModelStartLink
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillModelStartLink];
+	optional uint64 guid = 2;
+	optional Pos beginpos = 3;
+	optional uint64 targetguid = 4;
+	optional int32 effectid = 5;
+	optional uint32 uniqueid = 6;
+}
+
+message NotifySkillModelStopLink
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifySkillModelStopLink];
+	optional uint32 uniqueid = 2;
+}
+
+//???OnNetMsg_NotifySkillPassitive
+message NotifyPassitiveSkillRelease
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyPassitiveSkillRelease];
+	optional uint64 guid = 2;
+	optional int32 skillid = 3;
+	optional int32 timeLeft = 4;
+}
+
+//???OnNetMsg_NotifySkillPassitiveLoad
+message NotifyPassitiveSkillLoad
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyPassitiveSkillLoad];
+	optional uint64 guid = 2;
+	optional int32 skillid = 3;
+	optional int32 uniqueid = 4;
+}
+
+//???OnNetMsg_NotifySkillPassitiveUnLoad
+message NotifyPassitiveSkillUnLoad
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromGS_NotifyPassitiveSkillUnload];
+	optional uint64 guid = 2;
+	optional int32 skillid = 3;
+	optional int32 uniqueid = 4;
+}
+
+//???OnNetMsg_NotifySkillModelEmitTurn
+message NotifySkillModelEmitTurn
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifySkillModelEmitTurn];
+	optional uint64 guid = 2;
+	optional uint32 effectid = 3;
+	optional int32 progectid = 4;
+	optional Pos pos = 5;
+	optional Dir dir = 6;
+	optional uint64 targuid = 7;
+	optional Pos tarpos = 8;
+}
+
+//???OnNetMsg_NotifyBornObj
+message NotifyBornObj
+{
+	optional MsgID msgid = 1 [default = eMsgToSSFromCS_NotifyBornObj];
+	optional int32 type = 2;
+}
+
+//???OnNetMsg_NotifyReconnectInfo
+message NotifyReconnectInfo
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromCS_NotifyReconnectInfo];
+	optional int32 battlestate = 2;
+	optional int32 remain_times = 3;
+	optional bool ifob = 4;
+	message ReconnectInfo
+	{
+		optional int32 pos = 1;
+		optional uint64 guid = 2;
+		optional string nickname = 3;
+		optional uint32 heroid = 4;
+		optional bool ifselected = 5;
+	}
+	repeated ReconnectInfo reconnectinfo = 5;
+} 
+
+//???OnNetMsg_NotifyOBReturnBattleRoom
+message NotifyOBReturnBattleRoom
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyOBReturnBattleRoom];
+}
+
+//???OnNetMsg_NotifyOBAppear
+message NotifyOBAppear
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyOBAppear];
+	optional uint64 obid = 2;
+	optional int32 camp = 3;
+}
+
+//???OnNetMsg__NotifyKillNPC
+message NotifyKillNPC
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyKillNPC];
+	optional uint64 guid = 2;
+	optional uint32 killnum = 3;
+} 
+message NotifyAltarBSIco
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyAltarBSOk]; 
+	optional uint32 altarid = 2;
+	optional uint32 objtype = 3; 
+	optional uint32 optype = 4;
+}
+
+//???OnNetMsg_NotifySkillUpLv
+message NotifySkillUpLv
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifySkillUpLv];
+	optional uint64 guid = 2;
+	optional uint32 skillpos = 3;
+	optional uint32 skillid = 4;
+}
+
+
+
+//???OnNetMsg_NotifyBlastHurt
+message NotifyBlastHurt
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyBlastHurt];
+	optional uint64 guid = 2;
+	optional int32 blasthp = 3;
+}
+
+//???OnNetMsg__NotifyGameObjectReliveState
+message NotifyGameObjectReliveState
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyGameObjectReliveState];
+	optional uint64 guid = 2;
+	optional Pos pos = 3;
+	optional Dir dir = 4;
+} 
+
+message NotifyCurGold
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGs_NotifyCurGold];
+	optional uint64 gold = 2;
+}
+//eMsgToGCFromGs_NotifyCurDiamond = 123
+message NotifyCurDiamond
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGs_NotifyCurDiamond];
+	optional uint64 Diamond = 2;
+}
+
+//eMsgToGCFromGS_NotifyGetloginRewardSuccess
+message GetloginRewardSuccess
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyGetloginRewardSuccess];
+}
+
+//eMsgToGCFromGS_NotifyGetloginReward_Skin
+message GetloginReward_Skin
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyGetloginReward_Skin];
+	optional int64 skinid = 2;
+}
+
+//eMsgToGCFromGS_NotifyGetloginReward_Rune
+message GetloginReward_Rune
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyGetloginReward_Rune];
+	optional int64 runeid = 2;
+}
+
+//eMsgToGCFromGS_NotifyGetloginReward_Hero
+message GetloginReward_Hero
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_NotifyGetloginReward_Hero];
+	optional uint32 heroid = 2;
+	optional int64 expired_time = 3;
+}
+
+//eMsgToGCFromBS_NotifyCanInviteFriends
+message CanInviteFriends
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromBS_NotifyCanInviteFriends]; 
+	message Friends{
+		optional int32 HeaderId = 1;
+		optional string nickname = 2;
+		optional uint64	guididx = 3;
+	}
+	repeated Friends friends = 2;
+}
+
+//eMsgToGCFromBS_NotifyCurLastHitNum = 142;
+message LastHitNum
+{
+	optional MsgID msgid = 1[default = eMsgToGCFromBS_NotifyCurLastHitNum]; 
+	optional uint64 guid = 2;
+	optional int32 lhnum = 3;
+}
+
+message RoomInfo
+{
+optional int32 roomId = 1;
+optional int32 ifPwd = 2;
+optional int32 mapId = 3;
+optional string master = 4;
+optional int32 curUserCount = 5;
+optional int32 maxUserCount = 6;
+}
+message AskRoomListRet
+{
+	optional MsgID msgid = 1 [default = eMsgToGCFromGS_AskRoomListRet];
+	repeated RoomInfo roomlist = 2;
+}

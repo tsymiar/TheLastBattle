@@ -1,0 +1,88 @@
+package CSToRC;
+
+enum MsgID
+{
+	eMsgCS2RC_Begin = 33500;
+	eMsgCS2RC_AskRegistRsp = 33501;
+	eMsgCS2RC_AllServerInfo = 33502;
+	eMsgCS2RC_ServerUserInfo = 33503;
+	eMsgCS2RC_AllNoticeInfo = 33504;
+	eMsgCS2RC_AddNoticeResp = 33505;
+	eMsgCS2RC_DeleteNoticeResp = 33506;
+	eMsgCS2RC_AskAddOneMailResp = 33507;
+	eMsgCS2RC_AskQueryCDkeyResp = 33508; 
+	
+	eMsgCS2RC_End = 33999;
+}
+ 
+
+//eMsgCS2CS_AskQueryCDkeyResp
+message QueryCDkeyInfoResp
+{
+	optional MsgID msgid = 1 [default = eMsgCS2RC_AskQueryCDkeyResp];
+	message CDKey_Info
+	{
+		optional int32 id = 1;
+		optional string title = 2;
+		optional int32 platform = 3;
+		optional int64 end_tiem = 4;
+		optional int32 code_num = 5;
+		optional int32 code_len = 6;
+		optional int32 type = 7;
+	}
+	repeated CDKey_Info info = 2;
+}
+
+//eMsgCS2CS_AskAddOneMailResp
+message AddMailResp
+{
+	optional MsgID msgid = 1 [default = eMsgCS2RC_AskAddOneMailResp];
+	optional bool rst = 2;
+}
+
+message AskRegistRsp
+{
+	optional MsgID msgid = 1 [default = eMsgCS2RC_AskRegistRsp];
+	optional bool rst = 2;
+}
+
+message AllServerInfo
+{
+	optional MsgID msgid = 1 [default = eMsgCS2RC_AllServerInfo];
+	optional bytes  servername = 2;
+	optional int32	roomUserNum = 3;
+	optional int32	battleUserNum = 4;
+	optional float	loadFactory = 5; 
+	optional int32	allUserNum = 6;
+	optional string	curttime = 7;	 
+}
+
+
+message ServerUserInfo
+{
+	optional MsgID msgid = 1 [default = eMsgCS2RC_ServerUserInfo];
+	optional int32	allUserNum = 2;
+}
+
+message NoticeInfo
+{
+	optional bytes notice = 1;
+}
+
+message AllNoticeInfo
+{
+	optional MsgID msgid = 1 [default = eMsgCS2RC_AllNoticeInfo];
+	repeated NoticeInfo	notices = 2;
+}
+
+message AddNoticeResp
+{
+	optional MsgID msgid = 1 [default = eMsgCS2RC_AddNoticeResp];
+	optional bool rst = 2;
+}
+
+message DeleteNoticeResp
+{
+	optional MsgID msgid = 1 [default = eMsgCS2RC_DeleteNoticeResp];
+	optional bool rst = 2;
+}

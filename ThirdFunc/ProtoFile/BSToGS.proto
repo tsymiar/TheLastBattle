@@ -1,0 +1,25 @@
+package BSToGS;
+
+enum MsgID
+{
+	eMsgToGSFromBS_Begin = 24576;
+	eMsgToGSFromBS_AskRegisterRet = 24577;
+	eMsgToGSFromBS_OneUserLoginToken = 24578;
+	eMsgToGSFromBS_End = 25000;
+}
+message AskRegister
+{
+	optional MsgID mgsid = 1 [default = eMsgToGSFromBS_AskRegisterRet];
+	optional int32 gsid = 2;
+	optional int32 port = 3;
+}
+
+message OneUserLoginToken
+{
+	optional MsgID msgid = 1 [default = eMsgToGSFromBS_OneUserLoginToken];
+	optional int32 gateclient = 2;
+	optional string token = 3;
+	optional string user_name = 4;
+	optional int32 port = 5;
+	optional string ip =6;
+}
