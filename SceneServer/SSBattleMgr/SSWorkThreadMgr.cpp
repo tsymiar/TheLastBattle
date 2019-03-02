@@ -58,7 +58,7 @@ namespace SceneServer{
 		TiXmlDocument doc(filepath.c_str());
 		bool loadOkay = doc.LoadFile();
 		if (!loadOkay){
-			printf("load GSCfg.xml failed for %s\n", doc.ErrorDesc());
+			printf("load GSCfg.xmldetail:  %s\n", doc.ErrorDesc());
 		}
 		else{
 			TiXmlElement* m_pXMLEle = doc.RootElement();
@@ -296,7 +296,7 @@ namespace SceneServer{
 		strTitle << "ss" << " id=" << CSSWorkThreadMgr::GetInstance().GetSSConfig().n32SSID << " fps=" << fps<< " AllBattle=" << m_BattleID2ActorIDMap.size() 
 			<< " AllUser="  << m_User2ActorMapByGuid.size()
 			<< " NetUser=" << m_User2ActorMapByNetInfo.size();
-		SetConsoleTitle(strTitle.str().c_str());
+		SetConsoleTitle((LPCSTR)strTitle.str().c_str());
 		m_RunCounts = 0;
 	}
 
@@ -323,7 +323,7 @@ namespace SceneServer{
 		return pActor->m_pActive->GetTimer().RemoveTimer(timerID);
 	}
 
-	INT32 CSSWorkThreadMgr::PostMsgToLogServer(google::protobuf::Message& sMsg, int n32MsgID){
+	INT32 CSSWorkThreadMgr::PostMsgToLogMgr(google::protobuf::Message& sMsg, int n32MsgID){
 		INetSessionMgr::GetInstance()->SendMsgToSession(ST_CLIENT_S2Log, 0, sMsg, n32MsgID);
 		return eNormal;
 	}

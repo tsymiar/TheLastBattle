@@ -34,7 +34,13 @@ public:
 	virtual ISDSession* UCAPI CreateSession(ISDConnection* pConnection) = 0;
 	virtual ICliSession* UCAPI CreateConnectorSession(SESSION_TYPE type) = 0;
 public:
-	virtual bool UCAPI LogText(const TCHAR* pszLog);
+	virtual bool UCAPI LogText(const 
+#ifdef UNICODE
+        WCHAR
+#else
+        char
+#endif
+        *pszLog);
 	virtual bool UCAPI LogBinary(const UINT8* pLog, UINT32 dwLen);
 public:
 	virtual INT32 UCAPI ParsePacket(const char* pBuf, UINT32 dwLen);

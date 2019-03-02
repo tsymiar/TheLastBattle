@@ -1,21 +1,21 @@
 /*
-    Copyright 2005-2014 Intel Corporation.  All Rights Reserved.
+    Copyright (c) 2005-2018 Intel Corporation
 
-    This file is part of Threading Building Blocks. Threading Building Blocks is free software;
-    you can redistribute it and/or modify it under the terms of the GNU General Public License
-    version 2  as  published  by  the  Free Software Foundation.  Threading Building Blocks is
-    distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
-    implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    See  the GNU General Public License for more details.   You should have received a copy of
-    the  GNU General Public License along with Threading Building Blocks; if not, write to the
-    Free Software Foundation, Inc.,  51 Franklin St,  Fifth Floor,  Boston,  MA 02110-1301 USA
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-    As a special exception,  you may use this file  as part of a free software library without
-    restriction.  Specifically,  if other files instantiate templates  or use macros or inline
-    functions from this file, or you compile this file and link it with other files to produce
-    an executable,  this file does not by itself cause the resulting executable to be covered
-    by the GNU General Public License. This exception does not however invalidate any other
-    reasons why the executable file might be covered by the GNU General Public License.
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+
+
+
 */
 
 #ifndef __TBB_task_H
@@ -23,6 +23,7 @@
 
 #include "tbb_stddef.h"
 #include "tbb_machine.h"
+#include "tbb_profiling.h"
 #include <climits>
 
 typedef struct ___itt_caller *__itt_caller;
@@ -120,6 +121,12 @@ namespace internal {
     //! An id as used for specifying affinity.
     typedef unsigned short affinity_id;
 
+#if __TBB_TASK_ISOLATION
+    //! A tag for task isolation.
+    typedef intptr_t isolation_tag;
+    const isolation_tag no_isolation = 0;
+#endif /* __TBB_TASK_ISOLATION */
+
 #if __TBB_TASK_GROUP_CONTEXT
     class generic_scheduler;
 
@@ -155,16 +162,25 @@ namespace internal {
         void __TBB_EXPORTED_METHOD free( task& ) const;
     };
 
+#if __TBB_PREVIEW_CRITICAL_TASKS
+    // TODO: move to class methods when critical task API becomes public
+    void make_critical( task& t );
+    bool is_critical( task& t );
+#endif
+
     //! Memory prefix to a task object.
     /** This class is internal to the library.
         Do not reference it directly, except within the library itself.
-        Fields are ordered in way that preserves backwards compatibility and yields
-        good packing on typical 32-bit and 64-bit platforms.
+        Fields are ordered in way that preserves backwards compatibility and yields good packing on
+        typical 32-bit and 64-bit platforms. New fields should be added at the beginning for
+        backward compatibility with accesses to the task prefix inlined into application code. To
+        prevent ODR violation, the class shall have the same layout in all application translation
+        units. If some fields are conditional (e.g. enabled by preview macros) and might get
+        skipped, use reserved fields to adjust the layout.
 
-        In case task prefix size exceeds 32 or 64 bytes on IA32 and Intel64
-        architectures correspondingly, consider dynamic setting of task_alignment
-        and task_prefix_reservation_size based on the maximal operand size supported
-        by the current CPU.
+        In case task prefix size exceeds 32 or 64 bytes on IA32 and Intel64 architectures
+        correspondingly, consider dynamic setting of task_alignment and task_prefix_reservation_size
+        based on the maximal operand size supported by the current CPU.
 
         @ingroup task_scheduling */
     class task_prefix {
@@ -177,6 +193,17 @@ namespace internal {
         friend class internal::allocate_child_proxy;
         friend class internal::allocate_continuation_proxy;
         friend class internal::allocate_additional_child_of_proxy;
+#if __TBB_PREVIEW_CRITICAL_TASKS
+        friend void make_critical( task& );
+        friend bool is_critical( task& );
+#endif
+
+#if __TBB_TASK_ISOLATION
+        //! The tag used for task isolation.
+        isolation_tag isolation;
+#else
+        intptr_t reserved_space_for_task_isolation_tag;
+#endif /* __TBB_TASK_ISOLATION */
 
 #if __TBB_TASK_GROUP_CONTEXT
         //! Shared context that is used to communicate asynchronous state changes
@@ -257,6 +284,10 @@ namespace internal {
 #if __TBB_TASK_PRIORITY
 namespace internal {
     static const int priority_stride_v4 = INT_MAX / 4;
+#if __TBB_PREVIEW_CRITICAL_TASKS
+    // TODO: move into priority_t enum when critical tasks become public feature
+    static const int priority_critical = priority_stride_v4 * 3 + priority_stride_v4 / 3 * 2;
+#endif
 }
 
 enum priority_t {
@@ -403,12 +434,16 @@ private:
     intptr_t my_priority;
 #endif /* __TBB_TASK_PRIORITY */
 
+    //! Decription of algorithm for scheduler based instrumentation.
+    internal::string_index my_name;
+
     //! Trailing padding protecting accesses to frequently used members from false sharing
     /** \sa _leading_padding **/
     char _trailing_padding[internal::NFS_MaxLineSize - 2 * sizeof(uintptr_t) - 2 * sizeof(void*)
 #if __TBB_TASK_PRIORITY
-                            - sizeof(intptr_t)
+                           - sizeof(intptr_t)
 #endif /* __TBB_TASK_PRIORITY */
+                           - sizeof(internal::string_index)
                           ];
 
 public:
@@ -442,9 +477,19 @@ public:
         introduced in the currently unused padding areas and these fields are updated
         by inline methods. **/
     task_group_context ( kind_type relation_with_parent = bound,
-                         uintptr_t traits = default_traits )
+                         uintptr_t t = default_traits )
         : my_kind(relation_with_parent)
-        , my_version_and_traits(2 | traits)
+        , my_version_and_traits(3 | t)
+        , my_name(internal::CUSTOM_CTX)
+    {
+        init();
+    }
+
+    // Custom constructor for instrumentation of tbb algorithm
+    task_group_context ( internal::string_index name )
+        : my_kind(bound)
+        , my_version_and_traits(3 | default_traits)
+        , my_name(name)
     {
         init();
     }
@@ -503,6 +548,9 @@ public:
     //! Retrieves current priority of the current task group
     priority_t priority () const;
 #endif /* __TBB_TASK_PRIORITY */
+
+    //! Returns the context's trait
+    uintptr_t traits() const { return my_version_and_traits & traits_mask; }
 
 protected:
     //! Out-of-line part of the constructor.
@@ -689,10 +737,21 @@ public:
 #endif /* TBB_USE_THREADING_TOOLS||TBB_USE_ASSERT */
     }
 
-    //! Atomically increment reference count and returns its old value.
+    //! Atomically increment reference count.
     /** Has acquire semantics */
     void increment_ref_count() {
         __TBB_FetchAndIncrementWacquire( &prefix().ref_count );
+    }
+
+    //! Atomically adds to reference count and returns its new value.
+    /** Has release-acquire semantics */
+    int add_ref_count( int count ) {
+        internal::call_itt_notify( internal::releasing, &prefix().ref_count );
+        internal::reference_count k = count+__TBB_FetchAndAddW( &prefix().ref_count, count );
+        __TBB_ASSERT( k>=0, "task's reference count underflowed" );
+        if( k==0 )
+            internal::call_itt_notify( internal::acquired, &prefix().ref_count );
+        return int(k);
     }
 
     //! Atomically decrement reference count and returns its new value.
@@ -752,7 +811,12 @@ public:
 #if __TBB_TASK_PRIORITY
     //! Enqueue task for starvation-resistant execution on the specified priority level.
     static void enqueue( task& t, priority_t p ) {
-        __TBB_ASSERT( p == priority_low || p == priority_normal || p == priority_high, "Invalid priority level value" );
+#if __TBB_PREVIEW_CRITICAL_TASKS
+        __TBB_ASSERT(p == priority_low || p == priority_normal || p == priority_high
+                     || p == internal::priority_critical, "Invalid priority level value");
+#else
+        __TBB_ASSERT(p == priority_low || p == priority_normal || p == priority_high, "Invalid priority level value");
+#endif
         t.prefix().owner->enqueue( t, (void*)p );
     }
 #endif /* __TBB_TASK_PRIORITY */
@@ -766,7 +830,7 @@ public:
     //! sets parent task pointer to specified value
     void set_parent(task* p) {
 #if __TBB_TASK_GROUP_CONTEXT
-        __TBB_ASSERT(prefix().context == p->prefix().context, "The tasks must be in the same context");
+        __TBB_ASSERT(!p || prefix().context == p->prefix().context, "The tasks must be in the same context");
 #endif
         prefix().parent = p;
     }
@@ -875,12 +939,23 @@ private:
     internal::task_prefix& prefix( internal::version_tag* = NULL ) const {
         return reinterpret_cast<internal::task_prefix*>(const_cast<task*>(this))[-1];
     }
+#if __TBB_PREVIEW_CRITICAL_TASKS
+    friend void internal::make_critical( task& );
+    friend bool internal::is_critical( task& );
+#endif
 }; // class task
+
+#if __TBB_PREVIEW_CRITICAL_TASKS
+namespace internal {
+inline void make_critical( task& t ) { t.prefix().extra_state |= 0x8; }
+inline bool is_critical( task& t ) { return bool((t.prefix().extra_state & 0x8) != 0); }
+} // namespace internal
+#endif /* __TBB_PREVIEW_CRITICAL_TASKS */
 
 //! task that does nothing.  Useful for synchronization.
 /** @ingroup task_scheduling */
 class empty_task: public task {
-    /*override*/ task* execute() {
+    task* execute() __TBB_override {
         return NULL;
     }
 };
@@ -889,13 +964,20 @@ class empty_task: public task {
 namespace internal {
     template<typename F>
     class function_task : public task {
+#if __TBB_ALLOW_MUTABLE_FUNCTORS
         F my_func;
-        /*override*/ task* execute() {
+#else
+        const F my_func;
+#endif
+        task* execute() __TBB_override {
             my_func();
             return NULL;
         }
     public:
         function_task( const F& f ) : my_func(f) {}
+#if __TBB_CPP11_RVALUE_REF_PRESENT
+        function_task( F&& f ) : my_func( std::move(f) ) {}
+#endif
     };
 } // namespace internal
 //! @endcond
@@ -925,7 +1007,18 @@ public:
         *next_ptr = &task;
         next_ptr = &task.prefix().next;
     }
-
+#if __TBB_TODO
+    // TODO: add this method and implement&document the local execution ordering. See more in generic_scheduler::local_spawn
+    //! Push task onto front of list (FIFO local execution, like individual spawning in the same order).
+    void push_front( task& task ) {
+        if( empty() ) {
+            push_back(task);
+        } else {
+            task.prefix().next = first;
+            first = &task;
+        }
+    }
+#endif
     //! Pop the front task from the list.
     task& pop_front() {
         __TBB_ASSERT( !empty(), "attempt to pop item from empty task_list" );

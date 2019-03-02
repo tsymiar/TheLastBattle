@@ -6,7 +6,7 @@
 #include <stdarg.h>
 #include <uctype.h>
 
-namespace UCODE 
+namespace UCORE 
 {
     /**
 	 * @brief FileLogger module name
@@ -16,7 +16,7 @@ namespace UCODE
     /**
 	 * @brief FileLogger version number
      */
-	const SUCODEVersion	SDLOGGER_VERSION    = { 1, 0, 0, 0 };
+	const SUCOREVersion	SDLOGGER_VERSION    = { 1, 0, 0, 0 };
 	
 /**
  * @brief invalid log level
@@ -66,7 +66,13 @@ namespace UCODE
              * @param pszLog : Pointer to the logs to be logged
              * @return returns true if log success, If the pszLog is NULL, LogText returns false
              */
-			virtual bool UCAPI LogText(const TCHAR* pszLog) = 0;
+			virtual bool UCAPI LogText(const 
+#ifdef UNICODE
+                WCHAR
+#else
+                char
+#endif
+                *pszLog) = 0;
 
             /**
              * @brief Log information in Binary format
@@ -141,7 +147,7 @@ namespace UCODE
 
 	};
 
-#ifdef UCODE_HAS_MSMQ_LOGGER
+#ifdef UCORE_HAS_MSMQ_LOGGER
 
     /**
      * @brief pure virtual base class is the interface of msmq logger used shared memory
@@ -160,7 +166,7 @@ namespace UCODE
 	* @brief SDCreateNetLogger function type
 	* inc sdlogger.h
 	*/
-	typedef ISDUdpLogger* (UCAPI *PFN_SDCreateUdpLogger)(const SUCODEVersion* pstVersion);
+	typedef ISDUdpLogger* (UCAPI *PFN_SDCreateUdpLogger)(const SUCOREVersion* pstVersion);
 
 	/**
 	* @brief Module function getting method which return the pointer of ISDUdpLogger 
@@ -168,12 +174,12 @@ namespace UCODE
 	* @param pstVersion : the version number of target module, please passed in SDLOGGER_MODULENAME
 	* @return	he pointer of ISDUdpLogger if succeeded£¬NULL for failed
 	  */
-	ISDUdpLogger* UCAPI SDCreateUdpLogger(const SUCODEVersion* pstVersion);
+	ISDUdpLogger* UCAPI SDCreateUdpLogger(const SUCOREVersion* pstVersion);
 
 	/**
 	* @brief typedef SDCreateTcpLogger function type inc sdlogger.h
     */
-	typedef ISDTcpLogger* (UCAPI *PFN_SDCreateTcpLogger)(const SUCODEVersion* pstVersion);
+	typedef ISDTcpLogger* (UCAPI *PFN_SDCreateTcpLogger)(const SUCOREVersion* pstVersion);
 
 	/**
 	* @brief Module function getting method which return the pointer of ISDTcpLogger 
@@ -181,12 +187,12 @@ namespace UCODE
 	* @param pstVersion : the version number of target module, please passed in SDLOGGER_MODULENAME
 	* @return	the pointer of ISDTcpLogger if succeeded£¬NULL for failed
 	  */
-	ISDTcpLogger* UCAPI SDCreateTcpLogger(const SUCODEVersion* pstVersion);
+	ISDTcpLogger* UCAPI SDCreateTcpLogger(const SUCOREVersion* pstVersion);
 
 	/**
 	* @brief typedef SDCreateFileLogger function type inc sdlogger.h
 	*/
-	typedef ISDFileLogger* (UCAPI *PFN_SDCreateFileLogger)(const SUCODEVersion* pstVersion);
+	typedef ISDFileLogger* (UCAPI *PFN_SDCreateFileLogger)(const SUCOREVersion* pstVersion);
 
 	/**
 	* @brief Module function getting method which return the pointer of ISDFileLogger
@@ -194,26 +200,26 @@ namespace UCODE
 	* @param pstVersion : the version number of target module, please passed in SDLOGGER_MODULENAME
 	* @return the pointer of ISDFileLogger if succeeded£¬NULL for failed
     */
-	ISDFileLogger* UCAPI SDCreateFileLogger(const SUCODEVersion* pstVersion);
+	ISDFileLogger* UCAPI SDCreateFileLogger(const SUCOREVersion* pstVersion);
 
-#ifdef UCODE_HAS_MSMQ_LOGGER
+#ifdef UCORE_HAS_MSMQ_LOGGER
 	/**
 	* @brief Module function getting method which return the pointer of ISDMsmqLogger
 	* inc sdlogger.h
 	* @param pstVersion : the version number of target module, please passed in SDLOGGER_MODULENAME
 	* @return the pointer of ISDMsmqLogger if succeeded£¬NULL for failed
 	*/
-	ISDMsmqLogger* UCAPI SDCreateMsmqLogger(const SUCODEVersion* pstVersion);
+	ISDMsmqLogger* UCAPI SDCreateMsmqLogger(const SUCOREVersion* pstVersion);
 
 	/**
 	* @brief typedef SDCreateMsmqLogger function type inc sdlogger.h
 	*/
-	typedef ISDMsmqLogger* (UCAPI *PFN_SDCreateMsmqLogger)(const SUCODEVersion* pstVersion);
+	typedef ISDMsmqLogger* (UCAPI *PFN_SDCreateMsmqLogger)(const SUCOREVersion* pstVersion);
 #else 
 	/**
 	* @brief for sdcommon.def
 	*/
-	void * UCAPI SDCreateMsmqLogger(const SUCODEVersion* pstVersion);
+	void * UCAPI SDCreateMsmqLogger(const SUCOREVersion* pstVersion);
 
 #endif //
 
@@ -238,30 +244,30 @@ namespace UCODE
              * @param pLogger : logger implementation
              */
 			void UCAPI SetLogger(ISDLogger* pLogger);
-
+#ifdef UNICODE
             /**
              * @brief log by LOGLV_CRITICAL
              * @param format : same as printf
              */
-			void UCAPI Critical(const TCHAR *format, ...);
+            UCORE_NET_FUN void UCAPI Critical(WCHAR const* format, ...);
 
             /**
              * @brief log by LOGLV_INFO
              * @param format : same as printf
              */
-			void UCAPI Info(const TCHAR *format, ...);
+            UCORE_NET_FUN void UCAPI Info(const WCHAR *format, ...);
 
             /**
              * @brief log by LOGLV_WARN
              * @param format : same as printf
              */
-			void UCAPI Warn(const TCHAR *format, ...);
+            UCORE_NET_FUN void UCAPI Warn(const WCHAR *format, ...);
 
             /**
              * @brief log by LOGLV_DEBUG
              * @param format : same as printf
              */
-			void UCAPI Debug(const TCHAR *format, ...);
+            UCORE_NET_FUN void UCAPI Debug(const WCHAR *format, ...);
 
             /**
              * @brief log by given log level
@@ -269,7 +275,14 @@ namespace UCODE
              * @param pszFormat : same as printf
              * @param argptr : parameter list
              */
-			void _Log(UINT32 dwLevel, const TCHAR *pszFormat, va_list argptr);
+			void _Log(UINT32 dwLevel, const WCHAR *pszFormat, va_list argptr);
+#else
+            void UCAPI Critical(char const* format, ...);
+            void UCAPI Info(const char *format, ...);
+            void UCAPI Warn(const char *format, ...);
+            void UCAPI Debug(const char *format, ...);
+            void _Log(UINT32 dwLevel, const char *pszFormat, va_list argptr);
+#endif // UNICODE
 		protected:    
 			const CHAR* m_aszLogPrefix[9]; ///< log prefix
 			ISDLogger* m_pLogger;          ///< log implementation

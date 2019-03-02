@@ -9,7 +9,7 @@
 #include "conndatamgr.h"
 #include <ucstring.h>
 #include "ucnetutils.h"
-using namespace UCODE ;
+using namespace UCORE ;
 
 #define POST_ACCEPTEX_COUNT     128
 
@@ -264,7 +264,7 @@ void CCpListener::GetSockAddress(SPerIoData * pstPerIoData, sockaddr_in & Remote
 		}
 		DBG(_SDT("getpeername succ, sockfd=%u"), (UINT32) pstPerIoData->hSock);
 
-		DBG(_SDT("RemoteIP:%u, RemotePort:%d"),  RemoteAddr.sin_addr.s_addr, UCODENtohs(RemoteAddr.sin_port));
+		DBG(_SDT("RemoteIP:%u, RemotePort:%d"),  RemoteAddr.sin_addr.s_addr, UCORENtohs(RemoteAddr.sin_port));
 
 		if (0 != getsockname( pstPerIoData->hSock, (struct sockaddr*)&LocalAddr, &nLocalAddrLen))
 		{

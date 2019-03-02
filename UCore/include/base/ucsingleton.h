@@ -7,11 +7,11 @@
 **/
 #include "uctype.h"
 
-namespace   UCODE
+namespace   UCORE
 {
     /**
     * @defgroup groupsingleton 单件类封装
-    * @ingroup  UCODE
+    * @ingroup  UCORE
     * @{
     */
 

@@ -12,6 +12,7 @@
 
 #include <boost/array.hpp>
 
+#include <boost/geometry/core/coordinate_type.hpp>
 #include <boost/geometry/algorithms/detail/overlay/segment_identifier.hpp>
 
 namespace boost { namespace geometry
@@ -54,14 +55,19 @@ enum method_type
         The class is to be included in the turn_info class, either direct
         or a derived or similar class with more (e.g. enrichment) information.
  */
+template <typename Point, typename SegmentRatio>
 struct turn_operation
 {
     operation_type operation;
     segment_identifier seg_id;
-    segment_identifier other_id;
+    SegmentRatio fraction;
+
+    typedef typename coordinate_type<Point>::type comparable_distance_type;
+    comparable_distance_type remaining_distance;
 
     inline turn_operation()
         : operation(operation_none)
+        , remaining_distance(0)
     {}
 };
 
@@ -78,7 +84,8 @@ struct turn_operation
 template
 <
     typename Point,
-    typename Operation = turn_operation,
+    typename SegmentRatio,
+    typename Operation = turn_operation<Point, SegmentRatio>,
     typename Container = boost::array<Operation, 2>
 >
 struct turn_info
@@ -90,6 +97,8 @@ struct turn_info
     Point point;
     method_type method;
     bool discarded;
+    bool selectable_start; // Can be used as starting-turn in traverse
+    bool colocated;
 
 
     Container operations;
@@ -97,13 +106,15 @@ struct turn_info
     inline turn_info()
         : method(method_none)
         , discarded(false)
+        , selectable_start(true)
+        , colocated(false)
     {}
 
     inline bool both(operation_type type) const
     {
         return has12(type, type);
     }
-    
+
     inline bool has(operation_type type) const
     {
         return this->operations[0].operation == type
@@ -115,8 +126,6 @@ struct turn_info
         return has12(type1, type2) || has12(type2, type1);
     }
 
-
-    inline bool is_discarded() const { return discarded; }
     inline bool blocked() const
     {
         return both(operation_blocked);

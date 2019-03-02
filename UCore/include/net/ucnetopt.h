@@ -1,9 +1,9 @@
-#ifndef UCODE_SDNETOPT_H
-#define UCODE_SDNETOPT_H
+#ifndef UCORE_SDNETOPT_H
+#define UCORE_SDNETOPT_H
 
 #include "ucbase.h"
 
-namespace UCODE{
+namespace UCORE{
 
 /**
 * @brief The following flags start with CONNECTION_OPT_ are belong to ISDConnection.

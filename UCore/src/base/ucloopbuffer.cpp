@@ -2,7 +2,7 @@
 #include <string.h>
 #include "ucloopbuffer.h"
 
-namespace UCODE
+namespace UCORE
 {
 
     CSDLoopBuffer::CSDLoopBuffer(VOID)

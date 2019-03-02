@@ -8,11 +8,11 @@
 #include <pthread.h>
 #endif
 
-namespace UCODE
+namespace UCORE
 {
     /**
     * @defgroup groupsync 线程同步
-    * @ingroup  UCODE
+    * @ingroup  UCORE
     * @{
     */
 #if (defined(WIN32) || defined(WIN64))
@@ -234,7 +234,7 @@ namespace UCODE
     };
 
     /** @} */
-} //namespace UCODE
+} //namespace UCORE
 
 
 

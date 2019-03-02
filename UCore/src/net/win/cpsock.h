@@ -7,7 +7,7 @@
 #include "ucnetconfig.h"
 #include "ucnetopt.h"
 
-using namespace UCODE;
+using namespace UCORE;
 
 class CCPSock;
 
@@ -208,7 +208,7 @@ public:
 	*/
 	void DoClose();
 
-#ifdef UCODENET_HAS_GATHER_SEND 
+#ifdef UCORENet_HAS_GATHER_SEND 
 	Condition             m_sendCond; 
 	void    OnSendOut();
 	volatile UINT32  m_hasCollectSent;	
@@ -298,7 +298,7 @@ protected:
 
 	bool _PostClose(SOCKET hSock); 
 
-	void _OnError(INT32 nUCODEError, INT32 nSysError);
+	void _OnError(INT32 nUCOREError, INT32 nSysError);
 
 protected:
 	SOCKET				m_hSock;

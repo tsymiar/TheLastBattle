@@ -134,7 +134,7 @@ CCPSock * CCPSockMgr::_Create(UINT32 dwRecvBufSize, UINT32 dwSendBufSize)
 	poSock->AttachRecvBuf(pRecvBuf, dwRecvBufSize);
 	poSock->AttachSendBuf(pSendBuf, dwSendBufSize);
 
-#if UCODENet_Has_CollectBuffer_BeforeSend
+#if UCORENet_Has_CollectBuffer_BeforeSend
     #pragma message("[preconfig]add created socket into send socketlist")
     m_oSendSockList.insert(poSock);
 
@@ -179,7 +179,7 @@ void CCPSockMgr::_Release(CCPSock* poSock)
     DBG(_SDT("[%s:%d]Release cpsock, connID=%d, recvBuf=%d, sendBuf=%d"),
          MSG_MARK, poSock->GetConnectionID(), dwRecvBufSize, dwSendBufSize);
 
-#if UCODENet_Has_CollectBuffer_BeforeSend
+#if UCORENet_Has_CollectBuffer_BeforeSend
     #pragma message("[preconfig]erase socket from the send socketlist")
     m_oSendSockList.erase(poSock);
 #endif
@@ -315,7 +315,7 @@ void CCPSockMgr::CheckDelayRelease()
 }
 
 */
-#if UCODENet_Has_CollectBuffer_BeforeSend
+#if UCORENet_Has_CollectBuffer_BeforeSend
 #pragma message("[preconfig]sdnet has collected buffer before send")
 
 struct SendOutHelper

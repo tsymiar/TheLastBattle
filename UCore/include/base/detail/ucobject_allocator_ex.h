@@ -5,7 +5,7 @@
 #include "uclock.h"
 #include <deque>
 
-namespace UCODE
+namespace UCORE
 {
 
     template<class T >

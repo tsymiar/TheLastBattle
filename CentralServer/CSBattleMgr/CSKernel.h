@@ -117,7 +117,7 @@ public:
 	INT32				BroadCastMsgToGS(google::protobuf::Message& sMsg, int n32MsgID);
 	INT32				PostMsgToGC(const SUserNetInfo& cpsUserNetInfo, google::protobuf::Message& sMsg, int n32MsgID);
 	INT32				PostMsgToGS_KickoutGC(const ICSGSInfo *cpiGSInfo, INT32 n32GCNSID);
-	INT32				PostMsgToLogServer(google::protobuf::Message& sMsg, int n32MsgID);
+	INT32				PostMsgToLogMgr(google::protobuf::Message& sMsg, int n32MsgID);
 	INT32				PostMsgToRC(const ICSRCInfo *piInfo, google::protobuf::Message& sMsg, int n32MsgID);
 	INT32				PostMsgToRC(const INT32 nsid, google::protobuf::Message& sMsg, int n32MsgID);
 	ICSSSInfo*			GetMiniBattleNumSS();

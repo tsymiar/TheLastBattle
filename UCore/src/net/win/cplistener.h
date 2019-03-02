@@ -5,7 +5,7 @@
 #include "ucnet.h"
 #include "conndatamgr.h"
 
-using namespace UCODE;
+using namespace UCORE;
 
 /**
 * @brief 完成端口监听器,在本机为服务器端时,此类是使用IOCP真实接受建立连接的类
@@ -100,7 +100,7 @@ protected:
     LPFN_GETACCEPTEXSOCKADDRS   m_lpfnGetAcceptExSockaddrs;
     SPerIoData*                 m_pPerIoDataArray;
 
-    UINT32                      m_dwID;				//对应的CUCODEListener的ID
+    UINT32                      m_dwID;				//对应的CUCOREListener的ID
     ISDPacketParser*			m_poPacketParser;
     ISDSessionFactory*			m_poSessionFactory;
     UINT32                      m_dwRecvBufSize;

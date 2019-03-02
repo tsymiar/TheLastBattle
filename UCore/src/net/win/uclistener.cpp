@@ -2,7 +2,7 @@
 #include "ucnetconfig.h"
 #include "uclistener.h"
 #include <ucstring.h>
-CUCODEListener::CUCODEListener()
+CUCOREListener::CUCOREListener()
 {
 	m_poPacketParser	= NULL;
 	m_poSessionFactory	= NULL;
@@ -13,28 +13,28 @@ CUCODEListener::CUCODEListener()
     m_bNodelay   = FALSE;
 }
 
-CUCODEListener::~CUCODEListener()
+CUCOREListener::~CUCOREListener()
 {
 
 }
 
-void CUCODEListener::SetPacketParser(ISDPacketParser* poPacketParser)
+void CUCOREListener::SetPacketParser(ISDPacketParser* poPacketParser)
 {
 	m_poPacketParser = poPacketParser;
 }
 
-void CUCODEListener::SetSessionFactory(ISDSessionFactory* poSessionFactory)
+void CUCOREListener::SetSessionFactory(ISDSessionFactory* poSessionFactory)
 {
 	m_poSessionFactory = poSessionFactory;
 }
 
-void CUCODEListener::SetBufferSize(UINT32 dwRecvBufSize, UINT32 dwSendBufSize)
+void CUCOREListener::SetBufferSize(UINT32 dwRecvBufSize, UINT32 dwSendBufSize)
 {
 	m_dwRecvBufSize	= dwRecvBufSize;
 	m_dwSendBufSize	= dwSendBufSize;
 }
 
-void CUCODEListener::SetOpt(UINT32 dwType, void* pOpt)
+void CUCOREListener::SetOpt(UINT32 dwType, void* pOpt)
 {
     switch(dwType)
     {
@@ -51,14 +51,14 @@ void CUCODEListener::SetOpt(UINT32 dwType, void* pOpt)
 
 }
 
-bool CUCODEListener::Start(const char* pszIP, UINT16 wPort, bool bReUseAddr)
+bool CUCOREListener::Start(const char* pszIP, UINT16 wPort, bool bReUseAddr)
 {
 	if(m_bStart)
 	{
 		return true;
 	}
 
-    WARN(_SDT("CUCODEListener::Start Listen %s:%d, ReuseAddr %d"), _SDTA2T(pszIP), wPort, bReUseAddr);
+    WARN(_SDT("CUCOREListener::Start Listen %s:%d, ReuseAddr %d"), _SDTA2T(pszIP), wPort, bReUseAddr);
 
 	if(NULL == m_poSessionFactory)
 	{
@@ -68,7 +68,7 @@ bool CUCODEListener::Start(const char* pszIP, UINT16 wPort, bool bReUseAddr)
     m_poCpListener = new CCpListener;
 	if(NULL == m_poCpListener)
 	{
-		CRITICAL(_SDT("CUCODEListener::Start, new CCpListener failed"));
+		CRITICAL(_SDT("CUCOREListener::Start, new CCpListener failed"));
 		return false;
 	}
     m_poCpListener->SetNoDelay(m_bNodelay);
@@ -87,14 +87,14 @@ bool CUCODEListener::Start(const char* pszIP, UINT16 wPort, bool bReUseAddr)
 	return true;
 }
 
-bool CUCODEListener::Stop(void)
+bool CUCOREListener::Stop(void)
 {
 	if(false == m_bStart)
 	{
 		return true;
 	}
 
-    WARN(_SDT("CUCODEListener::Stop"));
+    WARN(_SDT("CUCOREListener::Stop"));
 
 	if(m_poCpListener != NULL)
 	{
@@ -108,7 +108,7 @@ bool CUCODEListener::Stop(void)
 	return true;
 }
 
-void CUCODEListener::Release(void)
+void CUCOREListener::Release(void)
 {
 	delete this;
 }

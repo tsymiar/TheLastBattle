@@ -3,9 +3,9 @@
 
 #include "uctype.h"
 
-namespace UCODE {
+namespace UCORE {
 
-struct SUCODEVersion
+struct SUCOREVersion
 {
 	UINT16 wMajorVersion;
 	UINT16 wMinorVersion;
@@ -14,12 +14,12 @@ struct SUCODEVersion
 };
 
 /**
- * @brief global UCODE version
+ * @brief global UCORE version
  */
-const SUCODEVersion UCODE_VERSION = { 1, 0, 0, 0 };
+const SUCOREVersion UCORE_VERSION = { 1, 0, 0, 0 };
 
 /**
- * @brief The base class of modules in namespace UCODE
+ * @brief The base class of modules in namespace UCORE
  *
  * Every module that exports from DLL was inherited from this class
  */
@@ -53,7 +53,7 @@ public:
      * @brief Get the version information of the module
      * @return the version structure of the module
      */
-    virtual SUCODEVersion UCAPI GetVersion(void) = 0;
+    virtual SUCOREVersion UCAPI GetVersion(void) = 0;
 
     /**
      * @brief Get the name of the module
@@ -62,10 +62,10 @@ public:
     virtual const char * UCAPI GetModuleName(void) = 0;
 };
 
-#ifdef _UCODE_NET
-#define UCODE_NET_FUN __declspec(dllexport)
+#ifdef _UCORE_NET
+#define UCORE_NET_FUN __declspec(dllexport)
 #else
-#define	UCODE_NET_FUN __declspec(dllexport)
+#define	UCORE_NET_FUN __declspec(dllexport)
 #endif
 
 }

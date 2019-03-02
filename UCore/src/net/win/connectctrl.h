@@ -5,7 +5,7 @@
 #include "ucdataqueue.h"
 #include "ucnet.h"
 #include "netrequest.h"
-using namespace UCODE;
+using namespace UCORE;
 
 /**
 * @brief 连接控制类,在本机为客户端时使用,用来控制对服务器的请求连接,并管理连接

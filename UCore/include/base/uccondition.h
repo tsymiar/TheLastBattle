@@ -8,7 +8,7 @@
 #endif
 #include "uctype.h"
 
-namespace  UCODE
+namespace  UCORE
 {
 
 #define CONDITION_WIN32_CONFORMANCE_TO_POSIX

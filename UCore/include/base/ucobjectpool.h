@@ -13,11 +13,11 @@
 #include <boost/preprocessor/repetition.hpp>
 #endif
 
-namespace UCODE
+namespace UCORE
 {
     /**
     * @defgroup groupmemorypool 内存池(包括对象池)
-    * @ingroup  UCODE
+    * @ingroup  UCORE
     * @{
     */
 

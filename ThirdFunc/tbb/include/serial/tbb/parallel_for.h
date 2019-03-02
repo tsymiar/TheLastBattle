@@ -1,38 +1,25 @@
 /*
-    Copyright 2005-2014 Intel Corporation.  All Rights Reserved.
+    Copyright (c) 2005-2018 Intel Corporation
 
-    This file is part of Threading Building Blocks. Threading Building Blocks is free software;
-    you can redistribute it and/or modify it under the terms of the GNU General Public License
-    version 2  as  published  by  the  Free Software Foundation.  Threading Building Blocks is
-    distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
-    implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    See  the GNU General Public License for more details.   You should have received a copy of
-    the  GNU General Public License along with Threading Building Blocks; if not, write to the
-    Free Software Foundation, Inc.,  51 Franklin St,  Fifth Floor,  Boston,  MA 02110-1301 USA
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-    As a special exception,  you may use this file  as part of a free software library without
-    restriction.  Specifically,  if other files instantiate templates  or use macros or inline
-    functions from this file, or you compile this file and link it with other files to produce
-    an executable,  this file does not by itself cause the resulting executable to be covered
-    by the GNU General Public License. This exception does not however invalidate any other
-    reasons why the executable file might be covered by the GNU General Public License.
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+
+
+
 */
 
 #ifndef __TBB_SERIAL_parallel_for_H
 #define __TBB_SERIAL_parallel_for_H
-
-#if !TBB_USE_EXCEPTIONS && _MSC_VER
-    // Suppress "C++ exception handler used, but unwind semantics are not enabled" warning in STL headers
-    #pragma warning (push)
-    #pragma warning (disable: 4530)
-#endif
-
-#include <stdexcept>
-#include <string> // required to construct std exception classes
-
-#if !TBB_USE_EXCEPTIONS && _MSC_VER
-    #pragma warning (pop)
-#endif
 
 #include "tbb_annotate.h"
 
@@ -41,9 +28,17 @@
 #include "tbb/partitioner.h"
 #endif
 
+#if TBB_USE_EXCEPTIONS
+#include <stdexcept>
+#include <string> // required to construct std exception classes
+#else
+#include <cstdlib>
+#include <iostream>
+#endif
+
 namespace tbb {
 namespace serial {
-namespace interface7 {
+namespace interface9 {
 
 // parallel_for serial annotated implementation
 
@@ -104,36 +99,48 @@ void start_for< Range, Body, Partitioner >::execute() {
 /** @ingroup algorithms **/
 template<typename Range, typename Body>
 void parallel_for( const Range& range, const Body& body ) {
-    serial::interface7::start_for<Range,Body,const __TBB_DEFAULT_PARTITIONER>::run(range,body,__TBB_DEFAULT_PARTITIONER());
+    serial::interface9::start_for<Range,Body,const __TBB_DEFAULT_PARTITIONER>::run(range,body,__TBB_DEFAULT_PARTITIONER());
 }
 
 //! Parallel iteration over range with simple partitioner.
 /** @ingroup algorithms **/
 template<typename Range, typename Body>
 void parallel_for( const Range& range, const Body& body, const simple_partitioner& partitioner ) {
-    serial::interface7::start_for<Range,Body,const simple_partitioner>::run(range,body,partitioner);
+    serial::interface9::start_for<Range,Body,const simple_partitioner>::run(range,body,partitioner);
 }
 
 //! Parallel iteration over range with auto_partitioner.
 /** @ingroup algorithms **/
 template<typename Range, typename Body>
 void parallel_for( const Range& range, const Body& body, const auto_partitioner& partitioner ) {
-    serial::interface7::start_for<Range,Body,const auto_partitioner>::run(range,body,partitioner);
+    serial::interface9::start_for<Range,Body,const auto_partitioner>::run(range,body,partitioner);
+}
+
+//! Parallel iteration over range with static_partitioner.
+/** @ingroup algorithms **/
+template<typename Range, typename Body>
+void parallel_for( const Range& range, const Body& body, const static_partitioner& partitioner ) {
+    serial::interface9::start_for<Range,Body,const static_partitioner>::run(range,body,partitioner);
 }
 
 //! Parallel iteration over range with affinity_partitioner.
 /** @ingroup algorithms **/
 template<typename Range, typename Body>
 void parallel_for( const Range& range, const Body& body, affinity_partitioner& partitioner ) {
-    serial::interface7::start_for<Range,Body,affinity_partitioner>::run(range,body,partitioner);
+    serial::interface9::start_for<Range,Body,affinity_partitioner>::run(range,body,partitioner);
 }
 
 //! Implementation of parallel iteration over stepped range of integers with explicit step and partitioner (ignored)
 template <typename Index, typename Function, typename Partitioner>
 void parallel_for_impl(Index first, Index last, Index step, const Function& f, Partitioner& ) {
-    if (step <= 0 )
+    if (step <= 0 ) {
+#if TBB_USE_EXCEPTIONS
         throw std::invalid_argument( "nonpositive_step" );
-    else if (last > first) {
+#else
+        std::cerr << "nonpositive step in a call to parallel_for" << std::endl;
+        std::abort();
+#endif
+    } else if (last > first) {
         // Above "else" avoids "potential divide by zero" warning on some platforms
         ANNOTATE_SITE_BEGIN( tbb_parallel_for );
         for( Index i = first; i < last; i = i + step ) {
@@ -160,6 +167,11 @@ template <typename Index, typename Function>
 void parallel_for(Index first, Index last, Index step, const Function& f, const auto_partitioner& p) {
     parallel_for_impl<Index,Function,const auto_partitioner>(first, last, step, f, p);
 }
+//! Parallel iteration over a range of integers with explicit step and static partitioner
+template <typename Index, typename Function>
+void parallel_for(Index first, Index last, Index step, const Function& f, const static_partitioner& p) {
+    parallel_for_impl<Index,Function,const static_partitioner>(first, last, step, f, p);
+}
 //! Parallel iteration over a range of integers with explicit step and affinity partitioner
 template <typename Index, typename Function>
 void parallel_for(Index first, Index last, Index step, const Function& f, affinity_partitioner& p) {
@@ -181,20 +193,25 @@ template <typename Index, typename Function>
     void parallel_for(Index first, Index last, const Function& f, const auto_partitioner& p) {
     parallel_for_impl<Index,Function,const auto_partitioner>(first, last, static_cast<Index>(1), f, p);
 }
+//! Parallel iteration over a range of integers with default step and static partitioner
+template <typename Index, typename Function>
+void parallel_for(Index first, Index last, const Function& f, const static_partitioner& p) {
+    parallel_for_impl<Index,Function,const static_partitioner>(first, last, static_cast<Index>(1), f, p);
+}
 //! Parallel iteration over a range of integers with default step and affinity_partitioner
 template <typename Index, typename Function>
 void parallel_for(Index first, Index last, const Function& f, affinity_partitioner& p) {
     parallel_for_impl(first, last, static_cast<Index>(1), f, p);
 }
 
-} // namespace interface7
+} // namespace interfaceX
 
-using interface7::parallel_for;
+using interface9::parallel_for;
 
 } // namespace serial
 
 #ifndef __TBB_NORMAL_EXECUTION
-using serial::interface7::parallel_for;
+using serial::interface9::parallel_for;
 #endif
 
 } // namespace tbb

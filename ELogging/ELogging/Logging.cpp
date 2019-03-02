@@ -68,7 +68,7 @@ Logging::Logging():m_n32IfConsoleDump(0)
 
 	bool loadOkay = doc.LoadFile();
 	if (!loadOkay){
-		printf("load eloggingSetting.xml failed for %s\n", doc.ErrorDesc());
+		printf("load eloggingSetting.xml detail: %s\n", doc.ErrorDesc());
 	}
 	else{
 		TiXmlElement* m_pXMLEle = doc.RootElement();

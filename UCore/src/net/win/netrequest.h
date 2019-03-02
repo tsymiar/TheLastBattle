@@ -4,7 +4,7 @@
 #include "ucnet.h"
 #include <list>
 
-using namespace UCODE;
+using namespace UCORE;
 
 enum ENetReqType
 {
@@ -35,7 +35,7 @@ struct SConnReq
 /**
 * @brief 断开连接请求结构体
 */
-struct UCODEisconnReq
+struct UCOREisconnReq
 {
 	UINT32				dwConnectorID;
 };
@@ -49,7 +49,7 @@ struct SNetRequest
 	union
 	{
 		SConnReq			stConn;
-		UCODEisconnReq			stDisConn;
+		UCOREisconnReq			stDisConn;
 	}stUn;
 };
 

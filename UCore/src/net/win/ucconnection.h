@@ -1,11 +1,11 @@
-#ifndef UCODECONNECTION_H
-#define UCODECONNECTION_H
+#ifndef UCORECONNECTION_H
+#define UCORECONNECTION_H
 
 #include "ucnetconfig.h"
 #include "ucnet.h"
 
 
-using namespace UCODE;
+using namespace UCORE;
 
 struct CConnData;
 
@@ -212,7 +212,7 @@ public:
 	/**
 	* @brief 当此连接发生错误时,调用此函数
 	*/
-	inline void OnError(INT32 nUCODEError, INT32 nSysError)
+	inline void OnError(INT32 nUCOREError, INT32 nSysError)
 	{
 		if(m_nConnStat != CONN_ASSOCIATE)
 		{
@@ -220,7 +220,7 @@ public:
 		}
 
 		SDASSERT(m_poSession != NULL);
-		m_poSession->OnError(nUCODEError, nSysError);
+		m_poSession->OnError(nUCOREError, nSysError);
 	}
 
 	/**

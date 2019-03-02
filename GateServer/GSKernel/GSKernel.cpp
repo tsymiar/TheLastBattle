@@ -4,8 +4,8 @@
 #include <fstream>
 #include "../../ThirdFunc/MsgLists/BSToGS.pb.h"
 #include "../../ThirdFunc/MsgLists/GSToBS.pb.h"
-#include "tinyxml.h" 
-#include "tinystr.h"
+#include "../../ThirdFunc/tinyxml/tinyxml.h" 
+#include "../../ThirdFunc/tinyxml/tinystr.h"
 
 using namespace std;
 
@@ -35,7 +35,7 @@ INT32	CGSKernel::LoadConfig()
 	TiXmlDocument doc(filepath);
 	bool loadOkay = doc.LoadFile();
 	if (!loadOkay){
-		printf("load GSCfg.xml failed for %s\n", doc.ErrorDesc());
+		printf("load GSCfg.xml detail: %s\n", doc.ErrorDesc());
 	}
 	else{
 		TiXmlElement* m_pXMLEle = doc.RootElement();

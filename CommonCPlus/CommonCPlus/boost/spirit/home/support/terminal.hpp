@@ -16,7 +16,6 @@
 #include <boost/spirit/include/phoenix_core.hpp>
 #include <boost/spirit/include/phoenix_function.hpp>
 #include <boost/proto/proto.hpp>
-#include <boost/fusion/include/void.hpp>
 #include <boost/spirit/home/support/meta_compiler.hpp>
 #include <boost/spirit/home/support/detail/make_vector.hpp>
 #include <boost/spirit/home/support/unused.hpp>
@@ -236,12 +235,9 @@ namespace boost { namespace spirit
           : to_nonlazy_arg<A>
         {};
 
+        // incomplete type: should not be appeared unused_type in nonlazy arg.
         template <>
-        struct to_nonlazy_arg<unused_type>
-        {
-            // unused arg: make_vector wants fusion::void_
-            typedef fusion::void_ type;
-        };
+        struct to_nonlazy_arg<unused_type>;
     }
 
     template <typename Terminal>
@@ -268,10 +264,42 @@ namespace boost { namespace spirit
         template <
             bool Lazy
           , typename A0
-          , typename A1
-          , typename A2
+          , typename A1 = unused_type
+          , typename A2 = unused_type
         >
         struct result_helper;
+
+        template <
+            typename A0
+        >
+        struct result_helper<false, A0>
+        {
+            typedef typename
+                proto::terminal<
+                    terminal_ex<
+                        Terminal
+                      , typename detail::result_of::make_vector<
+                            typename detail::to_nonlazy_arg<A0>::type>::type>
+                >::type
+            type;
+        };
+
+        template <
+            typename A0
+          , typename A1
+        >
+        struct result_helper<false, A0, A1>
+        {
+            typedef typename
+                proto::terminal<
+                    terminal_ex<
+                        Terminal
+                      , typename detail::result_of::make_vector<
+                            typename detail::to_nonlazy_arg<A0>::type
+                          , typename detail::to_nonlazy_arg<A1>::type>::type>
+                >::type
+            type;
+        };
 
         template <
             typename A0
@@ -547,7 +575,6 @@ namespace boost { namespace spirit
 
 }}
 
-#ifdef BOOST_SPIRIT_USE_PHOENIX_V3
 namespace boost { namespace phoenix
 {
     template <typename Tag>
@@ -558,6 +585,10 @@ namespace boost { namespace phoenix
     template <typename Tag>
     struct custom_terminal<Tag, typename Tag::is_spirit_tag>
     {
+#ifndef BOOST_PHOENIX_NO_SPECIALIZE_CUSTOM_TERMINAL
+        typedef void _is_default_custom_terminal; // fix for #7730
+#endif
+
         typedef spirit::terminal<Tag> result_type;
 
         template <typename Context>
@@ -567,7 +598,6 @@ namespace boost { namespace phoenix
         }
     };
 }}
-#endif
 
 // Define a spirit terminal. This macro may be placed in any namespace.
 // Common placeholders are placed in the main boost::spirit namespace

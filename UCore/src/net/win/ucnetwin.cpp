@@ -10,41 +10,41 @@
 #include "vercheck.h"
 //#include "syssockmgr.h"
 
-IUCNet* UCAPI UCODE::SDNetGetModule(const SUCODEVersion *pstVersion)
+IUCNet* UCAPI UCORE::SDNetGetModule(const SUCOREVersion *pstVersion)
 {
 	if (FALSE == VerCheck(pstVersion, &UCNET_VERSION))
 	{
 		return NULL;
 	}
 
-	if(NULL == CUCODENetWin::Instance())
+	if(NULL == CUCORENetWin::Instance())
 	{
 		WSADATA data;
 		WSAStartup(MAKEWORD(2, 2), &data);
 
-		if(false == CUCODENetWin::CreateInstance())
+		if(false == CUCORENetWin::CreateInstance())
 		{
 			return NULL;
 		}
 
-		if(false == CUCODENetWin::Instance()->Init())
+		if(false == CUCORENetWin::Instance()->Init())
 		{
-			CRITICAL(_SDT("UCODENetGetModule, Init CUCODENetWin failed"));
-			CUCODENetWin::DestroyInstance();
+			CRITICAL(_SDT("UCORENetGetModule, Init CUCORENetWin failed"));
+			CUCORENetWin::DestroyInstance();
 			return NULL;
 		}
 	}
 
-    CUCODENetWin::Instance()->AddRef();
+    CUCORENetWin::Instance()->AddRef();
 
-	return CUCODENetWin::Instance();
+	return CUCORENetWin::Instance();
 }
 
 //////////////////////////////////////////////////////////////////////////////////
 
-IMPLEMENT_SINGLETON(CUCODENetWin)
+IMPLEMENT_SINGLETON(CUCORENetWin)
 
-void UCAPI UCODE::SDNetSetOpt(UINT32 dwType, void* pOpt)
+void UCAPI UCORE::SDNetSetOpt(UINT32 dwType, void* pOpt)
 {
 	switch(dwType)
 	{
@@ -100,14 +100,14 @@ void UCAPI UCODE::SDNetSetOpt(UINT32 dwType, void* pOpt)
 	}
 }
 
-CUCODENetWin::CUCODENetWin()
+CUCORENetWin::CUCORENetWin()
 {
 	m_dwRef				= 0;
 	m_dwNextConnectorID = 0;
 	m_pRecvBuf = new char[MAX_PKG_LEN];
 }
 
-CUCODENetWin::~CUCODENetWin()
+CUCORENetWin::~CUCORENetWin()
 {
 	if (m_pRecvBuf)
 	{
@@ -116,18 +116,18 @@ CUCODENetWin::~CUCODENetWin()
 	
 }
 
-void CUCODENetWin::AddRef(void)
+void CUCORENetWin::AddRef(void)
 {
 	m_dwRef++;
 }
 
 
-UINT32 CUCODENetWin::QueryRef(void)
+UINT32 CUCORENetWin::QueryRef(void)
 {
 	return m_dwRef;
 }
 
-void CUCODENetWin::Release(void)
+void CUCORENetWin::Release(void)
 {
 	if(m_dwRef <= 1)
 	{
@@ -138,17 +138,17 @@ void CUCODENetWin::Release(void)
 	m_dwRef--;
 }
 
-SUCODEVersion CUCODENetWin::GetVersion(void)
+SUCOREVersion CUCORENetWin::GetVersion(void)
 {
 	return UCNET_VERSION;
 }
 
-const char * CUCODENetWin::GetModuleName(void)
+const char * CUCORENetWin::GetModuleName(void)
 {
 	return UCNET_MODULENAME;
 }
 
-ISDConnector* CUCODENetWin::CreateConnector(UINT32 dwNetIOType)
+ISDConnector* CUCORENetWin::CreateConnector(UINT32 dwNetIOType)
 {
 	if(!(dwNetIOType & NETIO_COMPLETIONPORT))
 	{
@@ -157,14 +157,14 @@ ISDConnector* CUCODENetWin::CreateConnector(UINT32 dwNetIOType)
 
 	if((INT32)m_oMapConnector.size() >= MAX_CONNECTION)
 	{
-		WARN(_SDT("CUCODENetWin::CreateConnector, Max connector reached"));
+		WARN(_SDT("CUCORENetWin::CreateConnector, Max connector reached"));
 		return NULL;
 	}
 
-	CUCODEConnector* poConnector = new CUCODEConnector;
+	CUCOREConnector* poConnector = new CUCOREConnector;
 	if(NULL == poConnector)
 	{
-		CRITICAL(_SDT("CUCODENetWin::CreateConnector, new CUCODEConnector failed"));
+		CRITICAL(_SDT("CUCORENetWin::CreateConnector, new CUCOREConnector failed"));
 		return NULL;
 	}
 
@@ -174,14 +174,14 @@ ISDConnector* CUCODENetWin::CreateConnector(UINT32 dwNetIOType)
 	return poConnector;
 }
 
-ISDListener* CUCODENetWin::CreateListener(UINT32 dwNetIOType)
+ISDListener* CUCORENetWin::CreateListener(UINT32 dwNetIOType)
 {
     if (dwNetIOType & NETIO_COMPLETIONPORT)
     {
-	    CUCODEListener* poListener = new CUCODEListener;
+	    CUCOREListener* poListener = new CUCOREListener;
 	    if(NULL == poListener)
 	    {
-		    CRITICAL(_SDT("CUCODENetWin::CreateListener, new CUCODEListener failed"));
+		    CRITICAL(_SDT("CUCORENetWin::CreateListener, new CUCOREListener failed"));
 		    return NULL;
 	    }
 
@@ -197,7 +197,7 @@ ISDListener* CUCODENetWin::CreateListener(UINT32 dwNetIOType)
     }
 }
 
-void CUCODENetWin::ReleaseConnector(CUCODEConnector* poConnector)
+void CUCORENetWin::ReleaseConnector(CUCOREConnector* poConnector)
 {
 	if(NULL == poConnector)
 	{
@@ -208,7 +208,7 @@ void CUCODENetWin::ReleaseConnector(CUCODEConnector* poConnector)
 	delete poConnector;
 }
 
-CUCODEConnector* CUCODENetWin::FindConnector(UINT32 dwID)
+CUCOREConnector* CUCORENetWin::FindConnector(UINT32 dwID)
 {
 	CMapConnector::iterator it = m_oMapConnector.find(dwID);
 	if(it == m_oMapConnector.end())
@@ -219,7 +219,7 @@ CUCODEConnector* CUCODENetWin::FindConnector(UINT32 dwID)
 	return it->second;
 }
 
-bool CUCODENetWin::Init()
+bool CUCORENetWin::Init()
 {
 	if(false == _CreateComponent())
 	{
@@ -234,33 +234,33 @@ bool CUCODENetWin::Init()
 	return true;
 }
 
-void CUCODENetWin::Uninit()
+void CUCORENetWin::Uninit()
 {
 	_UninitComponent();
 	_DesroryComponent();
 }
 
-bool CUCODENetWin::_CreateComponent()
+bool CUCORENetWin::_CreateComponent()
 {
 	if(false == CEventMgr::CreateInstance())
 	{
-		CRITICAL(_SDT("CUCODENetWin::_CreateComponent, CEventMgr::CreateInstance failed"));
+		CRITICAL(_SDT("CUCORENetWin::_CreateComponent, CEventMgr::CreateInstance failed"));
 		return false;
 	}
 
 	if (false == CConnDataMgr::CreateInstance())
 	{
-		CRITICAL(_SDT("CUCODENetWin::_CreateComponent, CConnDataMgr::CreateInstance failed"));
+		CRITICAL(_SDT("CUCORENetWin::_CreateComponent, CConnDataMgr::CreateInstance failed"));
 		return false;
 	}
 
 	if(false == CConnectCtrl::CreateInstance())
 	{
-		CRITICAL(_SDT("CUCODENetWin::_CreateComponent, CConnectCtrl::CreateInstance failed"));
+		CRITICAL(_SDT("CUCORENetWin::_CreateComponent, CConnectCtrl::CreateInstance failed"));
 	}
 	if(false == CIocpCtrl::CreateInstance())
 	{
-		CRITICAL(_SDT("CUCODENetWin::_CreateComponent, CIocpCtrl::CreateInstance failed"));
+		CRITICAL(_SDT("CUCORENetWin::_CreateComponent, CIocpCtrl::CreateInstance failed"));
 		return false;
 	}
 	
@@ -268,36 +268,36 @@ bool CUCODENetWin::_CreateComponent()
 	return true;
 }
 
-bool CUCODENetWin::_InitComponent()
+bool CUCORENetWin::_InitComponent()
 {
 	if (false == CConnDataMgr::Instance()->Init())
 	{
-		CRITICAL(_SDT("CUCODENetWin::_InitComponent, Init CConnDataMgr failed" ));
+		CRITICAL(_SDT("CUCORENetWin::_InitComponent, Init CConnDataMgr failed" ));
 		return false;
 	}
 	if(false == CEventMgr::Instance()->Init(MAX_NET_EVENT))
 	{
-		CRITICAL(_SDT("CUCODENetWin::_InitComponent, Init CEventMgr %d failed"), MAX_NET_EVENT);
+		CRITICAL(_SDT("CUCORENetWin::_InitComponent, Init CEventMgr %d failed"), MAX_NET_EVENT);
 		return false;
 	}
 
 
 	if(false == CConnectCtrl::Instance()->Init())
 	{
-		CRITICAL(_SDT("CUCODENetWin::_InitComponent, Init CConnectCtrl failed"));
+		CRITICAL(_SDT("CUCORENetWin::_InitComponent, Init CConnectCtrl failed"));
 		return false;
 	}
 
 	if(false == CIocpCtrl::Instance()->Init())
 	{
-		CRITICAL(_SDT("CUCODENetWin::_InitComponent, Init CIocpCtrl failed"));
+		CRITICAL(_SDT("CUCORENetWin::_InitComponent, Init CIocpCtrl failed"));
 		return false;
 	}
 
 	return true;
 }
 
-void CUCODENetWin::_UninitComponent()
+void CUCORENetWin::_UninitComponent()
 {
 	CIocpCtrl::Instance()->Uninit();
 	CConnectCtrl::Instance()->Uninit();
@@ -315,7 +315,7 @@ void CUCODENetWin::_UninitComponent()
 	_ClearConnector();
 }
 
-void CUCODENetWin::_DesroryComponent()
+void CUCORENetWin::_DesroryComponent()
 {
 	CIocpCtrl::DestroyInstance();
 	CConnectCtrl::DestroyInstance();
@@ -326,7 +326,7 @@ void CUCODENetWin::_DesroryComponent()
 	CEventMgr::DestroyInstance();
 }
 
-void CUCODENetWin::_ClearConnector()
+void CUCORENetWin::_ClearConnector()
 {
 	for(CMapConnector::iterator it = m_oMapConnector.begin(); it != m_oMapConnector.end(); it++)
 	{
@@ -336,19 +336,19 @@ void CUCODENetWin::_ClearConnector()
 	m_oMapConnector.clear();
 }
 
-bool CUCODENetWin::Run(INT32 nCount)
+bool CUCORENetWin::Run(INT32 nCount)
 {
 	CConnDataMgr::Instance()->RunConection();
 	do
 	{
-// #ifdef UCODENET_HAS_GATHER_SEND       
+// #ifdef UCORENet_HAS_GATHER_SEND       
 // #pragma message("[preconfig]sdnet collect buffer, has a internal timer")        
 //         if (m_pTimerModule)        
 //         {
 //             m_pTimerModule->Run();
 //         }        
 // #endif
-#ifdef UCODENET_HAS_GATHER_SEND 
+#ifdef UCORENet_HAS_GATHER_SEND 
         static INT32 sendCnt = 0;
         ++sendCnt;
         if (sendCnt == 10)
@@ -411,19 +411,19 @@ bool CUCODENetWin::Run(INT32 nCount)
 	return true;
 }
 
-void CUCODENetWin::_ProcEstablishEvt(SEstablishEvt* pstEvent)
+void CUCORENetWin::_ProcEstablishEvt(SEstablishEvt* pstEvent)
 {
 	CConnData* pConnData = pstEvent->pConnData;
 	SDASSERT(pConnData != NULL);
 	pConnData->connection.OnConnect();
 }
 
-void CUCODENetWin::_ProcAssociateEvt(SAssociateEvt* pstEvent)
+void CUCORENetWin::_ProcAssociateEvt(SAssociateEvt* pstEvent)
 {
 	CConnData* pConnData = pstEvent->pConnData;
 	SDASSERT(pConnData != NULL);
 
-#ifdef UCODENET_HAS_GATHER_SEND 
+#ifdef UCORENet_HAS_GATHER_SEND 
 	m_connSockets.push_back(&pConnData->sock);
 #endif //
 
@@ -435,9 +435,9 @@ void CUCODENetWin::_ProcAssociateEvt(SAssociateEvt* pstEvent)
 	pConnData->connection.OnAssociate();
 }
 
-void CUCODENetWin::_ProcConnErrEvt(SConnErrEvt* pstEvent)
+void CUCORENetWin::_ProcConnErrEvt(SConnErrEvt* pstEvent)
 {
-	CUCODEConnector* poConnector = FindConnector(pstEvent->dwConnectorID);
+	CUCOREConnector* poConnector = FindConnector(pstEvent->dwConnectorID);
 	if(NULL == poConnector)
 	{
 		return;
@@ -447,17 +447,17 @@ void CUCODENetWin::_ProcConnErrEvt(SConnErrEvt* pstEvent)
 }
 
 //// 2009-03-24 cwy add for interface expanding, add bind function
-void CUCODENetWin::_ProcBindErrEvt( SBindErrEvt* pstEvent )
+void CUCORENetWin::_ProcBindErrEvt( SBindErrEvt* pstEvent )
 {
-	CUCODEConnector* poConnector = FindConnector(pstEvent->dwConnectorID);
+	CUCOREConnector* poConnector = FindConnector(pstEvent->dwConnectorID);
 	if(NULL == poConnector)
 	{
 		return;
 	}
-	poConnector->OnBindErr(pstEvent->nUCODEErrCode, pstEvent->nSysErrCode);
+	poConnector->OnBindErr(pstEvent->nUCOREErrCode, pstEvent->nSysErrCode);
 }
 
-void CUCODENetWin::_ProcErrorEvt(SErrorEvt* pstEvent)
+void CUCORENetWin::_ProcErrorEvt(SErrorEvt* pstEvent)
 {
 	CConnData* pConnData = pstEvent->pConnData;
 	SDASSERT(pConnData != NULL);
@@ -466,15 +466,15 @@ void CUCODENetWin::_ProcErrorEvt(SErrorEvt* pstEvent)
 		return;
 	}
 
-	pConnData->connection.OnError(pstEvent->nUCODEErrCode, pstEvent->nSysErrCode);
+	pConnData->connection.OnError(pstEvent->nUCOREErrCode, pstEvent->nSysErrCode);
 }
 
-void CUCODENetWin::_ProcTerminateEvt(STerminateEvt* pstEvent)
+void CUCORENetWin::_ProcTerminateEvt(STerminateEvt* pstEvent)
 {
 	CConnData* pConnData = pstEvent->pConnData;
 	SDASSERT(pConnData != NULL);
 
-#ifdef UCODENET_HAS_GATHER_SEND 
+#ifdef UCORENet_HAS_GATHER_SEND 
 	for (ConnectedSockets::iterator itr = m_connSockets.begin();
 		itr != m_connSockets.end(); ++itr)
 	{
@@ -489,13 +489,13 @@ void CUCODENetWin::_ProcTerminateEvt(STerminateEvt* pstEvent)
 	pConnData->connection.OnClose();
 }
 
-void CUCODENetWin::ProcRecvData(CConnData * pConnData, const char * pData, int len)
+void CUCORENetWin::ProcRecvData(CConnData * pConnData, const char * pData, int len)
 {
 	SDASSERT(pConnData != NULL);
 	pConnData->connection.OnRecv(pData, len);
 }
 
-void CUCODENetWin::_ProcRecvEvt(SRecvEvt* pstEvent)
+void CUCORENetWin::_ProcRecvEvt(SRecvEvt* pstEvent)
 {
 	CHAR * pRecvBuf = NULL;
 	CConnData* pConnData = pstEvent->pConnData;
@@ -531,7 +531,7 @@ void CUCODENetWin::_ProcRecvEvt(SRecvEvt* pstEvent)
 	}
 }
 
-void CUCODENetWin::_ProcSendEvt(SSendEvt * pstEvent)
+void CUCORENetWin::_ProcSendEvt(SSendEvt * pstEvent)
 {
 	CConnData* pConnData = pstEvent->pConnData;
 	SDASSERT(pConnData != NULL);

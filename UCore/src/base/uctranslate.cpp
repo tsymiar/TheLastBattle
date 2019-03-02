@@ -1,7 +1,7 @@
 #include "uctranslate.h"
 
 #if UC_WITH_LIBICONV
-namespace UCODE
+namespace UCORE
 {
 	CSDTranslate::CSDTranslate()
 	{

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -196,29 +196,34 @@
     <ProjectGuid>{B85DB650-C515-48D1-B6FA-50FD143E7265}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>CSDataSource</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -238,9 +243,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\..\Bin\$(Platform)\$(Configuration)\</OutDir>
-    <LibraryPath>$(OutDir);..\..\Lib\$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
-    <IncludePath>..\..\CommonCPlus\CommonCPlus;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)Lib\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -263,15 +266,17 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CSDATASOURCE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CSDATASOURCE_EXPORTS;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(BOOST);..\..\CommonCPlus\CommonCPlus;$(SolutionDir)ThirdFunc\google\protobuf;$(SolutionDir)ThirdFunc\tinyxml;$(SolutionDir)ThirdFunc\tbb\include;$(SolutionDir)ThirdFunc\VLD\include;$(SolutionDir)ThirdFunc\LuaPlus;$(SolutionDir)ThirdFunc;$(ProjectDir).;$(ProjectDir)..;$(SolutionDir)ELogging;$(SolutionDir)ELogging\ELogging;$(SolutionDir)LoginServer\LoginServer;$(SolutionDir)CommonCPlus\Include;$(SolutionDir)CommonCPlus;$(SolutionDir)UCore\include\base</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>..\..\Lib\$(Platform)\$(Configuration)\vld.lib;..\..\Lib\$(Platform)\$(Configuration)\libmysql.lib;..\..\Lib\$(Platform)\$(Configuration)\WYYTools.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_filesystem-vc100-mt-gd-1_55.lib;$(OutDir)CSKernel.lib</AdditionalDependencies>
+      <AdditionalDependencies>vld.lib;DbgLib.lib;libmysql.lib;GSKernel.lib;Winmm.lib;tinyxml.lib;LuaPlus.lib;libprotobuf.lib;tbb_debug.lib;libboost_atomic-vc140-mt-gd-1_60.lib;libboost_date_time-vc140-mt-gd-1_60.lib;libboost_filesystem-vc140-mt-gd-1_60.lib;libboost_system-vc140-mt-gd-1_60.lib;libboost_thread-vc140-mt-gd-1_60.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(BOOST)\stage\lib;..\..\Lib\$(Platform)\$(Configuration);$(SolutionDir)Lib\$(Platform)\$(Configuration);$(SolutionDir)ThirdFunc\libmysql;$(SolutionDir)ThirdFunc\google\protobuf\lib;$(SolutionDir)ThirdFunc\tbb\lib;$(SolutionDir)ThirdFunc\VLD\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -283,11 +288,12 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
       <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AdditionalIncludeDirectories>$(BOOST);$(PROTOBUF)\include;$(ProjectDir)..\;$(SolutionDir)UCore\include\base</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>..\..\Lib\$(Platform)\$(Configuration)\vld.lib;..\..\Lib\$(Platform)\$(Configuration)\libmysql.lib;..\..\Lib\$(Platform)\$(Configuration)\WYYTools.lib;..\..\Lib\$(Platform)\$(Configuration)\libboost_filesystem-vc100-mt-gd-1_55.lib;..\..\Lib\$(Platform)\$(Configuration)\ice\iced.lib;..\..\Lib\$(Platform)\$(Configuration)\ice\iceutild.lib;$(OutDir)CSKernel.lib;..\..\Lib\$(Platform)\$(Configuration)\libprotoc.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\..\Lib\$(Platform)\$(Configuration)\vld.lib;..\..\Lib\$(Platform)\$(Configuration)\libmysql.lib;..\..\Lib\$(Platform)\$(Configuration)\WYYTools.lib;$(BOOST)\stage\lib\libboost_filesystem-vc140-mt-gd-1_60.lib;..\..\Lib\$(Platform)\$(Configuration)\ice\iced.lib;..\..\Lib\$(Platform)\$(Configuration)\ice\iceutild.lib;$(OutDir)CSKernel.lib;..\..\Lib\$(Platform)\$(Configuration)\libprotoc.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

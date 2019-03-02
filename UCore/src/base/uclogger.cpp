@@ -7,7 +7,7 @@
 #if (defined(WIN32) || defined(WIN64))
 #define vsnprintf _vsnprintf
 #endif
-using namespace UCODE;
+using namespace UCORE;
 
 //////////////////////////////////////////////////////////////////////////
 
@@ -157,15 +157,6 @@ void UCAPI CSDLogger::Debug(const char *format, ...)
 	va_end(args);
 }
 #endif
-
-
-
-
-
-
-
-
-
 
 INT32	LOGTHRD_BUF_SIZE	= 256*1024;	// 线程缓冲队列大小
 UINT32	LOGTHRD_SLEEP_TIME	= 10;		// 线程空闲等待时间

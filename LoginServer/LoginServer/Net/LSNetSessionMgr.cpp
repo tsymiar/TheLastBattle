@@ -34,4 +34,5 @@ ISDSession* UCAPI CClientSessionFactory::CreateSession( ISDConnection* pConnecti
 }
 
 ISDSession* UCAPI CSDKSessionFactory::CreateSession(ISDConnection* pConnection){
+    return NULL;
 }

@@ -49,7 +49,7 @@ public:
 	INT32				PostMsgToGS(INT32 n32NSID, google::protobuf::Message& sMsg, int n32MsgID);
 	INT32				PostGateServerDisconnect(INT32 n32NSID);
 	INT32				PostMsgToCS(google::protobuf::Message& sMsg, int n32MsgID);
-	INT32				PostMsgToLogServer(google::protobuf::Message& sMsg, int n32MsgID);
+	INT32				PostMsgToLogMgr(google::protobuf::Message& sMsg, int n32MsgID);
 	CSSGSInfo*			GetGSInfoByNSID(INT32 n32NSID);
 	CSSGSInfo*			GetGSInfoByGSID(INT32 n32GSID);
 

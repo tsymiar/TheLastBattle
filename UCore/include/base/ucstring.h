@@ -11,6 +11,7 @@
 #include <vector>
 //#include <ucdebug.h>
 #include <stdarg.h>
+#include <wchar.h>
 
 #if (defined(WIN32) || defined(WIN64))
 
@@ -48,12 +49,12 @@ typedef std::string tstring;
 #define SDFMT_64X           "%llx"
 #endif
 
-namespace UCODE
+namespace UCORE
 {
     /**
     * @defgroup groupstring 字符串处理
     * @brief 字符串处理不做边界检测
-    * @ingroup  UCODE
+    * @ingroup  UCORE
     * @{
     */
 
@@ -1083,7 +1084,7 @@ namespace UCODE
         Destination[sizeof(Destination)-1] = '\0';
     }
 
-}//namespace UCODE
+}//namespace UCORE
 
 #endif
 

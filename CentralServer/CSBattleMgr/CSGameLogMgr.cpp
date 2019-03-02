@@ -17,7 +17,7 @@ using namespace CentralServer;
 		ToLog::WriteLog sWriteLog;
 		sWriteLog.set_log_type(elog );
 		sWriteLog.set_log_str(log); 
-		CentralServer::GetCSKernelInstance()->PostMsgToLogServer(sWriteLog, sWriteLog.msgid()); 
+		CentralServer::GetCSKernelInstance()->PostMsgToLogMgr(sWriteLog, sWriteLog.msgid()); 
 	}   
 
 	void	CSSGameLogMgr::AddGameLog(EGameLog eLog, std::string& cdkey ,GCToCS::CurtUIEvent&  pMsg ) 

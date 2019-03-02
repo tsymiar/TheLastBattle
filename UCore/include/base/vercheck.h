@@ -3,11 +3,11 @@
 
 #include "ucbase.h"
 
-namespace UCODE
+namespace UCORE
 {
 
-UINT32  VerToDWORD(const SUCODEVersion* pstVersion);
-BOOL  VerCheck(const SUCODEVersion* pRequestVer, const SUCODEVersion* pRealVer);
+UINT32  VerToDWORD(const SUCOREVersion* pstVersion);
+BOOL  VerCheck(const SUCOREVersion* pRequestVer, const SUCOREVersion* pRealVer);
 
 }//end namespace
 

@@ -2,7 +2,7 @@
 #define SDTYPE_H
 /**
 * @file sdtype.h
-* @brief UCODE数据类型集合
+* @brief UCORE数据类型集合
 *
 **/
 #include "ucconfig.h"

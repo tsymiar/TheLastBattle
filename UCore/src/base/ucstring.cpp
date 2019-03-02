@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <string.h>
 #include "uctranslate.h"
-namespace UCODE
+namespace UCORE
 {
 #if (defined(WIN32) || defined(WIN64))
      #define UNICODE_CHARSET      "UCS-2LE"

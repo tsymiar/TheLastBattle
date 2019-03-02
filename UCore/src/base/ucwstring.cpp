@@ -1,5 +1,5 @@
 #include "ucstring.h"
-namespace UCODE
+namespace UCORE
 {
     INT32  SDsnwprintf(wchar_t* buffer, size_t n, const wchar_t* format, ...)
     {

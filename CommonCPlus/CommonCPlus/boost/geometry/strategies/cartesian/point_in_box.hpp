@@ -1,8 +1,13 @@
 // Boost.Geometry (aka GGL, Generic Geometry Library)
 
-// Copyright (c) 2007-2012 Barend Gehrels, Amsterdam, the Netherlands.
-// Copyright (c) 2008-2012 Bruno Lalande, Paris, France.
-// Copyright (c) 2009-2012 Mateusz Loskot, London, UK.
+// Copyright (c) 2007-2015 Barend Gehrels, Amsterdam, the Netherlands.
+// Copyright (c) 2008-2015 Bruno Lalande, Paris, France.
+// Copyright (c) 2009-2015 Mateusz Loskot, London, UK.
+
+// This file was modified by Oracle on 2015.
+// Modifications copyright (c) 2015, Oracle and/or its affiliates.
+
+// Contributed and/or modified by Adam Wulkiewicz, on behalf of Oracle
 
 // Parts of Boost.Geometry are redesigned from Geodan's Geographic Library
 // (geolib/GGL), copyright (c) 1995-2010 Geodan, Amsterdam, the Netherlands.
@@ -21,9 +26,9 @@
 #include <boost/geometry/strategies/within.hpp>
 
 
-namespace boost { namespace geometry { namespace strategy 
+namespace boost { namespace geometry { namespace strategy
 {
-    
+
 namespace within
 {
 
@@ -60,14 +65,14 @@ struct relate_point_box_loop
 {
     static inline bool apply(Point const& point, Box const& box)
     {
-        if (! SubStrategy::apply(get<Dimension>(point), 
-                    get<min_corner, Dimension>(box), 
+        if (! SubStrategy::apply(get<Dimension>(point),
+                    get<min_corner, Dimension>(box),
                     get<max_corner, Dimension>(box))
             )
         {
             return false;
         }
-        
+
         return relate_point_box_loop
             <
                 SubStrategy,
@@ -102,12 +107,12 @@ template
 >
 struct point_in_box
 {
-    static inline bool apply(Point const& point, Box const& box) 
+    static inline bool apply(Point const& point, Box const& box)
     {
         return relate_point_box_loop
             <
                 SubStrategy,
-                Point, Box, 
+                Point, Box,
                 0, dimension<Point>::type::value
             >::apply(point, box);
     }
@@ -126,13 +131,13 @@ namespace within { namespace services
 template <typename Point, typename Box>
 struct default_strategy
     <
-        point_tag, box_tag, 
-        point_tag, areal_tag, 
-        cartesian_tag, cartesian_tag, 
+        point_tag, box_tag,
+        point_tag, areal_tag,
+        cartesian_tag, cartesian_tag,
         Point, Box
     >
 {
-    typedef within::point_in_box<Point, Box> type; 
+    typedef within::point_in_box<Point, Box> type;
 };
 
 
@@ -146,9 +151,9 @@ namespace covered_by { namespace services
 template <typename Point, typename Box>
 struct default_strategy
     <
-        point_tag, box_tag, 
-        point_tag, areal_tag, 
-        cartesian_tag, cartesian_tag, 
+        point_tag, box_tag,
+        point_tag, areal_tag,
+        cartesian_tag, cartesian_tag,
         Point, Box
     >
 {

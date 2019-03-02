@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <memory.h>
 #include "ucnetconfig.h"
-using namespace UCODE;
+using namespace UCORE;
 
 CSimpleLoopBuffer::CSimpleLoopBuffer() : 
 m_pBuffer(NULL),

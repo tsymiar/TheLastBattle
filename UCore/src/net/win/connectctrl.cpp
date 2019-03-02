@@ -7,7 +7,7 @@
 #include "conndatamgr.h"
 #include <ucstring.h>
 #include "ucnetutils.h"
-using namespace UCODE ;
+using namespace UCORE ;
 
 IMPLEMENT_SINGLETON(CConnectCtrl)
 

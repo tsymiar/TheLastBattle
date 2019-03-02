@@ -1,19 +1,19 @@
-#ifndef UCODELISTENER_H
-#define UCODELISTENER_H
+#ifndef UCORELISTENER_H
+#define UCORELISTENER_H
 
 #include "ucnet.h"
 #include "cplistener.h"
 
-using namespace UCODE;
+using namespace UCORE;
 
 /**
 * @brief 网络监听器,监听远程客户端对此联机
 */
-class CUCODEListener : public ISDListener
+class CUCOREListener : public ISDListener
 {
 public:
-	CUCODEListener();
-	virtual ~CUCODEListener();
+	CUCOREListener();
+	virtual ~CUCOREListener();
 
 	//Interface ISDListener
 	/**

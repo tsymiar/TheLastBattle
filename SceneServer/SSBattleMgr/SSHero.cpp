@@ -330,7 +330,7 @@ INT32 CSSHero::AskBuyGoods(UINT32 un32GoodsTypeID,INT32 &goodsId){
 		}
 	}
 	RefreshGoodsSkillMap();
-	ELOG(LOG_WARNNING, "failed for errorcode:%d", buyRes);
+	ELOG(LOG_WARNNING, "failed for errorcode: %d", buyRes);
 	
 	return buyRes;
 }

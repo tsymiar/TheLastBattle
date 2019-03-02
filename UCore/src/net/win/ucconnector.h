@@ -1,15 +1,15 @@
-#ifndef UCODECONNECTOR_H
-#define UCODECONNECTOR_H
+#ifndef UCORECONNECTOR_H
+#define UCORECONNECTOR_H
 
 #include "ucnet.h"
 #include <map>
 
-using namespace UCODE;
+using namespace UCORE;
 
 /**
 * @brief 网络连接器,用于本地连接远程服务器
 */
-class CUCODEConnector : public ISDConnector
+class CUCOREConnector : public ISDConnector
 {
 	enum EConnStat
 	{
@@ -19,8 +19,8 @@ class CUCODEConnector : public ISDConnector
 	};
 
 public:
-	CUCODEConnector();
-	virtual ~CUCODEConnector();
+	CUCOREConnector();
+	virtual ~CUCOREConnector();
 
 	/**
 	* @brief 设置数据包解析器
@@ -88,11 +88,11 @@ public:
 	//// 2009-03-24 cwy add for interface expanding, add bind function
 	/**
 	* @brief 当绑定本地IP地址失败时,调用此函数
-	* @param nUCODEError : UCODE Error
+	* @param nUCOREError : UCORE Error
 	* @param nSysError : Sys Error
 	* @return void
 	*/
-	void OnBindErr(INT32 nUCODEError, INT32 nSysError);
+	void OnBindErr(INT32 nUCOREError, INT32 nSysError);
 
 	/**
 	* @brief 当使用此连接器连接成功时,调用此函数
@@ -128,7 +128,7 @@ protected:
     BOOL                m_bNodelay;
 };
 
-typedef std::map<UINT32, CUCODEConnector*> CMapConnector;
+typedef std::map<UINT32, CUCOREConnector*> CMapConnector;
 
 #endif
 

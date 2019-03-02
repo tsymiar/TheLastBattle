@@ -5,7 +5,7 @@
 #include "connectctrl.h"
 #include "ucnetutils.h"
 
-CUCODEConnector::CUCODEConnector()
+CUCOREConnector::CUCOREConnector()
 {
 	m_dwID				= 0;
 	m_poPacketParser	= NULL;
@@ -25,28 +25,28 @@ CUCODEConnector::CUCODEConnector()
 	//// ~
 }
 
-CUCODEConnector::~CUCODEConnector()
+CUCOREConnector::~CUCOREConnector()
 {
 
 }
 
-void CUCODEConnector::SetPacketParser(ISDPacketParser* poPakcetParser)
+void CUCOREConnector::SetPacketParser(ISDPacketParser* poPakcetParser)
 {
 	m_poPacketParser = poPakcetParser;
 }
 
-void CUCODEConnector::SetSession(ISDSession* poSession)
+void CUCOREConnector::SetSession(ISDSession* poSession)
 {
 	m_poSession = poSession;
 }
 
-void CUCODEConnector::SetBufferSize(UINT32 dwRecvBufSize, UINT32 dwSendBufSize)
+void CUCOREConnector::SetBufferSize(UINT32 dwRecvBufSize, UINT32 dwSendBufSize)
 {
 	m_dwRecvBufSize = dwRecvBufSize;
 	m_dwSendBufSize = dwSendBufSize;
 }
 
-bool CUCODEConnector::Connect(const char* pszIP, UINT16 wPort)
+bool CUCOREConnector::Connect(const char* pszIP, UINT16 wPort)
 {
 	m_dwIP	= inet_addr(pszIP);
 	m_wPort	= wPort;
@@ -54,22 +54,22 @@ bool CUCODEConnector::Connect(const char* pszIP, UINT16 wPort)
 	return ReConnect();
 }
 
-bool CUCODEConnector::ReConnect(void)
+bool CUCOREConnector::ReConnect(void)
 {
 	if(NULL == m_poPacketParser)
 	{
-		WARN(_SDT("CUCODEConnector::Connect, Not set PacketParser"));
+		WARN(_SDT("CUCOREConnector::Connect, Not set PacketParser"));
 		return false;
 	}
 	if(NULL == m_poSession)
 	{
-		WARN(_SDT("CUCODEConnector::Connect, Not set Session"));
+		WARN(_SDT("CUCOREConnector::Connect, Not set Session"));
 		return false;
 	}
 
 	if(m_nConnStat != CONN_NONE)
 	{
-		WARN(_SDT("CUCODEConnector::ReConnect, m_nConnStat is %d"), m_nConnStat);
+		WARN(_SDT("CUCOREConnector::ReConnect, m_nConnStat is %d"), m_nConnStat);
 		return false;
 	}
 
@@ -85,17 +85,17 @@ bool CUCODEConnector::ReConnect(void)
 	return true;
 }
 
-void CUCODEConnector::Release(void)
+void CUCOREConnector::Release(void)
 {
-	CUCODENetWin::Instance()->ReleaseConnector(this);
+	CUCORENetWin::Instance()->ReleaseConnector(this);
 }
 
-void CUCODEConnector::OnConnect()
+void CUCOREConnector::OnConnect()
 {
 	m_nConnStat = CONN_OK;
 }
 
-void CUCODEConnector::OnConnectErr(INT32 nSysError)
+void CUCOREConnector::OnConnectErr(INT32 nSysError)
 {
 	m_nConnStat = CONN_NONE;
 	CRITICAL(_SDT("OnConnectErr:Address:%s:%d"), SDInetNtoa(m_dwIP).c_str(),m_wPort);
@@ -104,21 +104,21 @@ void CUCODEConnector::OnConnectErr(INT32 nSysError)
 
 //// 2009-03-24 cwy add for interface expanding
 // add bind function
-void CUCODEConnector::OnBindErr( INT32 nUCODEError, INT32 nSysError )
+void CUCOREConnector::OnBindErr( INT32 nUCOREError, INT32 nSysError )
 {
 	m_nConnStat = CONN_NONE;
 	m_poSession->OnError(NET_BIND_FAIL, nSysError);
 }
 //// ~
 
-void CUCODEConnector::OnClose()
+void CUCOREConnector::OnClose()
 {
 	m_nConnStat = CONN_NONE;
 }
 
 //// 2009-03-24 cwy add for interface expanding
 // add bind function
-void UCAPI CUCODEConnector::SetOpt( UINT32 dwType, void* pOpt )
+void UCAPI CUCOREConnector::SetOpt( UINT32 dwType, void* pOpt )
 {
 	switch(dwType)
 	{

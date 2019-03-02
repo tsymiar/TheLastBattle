@@ -54,7 +54,7 @@ INT32	CCSKernel::LoadCfg()
 	TiXmlDocument doc(filepath.c_str());
 	bool loadOkay = doc.LoadFile();
 	if (!loadOkay){
-		printf("load GSCfg.xml failed for %s\n", doc.ErrorDesc());
+		printf("load GSCfg.xml detail: %s\n", doc.ErrorDesc());
 	}
 	else{
 		TiXmlElement* m_pXMLEle = doc.RootElement();
@@ -390,7 +390,7 @@ CCSKernel& CCSKernel::GetInstance(){
 	return *pInstance;
 }
 
-INT32 CCSKernel::PostMsgToLogServer(google::protobuf::Message& sMsg, int n32MsgID){
+INT32 CCSKernel::PostMsgToLogMgr(google::protobuf::Message& sMsg, int n32MsgID){
 	INetSessionMgr::GetInstance()->SendMsgToSession(ST_CLIENT_C2Log, 0, sMsg, n32MsgID);
 	return eNormal;
 }

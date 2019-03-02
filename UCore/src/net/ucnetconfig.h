@@ -23,7 +23,10 @@
 #include "uclogger.h"
 #include "ucstring.h"
 #include "uctype.h"
-using namespace UCODE;
+
+#pragma comment (lib, "Ws2_32.lib")
+
+using namespace UCORE;
 
 #define SDASSERT assert
 

@@ -3,7 +3,7 @@
 
 #include "uctype.h"
 
-namespace UCODE
+namespace UCORE
 {
     class CSDDataQueue
     {

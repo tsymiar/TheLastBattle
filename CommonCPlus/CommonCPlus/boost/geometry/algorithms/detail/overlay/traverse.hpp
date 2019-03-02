@@ -13,12 +13,12 @@
 
 #include <boost/range.hpp>
 
-#include <boost/geometry/algorithms/detail/overlay/append_no_dups_or_spikes.hpp>
 #include <boost/geometry/algorithms/detail/overlay/backtrack_check_si.hpp>
 #include <boost/geometry/algorithms/detail/overlay/copy_segments.hpp>
 #include <boost/geometry/algorithms/detail/overlay/turn_info.hpp>
 #include <boost/geometry/algorithms/num_points.hpp>
 #include <boost/geometry/core/access.hpp>
+#include <boost/geometry/core/assert.hpp>
 #include <boost/geometry/core/closure.hpp>
 #include <boost/geometry/core/coordinate_dimension.hpp>
 #include <boost/geometry/geometries/concepts/check.hpp>
@@ -40,7 +40,7 @@ namespace detail { namespace overlay
 
 template <typename Turn, typename Operation>
 #ifdef BOOST_GEOMETRY_DEBUG_TRAVERSE
-inline void debug_traverse(Turn const& turn, Operation op, 
+inline void debug_traverse(Turn const& turn, Operation op,
                 std::string const& header)
 {
     std::cout << header
@@ -94,14 +94,16 @@ template
     typename G1,
     typename G2,
     typename Turns,
-    typename IntersectionInfo
+    typename IntersectionInfo,
+    typename RobustPolicy
 >
 inline bool assign_next_ip(G1 const& g1, G2 const& g2,
             Turns& turns,
             typename boost::range_iterator<Turns>::type& ip,
             GeometryOut& current_output,
             IntersectionInfo& info,
-            segment_identifier& seg_id)
+            segment_identifier& seg_id,
+            RobustPolicy const& robust_policy)
 {
     info.visited.set_visited();
     set_visited_for_continue(*ip, info);
@@ -109,25 +111,27 @@ inline bool assign_next_ip(G1 const& g1, G2 const& g2,
     // If there is no next IP on this segment
     if (info.enriched.next_ip_index < 0)
     {
-        if (info.enriched.travels_to_vertex_index < 0 
+        if (info.enriched.travels_to_vertex_index < 0
             || info.enriched.travels_to_ip_index < 0)
         {
             return false;
         }
 
-        BOOST_ASSERT(info.enriched.travels_to_vertex_index >= 0);
-        BOOST_ASSERT(info.enriched.travels_to_ip_index >= 0);
+        BOOST_GEOMETRY_ASSERT(info.enriched.travels_to_vertex_index >= 0);
+        BOOST_GEOMETRY_ASSERT(info.enriched.travels_to_ip_index >= 0);
 
         if (info.seg_id.source_index == 0)
         {
             geometry::copy_segments<Reverse1>(g1, info.seg_id,
                     info.enriched.travels_to_vertex_index,
+                    robust_policy,
                     current_output);
         }
         else
         {
             geometry::copy_segments<Reverse2>(g2, info.seg_id,
                     info.enriched.travels_to_vertex_index,
+                    robust_policy,
                     current_output);
         }
         seg_id = info.seg_id;
@@ -139,13 +143,16 @@ inline bool assign_next_ip(G1 const& g1, G2 const& g2,
         seg_id = info.seg_id;
     }
 
-    detail::overlay::append_no_dups_or_spikes(current_output, ip->point);
+    detail::overlay::append_no_dups_or_spikes(current_output, ip->point,
+        robust_policy);
 
     return true;
 }
 
 
-inline bool select_source(operation_type operation, int source1, int source2)
+inline bool select_source(operation_type operation,
+                          signed_size_type source1,
+                          signed_size_type source2)
 {
     return (operation == operation_intersection && source1 != source2)
         || (operation == operation_union && source1 == source2)
@@ -167,7 +174,17 @@ inline bool select_next_ip(operation_type operation,
     {
         return false;
     }
+
     bool has_tp = false;
+
+    typedef typename std::iterator_traits
+    <
+        Iterator
+    >::value_type operation_type;
+
+    typename operation_type::comparable_distance_type
+            max_remaining_distance = 0;
+
     selected = boost::end(turn.operations);
     for (Iterator it = boost::begin(turn.operations);
         it != boost::end(turn.operations);
@@ -199,9 +216,23 @@ inline bool select_next_ip(operation_type operation,
                 )
             )
         {
+            if (it->operation == operation_continue)
+            {
+                max_remaining_distance = it->remaining_distance;
+            }
             selected = it;
             debug_traverse(turn, *it, " Candidate");
             has_tp = true;
+        }
+
+        if (it->operation == operation_continue && has_tp)
+        {
+            if (it->remaining_distance > max_remaining_distance)
+            {
+                max_remaining_distance = it->remaining_distance;
+                selected = it;
+                debug_traverse(turn, *it, " Candidate override");
+            }
         }
     }
 
@@ -230,10 +261,11 @@ template
 class traverse
 {
 public :
-    template <typename Turns, typename Rings>
+    template <typename RobustPolicy, typename Turns, typename Rings>
     static inline void apply(Geometry1 const& geometry1,
                 Geometry2 const& geometry2,
                 detail::overlay::operation_type operation,
+                RobustPolicy const& robust_policy,
                 Turns& turns, Rings& rings)
     {
         typedef typename boost::range_value<Rings>::type ring_type;
@@ -263,7 +295,7 @@ public :
                 ++it)
             {
                 // Skip discarded ones
-                if (! (it->is_discarded() || it->blocked()))
+                if (! (it->discarded || ! it->selectable_start || it->blocked()))
                 {
                     for (turn_operation_iterator_type iit = boost::begin(it->operations);
                         state.good() && iit != boost::end(it->operations);
@@ -278,7 +310,8 @@ public :
                             set_visited_for_continue(*it, *iit);
 
                             ring_type current_output;
-                            geometry::append(current_output, it->point);
+                            detail::overlay::append_no_dups_or_spikes(current_output,
+                                it->point, robust_policy);
 
                             turn_iterator current = it;
                             turn_operation_iterator_type current_iit = iit;
@@ -288,13 +321,14 @@ public :
                                         geometry1, geometry2,
                                         turns,
                                         current, current_output,
-                                        *iit, current_seg_id))
+                                        *iit, current_seg_id,
+                                        robust_policy))
                             {
                                 Backtrack::apply(
-                                    size_at_start, 
+                                    size_at_start,
                                     rings, current_output, turns, *current_iit,
                                     "No next IP",
-                                    geometry1, geometry2, state);
+                                    geometry1, geometry2, robust_policy, state);
                             }
 
                             if (! detail::overlay::select_next_ip(
@@ -304,10 +338,10 @@ public :
                                             current_iit))
                             {
                                 Backtrack::apply(
-                                    size_at_start, 
+                                    size_at_start,
                                     rings, current_output, turns, *iit,
                                     "Dead end at start",
-                                    geometry1, geometry2, state);
+                                    geometry1, geometry2, robust_policy, state);
                             }
                             else
                             {
@@ -317,7 +351,7 @@ public :
                                 detail::overlay::debug_traverse(*current, *current_iit, "Selected  ");
 
 
-                                unsigned int i = 0;
+                                typename boost::range_size<Turns>::type i = 0;
 
                                 while (current_iit != iit && state.good())
                                 {
@@ -326,10 +360,10 @@ public :
                                         // It visits a visited node again, without passing the start node.
                                         // This makes it suspicious for endless loops
                                         Backtrack::apply(
-                                            size_at_start, 
+                                            size_at_start,
                                             rings,  current_output, turns, *iit,
                                             "Visit again",
-                                            geometry1, geometry2, state);
+                                            geometry1, geometry2, robust_policy, state);
                                     }
                                     else
                                     {
@@ -348,7 +382,8 @@ public :
                                         detail::overlay::assign_next_ip<Reverse1, Reverse2>(
                                             geometry1, geometry2,
                                             turns, current, current_output,
-                                            *current_iit, current_seg_id);
+                                            *current_iit, current_seg_id,
+                                            robust_policy);
 
                                         if (! detail::overlay::select_next_ip(
                                                     operation,
@@ -360,10 +395,10 @@ public :
                                             // Should not occur in self-intersecting polygons without spikes
                                             // Might occur in polygons with spikes
                                             Backtrack::apply(
-                                                size_at_start, 
+                                                size_at_start,
                                                 rings,  current_output, turns, *iit,
                                                 "Dead end",
-                                                geometry1, geometry2, state);
+                                                geometry1, geometry2, robust_policy, state);
                                         }
                                         else
                                         {
@@ -376,10 +411,10 @@ public :
                                             // than turn points.
                                             // Turn points marked as "ii" can be visited twice.
                                             Backtrack::apply(
-                                                size_at_start, 
+                                                size_at_start,
                                                 rings,  current_output, turns, *iit,
                                                 "Endless loop",
-                                                geometry1, geometry2, state);
+                                                geometry1, geometry2, robust_policy, state);
                                         }
                                     }
                                 }
@@ -390,6 +425,7 @@ public :
                                     detail::overlay::debug_traverse(*current, *iit, "->Finished");
                                     if (geometry::num_points(current_output) >= min_num_points)
                                     {
+                                        clean_closing_dups_and_spikes(current_output, robust_policy);
                                         rings.push_back(current_output);
                                     }
                                 }

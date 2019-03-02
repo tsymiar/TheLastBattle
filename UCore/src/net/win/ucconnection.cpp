@@ -130,7 +130,7 @@ void CUCConnection::OnConnect()
 	//如果是主动连接对方，那么要通知Connector连接事件
 	if(!m_bAccept)
 	{
-		CUCODEConnector* poConnector = CUCODENetWin::Instance()->FindConnector(m_dwParentID);
+		CUCOREConnector* poConnector = CUCORENetWin::Instance()->FindConnector(m_dwParentID);
 		if(NULL == poConnector)
 		{
 			return;
@@ -149,7 +149,7 @@ void CUCConnection::OnAssociate()
 	//如果是主动连接对方，那么要通知Connector连接事件
 	if(!m_bAccept)
 	{
-		CUCODEConnector* poConnector = CUCODENetWin::Instance()->FindConnector(m_dwParentID);
+		CUCOREConnector* poConnector = CUCORENetWin::Instance()->FindConnector(m_dwParentID);
 		if(NULL == poConnector)
 		{
 			return;
@@ -163,7 +163,7 @@ void CUCConnection::OnAssociate()
 
 void CUCConnection::OnSend(const char * pBuf, UINT32 dwLen)
 {
-#ifdef UCODENET_HAS_SEND_REPORT
+#ifdef UCORENet_HAS_SEND_REPORT
 	if (m_poSession != NULL )
 	{
 		m_poSession->OnSend(pBuf, dwLen); 
@@ -195,7 +195,7 @@ void CUCConnection::OnClose()
 	//如果是主动连接对方，要通知Connector断线事件
 	if(false == m_bAccept)
 	{
-		CUCODEConnector* poConnector = CUCODENetWin::Instance()->FindConnector(m_dwParentID);
+		CUCOREConnector* poConnector = CUCORENetWin::Instance()->FindConnector(m_dwParentID);
 		if(poConnector != NULL)
 		{
 			poConnector->OnClose();

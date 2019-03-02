@@ -11,7 +11,7 @@
 #include <sys/times.h>
 #endif
 
-namespace UCODE
+namespace UCORE
 {
     CSDDateTime  SDNow()
     {

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "ucdataqueue.h"
 
-using namespace UCODE;
+using namespace UCORE;
 
 CSDDataQueue::CSDDataQueue(VOID)
 {

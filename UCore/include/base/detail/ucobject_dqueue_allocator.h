@@ -6,7 +6,7 @@
 #include <deque>
 // dual queue implement for object allocator
 
-namespace UCODE
+namespace UCORE
 {
 
     template<typename T, typename ReadMutex = CSDNonMutex,typename WriteMutex = CSDNonMutex >

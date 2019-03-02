@@ -2,7 +2,7 @@
 #define BOOST_ARCHIVE_ITERATORS_WCHAR_FROM_MB_HPP
 
 // MS compatible compilers support #pragma once
-#if defined(_MSC_VER) && (_MSC_VER >= 1020)
+#if defined(_MSC_VER)
 # pragma once
 #endif
 
@@ -19,18 +19,17 @@
 #include <boost/assert.hpp>
 #include <cctype>
 #include <cstddef> // size_t
-#include <cstdlib> // mblen
+#include <cwchar> // mbstate_t and mbrtowc
 
-#include <boost/config.hpp> // for BOOST_DEDUCED_TYPENAME
+#include <boost/config.hpp>
 #if defined(BOOST_NO_STDC_NAMESPACE)
 namespace std{ 
-    using ::mblen; 
-    using ::mbtowc; 
+    using ::mbstate_t;
+    using ::mbrtowc;
 } // namespace std
 #endif
 
 #include <boost/serialization/throw_exception.hpp>
-#include <boost/serialization/pfto.hpp>
 
 #include <boost/iterator/iterator_adaptor.hpp>
 #include <boost/archive/iterators/dataflow_exception.hpp>
@@ -53,7 +52,7 @@ class wchar_from_mb
     >
 {
     friend class boost::iterator_core_access;
-    typedef BOOST_DEDUCED_TYPENAME boost::iterator_adaptor<
+    typedef typename boost::iterator_adaptor<
         wchar_from_mb<Base>, 
         Base, 
         wchar_t,
@@ -89,8 +88,8 @@ class wchar_from_mb
 public:
     // make composible buy using templated constructor
     template<class T>
-    wchar_from_mb(BOOST_PFTO_WRAPPER(T) start) : 
-        super_t(Base(BOOST_MAKE_PFTO_WRAPPER(static_cast< T >(start)))),
+    wchar_from_mb(T start) : 
+        super_t(Base(static_cast< T >(start))),
         m_full(false)
     {}
     // intel 7.1 doesn't like default copy constructor
@@ -102,23 +101,17 @@ public:
 
 template<class Base>
 wchar_t wchar_from_mb<Base>::drain(){
-    char buffer[9];
-    char * bptr = buffer;
-    char val;
-    for(std::size_t i = 0; i++ < (unsigned)MB_CUR_MAX;){
-        val = * this->base_reference();
-        *bptr++ = val;
-        int result = std::mblen(buffer, i);
-        if(-1 != result)
-            break;
-        ++(this->base_reference());
-    }
+    std::mbstate_t mbs;
     wchar_t retval;
-    int result = std::mbtowc(& retval, buffer, MB_CUR_MAX);
-    if(0 >= result)
-        boost::serialization::throw_exception(iterators::dataflow_exception(
-            iterators::dataflow_exception::invalid_conversion
-        ));
+    std::size_t result;
+    do {
+        char val = *this->base_reference();
+        result = std::mbrtowc(&retval, &val, 1, &mbs);
+        if(result == static_cast<std::size_t>(-1))
+            boost::serialization::throw_exception(iterators::dataflow_exception(
+                iterators::dataflow_exception::invalid_conversion
+            ));
+    } while (result == static_cast<std::size_t>(-2));
     return retval;
 }
 

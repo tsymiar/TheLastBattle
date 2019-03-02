@@ -16,12 +16,12 @@
 #include <string>
 #include "uctype.h"
 #include "ucstring.h"
-namespace UCODE
+namespace UCORE
 {
 
     /**
     * @defgroup groupnetutil ÍøÂç²Ù×÷
-    * @ingroup  UCODE
+    * @ingroup  UCORE
     * @{
     */
 

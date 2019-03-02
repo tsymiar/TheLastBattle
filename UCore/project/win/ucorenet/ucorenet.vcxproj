@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2FCC1CD8-CE64-409F-9601-1A3F6601884B}</ProjectGuid>
+    <RootNamespace>ucorenet</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>ucorenet</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)Lib\$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\..\bin\$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>..\..\..\symbols\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>..\..\..\include\base;..\..\..\include\net;..\..\..\src\base;..\..\..\src\net;..\..\..\src\net\win;..\..\..\thirdparty\libiconv\include\win64;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\..\bin\x64\Debug;..\..\..\thirdparty\libiconv\lib\x64\debug;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IntDir>..\..\..\symbols\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <IncludePath>..\..\..\include\net;..\..\..\include\base;..\..\..\src\net;..\..\..\src\net\win;..\..\..\thirdparty\libiconv\include;..\..\..\thirdparty\libiconv\libiconv;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\..\bin\x64\Debug;..\..\..\thirdparty\libiconv\Debug_x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\..\..\Bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>..\..\..\symbols\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <IncludePath>..\..\..\include\net;..\..\..\include\base;..\..\..\src\net;..\..\..\src\net\win;..\..\..\thirdparty\libiconv\include;..\..\..\thirdparty\libiconv\libiconv;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\..\bin\x64\Release;..\..\..\thirdparty\libiconv\Release_x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>..\..\..\symbols\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>..\..\..\include\base;..\..\..\include\net;..\..\..\src\base;..\..\..\src\net;..\..\..\src\net\win;..\..\..\thirdparty\libiconv\include\win64;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(BOOST);$(PROTOBUF)\include;$(ProjectDir)..\;$(SolutionDir)UCore\include\base</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ucorebase.lib;libiconv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Lib\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN64;_DEBUG;_WINDOWS;_USRDLL;_UCODE_NET;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(BOOST);$(PROTOBUF)\include;$(ProjectDir)..\;$(SolutionDir)UCore\include\base</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ucorebase.lib;libiconvD.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <ImportLibrary>
+      </ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN64;NDEBUG;_WINDOWS;_USRDLL;_UCODE_NET;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ucorebase.lib;libiconv.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\net\ucnet.h" />
+    <ClInclude Include="..\..\..\include\net\ucnetopt.h" />
+    <ClInclude Include="..\..\..\src\net\bufpool.h" />
+    <ClInclude Include="..\..\..\src\net\conndataallocator.h" />
+    <ClInclude Include="..\..\..\src\net\conndatamgr.h" />
+    <ClInclude Include="..\..\..\src\net\ucnetconfig.h" />
+    <ClInclude Include="..\..\..\src\net\simpleloopbuffer.h" />
+    <ClInclude Include="..\..\..\src\net\win\connectctrl.h" />
+    <ClInclude Include="..\..\..\src\net\win\connectionmgr.h" />
+    <ClInclude Include="..\..\..\src\net\win\cplistener.h" />
+    <ClInclude Include="..\..\..\src\net\win\cpsock.h" />
+    <ClInclude Include="..\..\..\src\net\win\cpsockmgr.h" />
+    <ClInclude Include="..\..\..\src\net\win\eventmgr.h" />
+    <ClInclude Include="..\..\..\src\net\win\iocpctrl.h" />
+    <ClInclude Include="..\..\..\src\net\win\netevent.h" />
+    <ClInclude Include="..\..\..\src\net\win\netrequest.h" />
+    <ClInclude Include="..\..\..\src\net\win\resource.h" />
+    <ClInclude Include="..\..\..\src\net\win\ucconnection.h" />
+    <ClInclude Include="..\..\..\src\net\win\ucconnector.h" />
+    <ClInclude Include="..\..\..\src\net\win\uclistener.h" />
+    <ClInclude Include="..\..\..\src\net\win\ucnetwin.h" />
+    <ClInclude Include="..\..\..\src\net\win\thread_buffer_pool.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\base\uclogger.cpp" />
+    <ClCompile Include="..\..\..\src\net\bufpool.cpp" />
+    <ClCompile Include="..\..\..\src\net\conndataallocator.cpp" />
+    <ClCompile Include="..\..\..\src\net\conndatamgr.cpp" />
+    <ClCompile Include="..\..\..\src\net\ucnetconfig.cpp" />
+    <ClCompile Include="..\..\..\src\net\simpleloopbuffer.cpp" />
+    <ClCompile Include="..\..\..\src\net\win\connectctrl.cpp" />
+    <ClCompile Include="..\..\..\src\net\win\connectionmgr.cpp" />
+    <ClCompile Include="..\..\..\src\net\win\cplistener.cpp" />
+    <ClCompile Include="..\..\..\src\net\win\cpsock.cpp" />
+    <ClCompile Include="..\..\..\src\net\win\cpsockmgr.cpp" />
+    <ClCompile Include="..\..\..\src\net\win\eventmgr.cpp" />
+    <ClCompile Include="..\..\..\src\net\win\iocpctrl.cpp" />
+    <ClCompile Include="..\..\..\src\net\win\ucconnection.cpp" />
+    <ClCompile Include="..\..\..\src\net\win\ucconnector.cpp" />
+    <ClCompile Include="..\..\..\src\net\win\uclistener.cpp" />
+    <ClCompile Include="..\..\..\src\net\win\ucnetwin.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

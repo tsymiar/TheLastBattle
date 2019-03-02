@@ -4,7 +4,7 @@
 #include "uctype.h"
 #include "ucmutex.h"
 #include "uclock.h"
-using namespace UCODE;
+using namespace UCORE;
 class CSimpleLoopBuffer
 {
 public:

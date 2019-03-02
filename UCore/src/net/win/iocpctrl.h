@@ -5,7 +5,7 @@
 #include "cpsock.h"
 #include <set>
 #include "thread_buffer_pool.h"
-using namespace UCODE;
+using namespace UCORE;
 
 /**
 * @brief IOCP控制类,此类是一个单例的类,内部将创建2 * CPU个工作线程(Worker Item).

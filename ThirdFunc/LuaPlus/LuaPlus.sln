@@ -1,26 +1,51 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaPlus", "LuaPlus.vcxproj", "{AA75B895-9958-4D71-9419-D86946478CAA}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ALL_BUILD", "ALL_BUILD.vcxproj", "{D08BD85A-A26C-3F50-9EF7-03F64245BA17}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BB668268-2941-34AB-BF75-8A29875A7F48} = {BB668268-2941-34AB-BF75-8A29875A7F48}
+		{E9CC1DC7-A088-3D0F-8299-A8CE5B97772C} = {E9CC1DC7-A088-3D0F-8299-A8CE5B97772C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaPlus", "LuaPlus.vcxproj", "{BB668268-2941-34AB-BF75-8A29875A7F48}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E9CC1DC7-A088-3D0F-8299-A8CE5B97772C} = {E9CC1DC7-A088-3D0F-8299-A8CE5B97772C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZERO_CHECK", "ZERO_CHECK.vcxproj", "{E9CC1DC7-A088-3D0F-8299-A8CE5B97772C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
-		Debug|x64 = Debug|x64
 		Release|Win32 = Release|Win32
-		Release|x64 = Release|x64
+		MinSizeRel|Win32 = MinSizeRel|Win32
+		RelWithDebInfo|Win32 = RelWithDebInfo|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AA75B895-9958-4D71-9419-D86946478CAA}.Debug|Win32.ActiveCfg = Debug|Win32
-		{AA75B895-9958-4D71-9419-D86946478CAA}.Debug|Win32.Build.0 = Debug|Win32
-		{AA75B895-9958-4D71-9419-D86946478CAA}.Debug|x64.ActiveCfg = Debug|x64
-		{AA75B895-9958-4D71-9419-D86946478CAA}.Debug|x64.Build.0 = Debug|x64
-		{AA75B895-9958-4D71-9419-D86946478CAA}.Release|Win32.ActiveCfg = Release|Win32
-		{AA75B895-9958-4D71-9419-D86946478CAA}.Release|Win32.Build.0 = Release|Win32
-		{AA75B895-9958-4D71-9419-D86946478CAA}.Release|x64.ActiveCfg = Release|x64
-		{AA75B895-9958-4D71-9419-D86946478CAA}.Release|x64.Build.0 = Release|x64
+		{D08BD85A-A26C-3F50-9EF7-03F64245BA17}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D08BD85A-A26C-3F50-9EF7-03F64245BA17}.Release|Win32.ActiveCfg = Release|Win32
+		{D08BD85A-A26C-3F50-9EF7-03F64245BA17}.MinSizeRel|Win32.ActiveCfg = MinSizeRel|Win32
+		{D08BD85A-A26C-3F50-9EF7-03F64245BA17}.RelWithDebInfo|Win32.ActiveCfg = RelWithDebInfo|Win32
+		{BB668268-2941-34AB-BF75-8A29875A7F48}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BB668268-2941-34AB-BF75-8A29875A7F48}.Debug|Win32.Build.0 = Debug|Win32
+		{BB668268-2941-34AB-BF75-8A29875A7F48}.Release|Win32.ActiveCfg = Release|Win32
+		{BB668268-2941-34AB-BF75-8A29875A7F48}.Release|Win32.Build.0 = Release|Win32
+		{BB668268-2941-34AB-BF75-8A29875A7F48}.MinSizeRel|Win32.ActiveCfg = MinSizeRel|Win32
+		{BB668268-2941-34AB-BF75-8A29875A7F48}.MinSizeRel|Win32.Build.0 = MinSizeRel|Win32
+		{BB668268-2941-34AB-BF75-8A29875A7F48}.RelWithDebInfo|Win32.ActiveCfg = RelWithDebInfo|Win32
+		{BB668268-2941-34AB-BF75-8A29875A7F48}.RelWithDebInfo|Win32.Build.0 = RelWithDebInfo|Win32
+		{E9CC1DC7-A088-3D0F-8299-A8CE5B97772C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E9CC1DC7-A088-3D0F-8299-A8CE5B97772C}.Debug|Win32.Build.0 = Debug|Win32
+		{E9CC1DC7-A088-3D0F-8299-A8CE5B97772C}.Release|Win32.ActiveCfg = Release|Win32
+		{E9CC1DC7-A088-3D0F-8299-A8CE5B97772C}.Release|Win32.Build.0 = Release|Win32
+		{E9CC1DC7-A088-3D0F-8299-A8CE5B97772C}.MinSizeRel|Win32.ActiveCfg = MinSizeRel|Win32
+		{E9CC1DC7-A088-3D0F-8299-A8CE5B97772C}.MinSizeRel|Win32.Build.0 = MinSizeRel|Win32
+		{E9CC1DC7-A088-3D0F-8299-A8CE5B97772C}.RelWithDebInfo|Win32.ActiveCfg = RelWithDebInfo|Win32
+		{E9CC1DC7-A088-3D0F-8299-A8CE5B97772C}.RelWithDebInfo|Win32.Build.0 = RelWithDebInfo|Win32
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
 	EndGlobalSection
 EndGlobal

@@ -23,7 +23,7 @@ void CBattleTimer::Run(){
 	TimeKey nowTime = GetInternalTime();
 
 	while(!m_ThreadTimerQueue.empty()){
-		ThreadTimer& sThreadTimer = m_ThreadTimerQueue.top();
+		ThreadTimer& sThreadTimer = const_cast<ThreadTimer&>(m_ThreadTimerQueue.top());
 		if (!m_InvalidTimerSet.empty()){
 			auto iter = m_InvalidTimerSet.find(sThreadTimer.sequence);
 			if (iter != m_InvalidTimerSet.end()){

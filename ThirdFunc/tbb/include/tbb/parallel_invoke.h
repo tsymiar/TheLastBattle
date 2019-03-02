@@ -1,37 +1,40 @@
 /*
-    Copyright 2005-2014 Intel Corporation.  All Rights Reserved.
+    Copyright (c) 2005-2018 Intel Corporation
 
-    This file is part of Threading Building Blocks. Threading Building Blocks is free software;
-    you can redistribute it and/or modify it under the terms of the GNU General Public License
-    version 2  as  published  by  the  Free Software Foundation.  Threading Building Blocks is
-    distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
-    implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    See  the GNU General Public License for more details.   You should have received a copy of
-    the  GNU General Public License along with Threading Building Blocks; if not, write to the
-    Free Software Foundation, Inc.,  51 Franklin St,  Fifth Floor,  Boston,  MA 02110-1301 USA
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-    As a special exception,  you may use this file  as part of a free software library without
-    restriction.  Specifically,  if other files instantiate templates  or use macros or inline
-    functions from this file, or you compile this file and link it with other files to produce
-    an executable,  this file does not by itself cause the resulting executable to be covered
-    by the GNU General Public License. This exception does not however invalidate any other
-    reasons why the executable file might be covered by the GNU General Public License.
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+
+
+
 */
 
 #ifndef __TBB_parallel_invoke_H
 #define __TBB_parallel_invoke_H
 
 #include "task.h"
+#include "tbb_profiling.h"
 
 #if __TBB_VARIADIC_PARALLEL_INVOKE
-    #include <utility>
+    #include <utility> // std::forward
 #endif
 
 namespace tbb {
 
 #if !__TBB_TASK_GROUP_CONTEXT
     /** Dummy to avoid cluttering the bulk of the header with enormous amount of ifdefs. **/
-    struct task_group_context {};
+    struct task_group_context {
+        task_group_context(tbb::internal::string_index){}
+    };
 #endif /* __TBB_TASK_GROUP_CONTEXT */
 
 //! @cond INTERNAL
@@ -43,8 +46,7 @@ namespace internal {
         function_invoker(const function& _function) : my_function(_function) {}
     private:
         const function &my_function;
-        /*override*/
-        task* execute()
+        task* execute() __TBB_override
         {
             my_function();
             return NULL;
@@ -60,7 +62,7 @@ namespace internal {
         const function3& my_func3;
         bool is_recycled;
 
-        task* execute (){
+        task* execute () __TBB_override {
             if(is_recycled){
                 return NULL;
             }else{
@@ -201,7 +203,7 @@ namespace internal {
     };
 
     // Select task_group_context parameter from the back of a pack
-    task_group_context& get_context( task_group_context& tgc ) { return tgc; }
+    inline task_group_context& get_context( task_group_context& tgc ) { return tgc; }
 
     template<typename T1, typename... T>
     task_group_context& get_context( T1&& /*ignored*/, T&&... t )
@@ -224,7 +226,7 @@ namespace internal {
     // task_group_context is not in the pack, needs to be added
     template<typename F0, typename F1, typename... F>
     void parallel_invoke_impl(false_type, F0&& f0, F1&& f1, F&&... f) {
-        tbb::task_group_context context;
+        tbb::task_group_context context(PARALLEL_INVOKE);
         // Add context to the arguments, and redirect to the other overload
         parallel_invoke_impl(true_type(), std::forward<F0>(f0), std::forward<F1>(f1), std::forward<F>(f)..., context);
     }
@@ -386,31 +388,31 @@ void parallel_invoke(const F0& f0, const F1& f1, const F2& f2, const F3& f3, con
 // two arguments
 template<typename F0, typename F1>
 void parallel_invoke(const F0& f0, const F1& f1) {
-    task_group_context context;
+    task_group_context context(internal::PARALLEL_INVOKE);
     parallel_invoke<F0, F1>(f0, f1, context);
 }
 // three arguments
 template<typename F0, typename F1, typename F2>
 void parallel_invoke(const F0& f0, const F1& f1, const F2& f2) {
-    task_group_context context;
+    task_group_context context(internal::PARALLEL_INVOKE);
     parallel_invoke<F0, F1, F2>(f0, f1, f2, context);
 }
 // four arguments
 template<typename F0, typename F1, typename F2, typename F3 >
 void parallel_invoke(const F0& f0, const F1& f1, const F2& f2, const F3& f3) {
-    task_group_context context;
+    task_group_context context(internal::PARALLEL_INVOKE);
     parallel_invoke<F0, F1, F2, F3>(f0, f1, f2, f3, context);
 }
 // five arguments
 template<typename F0, typename F1, typename F2, typename F3, typename F4>
 void parallel_invoke(const F0& f0, const F1& f1, const F2& f2, const F3& f3, const F4& f4) {
-    task_group_context context;
+    task_group_context context(internal::PARALLEL_INVOKE);
     parallel_invoke<F0, F1, F2, F3, F4>(f0, f1, f2, f3, f4, context);
 }
 // six arguments
 template<typename F0, typename F1, typename F2, typename F3, typename F4, typename F5>
 void parallel_invoke(const F0& f0, const F1& f1, const F2& f2, const F3& f3, const F4& f4, const F5& f5) {
-    task_group_context context;
+    task_group_context context(internal::PARALLEL_INVOKE);
     parallel_invoke<F0, F1, F2, F3, F4, F5>(f0, f1, f2, f3, f4, f5, context);
 }
 // seven arguments
@@ -418,7 +420,7 @@ template<typename F0, typename F1, typename F2, typename F3, typename F4, typena
 void parallel_invoke(const F0& f0, const F1& f1, const F2& f2, const F3& f3, const F4& f4,
                      const F5& f5, const F6& f6)
 {
-    task_group_context context;
+    task_group_context context(internal::PARALLEL_INVOKE);
     parallel_invoke<F0, F1, F2, F3, F4, F5, F6>(f0, f1, f2, f3, f4, f5, f6, context);
 }
 // eight arguments
@@ -427,7 +429,7 @@ template<typename F0, typename F1, typename F2, typename F3, typename F4,
 void parallel_invoke(const F0& f0, const F1& f1, const F2& f2, const F3& f3, const F4& f4,
                      const F5& f5, const F6& f6, const F7& f7)
 {
-    task_group_context context;
+    task_group_context context(internal::PARALLEL_INVOKE);
     parallel_invoke<F0, F1, F2, F3, F4, F5, F6, F7>(f0, f1, f2, f3, f4, f5, f6, f7, context);
 }
 // nine arguments
@@ -436,7 +438,7 @@ template<typename F0, typename F1, typename F2, typename F3, typename F4,
 void parallel_invoke(const F0& f0, const F1& f1, const F2& f2, const F3& f3, const F4& f4,
                      const F5& f5, const F6& f6, const F7& f7, const F8& f8)
 {
-    task_group_context context;
+    task_group_context context(internal::PARALLEL_INVOKE);
     parallel_invoke<F0, F1, F2, F3, F4, F5, F6, F7, F8>(f0, f1, f2, f3, f4, f5, f6, f7, f8, context);
 }
 // ten arguments
@@ -445,7 +447,7 @@ template<typename F0, typename F1, typename F2, typename F3, typename F4,
 void parallel_invoke(const F0& f0, const F1& f1, const F2& f2, const F3& f3, const F4& f4,
                      const F5& f5, const F6& f6, const F7& f7, const F8& f8, const F9& f9)
 {
-    task_group_context context;
+    task_group_context context(internal::PARALLEL_INVOKE);
     parallel_invoke<F0, F1, F2, F3, F4, F5, F6, F7, F8, F9>(f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, context);
 }
 #endif // __TBB_VARIADIC_PARALLEL_INVOKE

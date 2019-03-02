@@ -1,9 +1,9 @@
 #include "vercheck.h"
 #include <memory.h>
 
-namespace UCODE
+namespace UCORE
 {
-	UINT32  VerToDWORD(const SUCODEVersion* pstVersion)
+	UINT32  VerToDWORD(const SUCOREVersion* pstVersion)
 	{
 		UINT32 dwValue;
 		char* p = (char*)&dwValue;
@@ -12,7 +12,7 @@ namespace UCODE
 		return dwValue;
 	}
 
-	BOOL  VerCheck(const SUCODEVersion * pRequestVer, const SUCODEVersion * pRealVer)
+	BOOL  VerCheck(const SUCOREVersion * pRequestVer, const SUCOREVersion * pRealVer)
 	{
 		if( !pRequestVer ) return TRUE;
 		if( !pRealVer ) return FALSE;

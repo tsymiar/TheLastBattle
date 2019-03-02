@@ -7,20 +7,25 @@
 using namespace std;
 #include "..\..\ucore\include\net\ucnetopt.h"
 #include "..\..\ucore\include\net\ucnet.h"
-using namespace UCODE;
+using namespace UCORE;
 //#ifdef _DEBUG
-//#pragma comment(lib,"../../ucore/bin/x64/Debug/ucodebase.lib")
-//#pragma comment(lib,"../../ucore/bin/x64/Debug/ucodenet.lib")
+//#pragma comment(lib,"../../ucore/bin/x64/Debug/ucorebase.lib")
+//#pragma comment(lib,"../../ucore/bin/x64/Debug/ucorenet.lib")
 //#else
-//#pragma comment(lib,"../../ucore/bin/x64/Release/ucodebase.lib")
-//#pragma comment(lib,"../../ucore/bin/x64/Release/ucodenet.lib")
+//#pragma comment(lib,"../../ucore/bin/x64/Release/ucorebase.lib")
+//#pragma comment(lib,"../../ucore/bin/x64/Release/ucorenet.lib")
 //#endif
 #ifdef _DEBUG
-#pragma comment(lib,"../../Bin/x64/Debug/ucodebase.lib")
-#pragma comment(lib,"../../Bin/x64/Debug/ucodenet.lib")
+#ifdef WIN32
+#pragma comment(lib,"../../Lib/Win32/Debug/ucorebase.lib")
+#pragma comment(lib,"../../Lib/Win32/Debug/ucorenet.lib")
 #else
-#pragma comment(lib,"../../Bin/x64/Release/ucodebase.lib")
-#pragma comment(lib,"../../Bin/x64/Release/ucodenet.lib")
+#pragma comment(lib,"../../Bin/x64/Debug/ucorebase.lib")
+#pragma comment(lib,"../../Bin/x64/Debug/ucorenet.lib")
+#endif
+#else
+#pragma comment(lib,"../../Bin/x64/Release/ucorebase.lib")
+#pragma comment(lib,"../../Bin/x64/Release/ucorenet.lib")
 #endif
 #include "google/protobuf/descriptor.h"
 #include "google/protobuf/message.h"

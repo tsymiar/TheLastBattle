@@ -1,21 +1,21 @@
 /*
-    Copyright 2005-2014 Intel Corporation.  All Rights Reserved.
+    Copyright (c) 2005-2018 Intel Corporation
 
-    This file is part of Threading Building Blocks. Threading Building Blocks is free software;
-    you can redistribute it and/or modify it under the terms of the GNU General Public License
-    version 2  as  published  by  the  Free Software Foundation.  Threading Building Blocks is
-    distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
-    implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    See  the GNU General Public License for more details.   You should have received a copy of
-    the  GNU General Public License along with Threading Building Blocks; if not, write to the
-    Free Software Foundation, Inc.,  51 Franklin St,  Fifth Floor,  Boston,  MA 02110-1301 USA
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-    As a special exception,  you may use this file  as part of a free software library without
-    restriction.  Specifically,  if other files instantiate templates  or use macros or inline
-    functions from this file, or you compile this file and link it with other files to produce
-    an executable,  this file does not by itself cause the resulting executable to be covered
-    by the GNU General Public License. This exception does not however invalidate any other
-    reasons why the executable file might be covered by the GNU General Public License.
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+
+
+
 */
 
 #ifndef __TBB_machine_H
@@ -30,19 +30,44 @@
 #include <sys/syscall.h>
 
 #if defined(SYS_futex)
+/* This header file is included for Linux and some other systems that may support futexes.*/
 
 #define __TBB_USE_FUTEX 1
+
+#if defined(__has_include)
+#define __TBB_has_include __has_include
+#else
+#define __TBB_has_include(x) 0
+#endif
+
+/*
+If available, use typical headers where futex API is defined. While Linux and OpenBSD
+are known to provide such headers, other systems might have them as well.
+*/
+#if defined(__linux__) || __TBB_has_include(<linux/futex.h>)
+#include <linux/futex.h>
+#elif defined(__OpenBSD__) || __TBB_has_include(<sys/futex.h>)
+#include <sys/futex.h>
+#endif
+
 #include <limits.h>
 #include <errno.h>
-// Unfortunately, some versions of Linux do not have a header that defines FUTEX_WAIT and FUTEX_WAKE.
 
-#ifdef FUTEX_WAIT
+/*
+Some systems might not define the macros or use different names. In such case we expect
+the actual parameter values to match Linux: 0 for wait, 1 for wake.
+*/
+#if defined(FUTEX_WAIT_PRIVATE)
+#define __TBB_FUTEX_WAIT FUTEX_WAIT_PRIVATE
+#elif defined(FUTEX_WAIT)
 #define __TBB_FUTEX_WAIT FUTEX_WAIT
 #else
 #define __TBB_FUTEX_WAIT 0
 #endif
 
-#ifdef FUTEX_WAKE
+#if defined(FUTEX_WAKE_PRIVATE)
+#define __TBB_FUTEX_WAKE FUTEX_WAKE_PRIVATE
+#elif defined(FUTEX_WAKE)
 #define __TBB_FUTEX_WAKE FUTEX_WAKE
 #else
 #define __TBB_FUTEX_WAKE 1

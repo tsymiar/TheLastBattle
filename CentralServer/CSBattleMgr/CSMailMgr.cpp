@@ -75,7 +75,7 @@ namespace CentralServer
 
 	INT32 CCSMailMgr::getMailInfoById(INT64 objIdx,INT32 mailId,   GSToGC::MailInfo & mailInfo, INT32 &nstate)
 	{
-		assert(NULL== name || mailId < 1);
+		assert(NULL == &mailInfo || mailId < 1);
 
 		auto itr = m_mapGameMail.find(mailId);
 		if (itr != m_mapGameMail.end())

@@ -41,7 +41,7 @@
 #include <MMSystem.h>
 #include <atlconv.h>
 #include "..\..\ucore\include\net\ucnet.h"
-#include "ELoggingHeader.h"
+#include "..\ELogging\ELoggingHeader.h"
 #include "..\..\Share\logger.h"
 #include "Net\GSNetSessionMgr.h"
 #include "../../ThirdFunc/MsgLists/BSToGS.pb.h"
@@ -57,7 +57,7 @@
 #include "../../ThirdFunc/MsgLists/ParseProto.h"
 #include "../../CommonCPlus/Include/FBAll_Const.h"
 using namespace std;
-using namespace UCODE;
+using namespace UCORE;
 #endif
 
 INT64 GetMiliSecond();

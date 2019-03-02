@@ -6,7 +6,7 @@
 #include <deque>
 #include <vector>
 
-namespace UCODE
+namespace UCORE
 {
     template<typename T, typename MT = CSDNonMutex>
     class ObjectAllocator

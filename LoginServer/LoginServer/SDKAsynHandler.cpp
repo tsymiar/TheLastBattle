@@ -739,7 +739,7 @@ void SDKAsynHandler::InitCfg(){
 	TiXmlDocument doc(filepath);
 	bool loadOkay = doc.LoadFile();
 	if (!loadOkay){
-		ELOG(LOG_ERROR, "load LSCfg.xml failed for %s\n", doc.ErrorDesc());
+		ELOG(LOG_ERROR, "load LSCfg.xml detail: %s\n", doc.ErrorDesc());
 	}
 }
 

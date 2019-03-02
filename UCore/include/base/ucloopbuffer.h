@@ -8,11 +8,11 @@
 
 #include "uctype.h"
 
-namespace UCODE
+namespace UCORE
 {
     /**
     * @defgroup grouploopbuffer Ñ­»·»º³åÇø
-    * @ingroup  UCODE
+    * @ingroup  UCORE
     * @{
     */
 

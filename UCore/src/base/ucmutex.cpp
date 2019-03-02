@@ -10,7 +10,7 @@
 #  include <pthread.h>
 #endif
 
-namespace UCODE
+namespace UCORE
 {
     BOOL SDMutexInit(SDMutexId & mid)
     {
@@ -212,7 +212,7 @@ namespace UCODE
     }
 
 
-} // namespace UCODE
+} // namespace UCORE
 
 
 

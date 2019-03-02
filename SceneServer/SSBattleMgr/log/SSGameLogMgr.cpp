@@ -94,7 +94,7 @@ void	CSSGameLogMgr::PosBattleLogs(EGameLog eLog, std::string & logStr)
 	sLog.set_log_type(eLog ); 
 	sLog.set_log_str(logStr);	
 
-	CSSWorkThreadMgr::GetInstance().PostMsgToLogServer(sLog, sLog.msgid());  
+	CSSWorkThreadMgr::GetInstance().PostMsgToLogMgr(sLog, sLog.msgid());  
 }
 void	CSSGameLogMgr::AddBattleLog(EGameLog eLog, INT32 bid,INT32 mapid, INT32 param)
 {

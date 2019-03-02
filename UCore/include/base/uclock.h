@@ -3,7 +3,7 @@
 
 #include "ucmutex.h"
 
-namespace  UCODE
+namespace  UCORE
 {
     template <class MT = CSDMutex>
     class CSDLock

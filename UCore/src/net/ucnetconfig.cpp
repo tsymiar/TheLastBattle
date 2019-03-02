@@ -18,7 +18,7 @@ INT32 g_nLoopSize = 4096*1024*6;
 UINT32 g_dwNetLogLevel = 0;
 CSDLogger g_oNetLogger;
 
-bool UCAPI UCODE::SDNetSetLogger(ISDLogger* poLogger, UINT32 dwLevel)
+bool UCAPI UCORE::SDNetSetLogger(ISDLogger* poLogger, UINT32 dwLevel)
 {
 	if(NULL == poLogger)
 	{

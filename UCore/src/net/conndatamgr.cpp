@@ -29,7 +29,7 @@ bool CConnDataMgr::Init()
 	m_connDataAllocator = new ConnDataAllocator(); 
 	m_initState  = 1; 
 	m_byRunIndex = 0;
-	m_dwLastRunTime = UCODE::SDGetTickCount();
+	m_dwLastRunTime = UCORE::SDGetTickCount();
 	return true; 
 }
 
@@ -103,7 +103,7 @@ UINT8 CConnDataMgr::AddRunConection( CUCConnection* pConnection )
 
 void CConnDataMgr::RunConection()
 {
-	UINT32 dwCurTime = UCODE::SDGetTickCount();
+	UINT32 dwCurTime = UCORE::SDGetTickCount();
 	UINT32 dwPassTime = dwCurTime - m_dwLastRunTime;
 	m_dwLastRunTime = dwCurTime;
 	if (dwPassTime > RUN_CONNECTION_LIST_SIZE)

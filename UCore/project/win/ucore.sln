@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ucodebase", "ucodebase\ucodebase.vcxproj", "{F5DC0C1D-AAF9-4388-BFE7-084369AF65A5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ucorebase", "ucorebase\ucorebase.vcxproj", "{F5DC0C1D-AAF9-4388-BFE7-084369AF65A5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ucodenet", "ucodenet\ucodenet.vcxproj", "{2FCC1CD8-CE64-409F-9601-1A3F6601884B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ucorenet", "ucorenet\ucorenet.vcxproj", "{2FCC1CD8-CE64-409F-9601-1A3F6601884B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F5DC0C1D-AAF9-4388-BFE7-084369AF65A5} = {F5DC0C1D-AAF9-4388-BFE7-084369AF65A5}
 	EndProjectSection

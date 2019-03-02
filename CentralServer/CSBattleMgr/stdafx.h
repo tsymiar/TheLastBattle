@@ -38,6 +38,7 @@
 #define _WIN32_IE 0x0700        
 #endif
 #include "WYYTools/Vector3D.h"
+//#pragma comment(lib, "..\..\Lib\$(Platform)\$(Configuration)\WYYTools.lib")
 #include "Include/FBAll_Const.h"
 #include	"boost/property_tree/ptree.hpp"
 #include	"boost/property_tree/xml_parser.hpp"

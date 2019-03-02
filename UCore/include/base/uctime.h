@@ -24,11 +24,11 @@ typedef std::string tstring;
 #endif
 #endif
 
-namespace UCODE
+namespace UCORE
 {
     /**
     * @defgroup grouptime Ê±¼ä²Ù×÷
-    * @ingroup  UCODE
+    * @ingroup  UCORE
     * @{
     */
     class CSDDateTime;

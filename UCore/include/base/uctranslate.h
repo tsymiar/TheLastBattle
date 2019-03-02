@@ -9,7 +9,7 @@ using namespace std;
 #if UC_WITH_LIBICONV
 #include "iconv.h"
 #include "localcharset.h"
-namespace UCODE
+namespace UCORE
 {
     /**
     * @brief 一种字符集到另一种字符集的转换

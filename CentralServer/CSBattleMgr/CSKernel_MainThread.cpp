@@ -20,7 +20,7 @@ void CCSKernel::MainLoop(){
 	INetSessionMgr::GetInstance()->CreateListener(m_sCSKernelCfg.n32SSNetListenerPort,1024000,10240000,1,&gSceneSessionFactory);
 	//侦听端口10010
     INetSessionMgr::GetInstance()->CreateListener(m_sCSKernelCfg.n32RCNetListenerPort,1024000,10240000,2,&gRemoteConsoleFactory);
-    //连接LogServer 1234端口
+    //连接LogMgr 1234端口
 	INetSessionMgr::GetInstance()->CreateConnector(ST_CLIENT_C2Log, m_sCSKernelCfg.LogAddress.c_str(), m_sCSKernelCfg.LogPort, 102400,102400,0);
 
     //连接redis 6379

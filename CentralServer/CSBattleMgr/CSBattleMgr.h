@@ -2,7 +2,6 @@
 #include "stdafx.h"
 #include "CSCfgMgr.h"
 #include <unordered_map>
-#include <hash_map>
 #include <map>
 #include "CSBattleRoom.h"
  
@@ -13,7 +12,7 @@ namespace CentralServer{
 
 class CCSBattle;
 class CCSUser;
-typedef	hash_map<UINT64, CCSBattle*> BattleMap;
+typedef	unordered_map<UINT64, CCSBattle*> BattleMap;
 
 class CCSBattleMgr
 {

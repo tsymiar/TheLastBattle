@@ -25,6 +25,7 @@ MFC/
 [Oo]bj/
 [Gg]en/
 [Gg]eneratedFiles
+CMakeFiles
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -72,6 +73,8 @@ artifacts/
 *.pidb
 *.svclog
 *.scc
+*.tlog
+*[Cc]ache*
 
 # Chutzpah Test files
 _Chutzpah*
@@ -247,3 +250,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+ThirdFunc/curl-7.64.0/projects/Windows/VC15/lib/LIB Debug/libcurl.res

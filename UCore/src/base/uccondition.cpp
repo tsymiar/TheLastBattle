@@ -4,7 +4,7 @@
 #include "ucmutex.h"
 #include "uctime.h"
 
-namespace UCODE
+namespace UCORE
 {
 
     CSDCondition::CSDCondition()
@@ -454,5 +454,5 @@ namespace UCODE
 #endif
     }
 
-} // namespace UCODE
+} // namespace UCORE
 

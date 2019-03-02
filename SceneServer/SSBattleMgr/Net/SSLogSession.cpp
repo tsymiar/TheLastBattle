@@ -25,7 +25,7 @@ void CSSLogSession::SendInitData()
 {
 	// send init data to remote and a stop message at the end.
 	// you can't send anything until you recv remote init messages.
-	ELOG(LOG_INFO," LogServer Connected, try to register me.");
+	ELOG(LOG_INFO," LogMgr Connected, try to register me.");
 }
 
 void CSSLogSession::OnRealEstablish(){

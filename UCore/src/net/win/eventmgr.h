@@ -9,7 +9,7 @@
 #include "ucobjectpool.h"
 #include "thread_buffer_pool.h"
 
-using namespace UCODE;
+using namespace UCORE;
 
 class CUCConnection;
 
@@ -47,14 +47,14 @@ public:
 	}
 
 	//// 2009-03-24 cwy add for interface expanding, add bind function
-	inline void PushBindEvt(UINT32 dwConnectorID, INT32	 nUCODEErrCode, INT32 nSysErrCode)
+	inline void PushBindEvt(UINT32 dwConnectorID, INT32	 nUCOREErrCode, INT32 nSysErrCode)
 	{
 		SNetEvent* pstEvent = _GetFreeEvt();
 		SDASSERT(pstEvent != NULL);
 		pstEvent->nType = NETEVT_BIND_ERR;
 		SBindErrEvt* pstBindErr		= &pstEvent->stUn.stBindErr;
 		pstBindErr->dwConnectorID	= dwConnectorID;
-		pstBindErr->nUCODEErrCode		= nUCODEErrCode;
+		pstBindErr->nUCOREErrCode		= nUCOREErrCode;
 		pstBindErr->nSysErrCode		= nSysErrCode;
 
 		_PushBackNetEvt(pstEvent);
@@ -99,7 +99,7 @@ public:
 		_PushBackNetEvt(pstEvent);
 	}
 
-	inline void PushErrorEvt(CConnData* pConnData, UINT32 dwConnectionID, INT32 nUCODEErrCode, INT32 nSysErrCode)
+	inline void PushErrorEvt(CConnData* pConnData, UINT32 dwConnectionID, INT32 nUCOREErrCode, INT32 nSysErrCode)
 	{
 		SNetEvent* pstEvent = _GetFreeEvt();
 		SDASSERT(pstEvent != NULL);
@@ -108,7 +108,7 @@ public:
 		SErrorEvt* pstError			= &pstEvent->stUn.stError;
 		pstError->pConnData			= pConnData;
 		pstError->dwConnectionID	= dwConnectionID;
-		pstError->nUCODEErrCode		= nUCODEErrCode;
+		pstError->nUCOREErrCode		= nUCOREErrCode;
 		pstError->nSysErrCode		= nSysErrCode;
 
 		_PushBackNetEvt(pstEvent);

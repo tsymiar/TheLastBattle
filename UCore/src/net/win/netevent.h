@@ -41,7 +41,7 @@ struct SErrorEvt
 {
 	CConnData*		pConnData;
 	UINT32			dwConnectionID;
-	INT32			nUCODEErrCode;
+	INT32			nUCOREErrCode;
 	INT32			nSysErrCode;
 };
 
@@ -72,7 +72,7 @@ struct SSendEvt
 struct SBindErrEvt
 {
 	UINT32			dwConnectorID;
-	INT32			nUCODEErrCode;
+	INT32			nUCOREErrCode;
 	INT32			nSysErrCode;
 };
 

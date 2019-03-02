@@ -4,8 +4,6 @@
 #include <iostream>
 #include <tchar.h>
 
-#pragma comment(lib,"..\\..\\Bin\\x64\\Release\\ELogging.lib")
-
 // 注意：这个枚举值有2个//
 enum LoggingEnum{
 	LOG_INFO,

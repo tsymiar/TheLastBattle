@@ -1,16 +1,16 @@
-#ifndef UCODE_UCNET_H_
-#define UCODE_UCNET_H_
+#ifndef UCORE_UCNET_H_
+#define UCORE_UCNET_H_
 
 #include "ucbase.h"
 #include "ucconfig.h"
 #include "uclogger.h"
 
-namespace UCODE{
+namespace UCORE{
 
 /**
  * @brief UCNet组件模块版本
  */
-static const SUCODEVersion UCNET_MODULE_VERSION = {1, 0, 0, 0};
+static const SUCOREVersion UCNET_MODULE_VERSION = {1, 0, 0, 0};
 
 /**
  * @brief UCNet module name
@@ -20,7 +20,7 @@ const char UCNET_MODULENAME[] = "UCNet";
 /**
  * @brief UCNet version
  */
-const SUCODEVersion	UCNET_VERSION = UCNET_MODULE_VERSION;
+const SUCOREVersion	UCNET_VERSION = UCNET_MODULE_VERSION;
 
 /**
  * @brief Error code of UCNet
@@ -386,12 +386,12 @@ public:
  * @param pstVersion : the version of SDNet
  * @return IUCNet instance pointer
  */
-UCODE_NET_FUN IUCNet* UCAPI SDNetGetModule(const SUCODEVersion* pstVersion);
+UCORE_NET_FUN IUCNet* UCAPI SDNetGetModule(const SUCOREVersion* pstVersion);
 
 /**
  * @brief Function pointer definition of SDNetGetModule
  */
-typedef IUCNet* (UCAPI *PFN_SDNetGetModule)(const SUCODEVersion* pstVersion);
+typedef IUCNet* (UCAPI *PFN_SDNetGetModule)(const SUCOREVersion* pstVersion);
 
 /**
  * @brief Set ISDLogger object to the SDNet. The log of SDNet will export to the ISDLogger object
@@ -399,7 +399,7 @@ typedef IUCNet* (UCAPI *PFN_SDNetGetModule)(const SUCODEVersion* pstVersion);
  * @param dwLevel : log level
  * @return true means success, false means failure
  */
-UCODE_NET_FUN bool UCAPI SDNetSetLogger(ISDLogger* poLogger, UINT32 dwLevel);
+UCORE_NET_FUN bool UCAPI SDNetSetLogger(ISDLogger* poLogger, UINT32 dwLevel);
 
 /**
  * @brief Function pointer definition of SDNetSetLogger
@@ -411,7 +411,7 @@ typedef bool (UCAPI *PFN_SDNetSetLogger)(ISDLogger* poLogger, UINT32 dwLevel);
  * @param dwType : option type
  * @param pOpt : option value
  */
-UCODE_NET_FUN void UCAPI SDNetSetOpt(UINT32 dwType, void* pOpt);
+UCORE_NET_FUN void UCAPI SDNetSetOpt(UINT32 dwType, void* pOpt);
 
 }
 
