@@ -91,7 +91,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;BUILDING_LIBCURL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(BOOST);$(ProjectDir)lib_json;$(ProjectDir)json;$(ProjectDir)..\;$(SolutionDir)UCore\include\base;$(SolutionDir)ThirdFunc;$(SolutionDir)ThirdFunc\curl-7.64.0\include;$(SolutionDir)ThirdFunc\tinyxml;$(SolutionDir)ELogging;$(SolutionDir)ThirdFunc\MsgLists;$(SolutionDir)CommonCPlus\CommonCPlus;$(SolutionDir)ThirdFunc\curl-7.38.0\include;$(SolutionDir)ThirdFunc\openssl-1.1.1a\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(BOOST);$(ProjectDir)lib_json;$(ProjectDir)json;$(ProjectDir)..\;$(SolutionDir)UCore\include\base;$(SolutionDir)ThirdFunc;$(SolutionDir)ThirdFunc\curl-7.64.0\include;$(SolutionDir)ThirdFunc\tinyxml;$(SolutionDir)ELogging;$(SolutionDir)ThirdFunc\MsgLists;$(SolutionDir)CommonCPlus\CommonCPlus;$(SolutionDir)ThirdFunc\openssl-1.1.1a\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -100,7 +100,7 @@
       <AdditionalLibraryDirectories>$(BOOST)\stage\lib;$(SolutionDir)ThirdFunc\VLD\lib\$(Platform);$(SolutionDir)ThirdFunc\libmysql;$(SolutionDir)ThirdFunc\google\protobuf\lib;$(SolutionDir)ThirdFunc\openssl-1.1.1a\lib;..\..\Lib\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist $(SolutionDir)Bin\ md $(SolutionDir)Bin\
+      <Command>if not exist "$(SolutionDir)Bin" md $(SolutionDir)Bin\
 copy /y $(SolutionDir)Lib\Win32\Debug\*.dll $(SolutionDir)Bin\
 copy /y $(SolutionDir)Debug\*.exe $(SolutionDir)Bin\
 copy /y $(SolutionDir)ThirdFunc\openssl-1.1.1a\libcrypto-1_1.dll $(SolutionDir)Bin\</Command>

@@ -1,8 +1,8 @@
 ﻿
 -------
-* [数据库初始化](https://blog.csdn.net/zixiao217/article/details/80156362):
-
-  `ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY '123321';`
+* 数据库初始化:
+    to solve `Authentication plugin 'caching_sha2_password' cannot be loaded`
+    `ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY '123321';`
 
 * CSBattleMgr
 

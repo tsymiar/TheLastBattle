@@ -25,7 +25,9 @@ MFC/
 [Oo]bj/
 [Gg]en/
 [Gg]eneratedFiles
+*[Cc]ache*
 CMakeFiles
+ThirdFunc/boost_1_60_0*
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -74,7 +76,6 @@ artifacts/
 *.svclog
 *.scc
 *.tlog
-*[Cc]ache*
 
 # Chutzpah Test files
 _Chutzpah*
@@ -251,3 +252,10 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 ThirdFunc/curl-7.64.0/projects/Windows/VC15/lib/LIB Debug/libcurl.res
+
+# Keep files
+!*.c
+!*.cc
+!*.cpp
+!*.hpp
+!*.h
