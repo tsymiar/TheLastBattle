@@ -48,7 +48,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../CommonCPlus/WYYTools/Vector3D.h"
+#include "WYYTools/Vector3D.h"
 #include "../../CommonCPlus/Include/FBAll_Const.h"
 #include "SSDataStructure.h"
 #include "../../ELogging/ELoggingHeader.h"

@@ -99,7 +99,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(BOOST);$(PROTOBUF)\include;$(ProjectDir)..\;$(SolutionDir)UCore\include\base</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(BOOST);$(ProjectDir)..\;$(SolutionDir)ThirdFunc\google\protobuf;$(SolutionDir)UCore\include\base</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

@@ -91,7 +91,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;BUILDING_LIBCURL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(BOOST);$(ProjectDir)lib_json;$(ProjectDir)json;$(ProjectDir)..\;$(SolutionDir)UCore\include\base;$(SolutionDir)ThirdFunc;$(SolutionDir)ThirdFunc\curl-7.64.0\include;$(SolutionDir)ThirdFunc\tinyxml;$(SolutionDir)ELogging;$(SolutionDir)ThirdFunc\MsgLists;$(SolutionDir)CommonCPlus\CommonCPlus;$(SolutionDir)ThirdFunc\openssl-1.1.1a\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(BOOST);$(ProjectDir)lib_json;$(ProjectDir)json;$(ProjectDir)..\;$(SolutionDir)UCore\include\base;$(SolutionDir)ThirdFunc;$(SolutionDir)ThirdFunc\curl-7.64.0\include;$(SolutionDir)ThirdFunc\boost_1_60_0;$(SolutionDir)ThirdFunc\tinyxml;$(SolutionDir)ELogging;$(SolutionDir)ThirdFunc\MsgLists;$(SolutionDir)CommonCPlus\CommonCPlus;$(SolutionDir)ThirdFunc\openssl-1.1.1a\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

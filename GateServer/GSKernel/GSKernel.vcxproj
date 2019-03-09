@@ -96,13 +96,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GSKERNEL_EXPORTS;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Async</ExceptionHandling>
-      <AdditionalIncludeDirectories>$(BOOST);$(ProjectDir).;$(ProjectDir)..\;$(SolutionDir)UCore\include\base;$(SolutionDir)ThirdFunc;$(SolutionDir)CommonCPlus\CommonCPlus</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(BOOST);$(SolutionDir)ThirdFunc\boost_1_60_0;$(ProjectDir).;$(ProjectDir)..\;$(SolutionDir)UCore\include\base;$(SolutionDir)ThirdFunc;$(SolutionDir)CommonCPlus\CommonCPlus</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>ws2_32.lib;vld.lib;ucorenet.lib;Winmm.lib;tinyxml.lib;ELogging.lib;DbgLib.lib;libmysql.lib;libprotobuf.lib;libboost_atomic-vc140-mt-gd-1_60.lib;libboost_date_time-vc140-mt-gd-1_60.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(BOOST)\stage\lib;$(SolutionDir)ThirdFunc\google\protobuf\lib;$(SolutionDir)ThirdFunc\libmysql;$(SolutionDir)ThirdFunc\VLD\lib\$(Platform);$(SolutionDir)Lib\$(Platform)\$(Configuration);..\..\..\..\CommonCPlus\trunk\Bin\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(BOOST)\stage\lib;$(SolutionDir)ThirdFunc\boost_1_60_0\stage\lib;$(SolutionDir)ThirdFunc\google\protobuf\lib;$(SolutionDir)ThirdFunc\libmysql;$(SolutionDir)ThirdFunc\VLD\lib\$(Platform);$(SolutionDir)Lib\$(Platform)\$(Configuration);..\..\..\..\CommonCPlus\trunk\Bin\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

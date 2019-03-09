@@ -519,14 +519,14 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CSDATASOURCE_EXPORTS;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\;$(SolutionDir)UCore\include\base;$(SolutionDir)ThirdFunc;$(SolutionDir)ThirdFunc\tinyxml;..\..\ThirdFunc\LuaPlus\src;..\..\ThirdFunc\LuaPlus;..\..\CommonCPlus;..\..\CommonCPlus\CommonCPlus;..\..\CommonCPlus\CommonCPlus\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\;$(SolutionDir)UCore\include\base;$(SolutionDir)ThirdFunc;$(SolutionDir)ThirdFunc\tinyxml;$(SolutionDir)ThirdFunc\boost_1_60_0;..\..\ThirdFunc\LuaPlus\src;..\..\ThirdFunc\LuaPlus;..\..\CommonCPlus;..\..\CommonCPlus\CommonCPlus;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>vld.lib;tinyxml.lib;Winmm.lib;DbgLib.lib;libmysql.lib;GSKernel.lib;libprotobuf.lib;libboost_thread-vc140-mt-gd-1_60.lib</AdditionalDependencies>
       <Profile>true</Profile>
-      <AdditionalLibraryDirectories>$(BOOST)\stage\lib;..\..\..\..\CommonCPlus\trunk\Bin\$(Platform)\$(Configuration)\;..\..\Lib\$(Platform)\$(Configuration);$(SolutionDir)ThirdFunc\libmysql;$(SolutionDir)ThirdFunc\google\protobuf\lib;$(SolutionDir)ThirdFunc\VLD\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\CommonCPlus\trunk\Bin\$(Platform)\$(Configuration)\;..\..\Lib\$(Platform)\$(Configuration);$(BOOST)\stage\lib;$(SolutionDir)ThirdFunc\boost_1_60_0\stage\lib;$(SolutionDir)ThirdFunc\libmysql;$(SolutionDir)ThirdFunc\google\protobuf\lib;$(SolutionDir)ThirdFunc\VLD\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

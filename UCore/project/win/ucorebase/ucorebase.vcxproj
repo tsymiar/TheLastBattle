@@ -120,7 +120,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(BOOST);$(SolutionDir)UCore\thirdparty\libiconv\libiconv;$(SolutionDir)UCore\thirdparty\libiconv\include;$(PTHREAD)\include;$(PROTOBUF)\include;$(ProjectDir)..\;$(SolutionDir)UCore\include\base</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(BOOST);$(PTHREAD)\include;$(SolutionDir)UCore\thirdparty\libiconv\libiconv;$(SolutionDir)UCore\thirdparty\libiconv\include;$(SolutionDir)ThirdFunc\google\protobuf;$(ProjectDir)..\;$(SolutionDir)UCore\include\base</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>

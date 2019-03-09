@@ -27,7 +27,6 @@ MFC/
 [Gg]eneratedFiles
 *[Cc]ache*
 CMakeFiles
-ThirdFunc/boost_1_60_0*
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -198,6 +197,8 @@ ClientBin/
 *.publishsettings
 node_modules/
 orleans.codegen.cs
+*cmake_install.cmake
+ThirdFunc/LuaPlus/*.vcxproj*
 
 # RIA/Silverlight projects
 Generated_Code/

@@ -276,7 +276,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>vld.lib;DbgLib.lib;libmysql.lib;GSKernel.lib;Winmm.lib;tinyxml.lib;LuaPlus.lib;libprotobuf.lib;tbb_debug.lib;libboost_atomic-vc140-mt-gd-1_60.lib;libboost_date_time-vc140-mt-gd-1_60.lib;libboost_filesystem-vc140-mt-gd-1_60.lib;libboost_system-vc140-mt-gd-1_60.lib;libboost_thread-vc140-mt-gd-1_60.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(BOOST)\stage\lib;..\..\Lib\$(Platform)\$(Configuration);$(SolutionDir)Lib\$(Platform)\$(Configuration);$(SolutionDir)ThirdFunc\libmysql;$(SolutionDir)ThirdFunc\google\protobuf\lib;$(SolutionDir)ThirdFunc\tbb\lib;$(SolutionDir)ThirdFunc\VLD\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(BOOST)\stage\lib;$(SolutionDir)ThirdFunc\boost_1_60_0\stage\lib;..\..\Lib\$(Platform)\$(Configuration);$(SolutionDir)Lib\$(Platform)\$(Configuration);$(SolutionDir)ThirdFunc\libmysql;$(SolutionDir)ThirdFunc\google\protobuf\lib;$(SolutionDir)ThirdFunc\tbb\lib;$(SolutionDir)ThirdFunc\VLD\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
