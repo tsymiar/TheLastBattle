@@ -90,12 +90,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(BOOST);$(ProjectDir)..\;$(SolutionDir)ThirdFunc;$(SolutionDir)UCore\include\base</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\;$(SolutionDir)ThirdFunc;$(SolutionDir)UCore\include\base;$(SolutionDir)ThirdFunc\boost_1_60_0</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(BOOST)\stage\lib;$(SolutionDir)ThirdFunc\boost_1_60_0\stage\lib;$(SolutionDir)ThirdFunc\google\protobuf\lib;$(SolutionDir)Lib\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)Lib\$(Platform)\$(Configuration);$(SolutionDir)ThirdFunc\google\protobuf\lib;$(SolutionDir)ThirdFunc\boost_1_60_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>ws2_32.lib;tinyxml.lib;ELogging.lib;libprotobuf.lib;libboost_atomic-vc140-mt-gd-1_60.lib;libboost_date_time-vc140-mt-gd-1_60.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

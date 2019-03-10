@@ -186,20 +186,6 @@ BundleArtifacts/
 # but keep track of directories ending in .cache
 !*.[Cc]ache/
 
-# Others
-ClientBin/
-[Ss]tyle[Cc]op.*
-~$*
-*~
-*.dbmdl
-*.dbproj.schemaview
-*.pfx
-*.publishsettings
-node_modules/
-orleans.codegen.cs
-*cmake_install.cmake
-ThirdFunc/LuaPlus/*.vcxproj*
-
 # RIA/Silverlight projects
 Generated_Code/
 
@@ -260,3 +246,22 @@ ThirdFunc/curl-7.64.0/projects/Windows/VC15/lib/LIB Debug/libcurl.res
 !*.cpp
 !*.hpp
 !*.h
+!FBALLVoipAndroid/assets/social_res/drawable/morepopup_cache.png
+
+# Others
+ClientBin/
+[Ss]tyle[Cc]op.*
+~$*
+*~
+*.dbmdl
+*.dbproj.schemaview
+*.pfx
+*.publishsettings
+node_modules/
+orleans.codegen.cs
+*cmake_install.cmake
+ThirdFunc/LuaPlus/*.vcxproj*
+ThirdFunc/boost_1_60_0/*
+ThirdFunc/libmysql/*
+ThirdFunc/openssl-1.1.1a/*
+ThirdFunc/pthread/*

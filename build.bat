@@ -51,7 +51,7 @@ cd %BATDIR%ThirdFunc\boost_1_60_0
 if not exist bjam (
     call bootstrap.bat
 )
-bjam stage architecture=x86 address-model=32 --with-atomic --with-math --with-date_time --with-thread --with-filesystem --with-system link=static runtime-link=shared threading=multi variant=debug
+bjam stage architecture=x86 address-model=32 --with-atomic --with-math --with-date_time --with-thread --with-filesystem --with-system --with-regex link=static runtime-link=shared threading=multi variant=debug
 cd %BATDIR%
 
 echo ----------------------------------------------------
@@ -62,7 +62,8 @@ msiexec /package ActivePerl-5.20.2.2001-MSWin32-x64-298913.msi /qb
 echo finish install ActivePerl
 set SSLDIR=%BATDIR%ThirdFunc\openssl-1.1.1a
 7za x openssl-1.1.1a.tar.gz -y
-7za x openssl-1.1.1a.tar -o%SSLDIR%\.. -y && del openssl-1.1.1a.tar
+7za x openssl-1.1.1a.tar -o%SSLDIR%\.. -y
+copy /y opensslconf.h %SSLDIR%\include\openssl
 cd %SSLDIR%
 call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
 perl %SSLDIR%\Configure VC-WIN32 --prefix=%SSLDIR%
@@ -75,6 +76,9 @@ nmake && nmake install
 if errorlevel 1 (
     echo fail to make/install ntlib.
 )
+cd %BATDIR%lib-src
+7za x openssl-1.1.1a.tar -o%SSLDIR%\.. -y 
+del openssl-1.1.1a.tar
 cd %BATDIR%
 
 echo ----------------------------------------------------

@@ -95,7 +95,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;ELOGGING_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(BOOST);$(SolutionDir)ThirdFunc;$(ProjectDir)..\;$(SolutionDir)UCore\include\base;..\..\CommonCPlus\CommonCPlus;..\..\ThirdFunc\tinyxml</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\;..\..\ThirdFunc\tinyxml;$(SolutionDir)ThirdFunc;$(SolutionDir)ThirdFunc\boost_1_60_0;$(SolutionDir)UCore\include\base;..\..\CommonCPlus\CommonCPlus</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

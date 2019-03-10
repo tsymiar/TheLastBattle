@@ -90,7 +90,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <AdditionalIncludeDirectories>$(BOOST);$(SolutionDir)ThirdFunc;$(ProjectDir)..\;$(SolutionDir)UCore\include\base</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\;$(SolutionDir)UCore\include\base;$(SolutionDir)ThirdFunc;$(SolutionDir)ThirdFunc\boost_1_60_0</AdditionalIncludeDirectories>
     </ClCompile>
     <Lib>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
