@@ -97,13 +97,10 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>vld.lib;ws2_32.lib;winmm.lib;libcrypto.lib;wldap32.lib;libcurld.lib;libmysql.lib;tinyxml.lib;libprotobuf.lib;GSKernel.lib;libboost_atomic-vc140-mt-gd-1_60.lib;libboost_date_time-vc140-mt-gd-1_60.lib;libboost_filesystem-vc140-mt-gd-1_60.lib;libboost_system-vc140-mt-gd-1_60.lib;libboost_thread-vc140-mt-gd-1_60.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(BOOST)\stage\lib;$(SolutionDir)ThirdFunc\VLD\lib\$(Platform);$(SolutionDir)ThirdFunc\libmysql;$(SolutionDir)ThirdFunc\google\protobuf\lib;$(SolutionDir)ThirdFunc\openssl-1.1.1a\lib;..\..\Lib\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\Lib\$(Platform)\$(Configuration);$(SolutionDir)ThirdFunc\boost_1_60_0\stage\lib;$(SolutionDir)ThirdFunc\VLD\lib\$(Platform);$(SolutionDir)ThirdFunc\google\protobuf\lib;$(SolutionDir)ThirdFunc\openssl-1.1.1a\lib;$(SolutionDir)ThirdFunc\libmysql;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist "$(SolutionDir)Bin" md $(SolutionDir)Bin\
-copy /y $(SolutionDir)Lib\Win32\Debug\*.dll $(SolutionDir)Bin\
-copy /y $(SolutionDir)Debug\*.exe $(SolutionDir)Bin\
-copy /y $(SolutionDir)ThirdFunc\openssl-1.1.1a\libcrypto-1_1.dll $(SolutionDir)Bin\</Command>
+      <Command>if not exist "$(SolutionDir)Bin" (md "$(SolutionDir)Bin\")</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
