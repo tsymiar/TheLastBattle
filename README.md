@@ -1,5 +1,5 @@
 ﻿
-   [![Build status](https://tsymiar.visualstudio.com/BattleServer/_apis/build/status/BattleServer-.NET%20Desktop-CI)](https://tsymiar.visualstudio.com/BattleServer/_build/latest?definitionId=1)
+   [![Build status](https://tsymiar.visualstudio.com/BattleServer/_apis/build/status/BattleServer-ASP.NET%20Core%20(.NET%20Framework)-CI)](https://tsymiar.visualstudio.com/BattleServer/_build/latest?definitionId=61)
    [![MIT Licence](https://tsymiar.github.io/MyAutomatic/image/unlicense.svg)](https://unlicense.org/)
 
 -------
