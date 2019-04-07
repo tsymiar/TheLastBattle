@@ -1,11 +1,12 @@
 ﻿
    [![Build status](https://tsymiar.visualstudio.com/BattleServer/_apis/build/status/BattleServer-ASP.NET%20Core%20(.NET%20Framework)-CI)](https://tsymiar.visualstudio.com/BattleServer/_build/latest?definitionId=61)
+   [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7c414d19d53b4d6a9e30f741505f6dad)](https://www.codacy.com/app/tsymiar/BattleServer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tsymiar/BattleServer&amp;utm_campaign=Badge_Grade)
    [![MIT Licence](https://tsymiar.github.io/MyAutomatic/image/unlicense.svg)](https://unlicense.org/)
 
 -------
 ### Database
 
-   TRY `Authentication plugin 'caching_sha2_password' cannot be loaded` to solve issue below:
+   Using SQL sentence below to solve `Authentication plugin 'caching_sha2_password' cannot be loaded` issue:
     
    `ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY '123321';`
 
