@@ -107,7 +107,7 @@ static unsigned int callbackHash(const void *key) {
 static void *callbackValDup(void *privdata, const void *src) {
     redisCallback *dup = (redisCallback*)malloc(sizeof(*dup));
     ((void) privdata);
-    memcpy(dup,src,sizeof(*dup));
+    std::memcpy(dup,src,sizeof(*dup));
     return dup;
 }
 

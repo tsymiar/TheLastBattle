@@ -239,7 +239,7 @@ typedef struct user {           /* Ptrace returns this data for thread state */
 /* Wrapper for read() which is guaranteed to never return EINTR.
  */
 static ssize_t c_read(int f, void *buf, size_t bytes, int *errno_) {
-  int my_errno;
+  int my_errno = 0;
   /* scope */ {
     /* Define a private copy of syscall macros, which does not modify the
      * global copy of errno.
@@ -267,7 +267,7 @@ static ssize_t c_read(int f, void *buf, size_t bytes, int *errno_) {
  * short writes.
  */
 static ssize_t c_write(int f, const void *void_buf, size_t bytes, int *errno_){
-  int my_errno;
+  int my_errno = 0;
   /* scope */ {
     /* Define a private copy of syscall macros, which does not modify the
      * global copy of errno.
@@ -851,7 +851,7 @@ struct CreateArgs {
 };
 
 static int CreatePipelineChild(void *void_arg) {
-  int my_errno;
+  int my_errno = 0;
   /* scope */ {
     /* Define a private copy of syscall macros, which does not modify the
      * global copy of errno.

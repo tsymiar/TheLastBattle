@@ -141,7 +141,7 @@ Logging::Logging():m_n32IfConsoleDump(0)
 			m_PrelushTime[i] = nowTime;
 			n32Res = CreateLogFile((LoggingEnum)i);
 			if (n32Res != 0){
-				printf("Createfile(i) failed", i);
+				printf("Createfile(%d) failed!\n", i);
 			}
 		}
 	}

@@ -767,7 +767,8 @@ int redisvFormatCommand(char **target, const char *format, va_list ap) {
                     const char *_p = c+1;
                     size_t _l = 0;
                     va_list _cpy;
-
+                    va_start(_cpy,arg);
+					
                     /* Flags */
                     if (*_p != '\0' && *_p == '#') _p++;
                     if (*_p != '\0' && *_p == '0') _p++;
@@ -1024,7 +1025,7 @@ void redisFree(redisContext *c) {
  * see if there is a reply available. */
 int redisBufferRead(redisContext *c) {
     char buf[1024*16];
-    int nread;
+    int nread = 0;
 
     /* Return early when the context has seen an error. */
     if (c->err)

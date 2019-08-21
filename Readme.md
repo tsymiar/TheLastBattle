@@ -4,6 +4,19 @@
    [![MIT Licence](https://tsymiar.github.io/MyAutomatic/image/unlicense.svg)](https://unlicense.org/)
 
 -------
+### Introduction
+
+   **BattleServer** is a MOBA game server, like `Srike of Kings`.
+   
+   Below is the structure of this server project:
+
+   ![](https://github.com/tsymiar/BattleServer/blob/master/Document/image/LastBattle.jpg "LastBattle")
+
+### Client
+
+   Source files include [Client](https://github.com/tsymiar/BattleServer/tree/master/Client), which is also a standalone project.
+
+-------
 ### Database
 
    Using SQL sentence below to solve `Authentication plugin 'caching_sha2_password' cannot be loaded` issue:
