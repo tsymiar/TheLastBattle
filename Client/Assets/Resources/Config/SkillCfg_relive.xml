@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SkillCfg_relive xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un32ID="4001">
+		<szName>骷髅骑士-复活</szName>
+		<n32WaitMilSec>3000</n32WaitMilSec>
+		<n32BaseHP>0</n32BaseHP>
+		<n32PercentHP>500</n32PercentHP>
+		<n32BaseMP>0</n32BaseMP>
+		<n32PercentMP>0</n32PercentMP>
+	</info>
+</SkillCfg_relive>

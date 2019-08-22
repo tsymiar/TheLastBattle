@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CreepsConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info MapID="1000">
+		<ID>1</ID>
+		<MonsterLv>1</MonsterLv>
+		<MonsterNumber>1</MonsterNumber>
+		<MonsterID>20001,20002,20003,20004,20005,20006</MonsterID>
+		<BornCoordinates>9109,6006,7355</BornCoordinates>
+		<MonsterRefreshInterval>30000</MonsterRefreshInterval>
+		<Random>1</Random>
+		<Orientation>0.6,0,0.8</Orientation>
+	</info>
+	<info MapID="1000">
+		<ID>2</ID>
+		<MonsterLv>1</MonsterLv>
+		<MonsterNumber>1</MonsterNumber>
+		<MonsterID>20001,20002,20003,20004,20005,20006</MonsterID>
+		<BornCoordinates>11308,6006,7728</BornCoordinates>
+		<MonsterRefreshInterval>30000</MonsterRefreshInterval>
+		<Random>1</Random>
+		<Orientation>0.3,0,1</Orientation>
+	</info>
+	<info MapID="1000">
+		<ID>3</ID>
+		<MonsterLv>1</MonsterLv>
+		<MonsterNumber>1</MonsterNumber>
+		<MonsterID>20001,20002,20003,20004,20005,20006</MonsterID>
+		<BornCoordinates>12883,6006,5532</BornCoordinates>
+		<MonsterRefreshInterval>30000</MonsterRefreshInterval>
+		<Random>1</Random>
+		<Orientation>-0.7,0,0.7</Orientation>
+	</info>
+	<info MapID="1000">
+		<ID>4</ID>
+		<MonsterLv>1</MonsterLv>
+		<MonsterNumber>1</MonsterNumber>
+		<MonsterID>20001,20002,20003,20004,20005,20006</MonsterID>
+		<BornCoordinates>9615,6006,12830</BornCoordinates>
+		<MonsterRefreshInterval>30000</MonsterRefreshInterval>
+		<Random>1</Random>
+		<Orientation>0.4,0,-0.9</Orientation>
+	</info>
+	<info MapID="1000">
+		<ID>5</ID>
+		<MonsterLv>1</MonsterLv>
+		<MonsterNumber>1</MonsterNumber>
+		<MonsterID>20001,20002,20003,20004,20005,20006</MonsterID>
+		<BornCoordinates>12259,6006,12871</BornCoordinates>
+		<MonsterRefreshInterval>30000</MonsterRefreshInterval>
+		<Random>1</Random>
+		<Orientation>-0.8,0,-0.6</Orientation>
+	</info>
+	<info MapID="1000">
+		<ID>6</ID>
+		<MonsterLv>2</MonsterLv>
+		<MonsterNumber>1</MonsterNumber>
+		<MonsterID>20007,20008,20009</MonsterID>
+		<BornCoordinates>10860,6006,15323</BornCoordinates>
+		<MonsterRefreshInterval>60000</MonsterRefreshInterval>
+		<Random>1</Random>
+		<Orientation>0.4,0,-0.9</Orientation>
+	</info>
+	<info MapID="1000">
+		<ID>7</ID>
+		<MonsterLv>1</MonsterLv>
+		<MonsterNumber>1</MonsterNumber>
+		<MonsterID>20001,20002,20003,20004,20005,20006</MonsterID>
+		<BornCoordinates>20314,6006,13263</BornCoordinates>
+		<MonsterRefreshInterval>30000</MonsterRefreshInterval>
+		<Random>1</Random>
+		<Orientation>-0.3,0,-1</Orientation>
+	</info>
+	<info MapID="1000">
+		<ID>8</ID>
+		<MonsterLv>1</MonsterLv>
+		<MonsterNumber>1</MonsterNumber>
+		<MonsterID>20001,20002,20003,20004,20005,20006</MonsterID>
+		<BornCoordinates>18320,6006,12304</BornCoordinates>
+		<MonsterRefreshInterval>30000</MonsterRefreshInterval>
+		<Random>1</Random>
+		<Orientation>0.2,0,-1</Orientation>
+	</info>
+	<info MapID="1000">
+		<ID>9</ID>
+		<MonsterLv>1</MonsterLv>
+		<MonsterNumber>1</MonsterNumber>
+		<MonsterID>20001,20002,20003,20004,20005,20006</MonsterID>
+		<BornCoordinates>16850,6006,14587</BornCoordinates>
+		<MonsterRefreshInterval>30000</MonsterRefreshInterval>
+		<Random>1</Random>
+		<Orientation>0.8,0,-0.6</Orientation>
+	</info>
+	<info MapID="1000">
+		<ID>10</ID>
+		<MonsterLv>1</MonsterLv>
+		<MonsterNumber>1</MonsterNumber>
+		<MonsterID>20001,20002,20003,20004,20005,20006</MonsterID>
+		<BornCoordinates>19938,6006,6926</BornCoordinates>
+		<MonsterRefreshInterval>30000</MonsterRefreshInterval>
+		<Random>1</Random>
+		<Orientation>-0.6,0,0.8</Orientation>
+	</info>
+	<info MapID="1000">
+		<ID>11</ID>
+		<MonsterLv>1</MonsterLv>
+		<MonsterNumber>1</MonsterNumber>
+		<MonsterID>20001,20002,20003,20004,20005,20006</MonsterID>
+		<BornCoordinates>17121,6006,7060</BornCoordinates>
+		<MonsterRefreshInterval>30000</MonsterRefreshInterval>
+		<Random>1</Random>
+		<Orientation>1,0,-0.2</Orientation>
+	</info>
+	<info MapID="1000">
+		<ID>12</ID>
+		<MonsterLv>2</MonsterLv>
+		<MonsterNumber>1</MonsterNumber>
+		<MonsterID>20007,20008,20009</MonsterID>
+		<BornCoordinates>18652,6006,4575</BornCoordinates>
+		<MonsterRefreshInterval>60000</MonsterRefreshInterval>
+		<Random>1</Random>
+		<Orientation>-0.4,0,0.9</Orientation>
+	</info>
+</CreepsConfig>

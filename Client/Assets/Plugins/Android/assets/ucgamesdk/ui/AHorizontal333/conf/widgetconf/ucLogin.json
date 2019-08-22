@@ -1,0 +1,182 @@
+{
+  "CLASS_NAME"              : "UCLoginLayoutConfig",
+  "logoImageViewConfig"     : {
+    "CLASS_NAME"              : "ImageViewConfig",
+    "src"                     : "logo.png",
+    "width"                   : 80,
+    "height"                  : 45,
+    "bgNormalPath"            : "logo.png",
+    "topMargin"               : 24,
+    "leftMargin"              : 24,
+    "visibile"                : true
+  },
+  "titleConfig"             : {
+    "CLASS_NAME"              : "TextConfig",
+    "textColor"               : "#ffffff",
+    "text"                    : "<font color='#a0a0a0'>|<\/font> UC号登录",
+    "textSize"                : 24,
+    "width"                   : 100,
+    "height"                  : 45,
+    "topMargin"               : 33,
+    "leftMargin"              : 115,
+    "visibile"                : true
+  },
+  "titleHintsConfig"        : {
+    "CLASS_NAME"              : "TextConfig",
+    "visibile"                : false
+  },
+  "tipsConfig"              : {
+    "CLASS_NAME"              : "TextConfig",
+    "textColor"               : "#a0a0a0",
+    "textSize"                : 18,
+    "width"                   : 386,
+    "height"                  : 40,
+    "topMargin"               : 158,
+    "leftMargin"              : 24,
+    "visibile"                : false
+  },
+  "buttonConfig"            : {
+    "CLASS_NAME"              : "ButtonConfig",
+    "textColor"               : "#ffffffff",
+    "text"                    : "进入游戏",
+    "textSize"                : 24,
+    "width"                   : 410,
+    "height"                  : 60,
+    "bgNormalPath"            : "btn_orange.9.png",
+    "bgFocusPath"             : "btn_orange_press.9.png",
+    "topMargin"               : 225,
+    "visibile"                : true
+  },
+  "thirdPartyConfig"        : {
+    "CLASS_NAME"              : "ThirdPartyConfig",
+    "captionConfig"           : {
+      "CLASS_NAME"              : "TextConfig",
+      "textColor"               : "#a0a0a0",
+      "text"                    : "其他登录方式：",
+      "textSize"                : 18,
+      "visibile"                : true
+    },
+    "platformIcon"            : [ ],
+    "iconWidth"               : 36,
+    "iconHeight"              : 36,
+    "iconMargin"              : 24,
+    "width"                   : 386,
+    "height"                  : 40,
+    "topMargin"               : 305,
+    "visibile"                : true
+  },
+  "registerConfig"          : {
+    "CLASS_NAME"              : "TextConfig",
+    "textColor"               : "#a0a0a0",
+    "textPressColor"          : "#ffffff",
+    "text"                    : "一键注册",
+    "textSize"                : 18,
+    "icon"                    : "loginup_icon_arrow.png",
+    "iconDirection"           : 2,
+    "width"                   : 100,
+    "height"                  : 40,
+    "bgNormalPath"            : "loginup_bg.9.png",
+    "bgFocusPath"             : "loginup_bg.9.png",
+    "rightMargin"             : 12,
+    "bottomMargin"            : 12,
+    "visibile"                : true
+  },
+  "noticeConfig"            : {
+    "CLASS_NAME"              : "TextConfig",
+    "textColor"               : "#fc5402",
+    "text"                    : "",
+    "textSize"                : 20,
+    "width"                   : 290,
+    "height"                  : 40,
+    "leftMargin"              : 12,
+    "bottomMargin"            : 12,
+    "topPadding"              : 10,
+    "visibile"                : true
+  },
+  "usernameInputWidgetConf" : {
+    "CLASS_NAME"              : "InputWidgetConfig",
+    "labelTextViewConfig"     : {
+      "CLASS_NAME"              : "TextConfig",
+      "visibile"                : false
+    },
+    "inputEditTextConfig"     : {
+      "CLASS_NAME"              : "EditTextConfig",
+      "hint"                    : "UC号\\邮箱\\绑定手机号",
+      "inputType"               : 1,
+      "isPassword"              : false,
+      "enabled"                 : true,
+      "textColor"               : "#000000",
+      "textSize"                : 24,
+      "width"                   : 371,
+      "height"                  : 51,
+      "bgColor"                 : "#66ffffff",
+      "leftMargin"              : 5,
+      "visibile"                : true
+    },
+    "rightButtonConfig"       : {
+      "CLASS_NAME"              : "ButtonConfig",
+      "textColor"               : "#000000",
+      "text"                    : "",
+      "textSize"                : 18,
+      "width"                   : 60,
+      "height"                  : 50,
+      "bgNormalPath"            : "input_icon_Arrow.9.png",
+      "bgFocusPath"             : "input_icon_Arrow.9.png",
+      "rightMargin"             : 7,
+      "visibile"                : true
+    },
+    "width"                   : 410,
+    "height"                  : 60,
+    "bgNormalPath"            : "input_bg.9.png",
+    "bgFocusPath"             : "input_bg.9.png",
+    "bgColor"                 : "#ffffff",
+    "topMargin"               : 94,
+    "visibile"                : true
+  },
+  "passwordInputWidgetConf" : {
+    "CLASS_NAME"              : "InputWidgetConfig",
+    "labelTextViewConfig"     : {
+      "CLASS_NAME"              : "TextConfig",
+      "visibile"                : false
+    },
+    "inputEditTextConfig"     : {
+      "CLASS_NAME"              : "EditTextConfig",
+      "hint"                    : "请输入密码",
+      "inputType"               : 129,
+      "isPassword"              : false,
+      "enabled"                 : true,
+      "textColor"               : "#000000",
+      "textSize"                : 24,
+      "width"                   : 371,
+      "height"                  : 51,
+      "bgColor"                 : "#66ffffff",
+      "leftMargin"              : 5,
+      "visibile"                : true
+    },
+    "rightButtonConfig"       : {
+      "CLASS_NAME"              : "ButtonConfig",
+      "textColor"               : "#000000",
+      "text"                    : "忘记密码?",
+      "textSize"                : 18,
+      "width"                   : 100,
+      "height"                  : 50,
+      "bgNormalPath"            : "btn_white.9.png",
+      "bgFocusPath"             : "btn_white_press.9.png",
+      "rightMargin"             : 7,
+      "visibile"                : true
+    },
+    "width"                   : 410,
+    "height"                  : 60,
+    "bgNormalPath"            : "input_bg.9.png",
+    "bgFocusPath"             : "input_bg.9.png",
+    "bgColor"                 : "#ffffff",
+    "visibile"                : true
+  },
+  "width"                   : 460,
+  "height"                  : 430,
+  "x"                       : -1,
+  "y"                       : -1,
+  "bgNormalPath"            : "bg.9.png",
+  "bgColor"                 : "",
+  "visibile"                : true
+}

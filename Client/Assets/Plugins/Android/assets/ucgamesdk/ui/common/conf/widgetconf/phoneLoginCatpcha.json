@@ -1,0 +1,32 @@
+{
+  "logoImageViewConfig" : { },
+  "titleConfig"         : { },
+  "titleHintsConfig"    : { },
+  "tipsConfig"          : {
+    "text"                : "正在向%s发送验证码"
+  },
+  "inputWidgetConfig"   : {
+    "labelTextViewConfig" : { },
+    "inputEditTextConfig" : {
+      "hint"                : "请输入验证码"
+    },
+    "rightButtonConfig"   : {
+      "text"                : "重新发送",
+      "textSize"            : 15,
+      "width"               : 100,
+      "height"              : 45,
+      "bgNormalPath"        : "input_btn_bg.9.png",
+      "bgFocusPath"         : "input_btn_bg.9.png",
+      "rightMargin"         : 7
+    }
+  },
+  "buttonConfig"        : {
+    "text"                : "进入游戏"
+  },
+  "thirdPartyConfig"    : {
+    "captionConfig"       : { }
+  },
+  "registerConfig"      : { },
+  "noticeConfig"        : { },
+  "parent"              : "phoneLogin"
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Vidicon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="11001">
+		<begin>24500,8200,8000</begin>
+		<end>11500,8200,8000</end>
+		<aspect>23000,6100,9500</aspect>
+		<time>4</time>
+		<Nexttime>4</Nexttime>
+		<goon>11002</goon>
+	</info>
+	<info id="11002">
+		<begin>11500,8000,8000</begin>
+		<end>3500,8200,8000</end>
+		<aspect>10000,6100,9500</aspect>
+		<time>4</time>
+		<Nexttime>3</Nexttime>
+	</info>
+</Vidicon>

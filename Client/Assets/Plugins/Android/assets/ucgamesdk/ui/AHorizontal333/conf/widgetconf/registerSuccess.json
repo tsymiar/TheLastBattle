@@ -1,0 +1,49 @@
+{
+  "logoImageViewConfig"  : { },
+  "titleConfig"          : {
+    "text"                 : "<font color='#a0a0a0'>|<\/font> 注册成功"
+  },
+  "tipsConfig"           : {
+    "visibile"             : false
+  },
+  "inputWidgetOneConfig" : {
+    "labelTextViewConfig"  : {
+      "textColor"            : "#000000",
+      "text"                 : "UC号:",
+      "textSize"             : 24,
+      "width"                : 85,
+      "height"               : 60,
+      "topMargin"            : 158,
+      "leftMargin"           : 24
+    },
+    "inputEditTextConfig"  : {
+      "enabled"              : false
+    },
+    "rightButtonConfig"    : { }
+  },
+  "inputWidgetTwoConfig" : {
+    "labelTextViewConfig"  : {
+      "textColor"            : "#000000",
+      "text"                 : "密码:",
+      "textSize"             : 24,
+      "width"                : 85,
+      "height"               : 60,
+      "topMargin"            : 158,
+      "leftMargin"           : 24
+    },
+    "inputEditTextConfig"  : {
+      "enabled"              : false
+    },
+    "rightButtonConfig"    : { }
+  },
+  "buttonConfig"         : {
+    "text"                 : "进入游戏",
+    "topMargin"            : 230
+  },
+  "registerConfig"       : {
+    "visibile"             : false
+  },
+  "licenseConfig"        : { },
+  "height"               : 340,
+  "parent"               : "register"
+}

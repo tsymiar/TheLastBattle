@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: soul_jialong
+  m_Shader: {fileID: 4800000, guid: d509ede28498b7040a215b30226c4ece, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: 3000
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 048c5c05015d8a54a9a6da3ae85e6d62, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Blend_Texture
+        second:
+          m_Texture: {fileID: 2800000, guid: 6ea735aa16299c5409cf0dfdf576a9e0, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Blend_Texture01
+        second:
+          m_Texture: {fileID: 2800000, guid: f2ac29a011898414797e53dca9434ca8, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _InvFade
+        second: 1
+      data:
+        first:
+          name: _Speed01
+        second: -5
+      data:
+        first:
+          name: _Speed02
+        second: 0
+      data:
+        first:
+          name: _LightenMain
+        second: 1
+      data:
+        first:
+          name: _Lighten
+        second: 7
+      data:
+        first:
+          name: _InnerColorPower
+        second: .392857134
+      data:
+        first:
+          name: _RimPower
+        second: 5
+      data:
+        first:
+          name: _AlphaPower
+        second: 4.5714283
+      data:
+        first:
+          name: _AllPower
+        second: .714285672
+      data:
+        first:
+          name: _Speed
+        second: 0
+      data:
+        first:
+          name: _Fresnel_Value
+        second: .5
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .144890264, g: .0934256017, b: .198529422, a: .482352942}
+      data:
+        first:
+          name: _Color01
+        second: {r: .235294119, g: .274509817, b: .313725501, a: 1}
+      data:
+        first:
+          name: _Color02
+        second: {r: .226102933, g: .316430032, b: .75, a: 1}
+      data:
+        first:
+          name: _Color03
+        second: {r: .331747413, g: .74679029, b: .764705896, a: 1}
+      data:
+        first:
+          name: _RimColor
+        second: {r: .254054964, g: .652539968, b: .933823526, a: .501960814}
+      data:
+        first:
+          name: _InnerColor
+        second: {r: .313691944, g: .257352948, b: 1, a: .501960814}

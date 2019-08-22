@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RuneSlotCfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un32TypeID="0">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>1</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="1">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>2</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="2">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>3</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="3">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>4</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="4">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>5</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="5">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>6</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="6">
+		<un8SlotLevel>2</un8SlotLevel>
+		<un8SlotOpenLevel>7</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="7">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>8</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="8">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>9</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="9">
+		<un8SlotLevel>2</un8SlotLevel>
+		<un8SlotOpenLevel>10</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="10">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>11</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="11">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>12</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="12">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>13</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="13">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>14</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="14">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>15</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="15">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>16</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="16">
+		<un8SlotLevel>2</un8SlotLevel>
+		<un8SlotOpenLevel>17</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="17">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>18</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="18">
+		<un8SlotLevel>1</un8SlotLevel>
+		<un8SlotOpenLevel>19</un8SlotOpenLevel>
+	</info>
+	<info un32TypeID="19">
+		<un8SlotLevel>2</un8SlotLevel>
+		<un8SlotOpenLevel>20</un8SlotOpenLevel>
+	</info>
+</RuneSlotCfg>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SkillCfg_Camera xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un32ID="6001">
+		<szName>技能上下小震屏</szName>
+		<mPeriod>3</mPeriod>
+		<mOffPeriod>0</mOffPeriod>
+		<mShakeOrient>1</mShakeOrient>
+		<mShakeTime>150</mShakeTime>
+		<mMaxWave>0.5</mMaxWave>
+		<mMinWave>0.2</mMinWave>
+	</info>
+	<info un32ID="6002">
+		<szName>技能左右小震屏</szName>
+		<mPeriod>3</mPeriod>
+		<mOffPeriod>0</mOffPeriod>
+		<mShakeOrient>2</mShakeOrient>
+		<mShakeTime>150</mShakeTime>
+		<mMaxWave>0.5</mMaxWave>
+		<mMinWave>0.2</mMinWave>
+	</info>
+	<info un32ID="6003">
+		<szName>技能前后小震屏</szName>
+		<mPeriod>3</mPeriod>
+		<mOffPeriod>0</mOffPeriod>
+		<mShakeOrient>3</mShakeOrient>
+		<mShakeTime>150</mShakeTime>
+		<mMaxWave>0.5</mMaxWave>
+		<mMinWave>0.2</mMinWave>
+	</info>
+</SkillCfg_Camera>

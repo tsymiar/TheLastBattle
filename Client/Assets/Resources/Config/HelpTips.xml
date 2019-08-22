@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<HelpTips xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="20001">
+		<tiptimes>1</tiptimes>
+		<tipmatches>5</tipmatches>
+		<Info>商城购买提示</Info>
+		<tippath>Position/Task5</tippath>
+		<tipevent>-5008</tipevent>
+		<tipShowTimes>6</tipShowTimes>
+	</info>
+	<info id="20002">
+		<tiptimes>2</tiptimes>
+		<tipmatches>5</tipmatches>
+		<Info>血量不足回城提示</Info>
+		<tippath>Position/Task6</tippath>
+		<tipevent>-5009</tipevent>
+		<tipShowTimes>10</tipShowTimes>
+	</info>
+	<info id="20003">
+		<tiptimes>2</tiptimes>
+		<tipmatches>5</tipmatches>
+		<Info>暴怒提示</Info>
+		<tippath>Position/Task7</tippath>
+		<tipevent>-5010</tipevent>
+		<tipShowTimes>10</tipShowTimes>
+	</info>
+	<info id="20004">
+		<tiptimes>1</tiptimes>
+		<tipmatches>5</tipmatches>
+		<Info>商店消耗提示</Info>
+		<tippath>Position/Task9</tippath>
+		<tipevent>-5011</tipevent>
+		<tipShowTimes>6</tipShowTimes>
+	</info>
+</HelpTips>

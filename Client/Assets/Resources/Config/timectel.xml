@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<timectel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="1001">
+		<endtime>2.5</endtime>
+	</info>
+	<info id="1002">
+		<endtime>3</endtime>
+	</info>
+	<info id="1003">
+		<endtime>3</endtime>
+	</info>
+	<info id="1004">
+		<endtime>2</endtime>
+	</info>
+	<info id="1005">
+		<endtime>0</endtime>
+	</info>
+	<info id="1006">
+		<endtime>4</endtime>
+	</info>
+	<info id="1007">
+		<endtime>8</endtime>
+	</info>
+	<info id="1008">
+		<endtime>0.1</endtime>
+	</info>
+</timectel>

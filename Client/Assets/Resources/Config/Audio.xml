@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Audio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="1001">
+		<Audio>Audio/newsguide/A1</Audio>
+	</info>
+	<info id="1002">
+		<Audio>Audio/newsguide/A2</Audio>
+	</info>
+	<info id="1003">
+		<Audio>Audio/newsguide/A3</Audio>
+	</info>
+	<info id="1004">
+		<Audio>Audio/newsguide/A4</Audio>
+	</info>
+	<info id="1005">
+		<Audio>Audio/newsguide/A5</Audio>
+	</info>
+	<info id="1006">
+		<Audio>Audio/newsguide/B6</Audio>
+	</info>
+	<info id="1007"/>
+	<info id="1008">
+		<Audio>Audio/newsguide/B7</Audio>
+	</info>
+	<info id="1009"/>
+	<info id="1010"/>
+	<info id="1011">
+		<Audio>Audio/newsguide/B8</Audio>
+	</info>
+	<info id="1012">
+		<Audio>Audio/newsguide/B9</Audio>
+	</info>
+	<info id="1013">
+		<Audio>Audio/newsguide/B10</Audio>
+	</info>
+	<info id="1014">
+		<Audio>Audio/newsguide/B11</Audio>
+	</info>
+	<info id="1015">
+		<Audio>Audio/newsguide/B12</Audio>
+	</info>
+	<info id="1016"/>
+	<info id="1017">
+		<Audio>Audio/newsguide/B13</Audio>
+	</info>
+	<info id="1018">
+		<Audio>Audio/newsguide/B14</Audio>
+	</info>
+	<info id="1019">
+		<Audio>Audio/newsguide/B15</Audio>
+	</info>
+	<info id="1020"/>
+</Audio>

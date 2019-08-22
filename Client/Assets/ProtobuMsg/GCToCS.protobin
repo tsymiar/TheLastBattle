@@ -1,0 +1,136 @@
+
+«"
+GCToCS.protoGCToCS"T
+PingCS<
+msgnum (2.GCToCS.MsgNum:eMsgToGSToCSFromGC_AskPingCS
+time ("Ñ
+CompleteInfoE
+msgnum (2.GCToCS.MsgNum:%eMsgToGSToCSFromGC_AskComleteUserInfo
+nickname (	
+headid (
+sex ("t
+Login;
+msgnum (2.GCToCS.MsgNum:eMsgToGSToCSFromGC_AskLogin
+platform (
+name (	
+passwd (	"F
+Logout<
+msgnum (2.GCToCS.MsgNum:eMsgToGSToCSFromGC_AskLogout"_
+QuickBattleA
+msgnum (2.GCToCS.MsgNum:!eMsgToGSToCSFromGC_AskQuickBattle
+mapid ("P
+LeaveBattleA
+msgnum (2.GCToCS.MsgNum:!eMsgToGSToCSFromGC_AskLeaveBattle"d
+
+ChangeSeatF
+msgnum (2.GCToCS.MsgNum:&eMsgToGSToCSFromGC_AskChangeBattleSeat
+newpos ("P
+ReadyBattleA
+msgnum (2.GCToCS.MsgNum:!eMsgToGSToCSFromGC_AskReadyBattle"P
+BeginBattleA
+msgnum (2.GCToCS.MsgNum:!eMsgToGSToCSFromGC_AskBeginBattle"\
+CancelReadyBattleG
+msgnum (2.GCToCS.MsgNum:'eMsgToGSToCSFromGC_AskCancelReadyBattle"^
+
+SelectHero@
+msgnum (2.GCToCS.MsgNum: eMsgToGSToCSFromGC_AskSelectHero
+heroid ("[
+LoadCompleteK
+msgnum (2.GCToCS.MsgNum:+eMsgToGSToCSFromGC_ReportLoadBattleComplete"W
+BuyRunes;
+msgnum (2.GCToCS.MsgNum:eMsgToGSToCSFromGC_BUYRunes
+typeid ("i
+	EuipRunes<
+msgnum (2.GCToCS.MsgNum:eMsgToGSToCSFromGC_EuipRunes
+frompos (
+topos ("Z
+UnEuipRunes>
+msgnum (2.GCToCS.MsgNum:eMsgToGSToCSFromGC_UnloadRunes
+pos ("i
+ComposeRunes?
+msgnum (2.GCToCS.MsgNum:eMsgToGSToCSFromGC_ComposeRunes
+num (
+pos ("\
+ExchangeGold?
+msgnum (2.GCToCS.MsgNum:eMsgToGSToCSFromGC_ExchangeGold
+num ("p
+CeateBattleB
+msgnum (2.GCToCS.MsgNum:"eMsgToGSToCSFromGC_AskCreateBattle
+mapid (
+passwd (	"N
+
+QuickMatch@
+msgnum (2.GCToCS.MsgNum: eMsgToGSToCSFromGC_AskQuickMatch"Y
+
+ChatInRoom=
+msgnum (2.GCToCS.MsgNum:eMsgToGSToCSFromGC_ChatInRoom
+chat (	"e
+TryToSeleceHeroB
+msgnum (2.GCToCS.MsgNum:"eMsgToGSToCSFromGC_TryToSelectHero
+heroid ("n
+	AddBattle?
+msgnum (2.GCToCS.MsgNum:eMsgToGSToCSFromGC_AskAddBattle
+battleid (
+passwd (	"d
+UserGameInfoB
+msgnum (2.GCToCS.MsgNum:"eMsgToGSToCSFromGC_AskUserGameInfo
+nickname (	"l
+AddOBA
+msgnum (2.GCToCS.MsgNum:!eMsgToGSToCSFromGC_AskAddObserver
+battleid (
+passwd (	"[
+	GuideInfo?
+msgnum (2.GCToCS.MsgNum:eMsgToGSToCSFromGC_AskGuideInfo
+mapid ("[
+ReconnectToBattleF
+msgnum (2.GCToCS.MsgNum:&eMsgToGSToCSFromGC_AskReConnetToBattle"t
+ReconnectToGameC
+msgnum (2.GCToCS.MsgNum:#eMsgToGSToCSFromGC_AskReconnectGame
+name (	
+passwd (	"~
+ComGuideStepIDA
+msgnum (2.GCToCS.MsgNum:!eMsgToGSToCSFromGC_AskGuideStepId
+type (
+step (
+state (*⁄
+MsgNum
+eMsgToGSToCSFromGC_Beginˇ?!
+eMsgToGSToCSFromGC_AskPingCSÄ@ 
+eMsgToGSToCSFromGC_AskLoginÅ@!
+eMsgToGSToCSFromGC_AskLogoutÇ@&
+!eMsgToGSToCSFromGC_AskQuickBattleÉ@&
+!eMsgToGSToCSFromGC_AskLeaveBattleÏG+
+&eMsgToGSToCSFromGC_AskChangeBattleSeatÖ@&
+!eMsgToGSToCSFromGC_AskReadyBattleÜ@&
+!eMsgToGSToCSFromGC_AskBeginBattleá@,
+'eMsgToGSToCSFromGC_AskCancelReadyBattleà@%
+ eMsgToGSToCSFromGC_AskSelectHeroâ@0
++eMsgToGSToCSFromGC_ReportLoadBattleCompleteä@ 
+eMsgToGSToCSFromGC_BUYRunesã@!
+eMsgToGSToCSFromGC_EuipRuneså@#
+eMsgToGSToCSFromGC_UnloadRunesç@$
+eMsgToGSToCSFromGC_ComposeRunesé@$
+eMsgToGSToCSFromGC_ExchangeGoldè@'
+"eMsgToGSToCSFromGC_AskCreateBattleê@%
+ eMsgToGSToCSFromGC_AskQuickMatchë@"
+eMsgToGSToCSFromGC_ChatInRoomí@*
+%eMsgToGSToCSFromGC_AskComleteUserInfoì@'
+"eMsgToGSToCSFromGC_TryToSelectHeroî@$
+eMsgToGSToCSFromGC_AskAddBattleï@'
+"eMsgToGSToCSFromGC_AskUserGameInfoñ@&
+!eMsgToGSToCSFromGC_AskAddObserveró@$
+eMsgToGSToCSFromGC_AskGuideInfoò@+
+&eMsgToGSToCSFromGC_AskReConnetToBattleõ@(
+#eMsgToGSToCSFromGC_AskReconnectGameú@#
+eMsgToGSToCSFromGC_AskBuyGoodsù@+
+&eMsgToGSToCSFromGC_AskReturnBattleRoomû@'
+"eMsgToGSToCSFromGC_AskAddToSNSListü@,
+'eMsgToGSToCSFromGC_AskRemoveFromSNSList†@(
+#eMsgToGSToCSFromGC_AskSendMsgToUser°@0
++eMsgToGSToCSFromGC_AskInviteFriendsToBattle¢@.
+)eMsgToGSToCSFromGC_AskQueryUserByNickName£@.
+)eMsgToGSToCSFromGC_GCReplyAddFriendRequst§@-
+(eMsgToGSToCSFromGC_GCReplyInviteToBattle•@&
+!eMsgToGSToCSFromGC_AskGuideStepId¶@)
+$eMsgToGSToCSFromGC_CompCSGuideStepIdß@
+eMsgToGSToCSFromGC_EndÏ@

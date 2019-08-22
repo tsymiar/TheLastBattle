@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MsgCfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="8">
+		<content>您已成为房主</content>
+		<effect>4</effect>
+		<type>1</type>
+	</info>
+	<info id="10">
+		<content>请选择英雄</content>
+		<effect>5</effect>
+		<type>1</type>
+	</info>
+	<info id="-12">
+		<content>目标已死亡</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-13">
+		<content>无法对友方单位施放</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-14">
+		<content>无效的目标</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-15">
+		<content>怒气不足</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-16">
+		<content>发送内容不能为空</content>
+		<effect>4</effect>
+		<type>1</type>
+	</info>
+	<info id="-65476">
+		<content>帐号不存在</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-65492">
+		<content>错误的消息号</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130751">
+		<content>已领取</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130752">
+		<content>邮件已过期</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130756">
+		<content>该账号正在游戏中</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130762">
+		<content>队友还在游戏中</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130766">
+		<content>加入失败</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130767">
+		<content>游戏已开始</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130771">
+		<content>钻石不足</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130773">
+		<content>对方好友已满</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130774">
+		<content>添加成功</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130775">
+		<content>请求已发送</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130776">
+		<content>玩家正在战斗中</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130777">
+		<content>用户不在线或不存在</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130788">
+		<content>请输入密码</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130804">
+		<content>尚未拥有该英雄</content>
+		<effect>5</effect>
+		<type>1</type>
+	</info>
+	<info id="-130812">
+		<content>死亡时不能购买该物品</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130813">
+		<content>死亡时无法出售物品</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130814">
+		<content>请勿重复发送</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130820">
+		<content>对方已在您的黑名单列表中</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130821">
+		<content>对方已在您的好友列表中</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130822">
+		<content>黑名单已满</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130823">
+		<content>好友列表已满</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130825">
+		<content>出动超级士兵</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130826">
+		<content>战斗开始</content>
+		<effect>6</effect>
+		<type>1</type>
+	</info>
+	<info id="-130827">
+		<content>还有十五秒开始出兵</content>
+		<effect>6</effect>
+		<type>1</type>
+	</info>
+	<info id="-130832">
+		<content>请勿频繁操作</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130861">
+		<content>昵称中含有非法字符</content>
+		<effect>2</effect>
+		<type>1</type>
+	</info>
+	<info id="-130872">
+		<content>该房间人数已满</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130879">
+		<content>团队CP不足</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130880">
+		<content>眩晕时无法使用技能</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130884">
+		<content>无法对友方单位施放</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130885">
+		<content>沉默时无法使用道具</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130886">
+		<content>您还没有目标</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130887">
+		<content>该道具对建筑无效</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130888">
+		<content>眩晕时无法使用道具</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130889">
+		<content>无效的目标</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130890">
+		<content>您还没有目标</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130891">
+		<content>技能冷却中</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130892">
+		<content>CP点数不足</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130893">
+		<content>魔法值不足</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130894">
+		<content>生命值不足</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130896">
+		<content>沉默时无法使用技能</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130900">
+		<content>道具唯一</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130901">
+		<content>阵营人数不平衡，无法开始游戏</content>
+		<effect>4</effect>
+		<type>1</type>
+	</info>
+	<info id="-130902">
+		<content>金币不足</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130909">
+		<content>昵称已存在</content>
+		<effect>2</effect>
+		<type>1</type>
+	</info>
+	<info id="-130916">
+		<content>背包已满</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130918">
+		<content>道具类型唯一</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130920">
+		<content>CP点数不足</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130922">
+		<content>物品正在冷却中</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130934">
+		<content>房间已开始游戏</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130935">
+		<content>无复活次数</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130936">
+		<content>金币不足</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130937">
+		<content>英雄未死亡</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130943">
+		<content>怒气不足</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130944">
+		<content>怒气释放中</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130950">
+		<content>需要一个可吸附目标</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130956">
+		<content>目标不能被吸附</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130958">
+		<content>CP点数不足</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130959">
+		<content>同类型怪物只能吸附一个</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130960">
+		<content>吸附数量已满</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130961">
+		<content>3级以上才可以吸取灵魂</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130969">
+		<content>目标超出范围</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-130977">
+		<content>请填写昵称</content>
+		<effect>2</effect>
+		<type>1</type>
+	</info>
+	<info id="-130979">
+		<content>密码错误</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-130998">
+		<content>帐号信息不完整</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="-131006">
+		<content>该地图暂未开放</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-131013">
+		<content>房间不存在</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-131020">
+		<content>只有房主能开始游戏</content>
+		<effect>4</effect>
+		<type>1</type>
+	</info>
+	<info id="-131021">
+		<content>玩家还未准备就绪</content>
+		<effect>4</effect>
+		<type>1</type>
+	</info>
+	<info id="-131032">
+		<content>不在房间中</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-131034">
+		<content>房间已满</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-131035">
+		<content>该位置已有玩家</content>
+		<effect>4</effect>
+		<type>1</type>
+	</info>
+	<info id="-131036">
+		<content>已在房间中</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-131055">
+		<content>用户未找到</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="-131062">
+		<content>服务器连接失败</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10000">
+		<content>请填写您的昵称</content>
+		<effect>2</effect>
+		<type>1</type>
+	</info>
+	<info id="10001">
+		<content>请输入房间号</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10002">
+		<content>准备中</content>
+		<effect>4</effect>
+		<type>1</type>
+	</info>
+	<info id="10003">
+		<content>您将随机获得一个未被选择的英雄开始游戏</content>
+		<effect>5</effect>
+		<type>1</type>
+	</info>
+	<info id="10004">
+		<content>您还没有目标</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10005">
+		<content>{0} 摧毁敌方 {1}</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10006">
+		<content>{0} 摧毁我方 {1}</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10007">
+		<content>{0} 击杀 {1}</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10008">
+		<content>{0} 击杀了 {1}</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10009">
+		<content>{0} 被 {1} 击杀</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10010">
+		<content>你已成为房主</content>
+		<effect>4</effect>
+		<type>1</type>
+	</info>
+	<info id="10011">
+		<content>无吸附技能</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10012">
+		<content>请选择购买物品</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10013">
+		<content>请选择出售物品</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10014">
+		<content>背包为空</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10015">
+		<content>您还未选择英雄</content>
+		<effect>5</effect>
+		<type>1</type>
+	</info>
+	<info id="10016">
+		<content>物品正在冷却中</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10017">
+		<content>物品无使用次数</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10018"/>
+	<info id="10019">
+		<content>大杀特杀</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10020">
+		<content>主宰比赛</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10021">
+		<content>杀人如麻</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10022">
+		<content>无人能挡</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10023">
+		<content>变态杀戮</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10024">
+		<content>妖怪般的杀戮</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10025">
+		<content>如同神一般</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10026">
+		<content>超越神的杀戮</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="10027">
+		<content>请选择一个聊天对象</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10028">
+		<content>无法添加自己为好友</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10029">
+		<content>请输入ID或昵称</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10030">
+		<content>添加失败</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10031">
+		<content>购买成功</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10032">
+		<content>昵称已存在</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10033">
+		<content>暂无好友可邀请</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10034">
+		<content>符文槽已满</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10035">
+		<content>符文槽未解锁</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10036">
+		<content>合成成功</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10037">
+		<content>请放入符文</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10038">
+		<content>洗炼卷等级过低</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10039">
+		<content>修改成功</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10040">
+		<content>修改失败</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10041">
+		<content>请选择一个目标</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10042">
+		<content>暂未开放更高等级合成</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="10043">
+		<content>敬请期待</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="20001">
+		<content>赠送{0}\n</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="20002">
+		<content>赠送{0}×{1}\n</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="21001">
+		<content>第一次复活消耗减少{0}钻石\n</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="21002">
+		<content>复活次数增加{0}次\n</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="21003">
+		<content>排队优先权\n</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="21004">
+		<content>战斗结算经验增加{0}\n</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="21005">
+		<content>符文盘每天抽奖{0}次\n</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="21006">
+		<content>符文合成价格减少{0}\n</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="21007">
+		<content>钻石购买金币额外获得{0}金币\n</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="21008">
+		<content>角色名字变紫色（所有人可见）\n</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="21009">
+		<content>中级抽奖每天抽奖{0}次\n</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="21010">
+		<content>高级抽奖每天抽奖{0}次\n</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40000">
+		<content>启动app</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40001">
+		<content>登陆成功</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40003">
+		<content>创建角色</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40004">
+		<content>进入大厅</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40005">
+		<content>进入商城</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40006">
+		<content>个人资料</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40007">
+		<content>封神之路</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40008">
+		<content>充值</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40009">
+		<content>快速进房间</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40010">
+		<content>新手界面引导</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40011">
+		<content>选择新手引导</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40012">
+		<content>进入房间</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40013">
+		<content>创建房间</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40014">
+		<content>加入房间</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40015">
+		<content>换座位</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40016">
+		<content>准备/开始</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40017">
+		<content>返回大厅</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40018">
+		<content>选择英雄</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40019">
+		<content>新手界面引导结束</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40020">
+		<content>进入战场</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40021">
+		<content>新手引导步骤</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40022">
+		<content>任务步骤开始</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40023">
+		<content>任务步骤结束</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40024">
+		<content>战斗伤亡</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40025">
+		<content>账号升级</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40026">
+		<content>战斗结束</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40027">
+		<content>返回商城</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40028">
+		<content>战场购买物品</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40029">
+		<content>查找不到对应的玩家</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40030">
+		<content>断线</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40031">
+		<content>聊天信息不能为空</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40032">
+		<content>退出游戏</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40033">
+		<content>非法字符</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40034">
+		<content>获得金币奖励</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40035">
+		<content>注册账号</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40036">
+		<content>邀请您加入队伍</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40037">
+		<content>发现即将开始游戏的队伍，是否加入？</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40038">
+		<content>匹配</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40039">
+		<content>人机</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40040">
+		<content>天梯</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40041">
+		<content>服务器连接异常</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40042">
+		<content>请稍等…
+正在恢复与服务器的连接</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40043">
+		<content>您已经与服务器断开连接</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40044">
+		<content>您有一场正在进行的比赛
+请尝试重新连接……</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40045">
+		<content>重连</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40046">
+		<content>退出</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40047">
+		<content>账号异常，请重新登录</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40048">
+		<content>成功邀请好友</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="40049">
+		<content>请选择一个好友</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+	<info id="40050">
+		<content>符文</content>
+		<effect>1</effect>
+		<type>1</type>
+	</info>
+	<info id="40051">
+		<content>请选择地图</content>
+		<effect>3</effect>
+		<type>1</type>
+	</info>
+</MsgCfg>

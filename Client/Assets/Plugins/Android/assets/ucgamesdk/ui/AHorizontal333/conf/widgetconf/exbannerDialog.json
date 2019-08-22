@@ -1,0 +1,36 @@
+{
+  "logoImageViewConfig"   : { },
+  "titleConfig"           : {
+    "visibile"              : false
+  },
+  "tipsConfig"            : {
+    "visibile"              : false
+  },
+  "leftButtonConfig"      : {
+    "leftMargin"            : 12
+  },
+  "rightButtonConfig"     : {
+    "width"                 : 195,
+    "bgNormalPath"          : "btn_black.9.png",
+    "bgFocusPath"           : "btn_black_press.9.png",
+    "leftMargin"            : 225
+  },
+  "closeButtonConfig"     : {
+    "icon"                  : "btn_exdialog_close.png",
+    "width"                 : 18,
+    "height"                : 18,
+    "bgColor"               : "#00ff0000",
+    "topMargin"             : 27,
+    "rightMargin"           : 24
+  },
+  "exContentLayoutConfig" : {
+    "width"                 : 408,
+    "height"                : 92,
+    "topMargin"             : 81,
+    "leftMargin"            : 12,
+    "rightMargin"           : 12
+  },
+  "width"                 : 432,
+  "height"                : 273,
+  "parent"                : "exDialog"
+}

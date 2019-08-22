@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Animine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="1001">
+		<localpath>BottomLeftPanel/Hand</localpath>
+		<pathtype>2</pathtype>
+		<startpos>135;235;0</startpos>
+		<begin>135;235;0</begin>
+		<objective>135;275;0</objective>
+		<frequency>0.5</frequency>
+		<form>2</form>
+		<style>2</style>
+		<animation>0</animation>
+		<finish>1</finish>
+	</info>
+	<info id="1002">
+		<localpath>TopLeftPanel/Hand</localpath>
+		<pathtype>2</pathtype>
+		<startpos>60;-215;0</startpos>
+		<begin>60;-215;0</begin>
+		<objective>60;-195;0</objective>
+		<frequency>0.5</frequency>
+		<form>2</form>
+		<style>2</style>
+		<animation>0</animation>
+		<finish>1</finish>
+	</info>
+	<info id="1003">
+		<localpath>BottomRightPanel/Hand</localpath>
+		<pathtype>2</pathtype>
+		<startpos>-290;240;0</startpos>
+		<begin>-290;240;0</begin>
+		<objective>-290;255;0</objective>
+		<frequency>0.5</frequency>
+		<form>2</form>
+		<style>2</style>
+		<animation>0</animation>
+		<finish>1</finish>
+	</info>
+	<info id="1004">
+		<localpath>BottomRightPanel/Hand</localpath>
+		<pathtype>2</pathtype>
+		<startpos>-200;120;0</startpos>
+		<begin>-200;120;0</begin>
+		<objective>-200;135;0</objective>
+		<frequency>0.5</frequency>
+		<form>2</form>
+		<style>2</style>
+		<animation>0</animation>
+		<finish>1</finish>
+	</info>
+	<info id="1005">
+		<localpath>BottomRightPanel/Hand</localpath>
+		<pathtype>2</pathtype>
+		<startpos>-180;240;0</startpos>
+		<begin>-180;240;0</begin>
+		<objective>-180;255;0</objective>
+		<frequency>0.5</frequency>
+		<form>2</form>
+		<style>2</style>
+		<animation>0</animation>
+		<finish>1</finish>
+	</info>
+</Animine>

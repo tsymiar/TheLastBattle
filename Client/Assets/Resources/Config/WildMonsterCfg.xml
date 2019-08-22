@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WildMonsterCfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info n32Number="1">
+		<SceneID>1002</SceneID>
+		<PointID>1</PointID>
+		<n32Camp>1</n32Camp>
+		<un32RefreshTime>10000</un32RefreshTime>
+		<un32RefreshMon>30,31,32</un32RefreshMon>
+		<un32RefreshPos>10947.0,1802.0,3538.0;
+10947.0,1802.0,3538.0;
+10947.0,1802.0,3538.0;</un32RefreshPos>
+		<cBornDir>0,0,1;
+0,0,1;
+0,0,1</cBornDir>
+		<bIsPatrol>1,1,1</bIsPatrol>
+		<n32PatrolPoint>10947.0,1802.0,3538.0;
+10947.0,1802.0,3538.0;
+10947.0,1802.0,3538.0;</n32PatrolPoint>
+		<n32ActiveRadius>13594,1800,3232</n32ActiveRadius>
+		<n32GroupID>1</n32GroupID>
+		<n32BuffID>10001,10002,10003</n32BuffID>
+		<n32RefreshMsgType>1</n32RefreshMsgType>
+		<sRefreshMsg>WildAnimalBorn_tips</sRefreshMsg>
+	</info>
+	<info n32Number="2">
+		<SceneID>1002</SceneID>
+		<PointID>2</PointID>
+		<n32Camp>1</n32Camp>
+		<un32RefreshTime>10000</un32RefreshTime>
+		<un32RefreshMon>33</un32RefreshMon>
+		<un32RefreshPos>10947.0,1802.0,3538.0</un32RefreshPos>
+		<cBornDir>0,0,1</cBornDir>
+		<bIsPatrol>0</bIsPatrol>
+		<n32PatrolPoint>0</n32PatrolPoint>
+		<n32ActiveRadius>13594</n32ActiveRadius>
+		<n32GroupID>1</n32GroupID>
+		<n32BuffID>0</n32BuffID>
+		<n32RefreshMsgType>1</n32RefreshMsgType>
+		<sRefreshMsg>WildAnimalBorn_tips</sRefreshMsg>
+	</info>
+	<info n32Number="3">
+		<SceneID>1002</SceneID>
+		<PointID>3</PointID>
+		<n32Camp>1</n32Camp>
+		<un32RefreshTime>10000</un32RefreshTime>
+		<un32RefreshMon>34,35</un32RefreshMon>
+		<un32RefreshPos>10947.0,1802.0,3538.0;
+10947.0,1802.0,3538.0;</un32RefreshPos>
+		<cBornDir>0,0,1;
+0,0,1;</cBornDir>
+		<bIsPatrol>0</bIsPatrol>
+		<n32PatrolPoint>0</n32PatrolPoint>
+		<n32ActiveRadius>13594,1800</n32ActiveRadius>
+		<n32GroupID>0</n32GroupID>
+		<n32BuffID>0</n32BuffID>
+		<n32RefreshMsgType>2</n32RefreshMsgType>
+		<sRefreshMsg>WildAnimalBorn_tips</sRefreshMsg>
+	</info>
+	<info n32Number="4">
+		<SceneID>1002</SceneID>
+		<PointID>4</PointID>
+		<n32Camp>1</n32Camp>
+		<un32RefreshTime>10000</un32RefreshTime>
+		<un32RefreshMon>33</un32RefreshMon>
+		<un32RefreshPos>10947.0,1802.0,3538.0</un32RefreshPos>
+		<cBornDir>0,0,1</cBornDir>
+		<bIsPatrol>0</bIsPatrol>
+		<n32PatrolPoint>0</n32PatrolPoint>
+		<n32ActiveRadius>13594</n32ActiveRadius>
+		<n32GroupID>1</n32GroupID>
+		<n32BuffID>0</n32BuffID>
+		<n32RefreshMsgType>1</n32RefreshMsgType>
+		<sRefreshMsg>WildAnimalBorn_tips</sRefreshMsg>
+	</info>
+	<info n32Number="5">
+		<SceneID>1002</SceneID>
+		<PointID>5</PointID>
+		<n32Camp>1</n32Camp>
+		<un32RefreshTime>10000</un32RefreshTime>
+		<un32RefreshMon>34</un32RefreshMon>
+		<un32RefreshPos>10947.0,1802.0,3538.1</un32RefreshPos>
+		<cBornDir>0,0,2</cBornDir>
+		<bIsPatrol>0</bIsPatrol>
+		<n32PatrolPoint>0</n32PatrolPoint>
+		<n32ActiveRadius>13594</n32ActiveRadius>
+		<n32GroupID>1</n32GroupID>
+		<n32BuffID>0</n32BuffID>
+		<n32RefreshMsgType>1</n32RefreshMsgType>
+		<sRefreshMsg>WildAnimalBorn_tips</sRefreshMsg>
+	</info>
+	<info n32Number="6">
+		<SceneID>1002</SceneID>
+		<PointID>6</PointID>
+		<n32Camp>1</n32Camp>
+		<un32RefreshTime>10000</un32RefreshTime>
+		<un32RefreshMon>35</un32RefreshMon>
+		<un32RefreshPos>10947.0,1802.0,3538.2</un32RefreshPos>
+		<cBornDir>0,0,3</cBornDir>
+		<bIsPatrol>0</bIsPatrol>
+		<n32PatrolPoint>0</n32PatrolPoint>
+		<n32ActiveRadius>13594</n32ActiveRadius>
+		<n32GroupID>1</n32GroupID>
+		<n32BuffID>0</n32BuffID>
+		<n32RefreshMsgType>1</n32RefreshMsgType>
+		<sRefreshMsg>WildAnimalBorn_tips</sRefreshMsg>
+	</info>
+	<info n32Number="7">
+		<SceneID>1002</SceneID>
+		<PointID>7</PointID>
+		<n32Camp>1</n32Camp>
+		<un32RefreshTime>10000</un32RefreshTime>
+		<un32RefreshMon>36</un32RefreshMon>
+		<un32RefreshPos>10947.0,1802.0,3538.3</un32RefreshPos>
+		<cBornDir>0,0,4</cBornDir>
+		<bIsPatrol>0</bIsPatrol>
+		<n32PatrolPoint>0</n32PatrolPoint>
+		<n32ActiveRadius>13594</n32ActiveRadius>
+		<n32GroupID>0</n32GroupID>
+		<n32BuffID>0</n32BuffID>
+		<n32RefreshMsgType>1</n32RefreshMsgType>
+		<sRefreshMsg>WildAnimalBorn_tips</sRefreshMsg>
+	</info>
+	<info n32Number="8">
+		<SceneID>1002</SceneID>
+		<PointID>8</PointID>
+		<n32Camp>2</n32Camp>
+		<un32RefreshTime>10000</un32RefreshTime>
+		<un32RefreshMon>37</un32RefreshMon>
+		<un32RefreshPos>10947.0,1802.0,3538.4</un32RefreshPos>
+		<cBornDir>0,0,5</cBornDir>
+		<bIsPatrol>0</bIsPatrol>
+		<n32PatrolPoint>0</n32PatrolPoint>
+		<n32ActiveRadius>13594</n32ActiveRadius>
+		<n32GroupID>0</n32GroupID>
+		<n32BuffID>0</n32BuffID>
+		<n32RefreshMsgType>1</n32RefreshMsgType>
+		<sRefreshMsg>WildAnimalBorn_tips</sRefreshMsg>
+	</info>
+	<info n32Number="9">
+		<SceneID>1002</SceneID>
+		<PointID>9</PointID>
+		<n32Camp>2</n32Camp>
+		<un32RefreshTime>10000</un32RefreshTime>
+		<un32RefreshMon>38</un32RefreshMon>
+		<un32RefreshPos>10947.0,1802.0,3538.5</un32RefreshPos>
+		<cBornDir>0,0,6</cBornDir>
+		<bIsPatrol>0</bIsPatrol>
+		<n32PatrolPoint>0</n32PatrolPoint>
+		<n32ActiveRadius>13594</n32ActiveRadius>
+		<n32GroupID>0</n32GroupID>
+		<n32BuffID>0</n32BuffID>
+		<n32RefreshMsgType>1</n32RefreshMsgType>
+		<sRefreshMsg>WildAnimalBorn_tips</sRefreshMsg>
+	</info>
+	<info n32Number="10">
+		<SceneID>1002</SceneID>
+		<PointID>10</PointID>
+		<n32Camp>2</n32Camp>
+		<un32RefreshTime>10000</un32RefreshTime>
+		<un32RefreshMon>39</un32RefreshMon>
+		<un32RefreshPos>10947.0,1802.0,3538.6</un32RefreshPos>
+		<cBornDir>0,0,7</cBornDir>
+		<bIsPatrol>0</bIsPatrol>
+		<n32PatrolPoint>0</n32PatrolPoint>
+		<n32ActiveRadius>13594</n32ActiveRadius>
+		<n32GroupID>0</n32GroupID>
+		<n32BuffID>0</n32BuffID>
+		<n32RefreshMsgType>1</n32RefreshMsgType>
+		<sRefreshMsg>WildAnimalBorn_tips</sRefreshMsg>
+	</info>
+	<info n32Number="11">
+		<SceneID>1002</SceneID>
+		<PointID>11</PointID>
+		<n32Camp>2</n32Camp>
+		<un32RefreshTime>10000</un32RefreshTime>
+		<un32RefreshMon>40</un32RefreshMon>
+		<un32RefreshPos>10947.0,1802.0,3538.7</un32RefreshPos>
+		<cBornDir>0,0,8</cBornDir>
+		<bIsPatrol>0</bIsPatrol>
+		<n32PatrolPoint>0</n32PatrolPoint>
+		<n32ActiveRadius>13594</n32ActiveRadius>
+		<n32GroupID>0</n32GroupID>
+		<n32BuffID>0</n32BuffID>
+		<n32RefreshMsgType>1</n32RefreshMsgType>
+		<sRefreshMsg>WildAnimalBorn_tips</sRefreshMsg>
+	</info>
+	<info n32Number="12">
+		<SceneID>1002</SceneID>
+		<PointID>12</PointID>
+		<n32Camp>2</n32Camp>
+		<un32RefreshTime>10000</un32RefreshTime>
+		<un32RefreshMon>41</un32RefreshMon>
+		<un32RefreshPos>10947.0,1802.0,3538.8</un32RefreshPos>
+		<cBornDir>0,0,9</cBornDir>
+		<bIsPatrol>0</bIsPatrol>
+		<n32PatrolPoint>0</n32PatrolPoint>
+		<n32ActiveRadius>13594</n32ActiveRadius>
+		<n32GroupID>0</n32GroupID>
+		<n32BuffID>0</n32BuffID>
+		<n32RefreshMsgType>1</n32RefreshMsgType>
+		<sRefreshMsg>WildAnimalBorn_tips</sRefreshMsg>
+	</info>
+	<info n32Number="13">
+		<SceneID>1002</SceneID>
+		<PointID>13</PointID>
+		<n32Camp>2</n32Camp>
+		<un32RefreshTime>10000</un32RefreshTime>
+		<un32RefreshMon>42</un32RefreshMon>
+		<un32RefreshPos>10947.0,1802.0,3538.9</un32RefreshPos>
+		<cBornDir>0,0,10</cBornDir>
+		<bIsPatrol>0</bIsPatrol>
+		<n32PatrolPoint>0</n32PatrolPoint>
+		<n32ActiveRadius>13594</n32ActiveRadius>
+		<n32GroupID>1</n32GroupID>
+		<n32BuffID>0</n32BuffID>
+		<n32RefreshMsgType>1</n32RefreshMsgType>
+		<sRefreshMsg>WildAnimalBorn_tips</sRefreshMsg>
+	</info>
+	<info n32Number="14">
+		<SceneID>1002</SceneID>
+		<PointID>14</PointID>
+		<n32Camp>2</n32Camp>
+		<un32RefreshTime>10000</un32RefreshTime>
+		<un32RefreshMon>43</un32RefreshMon>
+		<un32RefreshPos>10947.0,1802.0,3538.10</un32RefreshPos>
+		<cBornDir>0,0,11</cBornDir>
+		<bIsPatrol>0</bIsPatrol>
+		<n32PatrolPoint>0</n32PatrolPoint>
+		<n32ActiveRadius>13594</n32ActiveRadius>
+		<n32GroupID>1</n32GroupID>
+		<n32BuffID>0</n32BuffID>
+		<n32RefreshMsgType>1</n32RefreshMsgType>
+		<sRefreshMsg>WildAnimalBorn_tips</sRefreshMsg>
+	</info>
+</WildMonsterCfg>

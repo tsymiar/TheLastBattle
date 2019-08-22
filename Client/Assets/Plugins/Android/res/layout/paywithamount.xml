@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff" >
+
+    <TextView
+        android1:id="@+id/textView1"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignParentTop="true"
+        android1:layout_centerHorizontal="true"
+        android1:layout_marginTop="28dp"
+        android:textColor="#000000"
+        android1:text="欢迎进入游戏商城"
+        android1:textSize="12pt" />
+
+    <RadioGroup
+        android1:id="@+id/radioGroup1"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_below="@+id/textView1"
+        android1:layout_centerHorizontal="true"
+        android1:layout_marginTop="19dp"
+        android:textColor="#000000" >
+
+        <RadioButton
+            android1:id="@+id/radio6"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android:textColor="#000000"
+            android1:checked="true"
+            android1:text="复活药水（6元）" />
+
+        <RadioButton
+            android1:id="@+id/radio10"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android:textColor="#000000"
+            android1:text="10级武器（10元）" />
+
+        <RadioButton
+            android1:id="@+id/radio20"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android:textColor="#000000"
+            android1:text="20级武器（20元）" />
+
+        <RadioButton
+            android1:id="@+id/radio30"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android:textColor="#000000"
+            android1:text="30级武器（30元）" />
+
+        <RadioButton
+            android1:id="@+id/radio50"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android:textColor="#000000"
+            android1:text="40级武器（50元）" />
+
+        <RadioButton
+            android1:id="@+id/radio100"
+            android1:layout_width="wrap_content"
+            android1:layout_height="wrap_content"
+            android:textColor="#000000"
+            android1:text="50级武器（100元）" />
+    </RadioGroup>
+
+    <Button
+        android1:id="@+id/pwa"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignLeft="@+id/textView1"
+        android1:layout_below="@+id/radioGroup1"
+        android1:layout_marginTop="46dp"
+        android1:text="进行支付" />
+
+    <Button
+        android1:id="@+id/back"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignBaseline="@+id/pwa"
+        android1:layout_alignBottom="@+id/pwa"
+        android1:layout_alignRight="@+id/textView1"
+        android1:text="返回游戏" />
+
+</RelativeLayout>

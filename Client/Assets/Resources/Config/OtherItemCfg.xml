@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OtherItemCfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info ID="130001">
+		<Name>双倍金币卡(1天)</Name>
+		<EffectID>1001</EffectID>
+		<EffectValue>100</EffectValue>
+		<ConsumeType>0</ConsumeType>
+		<PriceSeries>0</PriceSeries>
+		<bIsGetUse>1</bIsGetUse>
+		<bIsShowInShop>0</bIsShowInShop>
+		<Time>24</Time>
+		<Icon>11</Icon>
+	</info>
+	<info ID="130002">
+		<Name>双倍经验卡(1天)</Name>
+		<EffectID>1002</EffectID>
+		<EffectValue>100</EffectValue>
+		<ConsumeType>0</ConsumeType>
+		<PriceSeries>0</PriceSeries>
+		<bIsGetUse>1</bIsGetUse>
+		<bIsShowInShop>0</bIsShowInShop>
+		<Time>24</Time>
+		<Icon>12</Icon>
+	</info>
+	<info ID="130003">
+		<Name>全英雄体验卷(1天)</Name>
+		<EffectID>1003</EffectID>
+		<EffectValue>1</EffectValue>
+		<ConsumeType>0</ConsumeType>
+		<PriceSeries>0</PriceSeries>
+		<bIsGetUse>1</bIsGetUse>
+		<bIsShowInShop>0</bIsShowInShop>
+		<Time>24</Time>
+		<Icon>8</Icon>
+	</info>
+	<info ID="130004">
+		<Name>单英雄体验卷(1天)</Name>
+		<EffectID>1004</EffectID>
+		<EffectValue>1</EffectValue>
+		<ConsumeType>0</ConsumeType>
+		<PriceSeries>0</PriceSeries>
+		<bIsGetUse>0</bIsGetUse>
+		<bIsShowInShop>0</bIsShowInShop>
+		<Time>72</Time>
+		<Icon>0</Icon>
+	</info>
+	<info ID="130005">
+		<Name>一级洗炼卷</Name>
+		<EffectID>1005</EffectID>
+		<EffectValue>1</EffectValue>
+		<ConsumeType>1</ConsumeType>
+		<PriceSeries>3</PriceSeries>
+		<bIsGetUse>0</bIsGetUse>
+		<bIsShowInShop>0</bIsShowInShop>
+		<Time>-1</Time>
+		<Icon>1</Icon>
+	</info>
+	<info ID="130006">
+		<Name>二级洗炼卷</Name>
+		<EffectID>1005</EffectID>
+		<EffectValue>2</EffectValue>
+		<ConsumeType>1</ConsumeType>
+		<PriceSeries>10</PriceSeries>
+		<bIsGetUse>0</bIsGetUse>
+		<bIsShowInShop>0</bIsShowInShop>
+		<Time>-1</Time>
+		<Icon>2</Icon>
+	</info>
+	<info ID="130007">
+		<Name>三级洗炼卷</Name>
+		<EffectID>1005</EffectID>
+		<EffectValue>3</EffectValue>
+		<ConsumeType>1</ConsumeType>
+		<PriceSeries>30</PriceSeries>
+		<bIsGetUse>0</bIsGetUse>
+		<bIsShowInShop>0</bIsShowInShop>
+		<Time>-1</Time>
+		<Icon>3</Icon>
+	</info>
+	<info ID="130008">
+		<Name>四级洗炼卷</Name>
+		<EffectID>1005</EffectID>
+		<EffectValue>4</EffectValue>
+		<ConsumeType>1</ConsumeType>
+		<PriceSeries>70</PriceSeries>
+		<bIsGetUse>0</bIsGetUse>
+		<bIsShowInShop>0</bIsShowInShop>
+		<Time>-1</Time>
+		<Icon>4</Icon>
+	</info>
+	<info ID="130009">
+		<Name>五级洗炼卷</Name>
+		<EffectID>1005</EffectID>
+		<EffectValue>5</EffectValue>
+		<ConsumeType>1</ConsumeType>
+		<PriceSeries>200</PriceSeries>
+		<bIsGetUse>0</bIsGetUse>
+		<bIsShowInShop>0</bIsShowInShop>
+		<Time>-1</Time>
+		<Icon>5</Icon>
+	</info>
+	<info ID="130010">
+		<Name>六级洗炼卷</Name>
+		<EffectID>1005</EffectID>
+		<EffectValue>6</EffectValue>
+		<ConsumeType>1</ConsumeType>
+		<PriceSeries>480</PriceSeries>
+		<bIsGetUse>0</bIsGetUse>
+		<bIsShowInShop>0</bIsShowInShop>
+		<Time>-1</Time>
+		<Icon>6</Icon>
+	</info>
+	<info ID="130011">
+		<Name>符文页</Name>
+		<EffectID>1006</EffectID>
+		<EffectValue>1</EffectValue>
+		<ConsumeType>2</ConsumeType>
+		<PriceSeries>238</PriceSeries>
+		<bIsGetUse>1</bIsGetUse>
+		<bIsShowInShop>0</bIsShowInShop>
+		<Time>-1</Time>
+		<Icon>0</Icon>
+	</info>
+</OtherItemCfg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SkillCfg_overlap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un32ID="5001">
+		<szName>被动-死亡缩减</szName>
+		<n32InitialLayer>8</n32InitialLayer>
+		<n32MaxLayer>20</n32MaxLayer>
+		<eTriggerWayOfAdd>8</eTriggerWayOfAdd>
+		<n32AddLayerValue>1</n32AddLayerValue>
+		<eTriggerWayOfReduce>5</eTriggerWayOfReduce>
+		<n32ReduceLayerValue>0</n32ReduceLayerValue>
+		<n32ReduceLayerPer>125</n32ReduceLayerPer>
+		<n32EffectID>15</n32EffectID>
+		<eEffectValue>0</eEffectValue>
+		<eEffectRate>-20</eEffectRate>
+	</info>
+</SkillCfg_overlap>

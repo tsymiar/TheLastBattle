@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: distort_blood
+  m_Shader: {fileID: 4800000, guid: f22e0ea06e9c944dda09f3cc3006ae4e, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: 2999
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _NoiseTex
+        second:
+          m_Texture: {fileID: 2800000, guid: ca422fa333add1f43ab5326605905660, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Blend_Texture
+        second:
+          m_Texture: {fileID: 2800000, guid: 3e85d68785a3a7946b072465722d7359, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Blend_Texture01
+        second:
+          m_Texture: {fileID: 2800000, guid: ca422fa333add1f43ab5326605905660, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _HeatTime
+        second: .357142866
+      data:
+        first:
+          name: _ForceX
+        second: .357142866
+      data:
+        first:
+          name: _ForceY
+        second: .321428567
+      data:
+        first:
+          name: _ScrollTimeY
+        second: -.283582091
+      data:
+        first:
+          name: _Speed01
+        second: 3.0999999
+      data:
+        first:
+          name: _Speed02
+        second: 22.7199993
+      data:
+        first:
+          name: _Lighten
+        second: 9.36999989
+      data:
+        first:
+          name: _LightenMain
+        second: 1.67999995
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .171064034, g: .667065501, b: .83088237, a: .501960814}
+      data:
+        first:
+          name: _Color01
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _Color02
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _Color03
+        second: {r: 1, g: 1, b: 1, a: 1}

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Trigger xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info TaskID="17000">
+		<Text>点击此处进入[99ffff]新手引导[-]</Text>
+		<BtnName>Battle</BtnName>
+		<PrefabName>UIGuideFrame</PrefabName>
+		<PosXYZ>78,-250,0</PosXYZ>
+		<GuideType>1</GuideType>
+		<GuideEffect>effect/ui_effect/tips_scale</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17001">
+		<Text>点击进入新手训练关卡选择</Text>
+		<BtnName>Training</BtnName>
+		<PrefabName>UIGuideFrame</PrefabName>
+		<PosXYZ>-110,-65,0</PosXYZ>
+		<GuideType>1</GuideType>
+		<GuideEffect>effect/ui_effect/tips_scale</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17002">
+		<Text>点击进入新手训练关卡</Text>
+		<BtnName>1001</BtnName>
+		<PrefabName>UIGuideFrame</PrefabName>
+		<PosXYZ>135,-65,0</PosXYZ>
+		<GuideType>1</GuideType>
+		<GuideEffect>effect/ui_effect/tips_scale</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17003">
+		<Text>您现在可以在商城中购买英雄啦！
+请点击进入游戏商城</Text>
+		<BtnName>Market</BtnName>
+		<PrefabName>UIGuideFrame</PrefabName>
+		<PosXYZ>250,-230,0</PosXYZ>
+		<GuideType>1</GuideType>
+		<GuideEffect>effect/ui_effect/tips_scale</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17004">
+		<Text>点击“英雄”分类，来选择要购买的英雄</Text>
+		<BtnName>Hero</BtnName>
+		<PrefabName>UIGuideFrame</PrefabName>
+		<PosXYZ>-22,6,0</PosXYZ>
+		<GuideType>1</GuideType>
+		<GuideEffect>effect/ui_effect/tips_scale</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17005">
+		<Text>恭喜您达到3级，
+可以购买符文增加您的战斗力了！</Text>
+		<BtnName>Market</BtnName>
+		<PrefabName>UIGuideFrame</PrefabName>
+		<PosXYZ>250,-230,0</PosXYZ>
+		<GuideType>1</GuideType>
+		<GuideEffect>effect/ui_effect/tips_scale</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17006">
+		<Text>点击“符文”分类，来选择要购买的符文</Text>
+		<BtnName>Rune</BtnName>
+		<PrefabName>UIGuideFrame</PrefabName>
+		<PosXYZ>-22,-10,0</PosXYZ>
+		<GuideType>1</GuideType>
+		<GuideEffect>effect/ui_effect/tips_scale</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17007">
+		<Text>请点击切换按钮改变攻击目标！</Text>
+		<BtnName>Button_7</BtnName>
+		<PrefabName>UIGuideBottomRight</PrefabName>
+		<PosXYZ>-400,222,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<GuideEffect>effect/ui_effect/tips_button_ring</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17008">
+		<Text>开战之前先购买出门装</Text>
+		<BtnName>ShopBtn</BtnName>
+		<PrefabName>UIGuideTopleft</PrefabName>
+		<PosXYZ>430,-222,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<GuideEffect>effect/ui_effect/tips_button_ring</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17009">
+		<Text>确定购买加强自身实力</Text>
+		<BtnName>BuyBtn</BtnName>
+		<PrefabName>UIGuideCenter</PrefabName>
+		<PosXYZ>110,-305,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<GuideEffect>effect/ui_effect/tips_buy_remind</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17010">
+		<Text>点击按钮关闭商店界面</Text>
+		<BtnName>CancelButton</BtnName>
+		<PrefabName>UIGuideCenter</PrefabName>
+		<PosXYZ>180,315,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<GuideEffect>effect/ui_effect/tips_close_remind</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17011">
+		<Text>拖动摇杆控制英雄移动</Text>
+		<BtnName>VirtualStickUI</BtnName>
+		<PrefabName>UIGuideBottomleft</PrefabName>
+		<PosXYZ>470,200,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17012">
+		<Text>点击按钮攻击敌方小兵</Text>
+		<BtnName>Button_6</BtnName>
+		<PrefabName>UIGuideBottomRight</PrefabName>
+		<PosXYZ>-380,88,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<GuideEffect>effect/ui_effect/tips_button_ring</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17013">
+		<Text>使用技能击杀敌方小兵</Text>
+		<BtnName>Button_0</BtnName>
+		<PrefabName>UIGuideBottomRight</PrefabName>
+		<PosXYZ>-480,190,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<GuideEffect>effect/ui_effect/tips_button_ring</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17014">
+		<Text>向上滑动攻击键可以切换锁定目标</Text>
+		<BtnName>Button_6</BtnName>
+		<PrefabName>UIGuideFrame3</PrefabName>
+		<PosXYZ>-65,-323,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<triggertype>2</triggertype>
+		<type>1</type>
+		<times>3</times>
+	</info>
+	<info TaskID="17015">
+		<Text>吸附随从可以加强自身属性</Text>
+		<BtnName>Head</BtnName>
+		<PrefabName>UIGuideTopleft</PrefabName>
+		<PosXYZ>-380,15,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<GuideEffect>effect/ui_effect/tips_absorb_ring</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17016">
+		<Text>将随从放入祭坛，可以增强兵线实力</Text>
+		<BtnName>Soldier1</BtnName>
+		<Btncoord>20,-60.2,0</Btncoord>
+		<PrefabName>UIGuideCenter</PrefabName>
+		<PosXYZ>0,-177,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<GuideEffect>effect/ui_effect/tips_button_ring</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17017">
+		<Text>点击英雄头像，使用怒气可以强化技能</Text>
+		<BtnName>EnergyPool</BtnName>
+		<PrefabName>UIGuideTopleft</PrefabName>
+		<PosXYZ>458,-50,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17018">
+		<Text>恭喜您获得了一个新符文，
+马上装备试试吧！</Text>
+		<BtnName>Homepage</BtnName>
+		<PrefabName>UIGuideFrame</PrefabName>
+		<PosXYZ>15,-230,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<GuideEffect>effect/ui_effect/tips_scale</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17019">
+		<Text>点击进入符文装配界面</Text>
+		<BtnName>Runes</BtnName>
+		<PrefabName>UIGuideFrame</PrefabName>
+		<PosXYZ>-130,-110,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<GuideEffect>effect/ui_effect/tips_scale</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17020">
+		<Text>点击购买此英雄</Text>
+		<BtnName>1</BtnName>
+    <Btncoord>-125,-25.5,0</Btncoord>
+		<PrefabName>UIGuideFrame</PrefabName>
+		<PosXYZ>110,-30,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<GuideEffect>effect/ui_effect/tips_scale</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+	<info TaskID="17021">
+		<Text>点击购买，你就可以永久使用该英雄！</Text>
+		<BtnName>Gold</BtnName>
+		<PrefabName>UIGuideFrame</PrefabName>
+		<PosXYZ>33,-325,0</PosXYZ>
+		<GuideType>3</GuideType>
+		<GuideEffect>effect/ui_effect/tips_scale</GuideEffect>
+		<triggertype>1</triggertype>
+	</info>
+</Trigger>

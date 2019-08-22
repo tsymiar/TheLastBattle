@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SkillCfg_links xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un32ID="200001">
+		<szName>链接测试</szName>
+		<n32UseMP>0</n32UseMP>
+		<n32UseHP>0</n32UseHP>
+		<n32UseCP>0</n32UseCP>
+		<bIsCoolDown>0</bIsCoolDown>
+		<n32TriggerRate>1000</n32TriggerRate>
+		<bIfAffectBuilding>0</bIfAffectBuilding>
+		<bIfAffectHero>1</bIfAffectHero>
+		<bIfAffectMonster>1</bIfAffectMonster>
+		<eTargetType>2</eTargetType>
+		<bIsCanBeBreak>1</bIsCanBeBreak>
+		<eStartingPoint>1</eStartingPoint>
+		<bIsMoveBreak>0</bIsMoveBreak>
+		<n32FarthestDistance>1000</n32FarthestDistance>
+		<n32LastTime>10000</n32LastTime>
+		<Effect>0</Effect>
+		<Sound>0</Sound>
+		<TimeOverEventID>160019</TimeOverEventID>
+		<BreakEventID>160004</BreakEventID>
+	</info>
+</SkillCfg_links>

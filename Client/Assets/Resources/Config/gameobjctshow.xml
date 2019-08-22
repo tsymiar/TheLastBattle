@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gameobjctshow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="1001">
+		<pathtype>1</pathtype>
+		<path>VirtualPanel</path>
+		<startshow>1</startshow>
+		<endshow>1</endshow>
+	</info>
+</gameobjctshow>

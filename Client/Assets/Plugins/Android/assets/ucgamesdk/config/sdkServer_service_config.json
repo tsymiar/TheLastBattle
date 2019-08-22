@@ -1,0 +1,32 @@
+[
+    {
+        "service": "ucid.account.bindMobileBySmsCode",
+        "fields":
+        [ 
+            {
+                "name": "password",
+                "securityFmt": 2
+             }
+        ]
+    },
+     {
+        "service": "ucid.account.resetPasswordByPasswordQuestion",
+        "fields":
+        [ 
+            {
+                "name": "password",
+                "securityFmt": 1
+             }
+        ]
+    },
+    {
+        "service": "ucid.account.setPasswordQuestion",
+        "fields":
+        [ 
+            {
+                "name": "password",
+                "securityFmt": 2
+             }
+        ]
+    }
+]

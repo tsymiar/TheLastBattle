@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<HeadSelect xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info HeadID="1">
+		<Head_Name>精灵男</Head_Name>
+		<Head_Type>1</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>16</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="2">
+		<Head_Name>精灵女</Head_Name>
+		<Head_Type>2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>17</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="3">
+		<Head_Name>智子</Head_Name>
+		<Head_Type>2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>32</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="4">
+		<Head_Name>鬼一闪</Head_Name>
+		<Head_Type>1</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>12</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="5">
+		<Head_Name>冻法师</Head_Name>
+		<Head_Type>1,2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>7</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="6">
+		<Head_Name>半人马</Head_Name>
+		<Head_Type>1</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>23</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="7">
+		<Head_Name>甲虫</Head_Name>
+		<Head_Type>1</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>14</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="8">
+		<Head_Name>蜘蛛</Head_Name>
+		<Head_Type>2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>19</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="9">
+		<Head_Name>野狼</Head_Name>
+		<Head_Type>1</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>28</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="10">
+		<Head_Name>火龙</Head_Name>
+		<Head_Type>1</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>8</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="11">
+		<Head_Name>被奴役的猿人</Head_Name>
+		<Head_Type>1,2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>11</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="12">
+		<Head_Name>医疗猿人</Head_Name>
+		<Head_Type>1,2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>29</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="13">
+		<Head_Name>小汤姆</Head_Name>
+		<Head_Type>1,2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>20</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="14">
+		<Head_Name>熊</Head_Name>
+		<Head_Type>1,2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>27</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="15">
+		<Head_Name>精灵近战小兵</Head_Name>
+		<Head_Type>1,2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>18</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="16">
+		<Head_Name>精灵远程小兵</Head_Name>
+		<Head_Type>1,2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>33</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="17">
+		<Head_Name>亡灵近战小兵</Head_Name>
+		<Head_Type>1,2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>25</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="18">
+		<Head_Name>亡灵远程小兵</Head_Name>
+		<Head_Type>1,2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>26</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="19">
+		<Head_Name>石魔</Head_Name>
+		<Head_Type>1,2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>24</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="20">
+		<Head_Name>鱼人</Head_Name>
+		<Head_Type>1,2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>30</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="21">
+		<Head_Name>雷灵</Head_Name>
+		<Head_Type>1,2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>22</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="22">
+		<Head_Name>海骑士</Head_Name>
+		<Head_Type>1,2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>13</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="23">
+		<Head_Name>甲龙</Head_Name>
+		<Head_Type>1,2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>15</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="24">
+		<Head_Name>暴风女</Head_Name>
+		<Head_Type>2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>35</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="25">
+		<Head_Name>艾格</Head_Name>
+		<Head_Type>1</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>36</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="26">
+		<Head_Name>寒辉之羽</Head_Name>
+		<Head_Type>2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>37</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="27">
+		<Head_Name>石斧巨人</Head_Name>
+		<Head_Type>1</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>38</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="28">
+		<Head_Name>惩戒者</Head_Name>
+		<Head_Type>1</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>39</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="29">
+		<Head_Name>洞窟蝙蝠</Head_Name>
+		<Head_Type>1</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>40</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="30">
+		<Head_Name>黑魔律</Head_Name>
+		<Head_Type>2</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>42</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="31">
+		<Head_Name>嗜魂者</Head_Name>
+		<Head_Type>1</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>47</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="32">
+		<Head_Name>泰狱神</Head_Name>
+		<Head_Type>1</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>49</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>3</Account_Level>
+	</info>
+	<info HeadID="33">
+		<Head_Name>贪噬鬼</Head_Name>
+		<Head_Type>1</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>50</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+	<info HeadID="34">
+		<Head_Name>瘟疫巫师</Head_Name>
+		<Head_Type>1</Head_Type>
+		<Atlas>TeamHead2</Atlas>
+		<Atlas_Num>51</Atlas_Num>
+		<Used_Condition>0</Used_Condition>
+		<Account_Level>1</Account_Level>
+	</info>
+</HeadSelect>

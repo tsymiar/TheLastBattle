@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<path xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="1001">
+		<point>59,61,109</point>
+		<dis>6</dis>
+	</info>
+	<info id="1002">
+		<point>65,61,114</point>
+		<dis>6</dis>
+	</info>
+	<info id="1003">
+		<point>94,61,123</point>
+		<dis>6</dis>
+	</info>
+	<info id="1004">
+		<point>82,61,109</point>
+		<dis>4</dis>
+	</info>
+</path>

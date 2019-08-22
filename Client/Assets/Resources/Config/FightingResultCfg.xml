@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DailyBonus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info n32Type="1">
+		<n32FixedValue>125</n32FixedValue>
+		<n32TimeCoefficient>2</n32TimeCoefficient>
+		<n32TimeFixedValue>20</n32TimeFixedValue>
+		<TimeBetween>20,40</TimeBetween>
+		<n32LevelCoefficient>2</n32LevelCoefficient>
+		<n32LevelPower>1.3</n32LevelPower>
+	</info>
+	<info n32Type="2">
+		<n32FixedValue>100</n32FixedValue>
+		<n32TimeCoefficient>2</n32TimeCoefficient>
+		<n32TimeFixedValue>20</n32TimeFixedValue>
+		<TimeBetween>20,40</TimeBetween>
+		<n32LevelCoefficient>1</n32LevelCoefficient>
+		<n32LevelPower>1.1</n32LevelPower>
+	</info>
+	<info n32Type="3">
+		<n32FixedValue>0</n32FixedValue>
+		<n32TimeCoefficient>20</n32TimeCoefficient>
+		<n32TimeFixedValue>0</n32TimeFixedValue>
+		<TimeBetween>0,10</TimeBetween>
+		<n32LevelCoefficient>0</n32LevelCoefficient>
+		<n32LevelPower>0</n32LevelPower>
+	</info>
+	<info n32Type="4">
+		<n32FixedValue>200</n32FixedValue>
+		<n32TimeCoefficient>2</n32TimeCoefficient>
+		<n32TimeFixedValue>20</n32TimeFixedValue>
+		<TimeBetween>20,55</TimeBetween>
+		<n32LevelCoefficient>0</n32LevelCoefficient>
+		<n32LevelPower>0</n32LevelPower>
+	</info>
+	<info n32Type="5">
+		<n32FixedValue>0</n32FixedValue>
+		<n32TimeCoefficient>10</n32TimeCoefficient>
+		<n32TimeFixedValue>0</n32TimeFixedValue>
+		<TimeBetween>0,10</TimeBetween>
+		<n32LevelCoefficient>0</n32LevelCoefficient>
+		<n32LevelPower>0</n32LevelPower>
+	</info>
+	<info n32Type="6">
+		<n32FixedValue>100</n32FixedValue>
+		<n32TimeCoefficient>1</n32TimeCoefficient>
+		<n32TimeFixedValue>20</n32TimeFixedValue>
+		<TimeBetween>20,55</TimeBetween>
+		<n32LevelCoefficient>0</n32LevelCoefficient>
+		<n32LevelPower>0</n32LevelPower>
+	</info>
+	<info n32Type="7">
+		<n32FixedValue>0</n32FixedValue>
+		<n32TimeCoefficient>3</n32TimeCoefficient>
+		<n32TimeFixedValue>0</n32TimeFixedValue>
+		<TimeBetween>0,10</TimeBetween>
+		<n32LevelCoefficient>0</n32LevelCoefficient>
+		<n32LevelPower>0</n32LevelPower>
+	</info>
+	<info n32Type="8">
+		<n32FixedValue>30</n32FixedValue>
+		<n32TimeCoefficient>1</n32TimeCoefficient>
+		<n32TimeFixedValue>20</n32TimeFixedValue>
+		<TimeBetween>20,55</TimeBetween>
+		<n32LevelCoefficient>0</n32LevelCoefficient>
+		<n32LevelPower>0</n32LevelPower>
+	</info>
+</DailyBonus>

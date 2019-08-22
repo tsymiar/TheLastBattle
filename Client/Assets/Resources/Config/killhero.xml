@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<killhero xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="19001">
+		<deadnpcid>10009</deadnpcid>
+		<times>1</times>
+		<deadreason>0,1,2</deadreason>
+	</info>
+	<info id="19002">
+		<deadnpcid>10008,10009,10007</deadnpcid>
+		<times>1</times>
+		<deadreason>0,1,2</deadreason>
+	</info>
+	<info id="19003">
+		<deadnpcid>10007</deadnpcid>
+		<times>1</times>
+		<deadreason>0,1,2</deadreason>
+	</info>
+</killhero>

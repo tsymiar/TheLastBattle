@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Title xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="9001">
+		<content>欢迎进入英雄之刃！
+我们需要你带领军队摧毁敌方主基地！</content>
+		<site>Guide/Captions_Camera2</site>
+		<place>60,250,0</place>
+	</info>
+	<info id="9002">
+		<content>请让英雄移动至[CD0000]箭头区域！[-]</content>
+		<site>Guide/Captions_Camera2</site>
+		<place>60,250,0</place>
+	</info>
+	<info id="9003">
+		<content>不好，前方出现敌方小兵，赶快向前迎敌！</content>
+		<site>Guide/Captions_Camera2</site>
+		<place>60,250,0</place>
+	</info>
+	<info id="9004">
+		<content>请滑动[CD0000]攻击按钮[-]改变攻击目标！</content>
+		<site>Guide/Captions_Camera2</site>
+		<place>60,250,0</place>
+	</info>
+	<info id="9005">
+		<content>中立单位只能[CD0000]点击屏幕锁定！[-]</content>
+		<site>Guide/Captions_Camera2</site>
+		<place>60,250,0</place>
+	</info>
+	<info id="9006">
+		<content>跟随小兵前进，摧毁敌方箭塔！</content>
+		<site>Guide/Captions_Camera2</site>
+		<place>60,250,0</place>
+	</info>
+	<info id="9007">
+		<content>击杀敌方英雄积攒怒气，强化技能！</content>
+		<site>Guide/Captions_Camera2</site>
+		<place>60,250,0</place>
+	</info>
+	<info id="9008">
+		<content>点击左上角的头像按钮释放怒气！</content>
+		<site>Guide/Captions_Camera2</site>
+		<place>60,250,0</place>
+	</info>
+	<info id="9009">
+		<content>摧毁敌方祭坛，向胜利前进吧！</content>
+		<site>Guide/Captions_Camera2</site>
+		<place>60,250,0</place>
+	</info>
+	<info id="9010">
+		<content>摧毁敌方主基地，赢得胜利！</content>
+		<site>Guide/Captions_Camera2</site>
+		<place>60,250,0</place>
+	</info>
+	<info id="9011">
+		<content>锁定目标后点击按钮，可以吸附野怪！</content>
+		<site>Guide/Captions_Camera2</site>
+		<place>60,250,0</place>
+	</info>
+</Title>

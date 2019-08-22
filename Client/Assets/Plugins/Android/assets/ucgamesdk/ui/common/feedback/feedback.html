@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+<script type="text/javascript" src="../common/js/sdkBase.js?1385520253497"></script>
+<script type="text/javascript" src="../common/js/environment.js?1385520253497"></script>
+<script type="text/javascript">
+document.addEventListener( 'bridgeready',  function() {
+    var sdkBaseObj = new sdkBase ();
+    sdkBaseObj.request(sdkBaseObj.servType.COMMON, sdkBaseObj.actions.STAT, {
+        business :  'page.user.feedBack',
+        step :      'enter'
+    });
+    var userInfo = sdkBaseObj.request ( sdkBaseObj.servType.COMMON, sdkBaseObj.actions.GET_CURR_USER );
+    var gameInfo = sdkBaseObj.request(sdkBaseObj.servType.COMMON, sdkBaseObj.actions.GET_GAME_INFO);
+    if(userInfo && userInfo.success && gameInfo && gameInfo.success) {
+        window.location.href = eConfig.feedBackCenter + '?uid=' + userInfo.data.ucid + 
+                        '&uname=' + userInfo.data.nickname + '&gid=' + gameInfo.data.gameId + 
+                        '&gname=' + userInfo.data.gameName + '&skey=D02';
+    } else {
+        window.location.href = '../user/user.html';
+    }
+});
+</script>
+</body>
+</html>

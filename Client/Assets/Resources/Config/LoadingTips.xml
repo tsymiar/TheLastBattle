@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LoadingTips xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info Num="1">
+		<Content>推荐装备更适合新手玩家。</Content>
+	</info>
+	<info Num="2">
+		<Content> 每个英雄都有一个被动技能，不要忘了查看并好好利用它。</Content>
+	</info>
+	<info Num="3">
+		<Content>屏幕右方会显示你附近的敌方英雄头像，点击头像你将锁定该英雄。</Content>
+	</info>
+	<info Num="4">
+		<Content>在死亡期间你可以充分利用时间挑选购买装备。</Content>
+	</info>
+	<info Num="5">
+		<Content> 在对线的过程中不要忘记补兵，装备的积累速度往往能决定胜负。</Content>
+	</info>
+	<info Num="6">
+		<Content>安排一个英雄打野，将会使获得的资源最大化。</Content>
+	</info>
+	<info Num="7">
+		<Content>长按道具栏中的物品即可拖动调换位置。</Content>
+	</info>
+	<info Num="8">
+		<Content>长按技能按钮可查看该技能的详细信息。</Content>
+	</info>
+	<info Num="9">
+		<Content>当左上角英雄头像怒气值满时，点击头像即可爆气，爆气后技能威力更强大效果更华丽。</Content>
+	</info>
+	<info Num="10">
+		<Content>英雄爆气时，可刷新当前技能CD。</Content>
+	</info>
+	<info Num="11">
+		<Content>附身野怪不仅可以获得特殊技能，还可增加额外的属性。</Content>
+	</info>
+	<info Num="12">
+		<Content>不要盲目的附身野怪，适合自己的技能才是最好的技能。</Content>
+	</info>
+	<info Num="13">
+		<Content>选择英雄时也不要忘了配合，合理的阵容搭配更容易赢得胜利。</Content>
+	</info>
+	<info Num="14">
+		<Content>关键时刻使用“立即复活”，可以帮助你更快的回到战斗中。</Content>
+	</info>
+	<info Num="15">
+		<Content>点击头像下方的按钮，可查看双方的击杀与死亡统计。</Content>
+	</info>
+	<info Num="16">
+		<Content>每天登录游戏可以领取各种奖励哦。</Content>
+	</info>
+	<info Num="17">
+		<Content>摧毁对方的基地才能获得胜利。</Content>
+	</info>
+	<info Num="18">
+		<Content>积极参与团战，你不是一个人在战斗。</Content>
+	</info>
+	<info Num="19">
+		<Content>当游戏画面不流畅时，尝试设置低特效进行游戏。</Content>
+	</info>
+	<info Num="20">
+		<Content>英雄头上环绕的光效表示他们吸收了几颗灵魂。</Content>
+	</info>
+</LoadingTips>

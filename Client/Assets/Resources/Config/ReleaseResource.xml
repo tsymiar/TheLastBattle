@@ -1,0 +1,14 @@
+<ResourceList>
+	<Resource type="texture">
+		<Tex name ="HalfPhoto"/>
+		<Tex name ="UIatlas2"/>
+		<Tex name ="UIatlas4"/>
+		<Tex name ="UIatlas17"/>
+		<Tex name ="UIatlas14"/>
+		<Tex name ="UIatlas12"/>
+		<Tex name ="UIatlas3"/>
+		<Tex name ="UIatlas1"/>
+		<Tex name ="PVPload001"/>
+		<Tex name ="Wooden Atlas"/>
+	</Resource>
+</ResourceList>

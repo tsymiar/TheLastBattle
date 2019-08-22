@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OtherItemCfg_Describe xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info EffectID="1001">
+		<EffectDescribe>战斗结算金币+{0}%</EffectDescribe>
+	</info>
+	<info EffectID="1002">
+		<EffectDescribe>战斗结算经验+{0}%</EffectDescribe>
+	</info>
+	<info EffectID="1003">
+		<EffectDescribe>解锁全部英雄({0}天)</EffectDescribe>
+	</info>
+	<info EffectID="1004">
+		<EffectDescribe>解锁一个英雄({0}天)</EffectDescribe>
+	</info>
+	<info EffectID="1005">
+		<EffectDescribe>用于洗炼{0}级及以下等级的符文</EffectDescribe>
+	</info>
+	<info EffectID="1006">
+		<EffectDescribe>增加{0}个符文页</EffectDescribe>
+	</info>
+</OtherItemCfg_Describe>
