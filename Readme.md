@@ -14,7 +14,7 @@
 
 ### Client
 
-   Source files include [Client](https://github.com/tsymiar/BattleServer/tree/master/Client), which is also a standalone project.
+   Source files include [Client](https://github.com/tsymiar/BattleServer/tree/client/Client), which is also a standalone project.
 
 -------
 ### Database
