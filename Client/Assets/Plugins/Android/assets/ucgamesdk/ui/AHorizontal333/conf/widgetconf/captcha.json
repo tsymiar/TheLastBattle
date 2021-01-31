@@ -1,0 +1,72 @@
+{
+  "CLASS_NAME"          : "LoginCaptchaConfig",
+  "logoImageViewConfig" : {
+    "CLASS_NAME"          : "ImageViewConfig",
+    "src"                 : "logo.png",
+    "width"               : 80,
+    "height"              : 45,
+    "bgNormalPath"        : "logo.png",
+    "topMargin"           : 10,
+    "leftMargin"          : 160,
+    "visibile"            : true
+  },
+  "captchaInputConfig"  : {
+    "CLASS_NAME"          : "EditTextConfig",
+    "inputType"           : 1,
+    "isPassword"          : false,
+    "enabled"             : true,
+    "textSize"            : 24,
+    "width"               : 170,
+    "height"              : 66,
+    "bgNormalPath"        : "input_bg.9.png",
+    "bgFocusPath"         : "input_bg.9.png",
+    "bgColor"             : "#ffffff",
+    "topMargin"           : 70,
+    "visibile"            : true
+  },
+  "captchaWidgetConfig" : {
+    "CLASS_NAME"          : "CaptchaWidgetConfig",
+    "textConfig"          : {
+      "CLASS_NAME"          : "TextConfig",
+      "textColor"           : "#a0a0a0",
+      "textSize"            : 21,
+      "width"               : 99,
+      "topMargin"           : 9,
+      "leftMargin"          : 9,
+      "bottomMargin"        : 9,
+      "visibile"            : true
+    },
+    "buttonConfig"        : {
+      "CLASS_NAME"          : "ButtonConfig",
+      "width"               : 36,
+      "height"              : 36,
+      "bgNormalPath"        : "refresh.png",
+      "bgFocusPath"         : "refreshing.png",
+      "topMargin"           : 9,
+      "leftMargin"          : 9,
+      "visibile"            : true
+    },
+    "width"               : 130,
+    "height"              : 66,
+    "bgNormalPath"        : "input_bg.9.png",
+    "bgFocusPath"         : "input_bg.9.png",
+    "topMargin"           : 70,
+    "leftMargin"          : 9,
+    "visibile"            : true
+  },
+  "buttonConfig"        : {
+    "CLASS_NAME"          : "ButtonConfig",
+    "bgDisablePath"       : "btn_black_press.9.png",
+    "disableTextColor"    : "#a0a0a0",
+    "textColor"           : "#ffffffff",
+    "text"                : "确定",
+    "textSize"            : 18,
+    "width"               : 380,
+    "height"              : 60,
+    "bgNormalPath"        : "btn_orange.9.png",
+    "bgFocusPath"         : "btn_orange_press.9.png",
+    "topMargin"           : 150,
+    "visibile"            : true
+  },
+  "visibile"            : true
+}

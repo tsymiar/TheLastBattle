@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4618836bc3b6da349a87b507f02b9951, type: 3}
+  m_Name: DependentBundleNames
+  m_EditorClassIdentifier: 
+  content:
+  - Scene/Texture/pvp_004_LightmapFar-0.assetbundle
+  - Scene/Texture/pvp_004_LightmapFar-1.assetbundle
+  - Scene/Mesh/guangxiao2.assetbundle
+  - Scene/Mesh/chujichang17.assetbundle
+  - Scene/Mesh/chujichang8.assetbundle
+  - Scene/Mesh/chujichang13.assetbundle
+  - Scene/Mesh/chujichang14.assetbundle
+  - Scene/Mesh/chujichang19.assetbundle
+  - Scene/Texture/shui_jing_001_ty.assetbundle
+  - Scene/Texture/chu_ji_chang_001.assetbundle
+  - Scene/Texture/chu_ji_chang_007.assetbundle
+  - Scene/Mesh/lanshuijing.assetbundle
+  - Scene/Texture/wang_ling_shi_bi_001.assetbundle
+  - Scene/Mesh/shizhu3.assetbundle
+  - Scene/Mesh/chujichang7.assetbundle
+  - Scene/Mesh/chujichang2.assetbundle
+  - Scene/Mesh/chujichang4.assetbundle
+  - Scene/Mesh/chujichang1.assetbundle
+  - Scene/Mesh/chujichang3.assetbundle
+  - Scene/Texture/xi_niu_diao_xiang_001.assetbundle
+  - Scene/Mesh/xiniudiaoxiang.assetbundle
+  - Scene/Mesh/chujichang20.assetbundle
+  - Scene/Mesh/chujichang18.assetbundle
+  - Scene/Mesh/shizhu.assetbundle
+  - Scene/Mesh/shideng2.assetbundle
+  - Scene/Mesh/shizhu2.assetbundle
+  - Scene/Mesh/chujichang6.assetbundle
+  - Scene/Mesh/shizhu1.assetbundle
+  - Scene/Texture/chu_ji_chang_002.assetbundle
+  - Scene/Mesh/chujichang16.assetbundle
+  - Scene/Mesh/chujichang.assetbundle
+  - Scene/Mesh/bihua002.assetbundle
+  - Scene/Texture/chu_ji_chang_008.assetbundle
+  - Scene/Texture/shi_deng_002_ty.assetbundle
+  - Scene/Mesh/hongshuijing.assetbundle
+  - Scene/Mesh/Plane.assetbundle
+  - Scene/Mesh/bihua001.assetbundle
+  - Scene/Mesh/chujichang15.assetbundle
+  - Scene/Mesh/chujichang21.assetbundle
+  - Scene/Mesh/chujichang9.assetbundle
+  - Scene/Mesh/chujichang11.assetbundle
+  - Scene/Mesh/chujichang5.assetbundle
+  - Scene/Mesh/chujichang12.assetbundle
+  - Scene/Mesh/chujichang10.assetbundle

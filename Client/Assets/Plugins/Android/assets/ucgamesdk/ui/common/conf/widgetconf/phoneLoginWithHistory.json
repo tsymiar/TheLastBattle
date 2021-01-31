@@ -1,0 +1,33 @@
+{
+  "logoImageViewConfig" : { },
+  "titleConfig"         : { },
+  "titleHintsConfig"    : { },
+  "tipsConfig"          : {
+    "text"                : "可输入新手机号"
+  },
+  "inputWidgetConfig"   : {
+    "labelTextViewConfig" : { },
+    "inputEditTextConfig" : {
+      "hint"                : "请输入手机号",
+      "inputType"           : 3
+    },
+    "rightButtonConfig"   : {
+      "text"                : "",
+      "textSize"            : 18,
+      "width"               : 60,
+      "height"              : 50,
+      "bgNormalPath"        : "input_icon_Arrow.9.png",
+      "bgFocusPath"         : "input_icon_Arrow.9.png",
+      "rightMargin"         : 7
+    }
+  },
+  "buttonConfig"        : {
+    "text"                : "进入游戏"
+  },
+  "thirdPartyConfig"    : {
+    "captionConfig"       : { }
+  },
+  "registerConfig"      : { },
+  "noticeConfig"        : { },
+  "parent"              : "phoneLogin"
+}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PopWindow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="14001">
+		<content>恭喜你！完成吸附任务，
+摧毁敌方主基地奖励500金币。</content>
+		<site>Guide/Tips_Window</site>
+		<address>0,0,0</address>
+		<rate>0.9,0.9,0.9</rate>
+		<time>2</time>
+	</info>
+	<info id="14002">
+		<content>任务一：
+购买出门装</content>
+		<site>Guide/Tips_Window2</site>
+		<address>308,-31,0</address>
+		<rate>0.9,0.9,0.9</rate>
+		<time>2</time>
+	</info>
+	<info id="14003">
+		<content>任务二：
+击杀敌方小兵</content>
+		<site>Guide/Tips_Window2</site>
+		<address>308,-31,0</address>
+		<rate>0.9,0.9,0.9</rate>
+		<time>2</time>
+	</info>
+	<info id="14004">
+		<content>任务三：
+吸附一个野怪</content>
+		<site>Guide/Tips_Window2</site>
+		<address>308,-31,0</address>
+		<rate>0.9,0.9,0.9</rate>
+		<time>2</time>
+	</info>
+	<info id="14005">
+		<content>任务四：
+将随从放入祭坛</content>
+		<site>Guide/Tips_Window2</site>
+		<address>308,-31,0</address>
+		<rate>0.9,0.9,0.9</rate>
+		<time>2</time>
+	</info>
+	<info id="14006">
+		<content>任务五：
+摧毁敌方箭塔</content>
+		<site>Guide/Tips_Window2</site>
+		<address>308,-31,0</address>
+		<rate>0.9,0.9,0.9</rate>
+		<time>2</time>
+	</info>
+	<info id="14007">
+		<content>任务六：
+击杀敌方英雄</content>
+		<site>Guide/Tips_Window2</site>
+		<address>308,-31,0</address>
+		<rate>0.9,0.9,0.9</rate>
+		<time>2</time>
+	</info>
+	<info id="14008">
+		<content>任务七：
+摧毁敌方祭坛</content>
+		<site>Guide/Tips_Window2</site>
+		<address>308,-31,0</address>
+		<rate>0.9,0.9,0.9</rate>
+		<time>2</time>
+	</info>
+	<info id="14009">
+		<content>任务八：
+摧毁敌方主基地</content>
+		<site>Guide/Tips_Window2</site>
+		<address>308,-31,0</address>
+		<rate>0.9,0.9,0.9</rate>
+		<time>2</time>
+	</info>
+</PopWindow>

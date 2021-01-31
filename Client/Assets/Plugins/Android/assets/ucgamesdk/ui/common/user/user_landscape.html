@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width = device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="MobileOptimized" content="320"/>
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="../common/css/ln_login.css?1402642620718"/>
+<link rel="stylesheet" href="../common/css/base.css?1402642620718"/>
+<link rel="stylesheet" href="../common/css/style_sdk.css?1402642620718"/>
+<link rel="stylesheet" href="../common/css/sui.css?1402642620718"/>
+<title>注册页面</title>
+</head>
+<body data-ctrl=true>
+<div id="userContainer" class='screen-hr'></div>
+<script type="text/html" id="userBaseInfoTpl">
+<section class="btl_whi pa10" id="userBaseInfo">
+	<!-- 用户信息区 BEGIN -->
+    <div class="userInfo" style="-webkit-box-pack:center;  -webkit-box-align:center;">
+		<a href="javascript:void(0)" class="ico u_ico mt5"><img src="../common/sdk_images/tx-grey-male.jpg" id="userInfoAvatar"/></a>
+		<div class="content" id='userPanel'>
+			<div class="cf">
+				<a href="javascript:void(0)" class="title"><em class="ui-name" id="userInfoNickname"></em></a>
+				<a href="javascript:void(0)" class="icon_sm edit_icon" id="changeNickname"></a>
+                <div class="flb-box">
+				    <input type="text" class="input_text_uc flb-p4 hide" placeholder="请输入2-20字符" id="editNickname"/>
+				    <input type="button" class="btn_uc flb-p1 hide" value="修改" id="submitNicknameBtn"/>
+                </div>
+			</div>
+			<p class="plr5">
+				<span>UC号：<em class="exp" id="userInfoUcid"></em></span>
+			</p>
+            <p class="cf ms-none" id="userInfoVipArea">
+                <img id="vipImgDefault" src="../common/sdk_images/vip-default.png" style="float:left" width="22" height="22" class="ms-none"><span id="vipSpace">&nbsp;&nbsp;</span>
+                 <img id="vipImgGray" src="../common/sdk_images/vip-gray.png" style="float:left" width="22" height="22" class="ms-none"><span id="lightVip" style="color: #333;font-size:13" class="ms-none">【点亮】&nbsp;&nbsp;&nbsp;</span>
+            </p>
+		</div>
+	</div>
+	<!-- 用户操作区 BEGIN -->
+	<div class="usrCtrl ms-ni" id="usrCtrlSafe">
+		<a href="javascript:void(0)" class="btn_uc" id="changePassBtn">
+			<span class="icon_uc edp_icon"></span>
+			<span>修改密码</span>
+			<span class="arrow_uc"></span>
+		</a>
+		<a href="javascript:void(0)" class="btn_uc" id="accountSecureBtn">
+			<span class="icon_uc safe_icon"></span>
+			<span>账号安全方式</span>
+			<span class="oth" id="secureState">获取中</span>
+			<span class="arrow_uc"></span>
+		</a>
+	</div>
+	<div class="usrCtrl">
+		<a href="javascript:void(0)" class="btn_uc" id="payHistoryBtn">
+			<span class="icon_uc not_icon"></span>
+			<span>充值记录</span>
+			<span class="arrow_uc"></span>
+		</a>
+		<a href="javascript:void(0)" class="btn_uc" id="rechargeBtn">
+			<span class="icon_uc ud_icon"></span>
+			<span>充值U点</span>
+			<span class="oth" id="uPointBalance">获取中</span>
+			<span class="arrow_uc"></span>
+		</a>
+        <a href="javascript:void(0)" class="btn_uc ms-ni" id="becomeVipBtn">
+            <span class="icon_uc member_icon"></span>
+            <span>订购九游会员</span>
+            <span class="arrow_uc"></span>
+        </a>
+	</div>
+	<div class="usrCtrl usrCtrl_sg ms-ni" id="multiAccountManager">
+		<a href="javascript:void(0)" class="btn_uc" id="multiAccountBtn">
+			<span class="icon_uc pas_icon"></span>
+			<span>多账号管理</span>
+			<span class="oth" id="accountNo">获取中</span>
+			<span class="arrow_uc"></span>
+		</a>
+	</div>
+    <div class="usrCtrl usrCtrl_sg gr-mb0 btnClick-none" id='autoLoginSetting'>
+        <a href="javascript:void(0)" class="btn_uc btnClick-none">
+            <span class="icon_uc autologin_icon"></span>
+            <span>自动登录游戏</span>
+            <div class="auto-btn">
+                <span class="btn-ctn" href="javascript:;" id="autoLoginSwitch"></span>
+            </div>
+        </a>
+    </div>
+    <div class="gray f14">
+        <span id="autoLoginNoti">开启后将自动使用最近登录的账号进入游戏。</span>
+    </div>
+    <div>
+        <input type="button" class="btn btn_red ms-ni"  id="exitBtn" value="退出当前账号"/>
+    </div>
+	<div class="gray f14 plr5 flb-box">
+		<center class="flb-chi flb-p1">版本号：<span id="sdkVersion">获取中</span></center>
+		<center class="flb-chi flb-p1">手机游戏 尽在九游</center>
+	</div>
+      <div class="popWrap ms-none" id="isLightVipBox">
+    <div class="popLayer" id="lightVipMask"></div>
+    <div class="on_box on_box_ex" style="top:40%">
+      <p class="bing ms-cf"></p>
+      <div>
+        <center>
+          <p class="on_title">立即点亮九游会员？</p>
+        </center>
+      </div> <br />
+      <div>
+        <input type="button" value="暂不点亮" class="li-r-btn on_btn_ex" id="cancelLightVipBtn" />
+        <input type="button" value="立即前往" class="li-l-btn on_btn_ex" id="keepGotoLightVipBtn"/>
+      </div>
+    </div>
+  </div>
+</section>
+</script>
+<script type="text/html" id="userBaseInfoJcTpl">
+<section class="btl_whi pa10" id="userBaseInfo">
+    <!-- 用户操作区 BEGIN -->
+    <div class="usrCtrl ">
+        <a href="javascript:void(0)" class="btn_uc" id="myAccountBtnLn">
+            <span class="icon_uc myaccount_icon"></span>
+            <span>我的账号</span>
+            <span id="myAccountLn" style="text-align: right; padding-right: 10px;">获取中</span>
+        </a>
+        <a href="javascript:void(0)" class="btn_uc" id="changePassBtn">
+            <span class="icon_uc edp_icon"></span>
+            <span>修改密码</span>
+            <span class="arrow_uc"></span>
+        </a>
+    </div>
+    <div class="usrCtrl usrCtrl_sg">
+        <a href="javascript:void(0)" class="btn_uc" id="bbsBtn">
+            <span class="icon_uc gbbs_icon"></span>
+            <span>论坛</span>
+            <span class="arrow_uc"></span>
+        </a>
+    </div>
+    <div class="usrCtrl usrCtrl_sg ms-ni" id="multiAccountManager">
+        <a href="javascript:void(0)" class="btn_uc" id="multiAccountBtn">
+            <span class="icon_uc pas_icon"></span>
+            <span>多账号管理</span>
+            <span class="oth" id="accountNo">获取中</span>
+            <span class="arrow_uc"></span>
+        </a>
+    </div>
+    <div class="usrCtrl usrCtrl_sg gr-mb0 btnClick-none" id='autoLoginSetting'>
+        <a href="javascript:void(0)" class="btn_uc btnClick-none">
+            <span class="icon_uc autologin_icon"></span>
+            <span>自动登录游戏</span>
+            <div class="auto-btn">
+                <span class="btn-ctn" href="javascript:;" id="autoLoginSwitch"></span>
+            </div>
+        </a>
+    </div>
+    <div class="gray f14">
+        <span id="autoLoginNoti">开启后将自动使用最近登录的账号进入游戏。</span>
+    </div>
+    <div>
+        <input type="button" class="btn btn_red ms-ni"  id="exitBtn" value="退出当前账号"/>
+    </div>
+    <div class="gray f14 plr5 flb-box">
+        <center class="flb-chi flb-p1">版本号：<span id="sdkVersion">获取中</span></center>
+        <center class="flb-chi flb-p1">手机游戏 尽在手游吧</center>
+    </div>
+</section>
+</script>
+<script type="text/html" id="updatePasswordTpl">
+<!-- 主体内容框 -->
+<div class="btl_whi pa10 btnClick-none">
+    <p class="somber_chg">你的<%=accountName%>为：<span class="value" id='up-nickname'></span><span class="exp" id='up-ucid'></span></p>
+    <!-- 内容表单输入区 BEGIN -->
+    <div class="inputForm_chg">
+        <div class="ipfBox">
+            <label >当前密码</label>
+            <p class="input_text"><input type="text" id="oldPass" class="ui-security panel-input-top lpwd-input flb-chi flb-p99" maxlength="20"/></p>
+        </div>
+        <div class="ipfBox">
+            <label>新密码</label>
+            <p class="input_text"><input type="text" id="newPass" class="ui-security lpwd-input panel-input-top lpwd-input flb-chi flb-p99" maxlength="20"/></p>
+        </div>
+    </div>
+    <!-- 内容表单输入区 END -->
+</div>
+</script>
+<!--2.1.4用的注册成功页 -->
+<script type="text/html" id="regSuccessTempl">
+<!-- 切换TAB -->
+<p class="mTab">
+    <a class="item" id="regTitle"></a>
+</p>
+<div class="pa10 " id="fixBox_a">
+    <div class="ipWrap">
+        <div class="inputForm">
+            <p class="ipfBox">
+                <span class="item label" id="regSuccessAccountLabel"><%=accountName%>:</span>
+                <span class="item input_text" id="regUcAccount"></span>
+            </p>
+            <p class="ipfBox">
+                <span class="item label" id="passwordName">随机密码:</span>
+                <span class="item input_text" id="regPassword"></span>
+                <span class="item oth">
+                    <input type="button" id="modifyPassBtn" class="icon icon_btn icon_btn_xl" value="修改密码" />
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="noticeWrap">
+        <p class="title">账号安全建议</p>
+        <p>为避免您的账号、密码丢失，我们建议将账号与您的手机进行绑定。</p>
+    </div>
+    <div class="flexBtn">
+        <input type="button" class="btn btn_whi" id="regBindBtn" value="绑定密保手机" />
+        <input type="button" class="btn" id="regReturnGameBtn" value="进入游戏" />
+    </div>
+    
+</div>
+<div class="popWrap ms-none" id="modifyPassWin">
+    <div class="popLayer" id="modifyPassMask"></div>
+    <div class="popBox">
+        <p class="title">修改密码</p>
+        <div class="content">
+            <p class="mes gr-f20" id="regMsg1"></p>
+            <p class='input-wrap'><input type="text" id="newPassword" class="input_box" placeholder="输入6-20位新密码"/></p>
+            <p class="gr-mt15">
+                <input type="button" id="doModifyBtn" class="btn" value="确定" />
+            </p>
+            <p class="cf pt10">
+                <a href="javascript:;" id="cancelModifyBtn" class="fr ltgray ig_aro">暂不修改</a>
+            </p>
+        </div>
+    </div>
+</div>
+</script>
+<!--多账号管理 BEGIN-->
+<script type="text/html" id="multiAccountTempl">
+<div class="btl_whi pa10">
+	<div id="accountInfos" ></div>
+</div>	
+</script>
+<!--账号信息卡片-->
+<!-- 注释：此处外围a标签包裹着默认背景当无法读取出图像时便默认采用此背景，内层img包裹着实际头像img图像当此图像存在时便会覆盖外层默认背景，此处是采用1:1图片模拟，实际项目中可将g_img文件夹内模拟头像图片删除 -->
+<script	type="text/html" id="accountInfoItemTempl">
+	<div class="userInfo userInfo_s switAcc" data-account="<%=ucAccount%>" >
+		<div class="status on_btn_box">
+			<a href="javascript:;" class="<%=status%> che_icon"></a>
+		</div>
+		<div class="content">
+            <p class="plr5 account tl tfe"><%=accountName%>账号：<%=dispAccount%></p>
+			<p class="plr5 tl tfe">最近登录游戏:<%=gameName%></p>
+		</div>
+		<div class="status delStatus" style="display:none;">
+			<input type="button" class="del_icon" value="删除" />
+		</div>
+        <span class="arrow_uc gotoStatus <%=status%>" style="visibility:hidden;"></span>
+	</div>
+</script>
+<!--多账号管理 END-->
+<!--登录页-->
+<script type="text/html" id="login_templ">
+
+<!-- 切换TAB -->
+<div class="mTab" id="loginTitleTabs">
+    <img id="loginTabLogo" src="../common/sdk_images/logo.png" alt="logo" class="logo ms-ni" />
+</div>
+<!-- 页面主体 -->
+<div class="pa10" id="fixBox_a">
+    <div class="ipWrap">
+        <!-- 文本输入窗体 -->
+        <div class="inputForm">
+            <p class="ipfBox">
+                <input type="text" class="item input_text" data-hideinp='true' placeholder=""  id="username" lastLoginTime="" />
+                <span class="item oth ms-ni" id="showHistory">
+                    <a href="javascript:;" class="icon icon_btn"><em class="arrow">
+                    <select class="ms-pa ms-block ui-select" value="" id="loginHistory"></select>
+                    </em></a>
+                </span>
+            </p>
+            <p class="ipfBox">
+                <input type="password" class="item input_text sui-inp" data-ctrl='true' data-hideinp='true' placeholder="密码" id="password" />
+            </p>
+        </div>
+        <!-- 操作按钮 -->
+        <div class="inputBtn">
+            <input type="button" id="loginBut" class="btn" value="登录"/>
+            <input type="button" id="registerBut" class="btn btn_dark" value="一键注册"/>
+        </div>
+        <div class="login-check-wrap ms-ni" id="checkboxArea" >
+            <div class="icon-checkbox on" id='iconCheckbox'></div>
+            <div class="icon-checkbox-label">自动登录</div>
+        </div>
+        <!-- 提示语 -->
+        <p class="infoMes cf ms-none" id='agreementLinkCon'>
+            <a href="javascript:;" class="fr gray f14 bgTransparent" id="agreementBtn">注册即遵守《UC服务条款》</a>
+        </p>
+    </div>
+</div>
+<p class='noticeP' >
+    <a href="javascript:;" class="bgTransparent noticeLink gr-vshid" id="noticeBtn">领百万元大奖</a>
+</p>
+<!-- 正常登录底部 -->
+<p class="botLogo cf" id="normalLoginBottom">
+    <a href="javascript:;" id="gameLoginBtn" class="label fl ms-none"></a>
+    <a href="javascript:;" class="label fr bgTransparent" id="forgetPassBtn">忘记密码?</a>
+</p>
+
+<!-- 老帐号登录底部 -->
+<p class="botLogo cf ms-ni" id="gameLoginBottom">
+    <span class="f12 plr10">什么是老账号：</span>
+    <span class="f12 plr10">老账号指游戏官方账号，该账号也可登录九游的游戏客户端，角色信息完全一样。为方便日后登录游戏，九游将自动为你绑定一个UC账号。</span>
+</p>
+
+<div class="popWrap ms-none" id="popup">
+	<div class="popLayer hideMsgBoxLayout" id="modifyPassMask"></div>
+	<div class="popBox" id="popBox"></div>
+</div>
+<!--快速注册弹框 -->
+<div class="sui-popbox sui-disp-none black"
+    data-position='fix'
+    data-cancel=true
+    id="registerNowPopbox">
+
+    <div class="sui-popbox-mask"></div>
+    <div class="sui-popbox-box popbox-mgt">
+        <div class="sui-popbox-title f16">快速注册</div>
+        <div class="sui-popbox-content">
+            <div class="sui-mg-top">请设置密码：</div>
+            <div class="sui-inp-box sui-mg-top sui-inp-shadow-top">
+                <input class="sui-inp inp-idl" type="text"  placeholder="输入6-20位" id="registerNowPswInp" />
+            </div>
+            <p class="red ms-none" id='errMsgNotice'>错误提示</p>
+            <input id='registerNowFinishBtn' class="sui-btn sui-w-full sui-mg-top" type="button" value="完成注册">
+            <div class="tr mt10" id="regAgree">注册即遵守<a class='red' href="javascript:;" id="agreementBtn">UC服务条款</a></div>
+        </div>
+    </div>
+</div>
+<!--显示账号与密码弹框，有修改账号功能 -->
+<div class="ms-none" id="regSuccessPopup">
+    <div class="mask" id="regPopupMask"></div>
+    <div class="mark-content">
+        <div class="pop-content" id="regSuccessContent">
+            <div class="pop-mtitle" id="regSuccTitle">成功注册UC账号</div>
+                <article class="note-prompt" id="gameNotice"></article>
+                <div class="pa10">
+                    <div class="inputForm">
+                        <div class="ipfBox">
+                            <span class="item label" id="regSucPopAccountLb">UC账号:</span>
+                            <span class="item input_text" id="regUcAccount"></span>
+                        </div>
+                        <div class="ipfBox">
+                            <span class="item label" id="passwordName">随机密码:</span>
+                            <span class="item input_text" id="regPassword"></span>
+                            <span class="item input_text ms-ni" id='newPasswordSpan'>
+                                <input class="input-pompt bd-gray" id='newPassword' value="" placeholder="6-20位">
+                            </span>
+                            <span class="item oth">
+                                <input type="button" id="modifyPassBtn" class="icon icon_btn icon_btn_xl" value="修改密码" />
+                            </span>
+                        </div>
+                    </div>
+                    <article class="note-prompt" id="modifyResult">&nbsp;</article>
+                </div>
+                <div class="pop-btn-content">
+                    <input type="button" class="pop-btn org-btn mg10" data-returngame=true id="gameLoginReturnGameBtn" value="进入游戏" />
+                </div>
+                <div class="servic" id="regAgree">登录即遵守<a href="javascript:;" id="agreementBtn">UC服务条款</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--公告 -->
+<div class="popWrapZ ms-ni" id="notice" >
+    <div class="popLayer" id="noticeMask"></div>
+    <div class="popBox">
+        <p class="title" id="noticeTtl">领百万元大奖</p>
+        <div class="content">
+            <div class = "noticeWord" id="noticeWrapper"></div>
+            <input type="button" class="btn" value="确定" id = "closeNotice"/>
+        </div>
+    </div>
+</div>
+</script>
+<!--弹出框页面 -->
+    <!--验证码-->
+    <script type="text/html" id="captchaTempl">
+        <p class="title">验证码</p>
+        <div class="content">
+            <div class="capt-pop-content">
+                <div class="capt-inputForm">
+                    <input type="text" class="item input_text capt-input " placeholder="输入验证码" id="captchaInput" maxlength="8">
+                </div>
+                <div class="capt-refresh-cont">
+                    <img class="capt-img ms-none" id="captchaImg" src="">
+                    <div class="capt-tips ms-none" id="captchaTips">获取中...</div>
+                    <img class="capt-refresh-btn" id="captchaRefreshBtn" src="../common/sdk_images/captcha_press.png">
+                </div>
+            </div>
+            <p class="mt10">
+                <input type="button" class="btn btn_new " id="captchaBtn" value="确定" />
+            </p>
+        </div>
+    </script>
+	<!--错误信息-->
+	<script type="text/html" id="errorMsgBoxTempl">
+		<div class="content">
+			<div class="tc ptb10"><p class="point point_n" id="msgContent"></p></div>
+			<p class="mt10">
+				<input type="button" class="btn hideMsgBoxLayout" value="确定" />
+			</p>
+		</div>
+	</script>
+    <!--强制修改随机密码-->
+    <script type="text/html" id="forceUpdateRandomPassBoxTempl">
+        <p class="title">修改密码</p>
+        <div class="content">
+            <p id="updateHint" class="mes">为确保账号安全，请重新设置密码。</p>
+            <p id="forcePwd" class='input-wrap'>
+                <input type="password" id="forcePassword" class="input_box" placeholder="重新输入密码"/>
+            </p>
+            <p class="gr-mt15">
+                <input type="button" class="btn btn_new modifyAndLoginBtn" id="forceModifyAndLoginBtn" value="确定" />
+            </p>
+            <p class="cf pt10">
+                <!--<a href="javascript:;" class="fr ltgray f12" id="neverUpdateBtn">暂不修改</a>-->
+            </p>
+        </div>
+    </script>
+	<!--修改随机密码-->
+	<script type="text/html" id="updateRandomPassBoxTempl">
+		<p class="title">修改密码</p>
+		<div class="content">
+			<p class="mes"  id="randomPwdRemind">您当前使用的是随机密码，为确保您的账号安全，请设置密码后进入游戏。</p>
+			<p id="accountParam" class='input-wrap'>
+				<input type="text" id="newPassword" class="input_box" placeholder="输入6-20位新密码"/>
+			</p>
+			<p class="gr-mt15">
+                <input type="button" class="btn btn_new modifyAndLoginBtn" id="modifyAndLoginBtn" value="确定" />
+            </p>
+            <p class="cf pt10">
+                <a href="javascript:;" class="fr ltgray f12" id="neverUpdateBtn">关闭</a>
+            </p>
+		</div>
+	</script>
+	<!--修改密码-->
+	<script type="text/html" id="updatePassBoxTempl">
+		<p class="title">修改密码</p>
+		<div class="content">
+            <p class="mes gr-f20" id="updatePassBoxAcLb">UC账号：<span id="accountParam"></span></p>
+			<p class='input-wrap'><input type="text" id="newPassword" class="input_box" placeholder="输入6-20位新密码"/></p>
+            <p class="mt10">
+                <input type="button" class="btn btn_new modifyAndLoginBtn" id="bindModifyAndLoginBtn"  data-callback='callback' value="确定" />
+            </p>
+            <p class="cf pt10">
+                <a href="javascript:;" class="fr ltgray f12" id="cancelModify">暂不修改</a>
+            </p>
+		</div>
+	</script>
+	<!--已存在UC账号-->
+	<script type="text/html" id="ownUCAccountBoxTempl">
+        <p class="title" id="ownAccountBoxTitle">已绑定过UC账号</p>
+		<div class="content">
+			<p id="bindTitle" class="mes"></p>
+			<p><span id="bindUcid" class="gr-f20"></span></p>
+			<p class="mt10">
+				<input type="button" class="btn" id="useUCAccountLogin" value="使用UC账号登录">
+			</p>
+			<p class="cf pt10">
+                <a href="javascript:;" id="cancelLogin" class="fr ltgray ig_aro">不再提醒</a>
+            </p>
+		</div>
+	</script>
+<!--弹出框页面 -->
+<!--游戏账号首次登录-->
+<script type="text/html" id="firstGameLoginTempl">
+	<div class="infoWrap">
+		<p class="mTab">
+			<a class="item">老账号绑定新UC账号</a>
+		</p>
+		<div class="pa10" id="firstGameBody">
+            <div class="noticeWrap">
+                <p>为提供更好的游戏服务，我们为您分配了新的UC账号。</p>
+            </div>
+			<div class="ipWrap">
+				<div class="inputForm">
+					<p class="ipfBox">
+						<span class="item label">UC账号:</span>
+						<span class="item input_text" id="ucAccount"></span>
+					</p>
+					<p class="ipfBox">
+						<span class="item label" id='passwordLabel'>随机密码:</span>
+						<span class="item input_text" id="randomPassword"></span>
+						<span class="item oth">
+							<input type="button" class="icon icon_btn icon_btn_xl" id="updatePassBtn" value="修改密码" />
+						</span>
+					</p>
+				</div>
+			</div>
+			<div class="noticeWrap">
+				<p class="title">账号安全建议</p>
+				<p>为避免您的账号、密码丢失，我们建议将账号与您的手机进行绑定。</p>
+			</div>
+			<div class="flexBtn">
+				<input type="button" class="btn btn_whi" id="mobileBindingBtn" value="绑定密保手机" />
+				<input type="button" class="btn" id="returnGameBtn" value="进入游戏" />
+			</div>
+		</div>
+        <div class="cf somber f12 gr-mr10">
+            <p class="fr">使用本账号即同意遵守<a href="javascript:;" id="agreementBtn" class="red bgTransparent">UC服务条款</a></p>
+        </div>
+		<!-- 弹出框 -->
+		<div class="popWrap ms-none" id="popup">
+			<div class="popLayer hideMsgBoxLayout" id="modifyPassMask"></div>
+			<div class="popBox" id="popBox"></div>
+		</div>
+	</div>
+</script>
+<script type="text/html" id="noticeMsgTpl">
+<section class="ui-maincontainer">
+    <div class="ui-moudle-area ms-pr ui-ofh">
+        <div class="li-ui-pwd gr-pb10 gr-mt10">
+            <p class="item gr-pt10"><span class="label" id="noticeTitle"></span></p>
+            <section id="noticeContent"></section>
+        </div>
+        <div class="li-ui-pwd gr-pt10 gr-pb10 ms-none" id="noticeBtn"></div>
+    </div>
+</section>
+</script>
+<script type="text/html" id="vipArea">
+<section class="ui-maincontainer">    
+    <!--模块标题-->
+    <header class="ui-module-title">
+      <div class="ui-title-text">
+        <h3 class="ui-abtitle">皇冠玩家专区</h3>
+      </div>
+    </header>
+    <div class="ui-moudle-area gr-mt10 ui-ofh">
+        <div class="ui-module-infobox accountInfo">
+           尊敬的皇冠玩家用户，你可在九游旗下享受“客服专席”特权。
+        </div>
+    </div>
+</section>
+</script>
+<script type="text/html" id="screcyPageTempl">
+<div id='secrecy_con' class="">
+    <section class="tagHead" id="bindTabHead">
+        <ul class="tag flb-box">
+            <li class="on"><a href="javascript:;" class="block " id="bindPhoneTabBtn" data-type="mobile" >绑定手机</a></li>
+            <li ><a href="javascript:;" class="block " id="setQuestionTabBtn" data-type="question">设置问题</a></li>
+        </ul>
+    </section>
+    <section id="bindPhoneCnt">
+    </section>
+    <section id="setQuestionCnt" class='ms-none'>
+    </section>
+
+</div>
+</script>
+<script type="text/html" id="bindPopBoxTempl">
+    <div id="bindPopBox" class="ms-none">
+        <div class="mask" ></div>
+        <div class="mark-content">
+            <div class="pop-content">
+                <div class="pop-mtitle" id='bindSuccTitle'></div>
+                <div id="bindSuccessNoti"></div>
+                <div class="pop-btn-content">
+                    <a href="javascript:;" class="pop-btn org-btn" id="toGameBtn"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="phoneBindingChangeTempl">
+<section class="ui-maincontainer">
+  <div class="con">
+    <div class="pa10" >
+        <div class="box01_level" id="pBindChangeInfo">
+            <b id="phoneBindChangeAcLb">UC账号：<div id="bindChangeAcc"></div></b>
+            <b>已绑定手机号码：<div id="bindChangeNum"></div></b>
+        </div>
+        <div class="box02_level">
+            <div id="pBingChangeNoti">
+            </div>
+            <button id="pGotoSecCenterBtn" class="btn btn_whi" >修改手机号码</button>
+        </div>
+    </div>
+  </div>
+</section>
+</script>
+<script type="text/html" id="questionBindingChangeTempl">
+<section class="ui-maincontainer">
+  <div class="con">
+    <div class="pa10" >
+        <div class="box02_level">
+            <div id="qBingChangeNoti">
+            </div>
+            <button id="qGotoSecCenterBtn" class="btn btn_whi" >修改密保问题</button>
+        </div>
+    </div>
+  </div>
+</section>
+</script>
+<!-- 预绑定手机页面 -->
+<script type="text/html" id="preBindPage">
+<section class="ui-maincontainer tabPage ms-none" data-page='preBind' id='preBindCon'>
+  <div class="con" id="preBindBg">
+    <!--还原旧页面-->
+    <p class=" ms-tc"><span class="safe ms-tc"></span></p>
+    <article class="s_word ms-tc">
+      <p>我们发现你的账号安全级别：低</p>
+      <p>建议绑定手机</p>
+    </article>
+    <article class="p_word">
+      <p>绑定手机后可以在忘记密码或账号被盗时通过手机找回密码。</p>
+    </article>
+    <div class="flb-box">
+        <div class="in_par in_par_60 flb-p4"><input id="mobile" type="text" class="bindInput" placeholder="输入您要绑定的手机号码" /></div>
+    </div>
+	<div class="gr-mt15"><input type="button" id="toBindPageBtn" class="lo_btn higher btn_width" data-btnFeed="feed" value="提交" /></div>
+    <div class="gr-mt10">
+        <p class="or_way">还可以:通过 <a id="toSetQuestionsBtn" href="javascript:;" class="orn bgTransparent">密保问题</a> 提升账户安全</p>
+    </div>
+  <div class="popWrap ms-none" id="isBindBox">
+    <div class="popLayer" id="modifyPassMask"></div>
+    <div class="on_box on_box_ex">
+      <p class="bing ms-cf"></p>
+      <div>
+        <center>
+          <p class="on_title">手机号码已绑定</p>
+        </center>
+      </div> <br />
+      <div>
+        <center>
+          <p class="red">继续绑定，则自动与原<%=accountName%>解绑</p>
+        </center>
+      </div> <br />
+      <div>
+        <input type="button" value="取消" class="li-r-btn on_btn_ex" id="cancelIbbBtn" />
+        <input type="button" value="继续绑定" class="li-l-btn on_btn_ex" id="keepBindBtn"/>
+      </div>
+    </div>
+  </div>
+</section>
+</script>
+<script type="text/html" id="bindingInfoTempl">
+    <div>
+        <span class="bw_name"><%=accountName%></span><em><%=ucid%></em>
+    </div>
+    <div class="flb-box">
+        <div class="flb-p1">
+            <span class="bw_name">待绑定手机:</span><em><%=mobile%></em>
+        </div>
+        <div>
+            <button class="s-icon icon_btn" id='changeNumberBtn'>更换手机号</botton>
+        </div>
+    </div>
+</script>
+<!-- 绑定手机页面 -->
+<script type="text/html" id="bindPage">
+<section class="ui-maincontainer tabPage" data-page='bind'>
+    <div class="con" id="bindBg">
+      <article class="b_wor" id="bindInfo"></article>
+      <p>已向您的手机发送了带有验证码的短信。</p>
+        <div class="ms-cf note_div">
+          <p class="note_par ms-fl note_par_ex"><input id="validCode" type="text" class="bindInput" placeholder="请输入短信验证码" /></p><p class="note_btn"><input id="resendBtn" type="button" value="59 重新获取" class="reGainBtn btn_width" /></p>
+        </div>
+        <div class="in_par in_par_ex"><input id="bindPass" type="text" class="bindInput ui-security" placeholder="输入账号密码" /></div>
+		<p class="gr-f12 gray ms-cf ms-vshid" id="randomPassNotice">此为注册时随机生成的密码</p>
+        <div class="gr-mt10"><p><input type="button" id="doBindBtn" class="lo_btn higher btn_width" data-btnFeed="feed" value="确认绑定"></p></div>
+    </div>
+    </div>
+</section>
+</script>
+<!-- 密保问题设置页 -->
+<script type="text/html" id="securityQuestionsPage">
+    <div class="con tabPage" data-page='question'>
+        <!--<p class="pwdQ" id="uc_account"></p>-->
+        <article class="p_word">
+            <p id='setQuestionNoti'>您还可以设置密保问题，忘记密码时，可通过此方式找回。</p>
+        </article>
+        <p>选择或自定义密保问题：</p>
+        <form>
+            <div class="ms-pr gr-mt10">
+                <p class="in_par">
+                <input id="passwordQuestion" type="text" class="Qinput ms-fl" placeholder="请输入密保问题" />
+                <span class="" id="securityQuestions">
+                    <a href="javascript:;" class="ms-fr icon icon_btn sel-margin" id="js-sel">
+                        <em class="arrow">
+                          <select class="ms-pa ms-block ui-select" id="questionList">
+                          </select>
+                        </em>
+                    </a>
+                </span>
+            </div>
+            <p class="in_par gr-mt10">
+                <input id="passwordAnswer" type="text" class="Ainput ms-fl" placeholder="该密保问题答案" />
+            </p>
+            <p class="in_par gr-mt10"><input id="questionPass" type="text" class="sel-pass-input ui-security" placeholder="请输入账号的密码" /></p>
+            <p class="gr-mb10 gr-mt10"><input id="saveSecurityBtn" type='button' value="提交" class="lo_btn btn_width" id="js-on"></a></p>
+        </form>
+    </div>
+</script>
+<!-- 确定弹框 -->
+<script type="text/html" id="ConfirmBox-tpl">
+<div id="uiConfirmBox">
+    <section>
+        <div class="li-pop-box" id="js-po">
+            <p class="li-pop-t" id="uiConfirmBoxContent">确定删除帖子吗？</p>
+            <p class="fc">
+                <input type="button" id="uiConfirmBoxCancel" class="li-pop-btn" value="取消" />
+                <input type="button" id="uiConfirmBoxConfirm" class="li-pop-btn" value="确定" />
+            </p>
+        </div>
+    </section>
+</div>
+</script>
+<!-- 密保页 -->
+<script type="text/html" id="securitySettingPage">
+<section class="ui-maincontainer">
+   <section id="noticeContent"></section>
+   密保问题：<select name="questionList" id="questionList">
+             </select> <br />
+   密保答案：<input id="answer" /> <br />
+   密码：<input id='pass' /> <br />
+   <input type="button" id='securitySubmitBtn' value="提交" />
+</section>
+</script>
+<!--找回密码模块-->
+    <script type="text/html" id="passwordRetakeTempl">
+<section class="ui-maincontainer">    
+    <section class="tagHead" >
+        <ul class="tag flb-box" id="chooseTab" >
+            <li ><a href="javascript:;" data-retake="forgetpasswordRetake" class="forgetpasswordRetake block" id="forgetpasswordRetakeBtn">忘记密码</a></li>
+            <li ><a href="javascript:;" data-retake="appealRetake" class="appealRetake block" id="appealRetakeBtn">忘记账号</a></li>
+        </ul>
+    </section>
+    <!--发信息找回-->
+    <div class="con" id="con">
+        <!--忘记密码-->
+        <div class="js-tbox ms-none" id="forgetpasswordRetake">
+            <div class="" id="fgpwRetakeEnterAccount">
+                <p class="pwdQ"><span class="gr-f14">请输入需要找回密码的<%=accountName%>账号：</span></p>
+                <p class="in_par"><input type="text" class="input" style="height: 20px!important;padding: 13px 0px!important;line-height: 15px!important;" id="forgetpasswrodAccountInp" placeholder="请输入UC号\手机\邮箱"/></p>
+
+                <p class="ms-tr"></p>
+                <p class="gr-mt10">
+                    <input type="button" class="sui-btn sui-w-full sui-mg-top f16" value="提交" id="commitAccountBtn"/>
+                </p>
+                <div class="part01_safe">
+                    求助客服，电话：<a class="passwordRetakePhoneAClass" href="tel:02066311900" ><b class="passwordRetakePhoneBClass" style='color:blue;'>020-66311900</b></a>
+                    <p id="clientVersion"></p>
+                </div>
+            </div>
+            <div class="ms-none" id="fgpwRetakeWaysList">
+                <div class="usrCtrl">
+                    <a href="javascript:void(0)" class="btn_uc" id="fgpwPhoneRetakeBtn" style="color:#aaafb4">
+                        <span class="icon_uc fpmob_dis_icon"></span>
+                        <span id="phoneRetakeTitle" >手机找回</span>
+                    </a>
+                    <a href="javascript:void(0)" class="btn_uc" id="fgpwQuestionRetakeBtn" style="color:#aaafb4">
+                        <span class="icon_uc fpque_dis_icon"></span>
+                        <span id="questionRetakeTitle" >密保问题找回</span>
+                    </a>
+                    <!--<a href="javascript:void(0)"  disabled="true" class="btn_uc" id="fgpwMailRetakeBtn" style="color:#aaafb4">
+                        <span class="icon_uc .fpemail_dis_icon"></span>
+                        <span id="mailRetakeTitle" >邮箱找回</span>
+                    </a>-->
+                </div>
+                <div class="part01_safe ms-none" id="fpTips">
+                    您的<span id="fpAccountName"></span>账号没有进行任何绑定，请求助客服，热线：<a class="passwordRetakePhoneAClass" href="tel:02066311900" ><b class="passwordRetakePhoneBClass" style='color:blue;'>020-66311900</b></a>
+                </div>
+            </div>
+            <div class="ms-none" id="msgRetakeCon">
+                <div class="btn-bink-mobile gr-mt10">此账号已绑定手机：<span id="bindedNumber">00000</span></div>
+                <article class="p_word">
+                    <p class="black">若本机是上述号码，可直接点击编写；如果不是，请用该绑定手机发送短信。</p>
+                </article>
+                <p class="black ms-none" id="findPwd_p_notice" style="font-size: 12px;"></p>
+                <p class="pwdQ"><span class="gr-f14" id="findPwd_p1_text">移动用户</span></p>
+                <p class="ms-tl" id="findPwd_p1_msg_content">请编写短信内容: 0704发送到10690999713126</p>
+                <p class="t_btn"><a href="javascript:;" data="sms:10690999713126?body=0704" data-btnfeed="feed" class="lo_btn" id="sendCmccMessageBtn" >点击编写</a></p>
+                <p class="pwdQ"><span class="gr-f14" id="findPwd_p2_text">联通用户</span></p>
+                <p class="ms-tl" id="findPwd_p2_msg_content">请编写短信内容: 0704发送到10690999713126</p>
+                <p class="t_btn"><a href="javascript:;" data="sms:10690999713126?body=0704" data-btnfeed="feed" class="lo_btn" id="sendUnicomMessageBtn" >点击编写</a></p>
+                <article class="p_word">
+                    <p>短信费用由运营商收取，<%=accountName%>不收取任何费用</p>
+                </article>
+                <div class="part01_safe">
+                    求助客服，电话：<a class="passwordRetakePhoneAClass" href="tel:02066311900" ><b class="passwordRetakePhoneBClass" style='color:blue;'>020-66311900</b></a>
+                </div>
+            </div>
+            <div class="ms-none" id="questionRetakeCon">
+                <p class="pwdQ">找回<span id="accountName"></span>账号：<em id="ucAccount"></em></p>
+                <p class="pwdQ"><span class="gr-f14">密保问题：</span></p>
+                <p class="ms-tl" id="question"></p>
+                <p class="pwdQ"><span class="gr-f14">请输入密保问题答案：</span></p>      
+                <p class="in_par"><input type="text" class="input" id="securityAnswer" /></p>
+                <p class="bing ms-cf"><a href="javascript:;" class="ms-fr orn" id="toAppealRetakeBtn">密保问题忘记了？</a></p>
+                <p><a href="javascript:void(0)" class="lo_btn" id="secAnswerSubBtn">提交</a></p>
+                <div class="part01_safe">
+                    求助客服，电话：<a class="passwordRetakePhoneAClass" href="tel:02066311900" ><b class="passwordRetakePhoneBClass" style='color:blue;'>020-66311900</b></a>
+                </div>
+            </div>
+            <div class="ms-none" id="emailRetakeCon">
+                <p class="emRetake">重置密码的邮件已发到您的邮箱<span id="emailAddress" style="color:red"></span>,请在<span style="color:red">48</span>小时内登录该邮箱，按操作提示进行<span style="font-weight: bold;">重设密码</span>。</p>
+                <br>
+                <p><a href="javascript:void(0)" class="lo_btn" id="backToLoginBtn">返回登录</a></p>
+            </div>
+        </div>
+        <!--账号找回-->
+        <div class="js-tbox ms-none" id="appealRetake">
+            <div class="part01_safe" id="hasAccount">正在获取数据...</div>
+               <div class="zh_list ms-none" id="accountList"></div>
+            <div class="part01_safe">
+                求助客服，电话：<a class="passwordRetakePhoneAClass" href="tel:02066311900" ><b class="passwordRetakePhoneBClass" style='color:blue;'>020-66311900</b></a>
+                <p id="clientVersion"></p>
+            </div>
+        </div>
+    </div>
+</section>
+</script>
+    <!--回答密保问题页面-->
+    <script type="text/html" id="securityAnswerTmepl">
+<section class="ui-maincontainer">
+    <div class="con">
+        <p class="pwdQ">找回<%=accountName%>：<em id="ucAccount"></em></p>
+        <p class="pwdQ"><span class="gr-f14">密保问题：</span></p>
+        <p class="ms-tl" id="question"></p>
+        <p class="pwdQ"><span class="gr-f14">请输入密保问题答案：</span></p>      
+        <p class="in_par"><input type="text" class="input" id="securityAnswer" /></p>
+        <p class="bing ms-cf"><a href="javascript:;" class="ms-fr orn" id="toAppealRetakeBtn">密保问题忘记了？</a></p>
+        <p><a href="javascript:;" class="lo_btn" id="secAnswerSubBtn">提交</a></p>
+    </div>
+</section>
+</script>
+    <!--重置密码页面-->
+    <script type="text/html" id="resetPasswordTmepl">
+    <div class="con btnClick-none">
+        <p class="pwdQ"><span class="gr-f14" id="resetPassAccount">请为<%=accountName%><%=account%>重新设置密码</span></p>
+        <p class="in_par"><input type="text" class="input" id="newPassword" placeholder="请输入6-20位字母或数字密码"></input></p>
+        <p class="gr-mt10"><input type="button" class="lo_btn btnClick-none btn_width" id="newPasswordSubBtn" value="提交"/></p>
+        <div class="part01_safe">
+            求助客服，电话：<a class="passwordRetakePhoneAClass" href="tel:02066311900" ><b class="passwordRetakePhoneBClass" style='color:blue;'>020-66311900</b></a>
+        </div>
+    </div>
+    <div class="on_bg boxMask ms-none" id="successBox">
+        <div class="on_box">
+            <div class="on_info">
+                <p><%=accountName%>密码修改成功</p>
+            </div>
+            <p class="on_btn"><a href="javascript:;" class="lo_btn" id="resetPassReturnGameBtn">返回登录</a></p>
+        </div>
+    </div>
+</script>
+<!--激活试玩账号页面横屏版，直接点激活时用Begin-->
+<script type='text/html' id="regActivateTempl">
+    <div class="pa10 mh-hr" id="fixBox_activate">
+    	<div class="box01_active box01_active_l">
+        	<p class="tip" id='activateHint'>设置以下信息即可注册账号并完成激活：</p>
+            <table class="active_tab">
+                <tr>
+                    <td class="t1"><em style="color:red">*</em>密码</td>
+                    <td class="t2">
+                        <span class="text flb-box" >
+                            <input type="text" class="embed_in flb-chi flb-p1" placeholder="输入6-20位新密码" id="regGuestPassword" />
+                        </span>
+                    </td>
+                    <td rowspan="2">
+                            <input type="button" class="btn" value="注册并激活" id="regGuest">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="t1">&nbsp;&nbsp;邮箱</td>
+                    <td class="t2">
+                        <span class="text flb-box" >
+                            <input type="text" class="embed_in flb-chi flb-p1" placeholder="输入常用邮箱" id="regGuestEmail" />
+                        </span>
+                    </td>
+                </tr>
+            </table>
+            <p class="p_rule"><a href="javascript:;" id="activeAgreementBtn">注册即遵守《UC服务条款》</a></p>
+        </div>
+    </div>	
+    <div class="box02_active" id="regActivateBottom">
+    	<p><a href="javascript:;" id="bindUCAccount">使用已有UC账号激活></a></p>
+        <p><em>*</em>邮箱会同时设为密保邮箱，验证后可用来找回密码。</p>
+    </div>
+    <div class="popWrap ms-none" id="registerGuestAccountSuccess">
+        <div class="popLayer" id="modifyPassMask"></div>
+        <div class="pop_active">
+            <div class="popBar">激活成功</div>
+            <div class="mid01_pop">
+                <p>您的UC账号：<strong id='newUCID'>123456</strong></p>
+                <p id="bindEmailP">登录邮箱：<em id="bindEmail">123@uc.cn</em></p>
+                <input type="button" class="btn" value="确定" id='bindReturn'>
+            </div>
+        </div>
+    </div>
+</script>
+<!--激活试玩账号页面 End-->
+<!--使用已有UC账号激活横屏版，直接点激活时用Begin-->
+<script type='text/html' id="activateAccountTempl">
+<div class="pa10" id="fixBox_a">
+	<div class="box01_active box01_active_l">
+    	<p class="tip">使用已有UC账号激活：</p>
+        <table class="active_tab">
+        	<tr><td class="t1">账号</td>
+			<td class="t2">
+           		<span class="s_down flb-box">
+           			<input type="text" class="text_down flb-p1 flb-chi" placeholder="UC账号/手机/邮箱" id="ucAccountToBind" />
+					<span class="arrow_down">
+						<em class="arrow_down_chi">
+							<select class="ms-ni ui-select" value="" id="bindLoginHistory">
+							</select>
+						</em>
+					</span>
+				</span>
+			</td>
+			<td rowspan="2"><input type="button" class="btn" value="激活" id="activateGuest" ></td></tr>
+            <tr><td class="t1">密码</td>
+			<td class="t2">
+				<span class="text flb-box">
+					<input type="password" class="embed_in flb-chi flb-p1 sui-inp" data-ctrl=true placeholder="请输入密码6-20位" id="passwordToBind" />
+				</span>
+			</td></tr>
+            </tr>
+        </table>
+    </div>
+</div>
+</script>
+<!--使用已有UC账号激活End-->
+
+<!--激活试玩账号页面 Begin-->
+<script type='text/html' id="regActivatePlfTempl">
+    <div class="pa10 mh-vt" id="fixBox_activate">
+        <div class="box01_active">
+            <p class="tip" id='activateHint'>设置以下信息即可注册账号并完成激活：</p>
+            <table class="active_tab">
+                <tr>    
+                <tr>
+                    <td class="t1"><em style="color:red">*</em>密码</td>
+                    <td class="t2"><span class="text flb-box"><input type="text" class="embed_in flb-chi flb-p1" placeholder="输入6-20位新密码" id="regGuestPassword" /></sapn></td></tr>
+                </tr>
+                <tr>
+                    <td class="t1">&nbsp;&nbsp;邮箱</td>
+                    <td class="t2"><span class="text flb-box"><input type="text" class="embed_in flb-chi flb-p1" placeholder="输入常用邮箱" id="regGuestEmail" /></sapn></td>
+                </tr>
+            </table>
+            <input type="button" class="btn" value="注册并激活" id="regGuest">
+            <p class="p_rule"><a href="javascript:;" id="activeAgreementBtn">注册即遵守《UC服务条款》</a></p>
+        </div>
+    </div>
+    <div class="box02_active" id="regActivateBottom">
+        <p><a href="javascript:;" id="bindUCAccountPlf">使用已有UC账号激活></a></p>
+        <p><em>*</em>邮箱会同时设为密保邮箱，验证后可用来找回密码。</p>
+    </div>
+    <div class="popWrap ms-none" id="registerGuestAccountSuccess">
+        <div class="popLayer" id="modifyPassMask"></div>
+        <div class="pop_active">
+            <div class="popBar">激活成功</div>
+            <div class="mid01_pop">
+                <p>您的UC账号：<strong id='newUCID'>123456</strong></p>
+                <p id="bindEmailP">登录邮箱：<em id="bindEmail">123@uc.cn</em></p>
+                <input type="button" class="btn" value="确定" id='bindReturn'>
+            </div>
+        </div>
+    </div>
+</script>
+<!--激活试玩账号页面 End-->
+<!--使用已有UC账号激活Begin-->
+<script type='text/html' id="activateAccountPlfTempl">
+<div class="pa10" id="fixBox_a">
+    <div class="box01_active">
+        <p class="tip">使用已有UC账号激活：</p>
+        <table class="active_tab">
+            <tr>    
+            <tr>
+                <td class="t1">账号</td>
+                <td class="t2">
+                    <span class="s_down flb-box">
+                        <input type="text" class="text_down flb-p1 flb-chi" placeholder="UC账号/手机/邮箱" id="ucAccountToBind" />
+                        <span class="arrow_down">
+                            <em class="arrow_down_chi">
+                                <select class="ms-ni ui-select" value="" id="bindLoginHistory">
+                                </select>
+                            </em>
+                        </span>
+                    </span>
+                </td></tr>
+            <tr><td class="t1">密码</td>
+                <td class="t2">
+                    <span class="text flb-box">
+                        <input type="password" class="embed_in flb-chi flb-p1 sui-inp" data-ctrl=true placeholder="请输入密码6-20位" id="passwordToBind" />
+                    </span>
+                </td>
+            </tr>
+            </tr>
+        </table>
+        <input type="button" class="btn" value="激活" id="activateGuest" >
+    </div>
+</div>
+</script>
+<script	type="text/html" id="alreadySafeTempl">
+	<div class="pa10" >
+		<div class="box01_level">
+	    	<b>你的账号安全级别：高</b>
+	    </div>
+	    <div class="box02_level">
+	    	<h6>你已设置密保方式来提高安全级别，如需修改，请前往账户中心设置。</h6>
+	        <p class="p_fs">密保方式有：绑定手机、设置问题、设置邮箱。</p>
+			<!--有外跳的页面，采用input button会有问题-->
+	        <button id="gotoSecCenterBtn" class="btn btn_whi" >修改密保设置</button>
+	    </div>
+	</div>
+</script>
+<!--使用已有UC账号激活End-->
+<script type="text/html" id="agreementTempl">
+<section class="ui-maincontainer ui-ofh">
+    <div class="ui-moudle-area">
+    <div class="ui-module-infobox accountInfo no-boxShow" id="wrapper">  
+        <div id="scroller">
+        <p class="item">
+        <b>1. UC账号服务条款的接受</b><br>
+    1.1 UC账号由优视科技有限公司（以下简称"优视科技"）及其关联公司所有并合法运营，优视科技及其关联公司并在本用户服务协议的条款和要求下提供服务。<br>
+    1.2 当用户访问、浏览及使用UC账号提供的各项服务、业务时，用户便表明其接受了本服务协议的条款，并同意受本服务协议的约束，用户并保证其提交的信息真实、准确、及时和完整；若用户不同意本协议条款的，请停止注册程序。<br>
+    1.3 本服务协议所称的用户是指完全同意本服务协议所有条款（以下简称"服务条款"）并访问或浏览UC账号相关页面的服务接受者。<br>
+    <br>
+    <b>2. 服务条款的变更和修改</b><br>
+    优视科技保留依其自主判断在将来的任何时间变更、修改、增加或删除本服务协议条款的权利。所有修改的协议均构成本服务协议的一部分。优视科技有权随时对服务条款进行修改，一旦发生服务条款的变动，优视科技将公示修改的内容；当用户使用UC账号的任何服务时，应接受UC账号随时提供的与该服务相关的规则或说明，并且此规则或说明均构成本服务条款的一部分。用户如果不同意服务条款的修改，可以主动取消已经获得的服务；如果用户继续享用服务，则视为用户已经接受服务条款的修改。<br>
+    <br>
+    <b>3. 服务说明</b><br>
+    3.1 优视科技运用自己的操作系统通过国际互联网向用户提供丰富的网上资源，包括网盘、书签、邮箱、皮肤、微博、空间、游戏、论坛、SNS社区和实时定位、好友识别等其它个性化服务（以下简称本服务）。除非另有明确规定，基于增强或强化目前服务目的所新增的任何新功能、服务、新产品，均无条件地适用本服务条款。<br>
+    3.2 除非本协议中另有规定，否则优视科技对服务不承担任何责任，即用户对服务的使用承担风险。优视科技不保证服务一定会满足用户的使用要求，也不保证服务不会中断，对服务的及时性、安全性、准确性也不作担保。<br>
+    3.3 为使用本服务，用户必须自行配备接入国际互联网所必需的设备，包括计算机、手机、掌上电脑及其他存取装置或接受服务所需其它设备，并自行支付与此服务有关的费用。 <br>
+    3.4 优视科技保留在日后对全部或部分服务项目收取费用的权利。<br>
+    3.5 用户接受本服务时，须提供完整、真实、准确、最新的个人资料并按其变更情况不断更新账号资料。<br>
+    3.6 若用户提供任何错误、不实、过时或不完整的资料，或者优视科技有合理理由怀疑前述资料为错误、不实、过时或不完整，优视科技有权暂停或终止用户的账号，并拒绝其现在或将来使用本服务的全部或一部分。<br>
+    3.7 优视科技有权规定并修改使用本服务的一般措施，包括但不限于决定保留电子邮件信息或其他上载内容的时间、限制本服务一个账号可接收信息的数量等措施。如UC账号未能储存或删除本服务的内容或其他信息，优视科技不负担任何责任。对于用户3个月未使用的账号，优视科技有权（但无义务）予以删除。<br>
+    3.8 由于用户经由本服务张贴、上传或传送内容、与本服务连线、违反本服务条款或侵害其他人的任何权利导致任何第三方提出权利主张或使优视科技遭受任何形式的罚款或处罚，用户同意以适当方式充分消除对优视科技的不利影响，赔偿优视科技及其分公司、关联公司、代理人或其他合作伙伴及员工的损失，并使其免受损害。<br>
+    <br>
+    <b>4. 用户应遵守以下法律及法规</b><br>
+    用户同意遵守中华人民共和国相关法律、法规的规定，在使用UC账号时，不得侵犯任何第三方的合法权益。在任何情况下，如果优视科技有合理理由认为用户的行为可能违反上述法律、法规或侵犯第三方的合法权益，优视科技可以在任何时候，不经事先通知终止向该用户提供服务。用户应了解国际互联网的无国界性，应特别注意遵守当地所有有关的法律和法规。<br>
+    <br>
+    <b>5. 用户隐私权</b><br>
+    用户在遵守上述协议要求的前提下，优视科技将充分保护用户享有个人隐私。除非因以下原因，未经用户授权，本网站不公开、编辑或透露其个人账号资料：<br>
+    根据有关法律法规的要求；<br>
+    按照相关政府主管部门的要求；<br>
+    维护社会个体和公众的安全；<br>
+    为维护社会公共利益的需要；<br>
+    维护本网站的合法权益；<br>
+    事先获得用户的明确授权；<br>
+    符合其他相关的要求。<br>
+    <br>
+    <b>6. 用户账号、密码和安全</b><br>
+    6.1 用户一旦注册成功，便成为优视科技的注册用户，将得到一个密码和账号。用户有义务保证密码和账号的安全。用户对利用该密码和账号所进行的一切活动负全部责任；因此所衍生的任何损失或损害，优视科技无法也不会承担任何责任。<br>
+    6.2 用户的密码和账号遭到未授权的使用或发生其他任何安全问题，用户可以立即通知优视科技。用户在每次连线结束，应结束账号使用，否则用户可能得不到UC账号的安全保护。<br>
+    6.3 优视科技禁止用户交易UC账号，优视科技有权收回用户交易的UC账号。如果因用户交易UC账号引起的任何纠纷，优视科技不承担任何责任。<br>
+    <br>
+    <b>7. 对用户信息的存储和限制</b><br>
+    优视科技不对用户在UC账号任何服务下发布信息的删除或储存失败负责。优视科技有权判断用户的行为是否符合UC账号服务条款的规定，如果优视科技认为用户违反了服务条款的规定，优视科技有权删除用户发布或发送的信息，直至中断或终止向其提供服务。<br>
+    <br>
+    <b>8. 禁止用户从事以下行为：</b><br>
+    8.1 上载、张贴、发送或传送任何非法、淫秽、色情、低俗的，胁迫、骚扰、中伤他人的，诽谤、侵害他人隐私或诋毁他人名誉或商誉的，其他违反国家法律法规、社会主义道德规范及不适当的信息或电子邮件，包括但不限于资讯、资料、文字、软件、音乐、照片、图形、信息、视频或其他资料（以下简称内容）。<br>
+    8.2 以任何方式危害未成年人。<br>
+    8.3 冒充任何人或机构，或以虚伪不实的方式谎称或使人误认为与任何人或任何机构有关。<br>
+    8.4 伪造标题或以其他方式操控识别资料，使人误认为该内容为优视科技所传送。<br>
+    8.5 上载、张贴、发送电子邮件或以其他方式传送无权传送的内容。<br>
+    8.6 上载、张贴、发送电子邮件或以其他方式传送侵犯任何人的专利、商标、著作权、商业秘密或其他民事权利之内容。<br>
+    8.7 上载、张贴、发送电子邮件或以其他方式传送广告函件、促销资料、垃圾邮件等。<br>
+    8.8 干扰或破坏本服务或与本服务相连的服务器和网络，或不遵守本服务协议之规定。<br>
+    8.9 违反任何相关的中国法律、法规、规章、条例等其他具有法律约束力的规范。<br>
+    8.10 跟踪或以其他方式骚扰他人。<br>
+    8.11 窃取他人密码、账号和其它数字化信息或财产。<br>
+    8.12 其他被优视科技视为不适当的行为。 <br>
+    8.13 优视科技有权对用户载、张贴、发送的内容进行审核，有任何违反法律法规或本协议之有关规定的内容，优视科技有权立即将其删除或屏蔽，且不需要对用户另行通知。<br>
+    8.14 UC账号封号规则<br>
+    1.无视国家规定，在姓名、游戏角色名等地方中使用违规词语或不文明词语、非法字符<br>
+    处罚规则：视情节轻重给予时限性冻结账号的处罚；情节严重者，给予永久冻结的处罚。<br>
+    2.涉及到侵入、拦截、破坏、复制、修改游戏程序，以及宣扬、叫卖和使用各种辅助性程序或恶性非法程序，即使用外挂程序、或在游戏中宣传外挂程序的行为。<br>
+    处罚规则：视情节轻重给予时限性冻结账号的处罚；情节严重者，给予永久冻结的处罚。<br>
+    3.以任何弄虚作假的形式来蒙蔽或者欺骗其他用户，如发布模仿官方并带有病毒的网站、非官方中奖信息、非法广告、游戏代码、木马、外挂、病毒、色情信息、垃圾广告等信息<br>
+    处罚规则：视情节轻重给予时限性冻结账号的处罚；情节严重者，给予永久冻结的处罚。<br>
+    4.通过UC账号发布非法网站，宣传或使用私服、游戏代码、木马、外挂、病毒、色情信息、垃圾广告、非法广告等信息<br>
+    处罚规则：视情节轻重给予时限性冻结账号的处罚；情节严重者，给予永久冻结的处罚。<br>
+    5.通过UC账号发布触犯政府法令的文字如：煽动、反动、猥亵、暴力、种族歧视、宗教歧视等字眼，包含这类相关字的反向书写。<br>
+    处罚规则：视情节轻重给予时限性冻结账号的处罚；情节严重者，给予永久冻结的处罚，并上报相关部门追究其法律责任。<br>
+    6.宣传或贩卖BUG、攻击服务器运行、牟取个人利益、影响游戏公平性，以及影响其他玩家正常进行游戏等行为<br>
+    处罚规则：查证核实后，将暂停账号，并清除所有非法物品；视情节轻重给予时限性冻结账号的处罚；情节严重者，给予永久冻结的处罚。<br>
+    7.盗取或参与盗取他人账号，给被盗者造成严重损失的行为<br>
+    处罚规则：查证核实后，视情节轻重给予时限性冻结账号的处罚；情节严重者，给予永久冻结的处罚，并上报相关部门追究其法律责任。<br>
+    8.侮辱、毁谤、猥亵、威胁、辱骂其他用户，扭曲事实、恶意散布不实谣言，恶意影响游戏环境等行为<br>
+    处罚规则：视情节轻重给予时限性冻结账号的处罚；情节严重者，给予永久冻结的处罚。<br>
+    <br>
+    <b>9. 内容及其披露</b><br>
+    9.1 用户对经由本服务上载、张贴或传送的内容负全部责任；对于经由本服务而传送的内容，优视科技不保证前述内容的正确性、完整性或及时性。在任何情况下，优视科技均不对任何用户提供的内容负责，包括但不限于任何内容发生任何错误或纰漏以及衍生的任何损失或损害，用户负责处理与其提供的内容相关的任何及全部纠纷。优视科技有权（但无义务）拒绝或删除经由本服务提供的任何内容。用户使用上述内容，应自行承担风险。<br>
+    9.2 优视科技有权利在下述情况下，对内容进行保存或披露：<br>
+    法律程序所规定<br>
+    本服务条款规定<br>
+    被侵害的第三人提出权利主张<br>
+    为保护UC账号、其使用者及社会公众的权利、财产或人身安全<br>
+    其他优视科技认为有必要的情况。<br>
+    <br>
+    <b>10. 电子公告栏的张贴内容</b><br>
+    10.1 "电子公告栏"包括空间、论坛、SNS社区和其它一般公众可以使用的区域；<br>
+    10.2 用户一旦在本服务电子公告栏上传或张贴内容，即视为用户授予优视科技该内容著作权之免费及非独家、永久的许可使用权，优视科技有权为展示、传播及推广前述内容之目的，对上述内容进行复制、修改、出版。由此展示、传播及推广行为所产生的损失或利润，均由优视科技承担或享受。优视科技有权自主决定是否给予此类用户鼓励或奖励。<br>
+    10.3 因用户进行上述张贴，而导致任何第三方提出索赔要求或衍生的任何损害或损失，用户须承担全部责任。<br>
+    10.4 非经优视科技事先许可，用户不得对他人上传或张贴在电子公告栏或本服务其他内容进行复制、出售或用作其他商业用途。<br>
+    <br>
+    <b>11. UC账号服务使用规则</b><br>
+    11.1 用户必须保证，拥有上传之照片、文字等作品之著作权或已获得合法授权，在本网站之上传行为未侵犯任何第三方之合法权益。否则，将由用户承担由此带来的一切法律责任；用户不得将任何内部资料、机密资料、涉及他人隐私资料或侵犯任何人的专利、商标、著作权、商业秘密或其他专属权利之内容加以上载、张贴、或以其他方式传送。<br>
+    11.2 用户不得利用本服务进行故意制作、传播计算机病毒等破坏性程序，不得针对本服务、与本服务连接的服务器或网络制造干扰、混乱，或违反连接本服务的网络的任何要求、程序、政策或规则，否则优视科技将保留追究其法律责任的权利并有权将其提交给相关部门处理。<br>
+    11.3 优视科技有权对用户上传的图片、添加的文字等内容进行审核，有任何违反法律法规或本协议之有关规定的图片、文字，优视科技有权立即将其删除或屏蔽，且不需要对用户另行通知。<br>
+    11.4 用户不得将广告函件、促销资料、垃圾邮件等，加以上载、张贴、发送电子邮件或以其他方式传送。<br>
+    11.5 优视科技郑重提请用户注意，任何经由本服务以上载、张贴、发送的资料、文字、照片、图形、视讯、信息、用户的登记资料或其他资料（以下简称"内容"），无论系公开还是私下传送，均由内容提供者承担责任。优视科技无法控制经由本服务传送之内容，也无法对用户的使用行为进行全面控制，因此不保证内容的合法性、正确性、完整性、真实性或品质；用户已预知使用本服务时，可能会接触到令人不快、不适当或令人厌恶之内容，并同意将自行加以判断并承担所有风险，而不依赖于优视科技。但在任何情况下，优视科技有权依法停止传输任何前述内容并采取相应行动，包括但不限于暂停用户使用本服务的全部或部分，保存有关记录，并向有关机关报告。但优视科技有权(但无义务)依其自行之考量，拒绝和删除可经由本服务提供之违反本条款的或其他引起优视科技或用户反感的任何内容。<br>
+    11.6 用户完全理解并同意，若第三方在用户不知情或未经用户同意的前提下，将其文字、图片作品上传于UC账号空间及由此所产生的任何可能侵害其权益的行为，优视科技均不对任何人承担任何责任。<br>
+    11.7 优视科技有权根据政府机关或权利人的要求删除用户上载、张贴、发送的内容，无论优视科技事先是否通知。<br>
+    11.8 优视科技有权根据服务的需要，收回用户所用的空间域名或减少用户所用空间的大小，无论优视科技事先是否通知。<br>
+    <br>
+    <b>12. UC论坛规则</b><br>
+    12.1 关于用户名和昵称<br>
+    不得使用党和国家领导人或其他知名人士的真实姓名、字号、艺名、笔名作为用户名和昵称；<br>
+    不得使用国家机构或其他机构的名称作为用户名和昵称；<br>
+    不得使用和其他网友之名相近、相仿的用户名和昵称；<br>
+    不得使用不文明、不健康，或带攻击性、侮辱性的用户名和昵称；<br>
+    请勿使用易产生歧义、引起他人误解的用户名和昵称；<br>
+    不得使用各种奇形怪状的符号作为用户名和昵称；<br>
+    对于违反规定或产生不良后果的用户名和昵称，本站有权删除而不必事先通知。<br>
+    12.2 关于签名<br>
+    不得出现宣扬反动、封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪等不符合国家法律规定的以及任何包含种族、性别、宗教歧视性和猥亵性的信息内容；<br>
+    不得出现有侮辱性言语、挑衅、辱骂其他人以及不健康内容；<br>
+    不得出现广告性质的内容以及本公司以外其他网站的链接；<br>
+    优视科技有权在不需要通知和解释的情况下除去违反以上规定的签名内容,并对情节严重者予以封号处理。<br>
+    12.3 关于发贴内容<br>
+    遵守相关法规，严禁发表违反法律法规及社会主义道德规定的内容；<br>
+    使用文明用语，不得张贴对任何人进行人身攻击、谩骂、诋毁的言论；<br>
+    不得张贴未经公开报道、未经证实的消息；<br>
+    不得张贴与所在论坛主题无关的消息、言论和图片；<br>
+    未经优视科技同意，不得张贴带有商业性质的内容或任何形式的广告，不得张贴优视科技及其关联公司以外其他网站的链接；<br>
+    不得恶意灌水，内容相同的帖子不得一文多发；<br>
+    不得在帖子中（标题和内容）加入各种奇形怪状的符号；<br>
+    转贴文章应注明原始出处和时间；<br>
+    对于违反以上规定的内容，在不需要通知和解释的情况下，优视科技以及版主有权予以删除，并对情节严重者予以封账号处理。<br>
+    12.4 关于贴图<br>
+    不得张贴宣扬反动、封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪等不符合国家法律规定的以及任何包含种族、性别、宗教歧视性和猥亵性的图片；<br>
+    不得出现带有侮辱性、挑衅、辱骂其他人以及不健康内容的图片；<br>
+    请勿使用易产生歧义、引起他人误解的图片；<br>
+    摘录、转贴的图片请注明出处及作者，禁止张贴侵犯他人著作权、版权等知识产权的图片；<br>
+    不得张贴与论坛主题无关的图片；<br>
+    优视科技有权在不需要通知和解释的情况下删除违反以上规定的图片，并对情节严重者予以封账号处理。<br>
+    <br>
+    <b>13. UC账号游戏规则</b><br>
+    13.1 用户应当遵守游戏公约、玩家守则及不时发布的游戏规则、公告等；<br>
+    13.2 用户不得通过不正当的手段或其他不公平的手段使用UC账号的游戏产品和服务或参与UC账号的游戏活动。用户不得干扰优视科技正常地提供产品和服务，包括但不限于：攻击、侵入优视科技的网站服务器或使网站服务器过载；制作、发布、传播、使用任何形式的妨碍游戏公平性的辅助工具或程序(外挂)；利用程序的漏洞和错误(Bug)破坏游戏的正常进行或传播该漏洞或错误(Bug)；不合理地干扰或阻碍他人使用优视科技所提供的产品和服务。<br>
+    13.3 为维护游戏的公平性，如果优视科技发现用户数据异常，无论用户对该异常数据产生是否负有过错，优视科技均有权根据本规则、游戏公约、玩家守则及后期不时发布的游戏公告等，采取相应措施：包括但不限于对该账号的冻结、终止、删除；用户在此承诺优视科技有权采取上述行动，并承诺不得就上述行为要求优视科技做任何补偿或退费。<br>
+    13.4 优视科技在此特别提示用户：<br>
+    优视科技提供的游戏将按照现状提供，用户明确知道游戏中存在已知和未知的漏洞和错误（Bug）。尽管优视科技将尽最大努力解决已知的漏洞和错误（Bug），但用户知道或应该知道游戏中仍可能包含未知的漏洞和错误（Bug）等。用户同意不向优视科技及其关联公司因任何漏洞和错误（Bug）主张任何赔偿。优视科技不提倡虚拟物品之间的交易，并不对该交易中产生的任何问题进行支持和保障。<br>
+    <br>
+    <b>14. 手机特色功能说明</b><br>
+    14.1 用户明确知道，优视科技提供的实时定位服务将向用户及用户的不特定UC账号好友提供用户的实时空间位置信息。<br>
+    14.2 用户可选择向UC账号导入手机通讯簿上所对应的好友关系链，但优视科技确保将不导入好友关系链之外的任何信息（包括好友姓名及其他任何相关信息） <br>
+    14.3 优视科技将对好友关系链通过不可逆转的方式加密存储，包括UC账号和您的任何好友都将无法获知您的真实好友关系链和真实手机号码。<br>
+    <br>
+    <b>15. 优视科技的知识产权及其他权利</b><br>
+    15.1 优视科技对本服务及本服务所使用的软件和受知识产权相关法律或其他法律保护的资料享有相应的权利。<br>
+    15.2 经由本服务传送的内容，受到著作权法、商标法、专利法或其他法律的保护；未经优视科技明示授权许可，用户不得进行修改、出租、散布或衍生其他作品，用户本人创作并在公开使用区域张贴的内容除外。<br>
+    15.3 用户对本服务所使用的软件有非专属性使用权，但自己不得或许可任何第三方复制、修改、出售或衍生产品。<br>
+    15.4 UC账号及其他UC账号图样、产品及服务名称，均为优视科技及其关联公司所享有的商标，未经优视科技所事先书面授权，任何人不得使用、 复制或用作其他用途。<br>
+    <br>
+    <b>16. 免责声明</b><br>
+    16.1 优视科技对于本服务包含的或用户经由或从任何与本服务有关的途径所获得的任何内容、信息或广告，不保证其正确性或可靠性；并且对于用户经本服务上的广告、展示而购买、取得的任何产品、信息或资料，优视科技不负保证责任。用户自行承担担使用本服务的风险。<br>
+    16.2 优视科技有权但无义务，改善或更正本服务任何部分之任何疏漏、错误。<br>
+    16.3 优视科技不保证以下事项（包括但不限于）：<br>
+    本服务适合用户的使用要求；<br>
+    本服务不受干扰，及时、安全、可靠或不出现错误；<br>
+    用户经由本服务取得的任何产品、服务或其他材料符合用户的期望；<br>
+    16.4 用户使用经由本服务下载的或取得的任何资料，其风险自行负担；因该使用而导致用户手机或其他设备系统损坏或资料流失，用户应负完全责任；<br>
+    16.5 对基于以下原因而造成的利润、商业信誉、资料的损失或其他有形或无形损失，优视科技不承担任何直接、间接、附带、衍生或惩罚性的赔偿：<br>
+    本服务使用或无法使用；<br>
+    经由本服务购买或取得的任何产品、资料或服务；<br>
+    用户资料遭到未授权的使用或修改；<br>
+    用户资料丢失或被删除；<br>
+    其他与本服务相关的事宜。<br>
+    16.6 用户在浏览网际网路时自行判断使用UC账号的检索目录。该检索目录可能会引导用户进入到被认为具有攻击性或不适当的网站，优视科技没有义务查看检索目录所列网站的内容，因此，对其正确性、合法性、正当性不负任何责任。<br>
+    <br>
+    <b>17. 服务的修改和终止</b><br>
+    优视科技有权在未事前通知的情况下在任何时候，暂时或永久地修改或终止本服务或其中任何一部分。优视科技对本服务的修改或终止对用户和任何第三人不承担任何责任。优视科技有权基于任何理由，终止用户的账号、密码或拒绝其使用本服务，或删除、转移用户存储、发布在本服务的内容，优视科技采取上述行为均不需通知，并且对用户和任何第三人不承担任何责任。<br>
+    <br>
+    <b>18. 通知</b><br>
+    优视科技向用户发出的通知，可以采用电子邮件、页面公告、常规信件、电话或优视科技认为适合的形式。服务条款的修改或其他事项变更时，优视科技将会以上述形式进行通知。<br>
+    <br>
+    <b>19. 全部协议</b><br>
+    本服务协议和优视科技的其他服务条款构成完整的协议。<br>
+    <br>
+    <b>20. 法律的适用和管辖</b><br>
+    本服务条款的生效、履行、解释及争议的解决均适用中华人民共和国法律，发生的争议提交广州仲裁委员会裁决。如果本服务协议中某项条款因与中华人民共和国现行法律相抵触而导致无效，将不影响其他部分的效力。<br>
+    <br>
+    <b>21. 生效条件</b><br>
+    本协议自用户访问、浏览及使用UC账号之时开始生效。
+    </p>
+    </div>
+    </div><!--wrapper-->
+    </div>
+</section>
+</script>
+<script type="text/html" id="agreementJcTempl">
+<section class="ui-maincontainer ui-ofh">
+    <div class="ui-moudle-area">
+    <div class="ui-module-infobox accountInfo no-boxShow" id="wrapper">  
+        <div id="scroller">
+        <p class="item">
+    <b>1. 手游吧帐号服务条款的接受</b><br>
+    1.1手游吧账号由广州谊游网络科技有限公司（以下简称“广州谊游”）运营，广州谊游在本用户服务协议的条款和要求下提供服务。<br>
+    1.2 当用户访问、浏览及使用手游吧帐号提供的各项服务、业务时，用户便表明其接受了本服务协议的条款，并同意受本服务协议的约束，用户并保证其提交的信息真实、准确、及时和完整；若用户不同意本协议条款的，请停止注册程序。<br>
+    1.3 本服务协议所称的用户是指完全同意本服务协议所有条款（以下简称“服务条款”）并访问或浏览手游吧帐号相关页面的服务接受者。<br>
+
+    <b>2. 服务条款的变更和修改</b><br>
+    广州谊游保留依其自主判断在将来的任何时间变更、修改、增加或删除本服务协议条款的权利。所有修改的协议均构成本服务协议的一部分。广州谊游有权随时对服务条款进行修改，一旦发生服务条款的变动，广州谊游将公示修改的内容；当用户使用手游吧帐号的任何服务时，应接受手游吧帐号随时提供的与该服务相关的规则或说明，并且此规则或说明均构成本服务条款的一部分。用户如果不同意服务条款的修改，可以主动取消已经获得的服务；如果用户继续享用服务，则视为用户已经接受服务条款的修改。<br>
+
+    <b>3. 服务说明</b><br>
+    3.1除非本协议中另有规定，否则广州谊游对服务不承担任何责任，即用户对服务的使用承担风险。广州谊游不保证服务一定会满足用户的使用要求，也不保证服务不会中断，对服务的及时性、安全性、准确性也不作担保。<br>
+    3.2 为使用本服务，用户必须自行配备接入国际互联网所必需的设备，包括计算机、手机、掌上电脑及其他存取装置或接受服务所需其它设备，并自行支付与此服务有关的费用。<br> 
+    3.3 广州谊游保留在日后对全部或部分服务项目收取费用的权利。<br>
+    3.4 用户接受本服务时，须提供完整、真实、准确、最新的个人资料并按其变更情况不断更新帐号资料。<br>
+    3.5 若用户提供任何错误、不实、过时或不完整的资料，或者广州谊游有合理理由怀疑前述资料为错误、不实、过时或不完整，广州谊游有权暂停或终止用户的帐号，并拒绝其现在或将来使用本服务的全部或一部分。<br>
+    3.6广州谊游有权规定并修改使用本服务的一般措施，包括但不限于决定保留电子邮件信息或其他上载内容的时间、限制本服务一个帐号可接收信息的数量等措施。如手游吧帐号未能储存或删除本服务的内容或其他信息，广州谊游不负担任何责任。对于用户3个月未使用的帐号，广州谊游有权（但无义务）予以删除。<br>
+    3.7 由于用户经由本服务张贴、上传或传送内容、与本服务连线、违反本服务条款或侵害其他人的任何权利导致任何第三方提出权利主张或使广州谊游遭受任何形式的罚款或处罚，用户同意以适当方式充分消除对广州谊游的不利影响，赔偿广州谊游的损失，并使其免受损害。<br>
+
+    <b>4. 用户应遵守以下法律及法规</b><br>
+    用户同意遵守中华人民共和国相关法律、法规的规定，在使用手游吧帐号时，不得侵犯任何第三方的合法权益。在任何情况下，如果广州谊游有合理理由认为用户的行为可能违反上述法律、法规或侵犯第三方的合法权益，广州谊游可以在任何时候，不经事先通知终止向该用户提供服务。用户应了解国际互联网的无国界性，应特别注意遵守当地所有有关的法律和法规。<br>
+
+    <b>5. 用户隐私权</b><br>
+    用户在遵守上述协议要求的前提下，广州谊游将充分保护用户享有个人隐私。除非因以下原因，未经用户授权，本网站不公开、编辑或透露其个人帐号资料：<br>
+    根据有关法律法规的要求；<br>
+    按照相关政府主管部门的要求；<br>
+    维护社会个体和公众的安全；<br>
+    为维护社会公共利益的需要；<br>
+    维护本网站的合法权益；<br>
+    事先获得用户的明确授权；<br>
+    符合其他相关的要求。<br>
+
+    <b>6. 用户帐号、密码和安全</b><br>
+    6.1 用户一旦注册成功，便成为广州谊游的注册用户，将得到一个密码和帐号。用户有义务保证密码和帐号的安全。用户对利用该密码和帐号所进行的一切活动负全部责任；因此所衍生的任何损失或损害，广州谊游无法也不会承担任何责任。<br>
+    6.2 用户的密码和帐号遭到未授权的使用或发生其他任何安全问题，用户可以立即通知广州谊游。用户在每次连线结束，应结束帐号使用，否则用户可能得不到手游吧帐号的安全保护。<br>
+    6.3 广州谊游不提倡用户对手游吧账号的交易，如果因用户交易手游吧帐号引起的任何纠纷，广州谊游不承担任何责任。<br>
+
+     <b>7. 对用户信息的存储和限制</b><br>
+    广州谊游不对用户在手游吧帐号任何服务下发布信息的删除或储存失败负责。广州谊游有权判断用户的行为是否符合手游吧帐号服务条款的规定，如果广州谊游认为用户违反了服务条款的规定，广州谊游有权删除用户发布或发送的信息，直至中断或终止向其提供服务。<br>
+
+    <b>8. 禁止用户从事以下行为：</b><br>
+    8.1 上载、张贴、发送或传送任何非法、淫秽、色情、低俗的，胁迫、骚扰、中伤他人的，诽谤、侵害他人隐私或诋毁他人名誉或商誉的，其他违反国家法律法规、社会主义道德规范及不适当的信息或电子邮件，包括但不限于资讯、资料、文字、软件、音乐、照片、图形、信息、视频或其他资料（以下简称内容）。<br>
+    8.2 以任何方式危害未成年人。<br>
+    8.3 冒充任何人或机构，或以虚伪不实的方式谎称或使人误认为与任何人或任何机构有关。<br>
+    8.4 伪造标题或以其他方式操控识别资料，使人误认为该内容为广州谊游所传送。<br>
+    8.5 上载、张贴、发送电子邮件或以其他方式传送无权传送的内容。<br>
+    8.6 上载、张贴、发送电子邮件或以其他方式传送侵犯任何人的专利、商标、著作权、商业秘密或其他民事权利之内容。<br>
+    8.7 上载、张贴、发送电子邮件或以其他方式传送广告函件、促销资料、垃圾邮件等。<br>
+    8.8 干扰或破坏本服务或与本服务相连的服务器和网络，或不遵守本服务协议之规定。<br>
+    8.9 违反任何相关的中国法律、法规、规章、条例等其他具有法律约束力的规范。<br>
+    8.10 跟踪或以其他方式骚扰他人。<br>
+    8.11 窃取他人密码、帐号和其它数字化信息或财产。<br>
+    8.12 其他被广州谊游视为不适当的行为。 <br>
+    8.13 广州谊游有权对用户载、张贴、发送的内容进行审核，有任何违反法律法规或本协议之有关规定的内容，广州谊游有权立即将其删除或屏蔽，且不需要对用户另行通知。<br>
+    8.14 手游吧帐号封号规则<br>
+    1.无视国家规定，在姓名、游戏角色名等地方中使用违规词语或不文明词语、非法字符<br>
+    处罚规则：视情节轻重给予时限性冻结帐号的处罚；情节严重者，给予永久冻结的处罚。<br>
+    2.涉及到侵入、拦截、破坏、复制、修改游戏程序，以及宣扬、叫卖和使用各种辅助性程序或恶性非法程序，即使用外挂程序、或在游戏中宣传外挂程序的行为。<br>
+    处罚规则：视情节轻重给予时限性冻结帐号的处罚；情节严重者，给予永久冻结的处罚。<br>
+    3.以任何弄虚作假的形式来蒙蔽或者欺骗其他用户，如发布模仿官方并带有病毒的网站、非官方中奖信息、非法广告、游戏代码、木马、外挂、病毒、色情信息、垃圾广告等信息<br>
+    处罚规则：视情节轻重给予时限性冻结帐号的处罚；情节严重者，给予永久冻结的处罚。<br>
+    4.通过手游吧手游吧帐号发布非法网站，宣传或使用私服、游戏代码、木马、外挂、病毒、色情信息、垃圾广告、非法广告等信息<br>
+    处罚规则：视情节轻重给予时限性冻结帐号的处罚；情节严重者，给予永久冻结的处罚。<br>
+    5.通过U手游吧帐号发布触犯政府法令的文字如：煽动、反动、猥亵、暴力、种族歧视、宗教歧视等字眼，包含这类相关字的反向书写。<br>
+    处罚规则：视情节轻重给予时限性冻结帐号的处罚；情节严重者，给予永久冻结的处罚，并上报相关部门追究其法律责任。<br>
+    6.宣传或贩卖BUG、攻击服务器运行、牟取个人利益、影响游戏公平性，以及影响其他玩家正常进行游戏等行为<br>
+    处罚规则：查证核实后，将暂停帐号，并清除所有非法物品；视情节轻重给予时限性冻结帐号的处罚；情节严重者，给予永久冻结的处罚。<br>
+    7.盗取或参与盗取他人帐号，给被盗者造成严重损失的行为<br>
+    处罚规则：查证核实后，视情节轻重给予时限性冻结帐号的处罚；情节严重者，给予永久冻结的处罚，并上报相关部门追究其法律责任。<br>
+    8.侮辱、毁谤、猥亵、威胁、辱骂其他用户，扭曲事实、恶意散布不实谣言，恶意影响游戏环境等行为<br>
+    处罚规则：视情节轻重给予时限性冻结帐号的处罚；情节严重者，给予永久冻结的处罚。<br>
+
+    <b>9. 内容及其披露</b><br>
+    9.1 用户对经由本服务上载、张贴或传送的内容负全部责任；对于经由本服务而传送的内容，广州谊游不保证前述内容的正确性、完整性或及时性。在任何情况下，广州谊游均不对任何用户提供的内容负责，包括但不限于任何内容发生任何错误或纰漏以及衍生的任何损失或损害，用户负责处理与其提供的内容相关的任何及全部纠纷。广州谊游有权（但无义务）拒绝或删除经由本服务提供的任何内容。用户使用上述内容，应自行承担风险。<br>
+    9.2 广州谊游有权利在下述情况下，对内容进行保存或披露：<br>
+    法律程序所规定<br>
+    本服务条款规定<br>
+    被侵害的第三人提出权利主张<br>
+    为保护手游吧帐号、其使用者及社会公众的权利、财产或人身安全<br>
+    其他广州谊游认为有必要的情况。<br>
+
+    <b>10. 电子公告栏的张贴内容</b><br>
+    10.1 “电子公告栏”包括空间、论坛、SNS社区和其它一般公众可以使用的区域；<br>
+    10.2 用户一旦在本服务电子公告栏上传或张贴内容，即视为用户授予广州谊游该内容著作权之免费及非独家、永久的许可使用权，广州谊游有权为展示、传播及推广前述内容之目的，对上述内容进行复制、修改、出版。由此展示、传播及推广行为所产生的损失或利润，均由广州谊游承担或享受。广州谊游有权自主决定是否给予此类用户鼓励或奖励。<br>
+    10.3 因用户进行上述张贴，而导致任何第三方提出索赔要求或衍生的任何损害或损失，用户须承担 全部责任。<br>
+    10.4 非经广州谊游事先许可，用户不得对他人上传或张贴在电子公告栏或本服务其他内容进行复制、出售或用作其他商业用途。<br>
+
+    <b>11.手游吧帐号服务使用规则</b><br>
+    11.1 用户必须保证，拥有上传之照片、文字等作品之著作权或已获得合法授权，在本网站之上传行为未侵犯任何第三方之合法权益。否则，将由用户承担由此带来的一切法律责任；用户不得将任何内部资料、机密资料、涉及他人隐私资料或侵犯任何人的专利、商标、著作权、商业秘密或其他专属权利之内容加以上载、张贴、或以其他方式传送。<br>
+    11.2 用户不得利用本服务进行故意制作、传播计算机病毒等破坏性程序，不得针对本服务、与本服务连接的服务器或网络制造干扰、混乱，或违反连接本服务的网络的任何要求、程序、政策或规则，否则广州谊游将保留追究其法律责任的权利并有权将其提交给相关部门处理。<br>
+    11.3 广州谊游有权对用户上传的图片、添加的文字等内容进行审核，有任何违反法律法规或本协议之有关规定的图片、文字，广州谊游有权立即将其删除或屏蔽，且不需要对用户另行通知。<br>
+    11.4 用户不得将广告函件、促销资料、垃圾邮件等，加以上载、张贴、发送电子邮件或以其他方式传送。<br>
+    11.5 广州谊游郑重提请用户注意，任何经由本服务以上载、张贴、发送的资料、文字、照片、图形、视讯、信息、用户的登记资料或其他资料（以下简称“内容”），无论系公开还是私下传送，均由内容提供者承担责任。广州谊游无法控制经由本服务传送之内容，也无法对用户的使用行为进行全面控制，因此不保证内容的合法性、正确性、完整性、真实性或品质；用户已预知使用本服务时，可能会接触到令人不快、不适当或令人厌恶之内容，并同意将自行加以判断并承担所有风险，而不依赖于广州谊游。但在任何情况下，广州谊游有权依法停止传输任何前述内容并采取相应行动，包括但不限于暂停用户使用本服务的全部或部分，保存有关记录，并向有关机关报告。但广州谊游有权(但无义务)依其自行之考量，拒绝和删除可经由本服务提供之违反本条款的或其他引起广州谊游或用户反感的任何内容。<br>
+    11.6 用户完全理解并同意，若第三方在用户不知情或未经用户同意的前提下，将其文字、图片作品上传于手游吧帐号空间及由此所产生的任何可能侵害其权益的行为，广州谊游均不对任何人承担任何责任。<br>
+    11.7 广州谊游有权根据政府机关或权利人的要求删除用户上载、张贴、发送的内容，无论广州谊游事先是否通知。<br>
+    11.8 广州谊游有权根据服务的需要，收回用户所用的空间域名或减少用户所用空间的大小，无论广州谊游事先是否通知。<br>
+
+    <b>12. 手游吧论坛规则</b><br>
+    12.1 关于用户名和昵称<br>
+    不得使用党和国家领导人或其他知名人士的真实姓名、字号、艺名、笔名作为用户名和昵称；<br>
+    不得使用国家机构或其他机构的名称作为用户名和昵称；<br>
+    不得使用和其他网友之名相近、相仿的用户名和昵称；<br>
+    不得使用不文明、不健康，或带攻击性、侮辱性的用户名和昵称；<br>
+    请勿使用易产生歧义、引起他人误解的用户名和昵称；<br>
+    不得使用各种奇形怪状的符号作为用户名和昵称；<br>
+    对于违反规定或产生不良后果的用户名和昵称，本站有权删除而不必事先通知。<br>
+    12.2 关于签名<br>
+    不得出现宣扬反动、封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪等不符合国家法律规定的以及任何包含种族、性别、宗教歧视性和猥亵性的信息内容；<br>
+    不得出现有侮辱性言语、挑衅、辱骂其他人以及不健康内容；<br>
+    不得出现广告性质的内容以及本公司以外其他网站的链接；<br>
+    广州谊游有权在不需要通知和解释的情况下除去违反以上规定的签名内容,并对情节严重者予以封号处理。<br>
+    12.3 关于发贴内容<br>
+    遵守相关法规，严禁发表违反法律法规及社会主义道德规定的内容；<br>
+    使用文明用语，不得张贴对任何人进行人身攻击、谩骂、诋毁的言论；<br>
+    不得张贴未经公开报道、未经证实的消息；<br>
+    不得张贴与所在论坛主题无关的消息、言论和图片；<br>
+    未经广州谊游同意，不得张贴带有商业性质的内容或任何形式的广告，不得张贴广州谊游及其关联公司以外其他网站的链接；<br>
+    不得恶意灌水，内容相同的帖子不得一文多发；<br>
+    不得在帖子中（标题和内容）加入各种奇形怪状的符号；<br>
+    转贴文章应注明原始出处和时间；<br>
+    对于违反以上规定的内容，在不需要通知和解释的情况下，广州谊游以及版主有权予以删除，并对情节严重者予以封帐号处理。<br>
+    12.4 关于贴图<br>
+    不得张贴宣扬反动、封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪等不符合国家法律规定的以及任何包含种族、性别、宗教歧视性和猥亵性的图片；<br>
+    不得出现带有侮辱性、挑衅、辱骂其他人以及不健康内容的图片；<br>
+    请勿使用易产生歧义、引起他人误解的图片；<br>
+    摘录、转贴的图片请注明出处及作者，禁止张贴侵犯他人著作权、版权等知识产权的图片；<br>
+    不得张贴与论坛主题无关的图片；<br>
+    广州谊游有权在不需要通知和解释的情况下删除违反以上规定的图片，并对情节严重者予以封帐号处理。<br>
+
+    <b>13. 手游吧帐号游戏规则</b><br>
+    13.1 用户应当遵守游戏公约、玩家守则及不时发布的游戏规则、公告等；<br>
+    13.2 用户不得通过不正当的手段或其他不公平的手段使用手游吧帐号的游戏产品和服务或参与U手游吧帐号的游戏活动。用户不得干扰广州谊游正常地提供产品和服务，包括但不限于：攻击、侵入广州谊游的网站服务器或使网站服务器过载；制作、发布、传播、使用任何形式的妨碍游戏公平性的辅助工具或程序(外挂)；利用程序的漏洞和错误(Bug)破坏游戏的正常进行或传播该漏洞或错误(Bug)；不合理地干扰或阻碍他人使用广州谊游所提供的产品和服务。
+    13.3 为维护游戏的公平性，如果广州谊游发现用户数据异常，无论用户对该异常数据产生是否负有过错，广州谊游均有权根据本规则、游戏公约、玩家守则及后期不时发布的游戏公告等，采取相应措施：包括但不限于对该帐号的冻结、终止、删除；用户在此承诺广州谊游有权采取上述行动，并承诺不得就上述行为要求广州谊游做任何补偿或退费。<br>
+    13.4 广州谊游在此特别提示用户：<br>
+    广州谊游提供的游戏将按照现状提供，用户明确知道游戏中存在已知和未知的漏洞和错误（Bug）。尽管广州谊游将尽最大努力解决已知的漏洞和错误（Bug），但用户知道或应该知道游戏中仍可能包含未知的漏洞和错误（Bug）等。用户同意不向广州谊游及其关联公司因任何漏洞和错误（Bug）主张任何赔偿。广州谊游不提倡虚拟物品之间的交易，并不对该交易中产生的任何问题进行支持和保障。<br>
+
+    <b>14. 手机特色功能说明</b><br>
+    14.1 用户明确知道，广州谊游提供的实时定位服务将向用户及用户的不特定手游吧帐号好友提供用户的实时空间位置信息。<br>
+    14.2 用户可选择向手游吧帐号导入手机通讯簿上所对应的好友关系链，但广州谊游确保将不导入好友关系链之外的任何信息（包括好友姓名及其他任何相关信息） <br>
+    14.3 广州谊游将对好友关系链通过不可逆转的方式加密存储，包括手游吧帐号和您的任何好友都将无法获知您的真实好友关系链和真实手机号码。<br>
+
+    <b>15. 广州谊游的知识产权及其他权利</b><br>
+    15.1 广州谊游对本服务及本服务所使用的软件和受知识产权相关法律或其他法律保护的资料享有相应的权利。<br>
+    15.2 经由本服务传送的内容，受到著作权法、商标法、专利法或其他法律的保护；未经广州谊游明示授权许可，用户不得进行修改、出租、散布或衍生其他作品，用户本人创作并在公开使用区域张贴的内容除外。<br>
+    15.3 用户对本服务所使用的软件有非专属性使用权，但自己不得或许可任何第三方复制、修改、出售或衍生产品。<br>
+    15.4 手游吧帐号及其他手游吧帐号图样、产品及服务名称，均为广州谊游及其关联公司所享有的商标，未经广州谊游所事先书面授权，任何人不得使用、 复制或用作其他用途。<br>
+    15.5 第三方链接：广州谊游服务可能会提供与其他国际、国内互联网网站或资源进行链接。除非另有声明，广州谊游无法对第三方网站之服务进行控制，用户因使用或依赖上述网站或资源所发生的损失或损害，广州谊游不承担任何责任。<br>
+
+    <b>16. 免责声明</b><br>
+    16.1 广州谊游对于本服务包含的或用户经由或从任何与本服务有关的途径所获得的任何内容、信息或广告，不保证其正确性或可靠性；并且对于用户经本服务上的广告、展示而购买、取得的任何产品、信息或资料，广州谊游不负保证责任。用户自行承担担使用本服务的风险。<br>
+    16.2 广州谊游有权但无义务，改善或更正本服务任何部分之任何疏漏、错误。<br>
+    16.3 广州谊游不保证以下事项（包括但不限于）：<br>
+    本服务适合用户的使用要求；<br>
+    本服务不受干扰，及时、安全、可靠或不出现错误；<br>
+    用户经由本服务取得的任何产品、服务或其他材料符合用户的期望；<br>
+    16.4 用户使用经由本服务下载的或取得的任何资料，其风险自行负担；因该使用而导致用户手机或其他设备系统损坏或资料流失，用户应负完全责任；<br>
+    16.5 对基于以下原因而造成的利润、商业信誉、资料的损失或其他有形或无形损失，广州谊游不承担任何直接、间接、附带、衍生或惩罚性的赔偿：<br>
+    本服务使用或无法使用；<br>
+    经由本服务购买或取得的任何产品、资料或服务；<br>
+    用户资料遭到未授权的使用或修改；<br>
+    用户资料丢失或被删除；<br>
+    其他与本服务相关的事宜。<br>
+    16.6 用户在浏览网际网路时自行判断使用手游吧帐号的检索目录。该检索目录可能会引导用户进入到被认为具有攻击性或不适当的网站，广州谊游没有义务查看检索目录所列网站的内容，因此，对其正确性、合法性、正当性不负任何责任。<br>
+
+    <b>17. 服务的修改和终止</b><br>
+    广州谊游有权在未事前通知的情况下在任何时候，暂时或永久地修改或终止本服务或其中任何一部分。广州谊游对本服务的修改或终止对用户和任何第三人不承担任何责任。广州谊游有权基于任何理由，终止用户的帐号、密码或拒绝其使用本服务，或删除、转移用户存储、发布在本服务的内容，广州谊游采取上述行为均不需通知，并且对用户和任何第三人不承担任何责任。<br>
+
+    <b>18. 通知</b><br>
+    广州谊游向用户发出的通知，可以采用电子邮件、页面公告、常规信件、电话或广州谊游认为适合的形式。服务条款的修改或其他事项变更时，广州谊游将会以上述形式进行通知。<br>
+
+    <b>19. 全部协议</b><br>
+    本服务协议和广州谊游的其他服务条款构成完整的协议。<br>
+
+    <b>20. 法律的适用和管辖</b><br>
+    本服务条款的生效、履行、解释及争议的解决均适用中华人民共和国法律，发生的争议提交广州仲裁委员会裁决。如果本服务协议中某项条款因与中华人民共和国现行法律相抵触而导致无效，将不影响其他部分的效力。<br>
+
+    <b>21. 生效条件</b><br>
+    本协议自用户访问、浏览及使用手游吧帐号之时开始生效。<br>
+    </p>
+    </div>
+    </div><!--wrapper-->
+    </div>
+</section>
+</script>
+<!-- lnHtmlContent -->
+<!--登录页-->
+<script type="text/html" id="login_templ_ln">
+<div class="header-bar2-ln">
+    <h1 class="h1-ln">联想通行证</h1>
+</div>
+<div class="login-ln" id="loginContentLn">
+    <!--<div class="eorr-info-ln" style="display:none"></div>-->
+    <ul class="ul-ln">
+        <li class="li-ln form-user-ln">
+            <label class="label-ln">用户名</label>
+            <input type="text" placeholder="请输入邮箱或手机号" class="input-ln input-text-ln" id="usernameLn" style="width: 213px">
+            <div id="showHistoryLn">
+                <button type="button" class="button-ln btn-more-ln" id="btnMoreLn" onfocus="blur()"><!--没法去反馈，暂时只能这样-->
+                <select class="ms-pa ms-block ui-select" value="" id="loginHistoryLn" style="width:22px" onfocus="blur()"></select></button>
+            </div>
+        </li>
+        <li class="li-ln form-password-ln">
+            <label class="label-ln">密码</label>
+            <input type="password" data-ctrl='true' data-hideinp='true' placeholder="请输入密码" class="input-ln input-text-ln sui-inp" id="passwordLn">
+        </li>
+    </ul>
+    <div class="flb-box pa5 ms-ni" id='checkboxAreaLn'>
+        <div class="password-link-ln" id='iconCheckboxLn'>
+            <label>自动登录</label>
+        </div>
+        <div class="forgetPassword-link-ln">
+            <label><a class="a-ln" href="javascript:;" id="forgetPassBtnLn">忘记密码?</a></label>
+        </div>
+    </div>
+    
+    <div class="btns-ln">
+        <input class="input-ln btn-defult-ln" type="button" value="注 册" id="registerButLn"><input type="submit" class="input-ln btn-submit-ln" value="登 录" id="loginButLn">
+    </div>
+</div>
+</script>
+<!--注册页-->
+<script type="text/html" id="register_templ_ln">
+<div class="header-bar-ln">
+    <div style="position:absolute;line-height:40px;z-index: 1" id="RegBackLn"><a class="a-ln" href="javascript:void(0)">&emsp;&emsp;&nbsp;</a></div>
+    <h1 class="h1-ln">联想通行证</h1>
+</div>
+<div class="login-ln" id="registerContentLn">
+    <ul class="ul-ln login-con">
+        <li class="li-ln form-user-ln"><label class="label-ln">用户名</label>
+            <input type="text" placeholder="请输入邮箱或手机号" class="input-ln input-text-ln" id="regAccountLn" maxlength="50">
+        </li>
+        <li class="li-ln form-password-ln"><label class="label-ln">密码</label>
+            <input type="password" placeholder="请输入密码" class="input-ln input-text-ln" id="regPasswordLn" maxlength="20">
+        </li>
+    </ul>
+    <div style="width:80px" id="regShowPassAreaLn">
+        <div class="password-link-ln current-ln" id="regShowPassLn">
+            <label>显示密码</label>
+        </div>
+    </div>
+    <!--<ul class="ul-ln login-con">
+            <li class="li-ln form-verify-ln"><label class="label-ln">验证码</label><input type="text" placeholder="请输入验证码" class="input-ln input-text-ln"></li>
+        </ul>
+        <div class="verify-con-ln">
+            <img class="img-ln" src="images/yanzheng.png" width="105" height="36">
+            <a class="a-ln" href="#" class="refresh-ln"><span>换一张</span></a>
+        </div>
+    -->
+    <div class="btns-ln btns-register-ln">
+        <input type="submit" class="input-ln btn-submit-ln" value="注 册" id="finishRegBtnLn">
+    </div>
+    <div class="server-link-ln" id="regAgreeLn">注册即表示您接受 <a class="a-ln" href="javascript:;">联想通行证服务条款</a></div>
+</div>
+</script>
+<!--个人中心页-->
+<script type="text/html" id="user_base_info_templ_ln">
+<section class="btl_whi pa10" id="userBaseInfoLn">
+    <div class="usrCtrl">
+        <a href="javascript:void(0)" class="btn_uc" id="myAccountBtnLn">
+            <span class="icon_uc myaccount_icon"></span>
+            <span>我的账号</span>
+            <span id="myAccountLn" style="text-align: right; padding-right: 10px;">获取中</span>
+        </a>
+        <a href="javascript:void(0)" class="btn_uc" id="multiAccountBtnLn">
+            <span class="icon_uc pas_icon"></span>
+            <span>多账号管理</span>
+            <span class="oth" id="accountNoLn">获取中</span>
+            <span class="arrow_uc"></span>
+        </a>
+    </div>
+    <div class="usrCtrl usrCtrl_sg gr-mb0 btnClick-none" id='autoLoginSettingLn'>
+        <a href="javascript:void(0)" class="btn_uc btnClick-none">
+            <span class="icon_uc autologin_icon"></span>
+            <span>自动登录游戏</span>
+            <div class="auto-btn">
+                <span class="btn-ctn" href="javascript:;" id="autoLoginSwitchLn"></span>
+            </div>
+        </a>
+    </div>
+    <div class="gray f14">
+        <span id="autoLoginNotiLn">开启后将自动使用最近登录的账号进入游戏。</span>
+    </div>
+    <div>
+        <input type="button" class="btn btn_red ms-ni"  id="exitBtnLn" value="退出当前账号"/>
+    </div>
+    <div class="gray f14 plr5 flb-box">
+        <center class="flb-chi flb-p1">版本号：<span id="sdkVersionLn">获取中</span></center>
+    </div>
+</section>
+</script>
+<!--多账号管理页-->
+<script type="text/html" id="multi_account_templ_ln">
+<div class="btl_whi pa10">
+    <div id="accountInfosLn" ></div>
+</div>  
+</script>
+<!--账号信息卡片-->
+<!-- 注释：此处外围a标签包裹着默认背景当无法读取出图像时便默认采用此背景，
+    内层img包裹着实际头像img图像当此图像存在时便会覆盖外层默认背景，
+    此处是采用1:1图片模拟，实际项目中可将g_img文件夹内模拟头像图片删除 
+-->
+<script type="text/html" id="account_info_item_templ_ln">
+    <div class="userInfo userInfo_s swit_acc_ln" data-account="<%=account%>" >
+        <div class="status on_btn_box">
+            <a href="javascript:void(0);" class="<%=status%> che_icon"></a>
+        </div>
+        <div class="content">
+            <p class="plr5 account tl tfe">账号：<%=dispAccount%></p>
+            <p class="plr5 tl tfe">最近登录游戏:<%=gameName%></p>
+        </div>
+        <div class="status delStatus" style="display:none;">
+            <input type="button" class="del_icon account_del_ln" value="删除" />
+        </div>
+        <span class="arrow_uc gotoStatus <%=status%>" style="visibility:hidden;"></span>
+    </div>
+</script>
+<!-- lnHtmlContent -->
+<script type="text/javascript" src="../common/js/template.js?1402642620718"></script>
+<script type="text/javascript" src="../common/js/ucRoute.js?1402642620718"></script>
+<script type="text/javascript" src="js/userRoute.js?1402642620718"></script>
+<script type='text/javascript'>
+	Route.routeInit('User');
+</script>
+<script type="text/javascript" src="../common/js/sdkBase.js?1402642620718"></script>
+<script type="text/javascript" src="../common/js/ucf.js?1402642620718"></script>
+<script type="text/javascript" src="../common/js/environment.js?1402642620718"></script>
+<script type="text/javascript" src="../common/js/common.js?1402642620718"></script>
+<script type="text/javascript" src="js/user.js?1402642620718"></script>
+<script type="text/javascript" src="../general/js/general.js?1402642620718"></script>
+<script type="text/javascript" src="../game/js/game.js?1402642620718"></script>
+<script type="text/javascript">
+document.addEventListener( 'bridgeready',  function() {
+    S.initializer('user');
+});
+</script>
+</body>
+</html>

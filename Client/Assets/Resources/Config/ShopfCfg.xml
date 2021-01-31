@@ -1,0 +1,36 @@
+<ShopCfg>
+<info n32ShopID = "">
+   <un32ItemIDPage1/>
+   <un8CostTypePage1/>
+   <n32CPCostPage1/>
+   <un32ItemIDPage2/>
+   <un8CostTypePage2/>
+   <n32CPCostPage2/>
+   <un32ItemIDPage3/>
+   <un8CostTypePage3/>
+   <n32CPCostPage3/>
+   <un32ItemIDPage4/>
+   <un8CostTypePage4/>
+   <n32CPCostPage4/>
+   <un32ItemIDPage5/>
+   <un8CostTypePage5/>
+   <n32CPCostPage5/>
+</info>
+<info n32ShopID = "">
+   <un32ItemIDPage1/>
+   <un8CostTypePage1/>
+   <n32CPCostPage1/>
+   <un32ItemIDPage2/>
+   <un8CostTypePage2/>
+   <n32CPCostPage2/>
+   <un32ItemIDPage3/>
+   <un8CostTypePage3/>
+   <n32CPCostPage3/>
+   <un32ItemIDPage4/>
+   <un8CostTypePage4/>
+   <n32CPCostPage4/>
+   <un32ItemIDPage5/>
+   <un8CostTypePage5/>
+   <n32CPCostPage5/>
+</info>
+</ShopCfg>

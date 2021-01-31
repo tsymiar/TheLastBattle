@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SkillCfg_bloodseek xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un32ID="1001">
+		<szName>被动-德古拉</szName>
+		<n32BaseValue>0</n32BaseValue>
+		<n32HarmRate>150</n32HarmRate>
+		<n32TargetLifeRate>0</n32TargetLifeRate>
+		<n32SelfLifeRate>0</n32SelfLifeRate>
+	</info>
+	<info un32ID="1002">
+		<szName>被动-噬血者</szName>
+		<n32BaseValue>0</n32BaseValue>
+		<n32HarmRate>250</n32HarmRate>
+		<n32TargetLifeRate>0</n32TargetLifeRate>
+		<n32SelfLifeRate>0</n32SelfLifeRate>
+	</info>
+	<info un32ID="1003">
+		<szName>被动-圣愈</szName>
+		<n32BaseValue>0</n32BaseValue>
+		<n32HarmRate>0</n32HarmRate>
+		<n32TargetLifeRate>0</n32TargetLifeRate>
+		<n32SelfLifeRate>10</n32SelfLifeRate>
+	</info>
+	<info un32ID="1004">
+		<szName>热血等级1-吸血</szName>
+		<n32BaseValue>0</n32BaseValue>
+		<n32HarmRate>0</n32HarmRate>
+		<n32TargetLifeRate>0</n32TargetLifeRate>
+		<n32SelfLifeRate>30</n32SelfLifeRate>
+	</info>
+	<info un32ID="1005">
+		<szName>热血等级2-吸血</szName>
+		<n32BaseValue>0</n32BaseValue>
+		<n32HarmRate>0</n32HarmRate>
+		<n32TargetLifeRate>0</n32TargetLifeRate>
+		<n32SelfLifeRate>35</n32SelfLifeRate>
+	</info>
+	<info un32ID="1006">
+		<szName>热血等级3-吸血</szName>
+		<n32BaseValue>0</n32BaseValue>
+		<n32HarmRate>0</n32HarmRate>
+		<n32TargetLifeRate>0</n32TargetLifeRate>
+		<n32SelfLifeRate>40</n32SelfLifeRate>
+	</info>
+</SkillCfg_bloodseek>

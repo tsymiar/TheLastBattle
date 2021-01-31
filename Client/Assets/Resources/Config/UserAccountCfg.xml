@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WildMonsterCfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info UserLevel="1">
+		<LevelUpExp>100</LevelUpExp>
+	</info>
+	<info UserLevel="2">
+		<LevelUpExp>113</LevelUpExp>
+	</info>
+	<info UserLevel="3">
+		<LevelUpExp>131</LevelUpExp>
+	</info>
+	<info UserLevel="4">
+		<LevelUpExp>151</LevelUpExp>
+	</info>
+	<info UserLevel="5">
+		<LevelUpExp>175</LevelUpExp>
+	</info>
+	<info UserLevel="6">
+		<LevelUpExp>202</LevelUpExp>
+	</info>
+	<info UserLevel="7">
+		<LevelUpExp>230</LevelUpExp>
+	</info>
+	<info UserLevel="8">
+		<LevelUpExp>262</LevelUpExp>
+	</info>
+	<info UserLevel="9">
+		<LevelUpExp>295</LevelUpExp>
+	</info>
+	<info UserLevel="10">
+		<LevelUpExp>330</LevelUpExp>
+	</info>
+	<info UserLevel="11">
+		<LevelUpExp>367</LevelUpExp>
+	</info>
+	<info UserLevel="12">
+		<LevelUpExp>407</LevelUpExp>
+	</info>
+	<info UserLevel="13">
+		<LevelUpExp>447</LevelUpExp>
+	</info>
+	<info UserLevel="14">
+		<LevelUpExp>490</LevelUpExp>
+	</info>
+	<info UserLevel="15">
+		<LevelUpExp>534</LevelUpExp>
+	</info>
+	<info UserLevel="16">
+		<LevelUpExp>580</LevelUpExp>
+	</info>
+	<info UserLevel="17">
+		<LevelUpExp>627</LevelUpExp>
+	</info>
+	<info UserLevel="18">
+		<LevelUpExp>676</LevelUpExp>
+	</info>
+	<info UserLevel="19">
+		<LevelUpExp>726</LevelUpExp>
+	</info>
+	<info UserLevel="20">
+		<LevelUpExp>778</LevelUpExp>
+	</info>
+	<info UserLevel="21">
+		<LevelUpExp>831</LevelUpExp>
+	</info>
+	<info UserLevel="22">
+		<LevelUpExp>886</LevelUpExp>
+	</info>
+	<info UserLevel="23">
+		<LevelUpExp>941</LevelUpExp>
+	</info>
+	<info UserLevel="24">
+		<LevelUpExp>998</LevelUpExp>
+	</info>
+	<info UserLevel="25">
+		<LevelUpExp>1057</LevelUpExp>
+	</info>
+	<info UserLevel="26">
+		<LevelUpExp>1116</LevelUpExp>
+	</info>
+	<info UserLevel="27">
+		<LevelUpExp>1177</LevelUpExp>
+	</info>
+	<info UserLevel="28">
+		<LevelUpExp>1239</LevelUpExp>
+	</info>
+	<info UserLevel="29">
+		<LevelUpExp>1302</LevelUpExp>
+	</info>
+	<info UserLevel="30">
+		<LevelUpExp>0</LevelUpExp>
+	</info>
+</WildMonsterCfg>

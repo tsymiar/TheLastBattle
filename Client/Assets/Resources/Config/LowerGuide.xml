@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LowerGuide xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info Taskid="1001">
+		<Title>购买装备</Title>
+		<Event>1</Event>
+		<EventValue0>70,60,100</EventValue0>
+		<EventValue2>6</EventValue2>
+		<Content>CP点数足够时别忘了打开[00d5ff]商店[-]购买装备！当购买装备迷茫时[00d5ff]推荐装备[-]是个不错的选择！</Content>
+		<CDTime>300000</CDTime>
+		<LimitTime>3</LimitTime>
+		<SmallTitle>装备购买</SmallTitle>
+		<PrefabID>LowerGuide1</PrefabID>
+		<PicID>1</PicID>
+	</info>
+	<info Taskid="1002">
+		<Title>CP获取</Title>
+		<Event>2</Event>
+		<Content>[00d5ff]击杀小兵[-]可以获得少量CP点数，[00d5ff]击杀英雄[-]可以获得大量CP点数，[00d5ff]摧毁建筑[-]则可以使整个队伍的CP点数得到提升！</Content>
+		<CDTime>180000</CDTime>
+		<LimitTime>3</LimitTime>
+		<SmallTitle>收益说明</SmallTitle>
+		<PrefabID>LowerGuide</PrefabID>
+		<PicID>2</PicID>
+	</info>
+	<info Taskid="1003">
+		<Title>远离防御塔</Title>
+		<Event>3</Event>
+		<Content>[00d5ff]没有士兵时[-]最好[00d5ff]远离防御塔[-]，脆弱的英雄很难独自承受防御塔的攻击</Content>
+		<CDTime>60000</CDTime>
+		<LimitTime>0</LimitTime>
+		<SmallTitle>防御塔说明</SmallTitle>
+		<PrefabID>LowerGuide1</PrefabID>
+		<PicID>4</PicID>
+	</info>
+	<info Taskid="1004">
+		<Title>怒气爆发</Title>
+		<Event>4</Event>
+		<Content>怒气值满时记得[00d5ff]点击头像[-]释放怒气！怒气不仅可以[00d5ff]强化你的技能[-]，而且可以[00d5ff]刷新技能的冷却时间[-]！</Content>
+		<CDTime>60000</CDTime>
+		<LimitTime>0</LimitTime>
+		<SmallTitle>怒气说明</SmallTitle>
+		<PrefabID>LowerGuide1</PrefabID>
+		<PicID>2</PicID>
+	</info>
+	<info Taskid="1005">
+		<Title>灵魂之力</Title>
+		<Event>5</Event>
+		<Content>吸收的灵魂不仅可以[00d5ff]提升英雄的属性[-]，而且会[00d5ff]提供一个崭新的技能[-]！</Content>
+		<CDTime>60000</CDTime>
+		<LimitTime>0</LimitTime>
+		<SmallTitle>附身说明</SmallTitle>
+		<PrefabID>LowerGuide</PrefabID>
+		<PicID>3</PicID>
+	</info>
+	<info Taskid="1006">
+		<Title>阵亡复活</Title>
+		<Event>6</Event>
+		<Content>阵亡之后需要[00d5ff]等待一段时间[-]让水晶能量来复活你，[00d5ff]英雄等级越高[-]需要复活的时间[00d5ff]越长[-]，你也可以选择使用秘晶之力[00d5ff]立即复活[-]，但这种力量[00d5ff]无法多次使用[-]</Content>
+		<CDTime>300000</CDTime>
+		<LimitTime>2</LimitTime>
+		<SmallTitle>死亡复活</SmallTitle>
+		<PrefabID>LowerGuide</PrefabID>
+		<PicID>5</PicID>
+	</info>
+	<info Taskid="1007">
+		<Title>祭坛仪式</Title>
+		<Event>7</Event>
+		<Content>把吸收的灵魂[00d5ff]奉献给祭坛[-]将会源源不断地[00d5ff]产出灵魂士兵[-]，代价就是[00d5ff]失去灵魂给你提供的属性提升和技能[-]</Content>
+		<CDTime>180000</CDTime>
+		<LimitTime>0</LimitTime>
+		<SmallTitle>放置祭坛</SmallTitle>
+		<PrefabID>LowerGuide1</PrefabID>
+		<PicID>3</PicID>
+	</info>
+	<info Taskid="1008">
+		<Title>技能说明</Title>
+		<Event>8</Event>
+		<EventValue1>6</EventValue1>
+		<Content>[00d5ff]长按技能键[-]可以查看技能说明，英雄等级[00d5ff]达到6级[-]会自动提升一次英雄技能等级，[00d5ff]达到11级[-]英雄技能等级会再度提升，当你看到敌方英雄[00d5ff]比你先到6级或11级时[-]，请千万小心！</Content>
+		<CDTime>0</CDTime>
+		<LimitTime>0</LimitTime>
+		<SmallTitle>查看技能说明</SmallTitle>
+		<PrefabID>LowerGuide</PrefabID>
+		<PicID>6</PicID>
+	</info>
+	<info Taskid="1009">
+		<Title>吸收灵魂</Title>
+		<Event>8</Event>
+		<EventValue1>3</EventValue1>
+		<Content>英雄[00d5ff]到达3级[-]就可以去[00d5ff]吸收灵魂[-]啦！别忘了这个[00d5ff]提升英雄属性学习新技能[-]的好机会哦！</Content>
+		<CDTime>0</CDTime>
+		<LimitTime>0</LimitTime>
+		<SmallTitle>附身提示</SmallTitle>
+		<PrefabID>LowerGuide</PrefabID>
+		<PicID>3</PicID>
+	</info>
+	<info Taskid="1010">
+		<Title>超级士兵</Title>
+		<Event>9</Event>
+		<EventValue1>107,108</EventValue1>
+		<Content>[00d5ff]敌方祭坛被摧毁时[-]会出动[00d5ff]超级士兵[-]，超级士兵会无情地碾碎敌方的普通士兵！</Content>
+		<CDTime>0</CDTime>
+		<LimitTime>0</LimitTime>
+		<SmallTitle>超级兵提示</SmallTitle>
+		<PrefabID>LowerGuide</PrefabID>
+		<PicID>4</PicID>
+	</info>
+	<info Taskid="1011">
+		<Title>二次吸收</Title>
+		<Event>8</Event>
+		<EventValue1>3</EventValue1>
+		<Content>英雄[00d5ff]到达7级[-]可以[00d5ff]吸收二个灵魂[-]，再一次的属性提升、多一个全新的技能！</Content>
+		<CDTime>0</CDTime>
+		<LimitTime>0</LimitTime>
+		<SmallTitle>附身提示</SmallTitle>
+		<PrefabID>LowerGuide</PrefabID>
+		<PicID>1</PicID>
+	</info>
+</LowerGuide>

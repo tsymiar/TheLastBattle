@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VoipCfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<server>221.237.158.152</server>
+	<port>28888</port>
+</VoipCfg>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:text="版本:v3.4.4.1"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="306dp"
+        android:text="本demo界面展示功能为UCSDK主要功能，更多功能及无界面调用功能，请参考demo源码GameActivity.java文件，开发时请参考代码进行开发，如您在参考demo时有疑问，请及时联系UC技术接口人！或通过邮件方式将您的意见和建议进行反馈！邮箱：chenzh3@ucweb.com。感谢您的支持与理解！谢谢！"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/backgame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="返回游戏" />
+
+</LinearLayout>

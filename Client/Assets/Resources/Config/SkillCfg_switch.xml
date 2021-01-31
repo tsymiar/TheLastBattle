@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SkillCfg_switch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un32ID="190001">
+		<szName>刃甲开启</szName>
+		<n32UseMP>10</n32UseMP>
+		<n32UseHP>0</n32UseHP>
+		<n32UseCP>0</n32UseCP>
+		<bIsCoolDown>1</bIsCoolDown>
+		<n32TriggerRate>1000</n32TriggerRate>
+		<StartIcon>06</StartIcon>
+		<StartEffect>0</StartEffect>
+		<PassEventID>11100501</PassEventID>
+	</info>
+</SkillCfg_switch>

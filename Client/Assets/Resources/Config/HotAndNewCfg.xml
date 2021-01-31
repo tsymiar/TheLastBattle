@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DiscountsCfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un8TypeName="New">
+		<un32HeroGoodsID>0</un32HeroGoodsID>
+		<un32SkinGoodsID>0</un32SkinGoodsID>
+		<un32RuneGoodsID>0</un32RuneGoodsID>
+	</info>
+	<info un8TypeName="Hot">
+		<un32HeroGoodsID>0</un32HeroGoodsID>
+		<un32SkinGoodsID>0</un32SkinGoodsID>
+		<un32RuneGoodsID>0</un32RuneGoodsID>
+	</info>
+</DiscountsCfg>

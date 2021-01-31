@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Award xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="1001">
+		<award>1</award>
+		<quantity>500</quantity>
+		<pos>0</pos>
+	</info>
+	<info id="1002">
+		<award>2</award>
+		<quantity>0</quantity>
+	</info>
+</Award>

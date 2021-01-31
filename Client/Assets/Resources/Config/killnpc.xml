@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<killnpc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="3001">
+		<deadnpcid>21019</deadnpcid>
+		<times>1</times>
+		<deadreason>0,1,2</deadreason>
+	</info>
+	<info id="3002">
+		<deadnpcid>21023</deadnpcid>
+		<times>1</times>
+		<deadreason>-1</deadreason>
+	</info>
+	<info id="3003">
+		<deadnpcid>21021</deadnpcid>
+		<times>1</times>
+		<deadreason>-1</deadreason>
+	</info>
+</killnpc>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SkillCfg_summon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un32ID="180001">
+		<szName>魔法图腾</szName>
+		<n32UseMP>0</n32UseMP>
+		<n32UseHP>0</n32UseHP>
+		<n32UseCP>0</n32UseCP>
+		<bIsCoolDown>1</bIsCoolDown>
+		<n32TriggerRate>1000</n32TriggerRate>
+		<eSummonType>1</eSummonType>
+		<eSummonWayType>1</eSummonWayType>
+		<summonID>21016</summonID>
+		<n32SummonNum>1</n32SummonNum>
+		<n32Distance>200</n32Distance>
+		<eLifeTime>15000</eLifeTime>
+		<summonAction>0</summonAction>
+		<summonEffect>0</summonEffect>
+		<summonSound>0</summonSound>
+		<EventID>0</EventID>
+	</info>
+	<info un32ID="180002">
+		<szName>爆炸图腾</szName>
+		<n32UseMP>0</n32UseMP>
+		<n32UseHP>0</n32UseHP>
+		<n32UseCP>0</n32UseCP>
+		<bIsCoolDown>1</bIsCoolDown>
+		<n32TriggerRate>1000</n32TriggerRate>
+		<eSummonType>1</eSummonType>
+		<eSummonWayType>1</eSummonWayType>
+		<summonID>21028</summonID>
+		<n32SummonNum>1</n32SummonNum>
+		<n32Distance>200</n32Distance>
+		<eLifeTime>15000</eLifeTime>
+		<summonAction>0</summonAction>
+		<summonEffect>0</summonEffect>
+		<summonSound>0</summonSound>
+		<EventID>0</EventID>
+	</info>
+	<info un32ID="180003">
+		<szName>扭曲陷阱等级1</szName>
+		<n32UseMP>0</n32UseMP>
+		<n32UseHP>0</n32UseHP>
+		<n32UseCP>0</n32UseCP>
+		<bIsCoolDown>1</bIsCoolDown>
+		<n32TriggerRate>1000</n32TriggerRate>
+		<eSummonType>1</eSummonType>
+		<eSummonWayType>1</eSummonWayType>
+		<summonID>21029</summonID>
+		<n32SummonNum>1</n32SummonNum>
+		<n32Distance>200</n32Distance>
+		<eLifeTime>15000</eLifeTime>
+		<summonAction>0</summonAction>
+		<summonEffect>0</summonEffect>
+		<summonSound>Heimolv_Skill 1</summonSound>
+		<EventID>0</EventID>
+	</info>
+	<info un32ID="180004">
+		<szName>扭曲陷阱等级2</szName>
+		<n32UseMP>0</n32UseMP>
+		<n32UseHP>0</n32UseHP>
+		<n32UseCP>0</n32UseCP>
+		<bIsCoolDown>1</bIsCoolDown>
+		<n32TriggerRate>1000</n32TriggerRate>
+		<eSummonType>1</eSummonType>
+		<eSummonWayType>1</eSummonWayType>
+		<summonID>21030</summonID>
+		<n32SummonNum>1</n32SummonNum>
+		<n32Distance>200</n32Distance>
+		<eLifeTime>15000</eLifeTime>
+		<summonAction>0</summonAction>
+		<summonEffect>0</summonEffect>
+		<summonSound>Heimolv_Skill 1</summonSound>
+		<EventID>0</EventID>
+	</info>
+	<info un32ID="180005">
+		<szName>扭曲陷阱等级3</szName>
+		<n32UseMP>0</n32UseMP>
+		<n32UseHP>0</n32UseHP>
+		<n32UseCP>0</n32UseCP>
+		<bIsCoolDown>1</bIsCoolDown>
+		<n32TriggerRate>1000</n32TriggerRate>
+		<eSummonType>1</eSummonType>
+		<eSummonWayType>1</eSummonWayType>
+		<summonID>21031</summonID>
+		<n32SummonNum>1</n32SummonNum>
+		<n32Distance>200</n32Distance>
+		<eLifeTime>15000</eLifeTime>
+		<summonAction>0</summonAction>
+		<summonEffect>0</summonEffect>
+		<summonSound>Heimolv_Skill 1</summonSound>
+		<EventID>0</EventID>
+	</info>
+</SkillCfg_summon>

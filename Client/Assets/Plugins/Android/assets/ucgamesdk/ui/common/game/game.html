@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-cache;max-age=0" />
+<meta name="viewport" content="width = device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="MobileOptimized" content="320"/>
+<meta name="format-detection" content="telephone=no">
+<meta name="Cache-Control" content="" />
+<link rel="stylesheet" href="../common/css/base.css?1397541548941"/>
+<link rel="stylesheet" href="../common/css/style_sdk.css?1397541548941"/>
+<link rel="stylesheet" href="../common/css/sui.css?1397541548941"/>
+<title>UC游戏</title>
+</head>
+<body>
+<div class="ui-maincontainer" id="gameContainer"></div>
+<script type="text/html" id="notOpenTpl">
+    <div class="con">
+        <p class="pwdQ"><span id="gameNotOpenMsg" class="gr-f14 hide"><%=message%></span></p>
+        <p class="gr-mt15"><input type="button" class="lo_btn higher width100" id="bbsLink"  data-btnFeed="feed" value="论坛" /></p>
+        <p>了解游戏和其他玩家的最新动态。</p>
+        <div class="gr-mt15">
+            <input type="button" class="sui-btn sui-btn-primary sui-w-full" value="发号中心" id="gotoValidCodeCenter" data-source='NotOpen' data-from='sdk_sev'/>
+        </div>
+        <p class="">查看游戏的激活码和礼包。</p>
+    </div>
+</script>
+<script type="text/html" id="validateCodeTpl">
+    <div class="con" id='topCon'>
+        <p class="pwdQ"><span class="gr-f14">该游戏正在内测中，请输入内测码后进入游戏。</span></p>
+        <p class="in_par gr-mt10 flb-box">
+            <input type="text" name="validCode" id="validCode" class="Qinput flb-chi flb-p99" placeholder="输入内测码">
+            <a href="javascript:;" class="Qclose flb-chi flb-p1"  id="clearValidCode"></a>
+        </p>
+        <p class="bing ms-cf"  id="validCodeNoticeBox"><!--<a href="javascript:;" id="getValidCodeLink" class="ms-fr orn">获得内测码？</a>--></p>
+        <p class="gr-mt10">
+            <input type="button" class="lo_btn higher width100" id="confirmValidCode" data-btnFeed="feed" value="确认" />
+        </p>
+        <div class="gr-mt15">
+            <input type="button" class="sui-btn sui-btn-primary sui-w-full" value="领取内测码" id="gotoValidCodeCenter" data-source='Test' data-from='sdk_test'/>
+        </div>
+        <!--
+        <p class="item gr-pt10">
+            <p class="gr-mt10 noti-heart ms-inblock">
+              <span class="label">温馨提示：</span>
+            </p>
+            <span class="label">游戏内测激活码，请到九游游戏发号大厅领取</span>
+        </p>
+        -->
+    </div>
+    <div class="pa10 ms-tr" id='gameBottom'><a href="javascript:;" class="red-link" id='toUserCenterLink'>进入用户中心</a></div>
+</script>
+<!-- lnHtmlContent -->
+<script type="text/html" id="notOpenTplLn">
+    <div class="con">
+        <p class="pwdQ"><span id="gameNotOpenMsgLn" class="gr-f14 hide"><%=message%></span></p>
+    
+        <p class="gr-mt10">
+            <input type="button" class="lo_btn higher width100" id="enterUserCenterBtn" data-btnFeed="feed" value="进入用户中心" />
+        </p>
+    </div>
+</script>
+<script type="text/html" id="validateCodeTplLn">
+    <div class="con" id='topConLn'>
+        <p class="pwdQ"><span class="gr-f14">该游戏正在内测中，请输入内测码后进入游戏。</span></p>
+        <p class="in_par gr-mt10 flb-box">
+            <input type="text" name="validCode" id="validCodeLn" class="Qinput flb-chi flb-p99" placeholder="输入内测码">
+            <a href="javascript:;" class="Qclose flb-chi flb-p1"  id="clearValidCodeLn"></a>
+        </p>
+        <p class="gr-mt10">
+            <input type="button" class="lo_btn higher width100" id="confirmValidCodeLn" data-btnFeed="feed" value="确认" />
+        </p>
+    </div>
+    <div class="pa10 ms-tr" id='gameBottomLn'><a href="javascript:;" class="red-link" id='toUserCenterLinkLn'>进入用户中心</a></div>
+</script>
+<!-- lnHtmlContent -->
+<script type="text/javascript" src="../common/js/template.js?1397541548941"></script>
+<script type="text/javascript" src="../common/js/ucRoute.js?1397541548941"></script>
+<script type="text/javascript" src="js/gameRoute.js?1397541548941"></script>
+<script type='text/javascript'>
+	Route.routeInit('Game');
+</script>
+<script type="text/javascript" src="../common/js/sdkBase.js?1397541548941"></script>
+<script type="text/javascript" src="../common/js/ucf.js?1397541548941"></script>
+<script type="text/javascript" src="../common/js/environment.js?1397541548941"></script>
+<script type="text/javascript" src="../common/js/common.js?1397541548941"></script>
+<script type="text/javascript" src="../general/js/general.js?1397541548941"></script>
+<script type="text/javascript" src="../user/js/user.js?1397541548941"></script>
+<script type="text/javascript" src="js/game.js?1397541548941"></script>
+<script type="text/javascript">
+document.addEventListener( 'bridgeready',  function() {
+    S.initializer('game');
+});
+</script>
+</body>
+</html>

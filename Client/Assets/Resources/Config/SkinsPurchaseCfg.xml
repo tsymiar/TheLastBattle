@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SkinsPurchaseCfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info CommodityID="1">
+		<UnlockHeroID>10001</UnlockHeroID>
+		<HalfPhotoIcon>10</HalfPhotoIcon>
+		<ConsumeType>1,2</ConsumeType>
+		<n32Price>100,100</n32Price>
+		<TexturePick>Texture</TexturePick>
+		<DefaultSkin>1</DefaultSkin>
+	</info>
+	<info CommodityID="2">
+		<UnlockHeroID>10002</UnlockHeroID>
+		<HalfPhotoIcon>16</HalfPhotoIcon>
+		<ConsumeType>2</ConsumeType>
+		<n32Price>150</n32Price>
+		<TexturePick>Texture</TexturePick>
+		<DefaultSkin>1</DefaultSkin>
+	</info>
+	<info CommodityID="3">
+		<UnlockHeroID>10003</UnlockHeroID>
+		<HalfPhotoIcon>12</HalfPhotoIcon>
+		<ConsumeType>1,2</ConsumeType>
+		<n32Price>3000,255</n32Price>
+		<TexturePick>Texture</TexturePick>
+		<DefaultSkin>1</DefaultSkin>
+	</info>
+	<info CommodityID="4">
+		<UnlockHeroID>10004</UnlockHeroID>
+		<HalfPhotoIcon>7</HalfPhotoIcon>
+		<ConsumeType>1,2</ConsumeType>
+		<n32Price>6000,465</n32Price>
+		<TexturePick>Texture</TexturePick>
+		<DefaultSkin>1</DefaultSkin>
+	</info>
+</SkinsPurchaseCfg>

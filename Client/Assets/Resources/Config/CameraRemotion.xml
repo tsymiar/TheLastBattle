@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CameraRemotion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un32MapID="1001">
+		<LeftEdge>50,86,39.5</LeftEdge>
+		<RightEdge>250,86,39.5</RightEdge>
+		<TopEdge>100,86,124</TopEdge>
+		<BottomEdge>100,86,45</BottomEdge>
+		<MovementSpeed>10</MovementSpeed>
+	</info>
+	<info un32MapID="1002">
+		<LeftEdge>20,82,61.5</LeftEdge>
+		<RightEdge>255,82,61.5</RightEdge>
+		<TopEdge>117.5,82,145</TopEdge>
+		<BottomEdge>117.5,82,22</BottomEdge>
+		<MovementSpeed>10</MovementSpeed>
+	</info>
+</CameraRemotion>

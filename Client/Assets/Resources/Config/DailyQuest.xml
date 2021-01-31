@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DailyQuest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="1001">
+		<type>1</type>
+		<grade>1</grade>
+		<describe>双杀玩家222222222222222222</describe>
+		<task>14</task>
+		<amount>3</amount>
+		<award>1</award>
+		<number>100</number>
+	</info>
+	<info id="1002">
+		<type>1</type>
+		<grade>2</grade>
+		<describe>单场游戏中击杀20个敌方英雄</describe>
+		<task>1</task>
+		<amount>20</amount>
+		<award>2</award>
+		<number>100</number>
+	</info>
+	<info id="1003">
+		<type>1</type>
+		<grade>3</grade>
+		<describe>单场游戏中击杀30个敌方英雄</describe>
+		<task>1</task>
+		<amount>30</amount>
+		<award>1</award>
+		<number>100</number>
+	</info>
+	<info id="1004">
+		<type>1</type>
+		<grade>4</grade>
+		<describe>单场游戏中击杀40个敌方英雄</describe>
+		<task>1</task>
+		<amount>40</amount>
+		<award>1</award>
+		<number>100</number>
+	</info>
+	<info id="1005">
+		<type>1</type>
+		<grade>1</grade>
+		<describe>胜利2场</describe>
+		<task>6</task>
+		<amount>2</amount>
+		<award>1</award>
+		<number>100</number>
+	</info>
+	<info id="1006">
+		<type>1</type>
+		<grade>2</grade>
+		<describe>今日游戏中击杀80个敌方英雄</describe>
+		<task>2</task>
+		<amount>80</amount>
+		<award>1</award>
+		<number>100</number>
+	</info>
+	<info id="1007">
+		<type>1</type>
+		<grade>3</grade>
+		<describe>今日游戏中击杀100个敌方英雄</describe>
+		<task>2</task>
+		<amount>100</amount>
+		<award>1</award>
+		<number>100</number>
+	</info>
+	<info id="1008">
+		<type>1</type>
+		<grade>4</grade>
+		<describe>今日游戏中击杀120个敌方英雄</describe>
+		<task>2</task>
+		<amount>120</amount>
+		<award>1</award>
+		<number>100</number>
+	</info>
+	<info id="1009">
+		<type>1</type>
+		<grade>1</grade>
+		<describe>进行3场游戏</describe>
+		<task>5</task>
+		<amount>3</amount>
+		<npc>20010</npc>
+		<award>1</award>
+		<number>100</number>
+	</info>
+</DailyQuest>

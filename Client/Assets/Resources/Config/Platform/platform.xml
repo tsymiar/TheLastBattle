@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<platform xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">  
+		
+		<info ID="5">
+			<szName>SDK_91</szName>  
+		</info>
+  
+    <info ID="14">
+      <szName>360</szName>
+    </info>
+  
+		<info ID="11">
+			<szName>SDK_PP</szName>  
+		</info>
+    <info ID="12">
+      <szName>SDK_CMGE</szName>
+    </info>
+    <info ID="13">
+      <szName>SDK_TBT</szName>
+    </info>
+</platform>

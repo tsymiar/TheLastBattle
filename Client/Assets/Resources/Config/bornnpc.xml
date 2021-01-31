@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bornnpc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info mapid="1000">
+		<taskid>1001</taskid>
+		<post>7100,6100,11200</post>
+		<way>7100,6100,11200</way>
+		<timespace>1000</timespace>
+		<bornnumber>1</bornnumber>
+		<ID>21027</ID>
+		<dir>0,0,1</dir>
+		<closeborn>1007</closeborn>
+		<camp>2</camp>
+	</info>
+</bornnpc>

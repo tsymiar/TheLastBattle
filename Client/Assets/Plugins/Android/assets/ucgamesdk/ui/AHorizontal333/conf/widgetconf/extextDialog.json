@@ -1,0 +1,19 @@
+{
+  "logoImageViewConfig"   : { },
+  "titleConfig"           : {
+    "visibile"              : false
+  },
+  "tipsConfig"            : {
+    "visibile"              : false
+  },
+  "leftButtonConfig"      : {
+    "topMargin"             : 145
+  },
+  "rightButtonConfig"     : {
+    "topMargin"             : 145
+  },
+  "closeButtonConfig"     : { },
+  "exContentLayoutConfig" : { },
+  "height"                : 210,
+  "parent"                : "exDialog"
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MapLoadCfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info MapID="1001">
+		<LoadScene>pvp_001</LoadScene>
+		<MiniMap>MiniMap_001</MiniMap>
+		<NameCn>圣光营地</NameCn>
+		<ACameraPos>1</ACameraPos>
+		<BCameraPos>6</BCameraPos>
+		<ShowPic>135</ShowPic>
+		<PlayerNum>6</PlayerNum>
+		<PlayerMode>3V3</PlayerMode>
+		<ShopID>1001</ShopID>
+		<CameraType>2</CameraType>
+		<IsAI>1</IsAI>
+		<IsNormal>1</IsNormal>
+		<IsRank>1</IsRank>
+		<IsTrain>0</IsTrain>
+		<IsDungeon>0</IsDungeon>
+	</info>
+	<info MapID="1002">
+		<LoadScene>pvp_002</LoadScene>
+		<MiniMap>MiniMap_002</MiniMap>
+		<NameCn>奥斯深渊</NameCn>
+		<ACameraPos>15</ACameraPos>
+		<BCameraPos>20</BCameraPos>
+		<ShowPic>133</ShowPic>
+		<PlayerNum>6</PlayerNum>
+		<PlayerMode>3V3</PlayerMode>
+		<ShopID>1001</ShopID>
+		<CameraType>1</CameraType>
+		<IsAI>1</IsAI>
+		<IsNormal>1</IsNormal>
+		<IsRank>1</IsRank>
+		<IsTrain>0</IsTrain>
+		<IsDungeon>0</IsDungeon>
+	</info>
+	<info MapID="1000">
+		<LoadScene>pvp_000</LoadScene>
+		<MiniMap>MiniMap_002</MiniMap>
+		<NameCn>奥斯深渊新手</NameCn>
+		<ACameraPos>100</ACameraPos>
+		<BCameraPos>105</BCameraPos>
+		<ShowPic>133</ShowPic>
+		<PlayerNum>6</PlayerNum>
+		<PlayerMode>3V3</PlayerMode>
+		<ShopID>1001</ShopID>
+		<CameraType>1</CameraType>
+		<IsAI>0</IsAI>
+		<IsNormal>0</IsNormal>
+		<IsRank>0</IsRank>
+		<IsTrain>1</IsTrain>
+		<IsDungeon>0</IsDungeon>
+	</info>
+</MapLoadCfg>

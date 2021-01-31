@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SkillCfg_purification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un32ID="110001">
+		<szName>隐身-净化测试</szName>
+		<n32UseMP>0</n32UseMP>
+		<n32UseHP>0</n32UseHP>
+		<n32UseCP>0</n32UseCP>
+		<bIsCoolDown>1</bIsCoolDown>
+		<n32TriggerRate>1000</n32TriggerRate>
+		<bIfAffectBuilding>0</bIfAffectBuilding>
+		<bIfAffectHero>1</bIfAffectHero>
+		<bIfAffectMonster>0</bIfAffectMonster>
+		<eTargetType>1</eTargetType>
+		<ePurifyWay>2</ePurifyWay>
+		<ParameterList>169999,169998</ParameterList>
+		<n32PurifyMaxCount>0</n32PurifyMaxCount>
+		<EventID>0</EventID>
+	</info>
+	<info un32ID="110002">
+		<szName>唯一被动-击杀者</szName>
+		<n32UseMP>0</n32UseMP>
+		<n32UseHP>0</n32UseHP>
+		<n32UseCP>0</n32UseCP>
+		<bIsCoolDown>0</bIsCoolDown>
+		<n32TriggerRate>1000</n32TriggerRate>
+		<bIfAffectBuilding>0</bIfAffectBuilding>
+		<bIfAffectHero>1</bIfAffectHero>
+		<bIfAffectMonster>0</bIfAffectMonster>
+		<eTargetType>1</eTargetType>
+		<ePurifyWay>2</ePurifyWay>
+		<ParameterList>160310</ParameterList>
+		<n32PurifyMaxCount>0</n32PurifyMaxCount>
+		<EventID>0</EventID>
+	</info>
+</SkillCfg_purification>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="MobileOptimized" content="320" />
+
+    <title>UC游戏充值中心</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css?v=1.6.0"/>
+    <script type="text/javascript" src="js/zepto.min.js?v=1.4.2"></script>
+    <script type="text/javascript" src="js/sdkBase.js?v=1.4.2"></script>
+    <script type="text/javascript" src="js/util.js?v=1.4.2"></script>
+    <script type="text/javascript" src="js/rsa-all-min.js?v=1.4.2"></script>
+    <script type="text/javascript" src="js/md5.js?v=1.4.2"></script>
+    <script type="text/javascript" src="js/zip.min.js"></script>
+    <script type="text/javascript" src="js/sdkRequest.js"></script>
+    <script type="text/javascript">
+        document.addEventListener("bridgeready", function () {
+            //SdkBase对象
+            var sdkB = new sdkBase();
+            var gameInfo = sdkB.request(sdkB.servType.COMMON, sdkB.actions.GET_GAME_INFO);
+            var sdkInfo = sdkB.request(sdkB.servType.COMMON, sdkB.actions.GET_SDK_INFO);
+            var userInfo = sdkB.request(sdkB.servType.COMMON, sdkB.actions.GET_CURR_USER);
+
+            var gameId = gameInfo.data.gameId;
+            var serverId = gameInfo.data.serverId;
+            var os = sdkInfo.data.os;
+            var ucid = userInfo.data.ucid;
+            
+            var mainUrl = "https://paycenter.uc.cn/game/sdk/main.htm";
+            var reqData = {'gid' : gameId, 'os' : os, 'srid' : serverId, 'ucid' : ucid, 'v' : '2.1.0'};
+            sdkRequest.signAppendData(reqData,function(appendData){
+            	mainUrl = mainUrl + "?" + appendData;
+            	var script = document.createElement('script');
+                script.setAttribute('src', mainUrl);
+                document.getElementsByTagName('head')[0].appendChild(script);
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="mainPanel">
+    <header id="headerPanel"></header>
+    <div id="payPanel">
+        <div id="indexPanel">
+            <div id="orderInfoPanel" class="tipClass">
+                <ul>
+                    <li>
+                        <div class="name" id="divAccTile">手游吧账号：</div>
+                        <div class="cont f14 gray" id="divAccName"><img src="images/wait.gif"> 正在加载...</div>
+                    </li>
+                    <li>
+                        <div class="name" id="divStoreTitle">游戏名称：</div>
+                        <div class="cont f14 gray" id="divStoreName"><img src="images/wait.gif"> 正在加载...</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="title">选择支付方式</div>
+            <div id="msgBoxPanel" class="gray f14 center" style="padding: 50px">
+                <img src="images/wait.gif"> 正在加载...
+            </div>
+        </div>
+    </div>
+    <footer id="footerPanel">
+        	客服热线：<a href="tel:02037029130">020-37029130</a>
+    </footer>
+</div>
+</body>
+</html>

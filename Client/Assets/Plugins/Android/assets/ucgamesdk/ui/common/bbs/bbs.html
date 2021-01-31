@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+<p style="text-align:center;margin-top:200px;">努力加载中...</p>
+<p style="text-align:center;">速度太慢？<a href="javascript:void(0)" onclick="goNow()" style='color:#ff5907;'>刷新</a>一下</p>
+<script type="text/javascript" src="../common/js/sdkBase.js?1397541548941"></script>
+<script type="text/javascript" src="../common/js/environment.js?1397541548941"></script>
+<script type="text/javascript">
+var userInfo, gameInfo;
+
+var fromsource = 'sdk_daohang';
+var reg = new RegExp("(^|\\?|&)from=([^&]*)(\\s|&|$)", "i");  
+if (reg.test(location.href)) {
+    var fromTmp = unescape(RegExp.$2.replace(/\+/g, " "));
+    if (fromTmp.indexOf('#') != -1) {
+        fromTmp = fromTmp.substr(0, fromTmp.indexOf('#'));
+    };
+    if(fromTmp.length > 0){
+        fromsource = fromTmp;
+    }
+}
+
+document.addEventListener( 'bridgeready',  function() {
+    var sdkBaseObj = new sdkBase ();
+    setTimeout(function(){
+        sdkBaseObj.request(sdkBaseObj.servType.COMMON, sdkBaseObj.actions.STAT, {
+            business :  'page.bbs',
+            step :      'enter'
+        });
+    }, 0);
+
+    userInfo = sdkBaseObj.request ( sdkBaseObj.servType.COMMON, sdkBaseObj.actions.GET_CURR_USER );
+    gameInfo = sdkBaseObj.request(sdkBaseObj.servType.COMMON, sdkBaseObj.actions.GET_GAME_INFO);
+    if(userInfo && userInfo.success && gameInfo && gameInfo.success) {
+        window.location.href = eConfig.newbbs + '?gameid=' + gameInfo.data.gameId + 
+                        '&sid=' + userInfo.data.sid + '&cpid=' + gameInfo.data.cpId + 
+                        '&channelid=' + gameInfo.data.channelId + '&serverid=' + gameInfo.data.serverId + '&appchannel=sdkandroid&from=' + fromsource;
+    } else {
+        window.location.href = '../user/user.html';
+    }
+});
+
+function goNow() {
+    setTimeout(function(){
+        S.sdkBase.request(S.sdkBase.servType.COMMON, S.sdkBase.actions.STAT, {
+            business :  'h5_BBS_refresh_l',
+            step :      'enter'
+        });
+        S.sdkBase.request(S.sdkBase.servType.COMMON, S.sdkBase.actions.STAT, {
+            business :  'h5_BBS_refresh_l',
+            step :      'close'
+        });
+    }, 0);
+    
+    if(userInfo && userInfo.success && gameInfo && gameInfo.success) {
+        window.location.href = eConfig.newbbs + '?gameid=' + gameInfo.data.gameId + 
+                            '&sid=' + userInfo.data.sid + '&cpid=' + gameInfo.data.cpId + 
+                            '&channelid=' + gameInfo.data.channelId + '&serverid=' + gameInfo.data.serverId + '&appchannel=sdkandroid&from=' + fromsource;
+    } else {
+        window.location.href = '../user/user.html';
+    }
+}
+</script>
+</body>
+</html>

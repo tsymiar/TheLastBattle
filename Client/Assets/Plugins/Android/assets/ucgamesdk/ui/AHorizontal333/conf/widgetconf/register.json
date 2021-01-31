@@ -1,0 +1,133 @@
+{
+  "CLASS_NAME"           : "RegisterLayoutConfig",
+  "logoImageViewConfig"  : {
+    "CLASS_NAME"           : "ImageViewConfig",
+    "src"                  : "logo.png",
+    "width"                : 80,
+    "height"               : 45,
+    "bgNormalPath"         : "logo.png",
+    "topMargin"            : 24,
+    "leftMargin"           : 24,
+    "visibile"             : true
+  },
+  "titleConfig"          : {
+    "CLASS_NAME"           : "TextConfig",
+    "textColor"            : "#ffffff",
+    "textSize"             : 24,
+    "width"                : 100,
+    "height"               : 45,
+    "topMargin"            : 33,
+    "leftMargin"           : 115,
+    "visibile"             : true
+  },
+  "tipsConfig"           : {
+    "CLASS_NAME"           : "TextConfig",
+    "textColor"            : "#a0a0a0",
+    "textSize"             : 18,
+    "width"                : 386,
+    "height"               : 40,
+    "topMargin"            : 158,
+    "leftMargin"           : 24,
+    "visibile"             : true
+  },
+  "inputWidgetOneConfig" : {
+    "CLASS_NAME"           : "InputWidgetConfig",
+    "labelTextViewConfig"  : {
+      "CLASS_NAME"           : "TextConfig",
+      "visibile"             : true
+    },
+    "inputEditTextConfig"  : {
+      "CLASS_NAME"           : "EditTextConfig",
+      "inputType"            : 1,
+      "isPassword"           : false,
+      "enabled"              : true,
+      "textColor"            : "#000000",
+      "textSize"             : 24,
+      "width"                : 371,
+      "height"               : 51,
+      "bgColor"              : "#66ffffff",
+      "leftMargin"           : 5,
+      "visibile"             : true
+    },
+    "rightButtonConfig"    : {
+      "CLASS_NAME"           : "ButtonConfig",
+      "textColor"            : "#000000",
+      "visibile"             : true
+    },
+    "width"                : 410,
+    "height"               : 60,
+    "bgNormalPath"         : "input_bg.9.png",
+    "bgFocusPath"          : "input_bg.9.png",
+    "bgColor"              : "#ffffff",
+    "topMargin"            : 94,
+    "visibile"             : true
+  },
+  "inputWidgetTwoConfig" : {
+    "CLASS_NAME"           : "InputWidgetConfig",
+    "labelTextViewConfig"  : {
+      "CLASS_NAME"           : "TextConfig",
+      "visibile"             : true
+    },
+    "inputEditTextConfig"  : {
+      "CLASS_NAME"           : "EditTextConfig",
+      "inputType"            : 1,
+      "isPassword"           : false,
+      "enabled"              : true,
+      "textColor"            : "#000000",
+      "textSize"             : 24,
+      "width"                : 371,
+      "height"               : 51,
+      "bgColor"              : "#66ffffff",
+      "leftMargin"           : 5,
+      "visibile"             : true
+    },
+    "rightButtonConfig"    : {
+      "CLASS_NAME"           : "ButtonConfig",
+      "textColor"            : "#000000",
+      "visibile"             : true
+    },
+    "width"                : 410,
+    "height"               : 60,
+    "bgNormalPath"         : "input_bg.9.png",
+    "bgFocusPath"          : "input_bg.9.png",
+    "bgColor"              : "#ffffff",
+    "visibile"             : true
+  },
+  "buttonConfig"         : {
+    "CLASS_NAME"           : "ButtonConfig",
+    "textColor"            : "#ffffffff",
+    "textSize"             : 24,
+    "width"                : 410,
+    "height"               : 60,
+    "bgNormalPath"         : "btn_orange.9.png",
+    "bgFocusPath"          : "btn_orange_press.9.png",
+    "topMargin"            : 200,
+    "visibile"             : true
+  },
+  "registerConfig"       : {
+    "CLASS_NAME"           : "TextConfig",
+    "textColor"            : "#a0a0a0",
+    "textPressColor"       : "#ffffff",
+    "text"                 : "返回登录",
+    "textSize"             : 18,
+    "icon"                 : "loginup_icon_arrow.png",
+    "iconDirection"        : 2,
+    "width"                : 100,
+    "height"               : 40,
+    "bgNormalPath"         : "loginup_bg.9.png",
+    "bgFocusPath"          : "loginup_bg.9.png",
+    "rightMargin"          : 12,
+    "visibile"             : true
+  },
+  "licenseConfig"        : {
+    "CLASS_NAME"           : "TextConfig",
+    "visibile"             : false
+  },
+  "width"                : 460,
+  "height"               : 405,
+  "x"                    : -1,
+  "y"                    : -1,
+  "bgNormalPath"         : "bg.9.png",
+  "bgColor"              : "",
+  "visibile"             : true
+}

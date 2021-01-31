@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project nbr="AHorizontal333" enable="true" packTime="201405301655" resFlag="UC" default="true">
+	<node nbr="common" ver="140403135610" entry=""/>
+	<node nbr="general" ver="140403140049" entry=""/>
+	<node nbr="game" ver="140403135737" entry="game.html"/>
+	<node nbr="pay"  ver="140327102744" entry="start.html"/>
+	<node nbr="user" ver="140403135304" entry="user_landscape.html"/>
+	<node nbr="bbs" ver="140403135432" entry="bbs.html"/>
+	<node nbr="feedback" ver="140404140013" entry="feedback.html"/>
+	<node nbr="conf" ver="140403135650" entry=""/>
+	<node nbr="secrecy" ver="140403143153" entry="secrecy.html" />
+    <node nbr="vip" ver="140404120043" entry="http://vip.9game.cn/member/sdkOpen" />
+	<node nbr="codecenter" ver="140403135534" entry="codecenter.html"/>
+	<node nbr="jars" ver="140408183841" entry=""/>
+	<node nbr="widget" ver="140404120402" entry=""/>
+	
+	<clientapi apiName="login" entryNodeNbr="user" hash="" />
+	<clientapi apiName="pay" entryNodeNbr="pay" hash="" />
+	<clientapi apiName="user_center" entryNodeNbr="user" hash="#!user"/>
+	<clientapi apiName="update_pwd" entryNodeNbr="user" hash="#!user/updatePassword/true"/>
+	<clientapi apiName="login_game" entryNodeNbr="user" hash="#!sso/oldAcc"/>
+	<clientapi apiName="register" entryNodeNbr="user" hash="#!user/register"/>
+	<clientapi apiName="alpha_code" entryNodeNbr="game" hash="#!game/validCode/"/>
+	<clientapi apiName="game_not_open" entryNodeNbr="game" hash="#!game/notOpen"/>
+	<clientapi apiName="forget_pwd" entryNodeNbr="user" hash="#!findPassword/passwordRetake/messageRetake"/>
+	<clientapi apiName="agreement" entryNodeNbr="user" hash="#!user/agreement"/>
+	
+	<clientapiForUrl apiName="strategy" url="http://a.9game.cn/sdk/list.html"/>
+</project>
+
+<project nbr="AHorizontalForSYB2" enable="true" packTime="201405301655" resFlag="SYB">
+	<node nbr="common" ver="140403135610" entry=""/>
+	<node nbr="general" ver="140403140049" entry=""/>
+	<node nbr="game" ver="140403135737" entry="game.html"/>
+	<node nbr="pay"  ver="140403141219" entry="start.html"/>
+	<node nbr="user" ver="140403135304" entry="user_landscape.html"/>
+	<node nbr="bbs" ver="140403140901" entry="http://sdk.g.uc.cn/public/syb/transitbbs.html"/>
+	<node nbr="feedback" ver="140403141133" entry="http://sjyx8.cn/igame/"/>
+	<node nbr="conf" ver="140403141350" entry=""/>
+	<node nbr="secrecy" ver="140403143153" entry="secrecy.html" />
+    <node nbr="vip" ver="131127120036" entry="http://vip.9game.cn/member/sdkOpen" />
+	<node nbr="codecenter" ver="140403141050" entry="codecenter.html"/>
+	<node nbr="jars" ver="140403142050" entry=""/>
+	<node nbr="widget" ver="140403142133" entry=""/>
+	
+	<clientapi apiName="login" entryNodeNbr="user" hash="" />
+	<clientapi apiName="pay" entryNodeNbr="pay" hash="" />
+	<clientapi apiName="user_center" entryNodeNbr="user" hash="#!user"/>
+	<clientapi apiName="update_pwd" entryNodeNbr="user" hash="#!user/updatePassword/true"/>
+	<clientapi apiName="login_game" entryNodeNbr="user" hash="#!sso/oldAcc"/>
+	<clientapi apiName="register" entryNodeNbr="user" hash="#!user/register"/>
+	<clientapi apiName="alpha_code" entryNodeNbr="game" hash="#!game/validCode/"/>
+	<clientapi apiName="game_not_open" entryNodeNbr="game" hash="#!game/notOpen"/>
+	<clientapi apiName="forget_pwd" entryNodeNbr="user" hash="#!findPassword/passwordRetake/messageRetake"/>
+	<clientapi apiName="agreement" entryNodeNbr="user" hash="#!user/agreement"/>
+	
+	<clientapiForUrl apiName="strategy" url="http://a.9game.cn/sdk/list.html"/>
+</project>
+
+

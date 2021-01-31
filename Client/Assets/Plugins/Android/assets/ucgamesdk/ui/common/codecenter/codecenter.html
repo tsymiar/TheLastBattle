@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+<script type="text/javascript" src="../common/js/sdkBase.js?1397541548941"></script>
+<script type="text/javascript" src="../common/js/environment.js?1397541548941"></script>
+<script type="text/javascript">
+document.addEventListener( 'bridgeready',  function() {
+    var sdkBaseObj = new sdkBase ();
+    sdkBaseObj.request(sdkBaseObj.servType.COMMON, sdkBaseObj.actions.STAT, {
+        business :  'page.user.h5_Code_p.usercenter',
+        step :      'enter'
+    });
+    var userInfo = sdkBaseObj.request ( sdkBaseObj.servType.COMMON, sdkBaseObj.actions.GET_CURR_USER );
+    var gameInfo = sdkBaseObj.request(sdkBaseObj.servType.COMMON, sdkBaseObj.actions.GET_GAME_INFO);
+    var sdkInfo = sdkBaseObj.request(sdkBaseObj.servType.COMMON, sdkBaseObj.actions.GET_SDK_INFO);
+
+    var fromsource = 'sdk_user';
+    var reg = new RegExp("(^|\\?|&)from=([^&]*)(\\s|&|$)", "i");  
+    if (reg.test(location.href)) {
+        var fromTmp = unescape(RegExp.$2.replace(/\+/g, " "));
+        if (fromTmp.indexOf('#') != -1) {
+            fromTmp = fromTmp.substr(0, fromTmp.indexOf('#'));
+        };
+        if(fromTmp.length > 0){
+            fromsource = fromTmp;
+        }
+    }
+    if(userInfo && userInfo.success && gameInfo && gameInfo.success && sdkInfo && sdkInfo.success) {
+        window.location.href = eConfig.validCodeCenterUrl + '?from=' + fromsource + '&caller=sdk' + 
+                        '&version=' + sdkInfo.data.ve + '&gameId=' + gameInfo.data.gameId + 
+                        '&sid=' + userInfo.data.sid + '#!codeCenter/usercenter';
+    } else {
+        window.location.href = '../user/user.html';
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+  "CLASS_NAME"     : "NoticeDialogConfig",
+  "titleConfig"    : {
+    "CLASS_NAME"     : "TextConfig",
+    "textColor"      : "#ffffff",
+    "text"           : "",
+    "textSize"       : 24,
+    "width"          : 410,
+    "height"         : 60,
+    "bgColor"        : "#525252",
+    "visibile"       : true
+  },
+  "contentConfig"  : {
+    "CLASS_NAME"     : "TextConfig",
+    "textColor"      : "#000000",
+    "text"           : "",
+    "textSize"       : 24,
+    "width"          : 390,
+    "bgColor"        : "#eaebed",
+    "topMargin"      : 10,
+    "leftMargin"     : 20,
+    "rightMargin"    : 20,
+    "bottomMargin"   : 10,
+    "visibile"       : true
+  },
+  "btnConfig"      : {
+    "CLASS_NAME"     : "ButtonConfig",
+    "textColor"      : "#ffffffff",
+    "text"           : "确定",
+    "textSize"       : 24,
+    "width"          : 390,
+    "height"         : 60,
+    "bgNormalPath"   : "btn_orange.9.png",
+    "bgFocusPath"    : "btn_orange_press.9.png",
+    "topMargin"      : 20,
+    "leftMargin"     : 20,
+    "rightMargin"    : 20,
+    "bottomMargin"   : 20,
+    "visibile"       : true
+  },
+  "closeBtnConfig" : {
+    "CLASS_NAME"     : "ButtonConfig",
+    "text"           : "",
+    "width"          : 100,
+    "height"         : 55,
+    "bgNormalPath"   : "cancel.png",
+    "bgFocusPath"    : "cancel.png",
+    "visibile"       : true
+  },
+  "width"          : 400,
+  "height"         : 405,
+  "visibile"       : true
+}

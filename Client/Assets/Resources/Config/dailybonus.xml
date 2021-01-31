@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DailyBonus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info n32Days="1">
+		<n32Type>1</n32Type>
+		<n32ItemID>2</n32ItemID>
+		<n32ItemNum>120</n32ItemNum>
+	</info>
+	<info n32Days="2">
+		<n32Type>1</n32Type>
+		<n32ItemID>100010</n32ItemID>
+		<n32ItemNum>1</n32ItemNum>
+	</info>
+	<info n32Days="3">
+		<n32Type>1</n32Type>
+		<n32ItemID>130002</n32ItemID>
+		<n32ItemNum>1</n32ItemNum>
+	</info>
+	<info n32Days="4">
+		<n32Type>1</n32Type>
+		<n32ItemID>1</n32ItemID>
+		<n32ItemNum>2000</n32ItemNum>
+	</info>
+	<info n32Days="5">
+		<n32Type>1</n32Type>
+		<n32ItemID>2</n32ItemID>
+		<n32ItemNum>300</n32ItemNum>
+	</info>
+	<info n32Days="6">
+		<n32Type>1</n32Type>
+		<n32ItemID>130006</n32ItemID>
+		<n32ItemNum>10</n32ItemNum>
+	</info>
+	<info n32Days="7">
+		<n32Type>1</n32Type>
+		<n32ItemID>100013</n32ItemID>
+		<n32ItemNum>1</n32ItemNum>
+	</info>
+	<info n32Days="8">
+		<n32Type>1</n32Type>
+		<n32ItemID>130001</n32ItemID>
+		<n32ItemNum>1</n32ItemNum>
+	</info>
+	<info n32Days="9">
+		<n32Type>1</n32Type>
+		<n32ItemID>130008</n32ItemID>
+		<n32ItemNum>10</n32ItemNum>
+	</info>
+	<info n32Days="10">
+		<n32Type>1</n32Type>
+		<n32ItemID>2</n32ItemID>
+		<n32ItemNum>400</n32ItemNum>
+	</info>
+	<info n32Days="11">
+		<n32Type>1</n32Type>
+		<n32ItemID>1</n32ItemID>
+		<n32ItemNum>3000</n32ItemNum>
+	</info>
+	<info n32Days="12">
+		<n32Type>1</n32Type>
+		<n32ItemID>2</n32ItemID>
+		<n32ItemNum>500</n32ItemNum>
+	</info>
+	<info n32Days="13">
+		<n32Type>1</n32Type>
+		<n32ItemID>130002</n32ItemID>
+		<n32ItemNum>1</n32ItemNum>
+	</info>
+	<info n32Days="14">
+		<n32Type>2</n32Type>
+		<n32ItemID>130003</n32ItemID>
+		<n32ItemNum>1</n32ItemNum>
+	</info>
+</DailyBonus>

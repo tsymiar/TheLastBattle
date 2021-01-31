@@ -1,0 +1,27 @@
+{
+  "logoImageViewConfig" : { },
+  "titleConfig"         : { },
+  "titleHintsConfig"    : { },
+  "tipsConfig"          : {
+    "text"                : "我们将发送验证码到该手机"
+  },
+  "inputWidgetConfig"   : {
+    "labelTextViewConfig" : { },
+    "inputEditTextConfig" : {
+      "hint"                : "请输入手机号",
+      "inputType"           : 3
+    },
+    "rightButtonConfig"   : {
+      "visibile"            : false
+    }
+  },
+  "buttonConfig"        : {
+    "text"                : "发送验证码"
+  },
+  "thirdPartyConfig"    : {
+    "captionConfig"       : { }
+  },
+  "registerConfig"      : { },
+  "noticeConfig"        : { },
+  "parent"              : "phoneLogin"
+}

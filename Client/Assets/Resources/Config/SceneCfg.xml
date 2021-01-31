@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SceneCfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un32SceneID="1001">
+		<SceneName>初级场</SceneName>
+		<un8Level>1</un8Level>
+		<n32GoldCost>100</n32GoldCost>
+	</info>
+	<info un32SceneID="1002">
+		<SceneName>中级场</SceneName>
+		<un8Level>3</un8Level>
+		<n32GoldCost>300</n32GoldCost>
+	</info>
+	<info un32SceneID="1003">
+		<SceneName>高级场</SceneName>
+		<un8Level>5</un8Level>
+		<n32GoldCost>500</n32GoldCost>
+	</info>
+	<info un32SceneID="1004">
+		<SceneName>新手引导1</SceneName>
+		<un8Level>1</un8Level>
+		<n32GoldCost>0</n32GoldCost>
+	</info>
+	<info un32SceneID="1005">
+		<SceneName>新手引导2</SceneName>
+		<un8Level>3</un8Level>
+		<n32GoldCost>0</n32GoldCost>
+	</info>
+	<info un32SceneID="1006">
+		<SceneName>新手引导3</SceneName>
+		<un8Level>5</un8Level>
+		<n32GoldCost>0</n32GoldCost>
+	</info>
+</SceneCfg>

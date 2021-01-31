@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<talkingdata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    		<switch>0</switch>
+		<appId>291CD0D31B7B4470F35147075E2090C7</appId>
+		<desc>talkingdata</desc>
+		<url>api.talkinggame.com</url>
+		<port>80</port>
+		<other>/api/charge/291CD0D31B7B4470F35147075E2090C7</other>
+</talkingdata>

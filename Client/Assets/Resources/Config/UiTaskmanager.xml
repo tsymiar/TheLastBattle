@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UiTaskmanager xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="10001">
+		<sontaskid>1000;1002;1003</sontaskid>
+		<trigger>-5000</trigger>
+		<NextID>10002</NextID>
+		<istrigger>0</istrigger>
+	</info>
+	<info id="10002">
+		<sontaskid>1004</sontaskid>
+		<trigger>-5001</trigger>
+		<NextID>10003</NextID>
+		<istrigger>0</istrigger>
+	</info>
+	<info id="10003">
+		<sontaskid>1009</sontaskid>
+		<trigger>-5005</trigger>
+		<NextID>-1</NextID>
+		<istrigger>0</istrigger>
+	</info>
+	<info id="10004">
+		<sontaskid>1010</sontaskid>
+		<trigger>-5007</trigger>
+		<NextID>10008</NextID>
+	</info>
+	<info id="10008">
+		<sontaskid>8001;8002</sontaskid>
+		<trigger>-5006</trigger>
+		<NextID>10007</NextID>
+		<istrigger>0</istrigger>
+	</info>
+	<info id="10007">
+		<sontaskid>1008</sontaskid>
+		<trigger>-5004</trigger>
+		<NextID>10005</NextID>
+		<istrigger>0</istrigger>
+	</info>
+	<info id="10005">
+		<sontaskid>1005</sontaskid>
+		<trigger>-5002</trigger>
+		<NextID>10006</NextID>
+		<istrigger>0</istrigger>
+	</info>
+	<info id="10006">
+		<sontaskid>1006;1007</sontaskid>
+		<trigger>-5003</trigger>
+		<NextID>-1</NextID>
+		<istrigger>0</istrigger>
+	</info>
+</UiTaskmanager>

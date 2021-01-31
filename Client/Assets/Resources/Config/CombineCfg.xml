@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CombineCfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un32ItemID="30001">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30002">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30003">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30004">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30005">
+		<un32ChildID1>30011</un32ChildID1>
+		<un32ChildID2>30015</un32ChildID2>
+	</info>
+	<info un32ItemID="30006">
+		<un32ChildID1>30100</un32ChildID1>
+		<un32ChildID2>30010</un32ChildID2>
+	</info>
+	<info un32ItemID="30007">
+		<un32ChildID1>30013</un32ChildID1>
+		<un32ChildID2>30016</un32ChildID2>
+	</info>
+	<info un32ItemID="30008">
+		<un32ChildID1>30005</un32ChildID1>
+		<un32ChildID2>30026</un32ChildID2>
+	</info>
+	<info un32ItemID="30009">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30010">
+		<un32ChildID1>30014</un32ChildID1>
+		<un32ChildID2>30015</un32ChildID2>
+	</info>
+	<info un32ItemID="30011">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30012">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30013">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30014">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30015">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30016">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30017">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30018">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30019">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30020">
+		<un32ChildID1>30038</un32ChildID1>
+		<un32ChildID2>30100</un32ChildID2>
+	</info>
+	<info un32ItemID="30021">
+		<un32ChildID1>30034</un32ChildID1>
+		<un32ChildID2>30102</un32ChildID2>
+	</info>
+	<info un32ItemID="30022">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30023">
+		<un32ChildID1>30022</un32ChildID1>
+		<un32ChildID2>30016</un32ChildID2>
+	</info>
+	<info un32ItemID="30024">
+		<un32ChildID1>30027</un32ChildID1>
+		<un32ChildID2>30040</un32ChildID2>
+	</info>
+	<info un32ItemID="30025">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30026">
+		<un32ChildID1>30025</un32ChildID1>
+		<un32ChildID2>30017</un32ChildID2>
+	</info>
+	<info un32ItemID="30027">
+		<un32ChildID1>30018</un32ChildID1>
+		<un32ChildID2>30022</un32ChildID2>
+	</info>
+	<info un32ItemID="30028">
+		<un32ChildID1>30129</un32ChildID1>
+		<un32ChildID2>30023</un32ChildID2>
+	</info>
+	<info un32ItemID="30029">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30030">
+		<un32ChildID1>30011</un32ChildID1>
+		<un32ChildID2>30029</un32ChildID2>
+	</info>
+	<info un32ItemID="30031">
+		<un32ChildID1>30022</un32ChildID1>
+		<un32ChildID2>30026</un32ChildID2>
+	</info>
+	<info un32ItemID="30032">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30033">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30034">
+		<un32ChildID1>30033</un32ChildID1>
+		<un32ChildID2>30011</un32ChildID2>
+	</info>
+	<info un32ItemID="30035">
+		<un32ChildID1>30023</un32ChildID1>
+		<un32ChildID2>30012</un32ChildID2>
+	</info>
+	<info un32ItemID="30036">
+		<un32ChildID1>30039</un32ChildID1>
+		<un32ChildID2>30039</un32ChildID2>
+	</info>
+	<info un32ItemID="30037">
+		<un32ChildID1>30121</un32ChildID1>
+		<un32ChildID2>30040</un32ChildID2>
+	</info>
+	<info un32ItemID="30038">
+		<un32ChildID1>30017</un32ChildID1>
+		<un32ChildID2>30017</un32ChildID2>
+	</info>
+	<info un32ItemID="30039">
+		<un32ChildID1>30033</un32ChildID1>
+		<un32ChildID2>30015</un32ChildID2>
+	</info>
+	<info un32ItemID="30040">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30041">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30042">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30043">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30044">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30045">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30046">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30047">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30048">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30049">
+		<un32ChildID1>30121</un32ChildID1>
+		<un32ChildID2>30017</un32ChildID2>
+	</info>
+	<info un32ItemID="30050">
+		<un32ChildID1>30013</un32ChildID1>
+		<un32ChildID2>30090</un32ChildID2>
+	</info>
+	<info un32ItemID="30051">
+		<un32ChildID1>30038</un32ChildID1>
+		<un32ChildID2>30009</un32ChildID2>
+	</info>
+	<info un32ItemID="30052">
+		<un32ChildID1>30012</un32ChildID1>
+		<un32ChildID2>30014</un32ChildID2>
+	</info>
+	<info un32ItemID="30053">
+		<un32ChildID1>30030</un32ChildID1>
+		<un32ChildID2>30013</un32ChildID2>
+	</info>
+	<info un32ItemID="30054">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30055">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30056">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30057">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30058">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30059">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30060">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30061">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30062">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30063">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30064">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30065">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30066">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30067">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30068">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30069">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30070">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30071">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30072">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30073">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30074">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30075">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30076">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30077">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30078">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30079">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30080">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30081">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30082">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30083">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30084">
+		<un32ChildID1>30032</un32ChildID1>
+		<un32ChildID2>30017</un32ChildID2>
+	</info>
+	<info un32ItemID="30085">
+		<un32ChildID1>30032</un32ChildID1>
+		<un32ChildID2>30019</un32ChildID2>
+	</info>
+	<info un32ItemID="30086">
+		<un32ChildID1>30032</un32ChildID1>
+		<un32ChildID2>30014</un32ChildID2>
+	</info>
+	<info un32ItemID="30087">
+		<un32ChildID1>30032</un32ChildID1>
+		<un32ChildID2>30011</un32ChildID2>
+	</info>
+	<info un32ItemID="30088">
+		<un32ChildID1>30032</un32ChildID1>
+		<un32ChildID2>30092</un32ChildID2>
+	</info>
+	<info un32ItemID="30089">
+		<un32ChildID1>30090</un32ChildID1>
+		<un32ChildID2>30033</un32ChildID2>
+	</info>
+	<info un32ItemID="30090">
+		<un32ChildID1>30025</un32ChildID1>
+		<un32ChildID2>30011</un32ChildID2>
+	</info>
+	<info un32ItemID="30091">
+		<un32ChildID1>30089</un32ChildID1>
+		<un32ChildID2>30013</un32ChildID2>
+	</info>
+	<info un32ItemID="30092">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30093">
+		<un32ChildID1>30040</un32ChildID1>
+		<un32ChildID2>30029</un32ChildID2>
+	</info>
+	<info un32ItemID="30094">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30095">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30096">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30097">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30098">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30099">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30100">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30101">
+		<un32ChildID1>30027</un32ChildID1>
+		<un32ChildID2>30027</un32ChildID2>
+	</info>
+	<info un32ItemID="30102">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30103">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30104">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30105">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30106">
+		<un32ChildID1>30121</un32ChildID1>
+		<un32ChildID2>30012</un32ChildID2>
+	</info>
+	<info un32ItemID="30107">
+		<un32ChildID1>30122</un32ChildID1>
+		<un32ChildID2>30038</un32ChildID2>
+	</info>
+	<info un32ItemID="30108">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30109">
+		<un32ChildID1>30122</un32ChildID1>
+		<un32ChildID2>30128</un32ChildID2>
+	</info>
+	<info un32ItemID="30110">
+		<un32ChildID1>30121</un32ChildID1>
+		<un32ChildID2>30019</un32ChildID2>
+	</info>
+	<info un32ItemID="30111">
+		<un32ChildID1>30100</un32ChildID1>
+		<un32ChildID2>30029</un32ChildID2>
+	</info>
+	<info un32ItemID="30112">
+		<un32ChildID1>30124</un32ChildID1>
+		<un32ChildID2>30123</un32ChildID2>
+	</info>
+	<info un32ItemID="30113">
+		<un32ChildID1>30129</un32ChildID1>
+		<un32ChildID2>30120</un32ChildID2>
+	</info>
+	<info un32ItemID="30114">
+		<un32ChildID1>30126</un32ChildID1>
+		<un32ChildID2>30038</un32ChildID2>
+	</info>
+	<info un32ItemID="30115">
+		<un32ChildID1>30125</un32ChildID1>
+		<un32ChildID2>30129</un32ChildID2>
+	</info>
+	<info un32ItemID="30116">
+		<un32ChildID1>30120</un32ChildID1>
+		<un32ChildID2>30121</un32ChildID2>
+	</info>
+	<info un32ItemID="30117">
+		<un32ChildID1>30127</un32ChildID1>
+		<un32ChildID2>30025</un32ChildID2>
+	</info>
+	<info un32ItemID="30118">
+		<un32ChildID1>30130</un32ChildID1>
+		<un32ChildID2>30128</un32ChildID2>
+	</info>
+	<info un32ItemID="30119">
+		<un32ChildID1>30023</un32ChildID1>
+		<un32ChildID2>30016</un32ChildID2>
+	</info>
+	<info un32ItemID="30120">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30121">
+		<un32ChildID1>30012</un32ChildID1>
+		<un32ChildID2>30012</un32ChildID2>
+	</info>
+	<info un32ItemID="30122">
+		<un32ChildID1>30120</un32ChildID1>
+		<un32ChildID2>30018</un32ChildID2>
+	</info>
+	<info un32ItemID="30123">
+		<un32ChildID1>30100</un32ChildID1>
+		<un32ChildID2>30016</un32ChildID2>
+	</info>
+	<info un32ItemID="30124">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30125">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30126">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+	<info un32ItemID="30127">
+		<un32ChildID1>30125</un32ChildID1>
+		<un32ChildID2>30016</un32ChildID2>
+	</info>
+	<info un32ItemID="30128">
+		<un32ChildID1>30019</un32ChildID1>
+		<un32ChildID2>30019</un32ChildID2>
+	</info>
+	<info un32ItemID="30129">
+		<un32ChildID1>30033</un32ChildID1>
+		<un32ChildID2>30013</un32ChildID2>
+	</info>
+	<info un32ItemID="30130">
+		<un32ChildID1>0</un32ChildID1>
+		<un32ChildID2>0</un32ChildID2>
+	</info>
+</CombineCfg>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UiTaskEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="1000">
+		<startEvent>-8000</startEvent>
+		<endEvent>-1000</endEvent>
+		<textpath>Center/character</textpath>
+		<textpos>240;240;0</textpos>
+		<content>请输入您的账号昵称</content>
+		<isshield>1</isshield>
+	</info>
+	<info id="1001">
+		<startEvent>-8001</startEvent>
+		<endEvent>-1001</endEvent>
+		<textpath>Center/character</textpath>
+		<textpos>0;-186;0</textpos>
+		<content>请选择您的角色性别</content>
+		<isshield>1</isshield>
+	</info>
+	<info id="1002">
+		<startEvent>-8002</startEvent>
+		<endEvent>-1002</endEvent>
+		<textpath>Center/character</textpath>
+		<textpos>315;30;0</textpos>
+		<content>请选择您的角色头像</content>
+		<isshield>1</isshield>
+	</info>
+	<info id="1003">
+		<startEvent>-8003</startEvent>
+		<endEvent>-1003</endEvent>
+		<textpath>Center/character</textpath>
+		<textpos>270;-235;0</textpos>
+		<content>点击确定完成注册</content>
+		<isshield>1</isshield>
+	</info>
+	<info id="8003">
+		<startEvent>-8013</startEvent>
+		<endEvent>-1013</endEvent>
+		<textpath>Center/xuanzhi</textpath>
+		<textpos>0;95;0</textpos>
+		<isshield>1</isshield>
+	</info>
+	<info id="1004">
+		<startEvent>-8004</startEvent>
+		<endEvent>-1004</endEvent>
+		<textpath>Center/character</textpath>
+		<textpos>-16;-240;0</textpos>
+		<content>附近有个敌方基地，咱们找它练练手！</content>
+		<isshield>1</isshield>
+	</info>
+	<info id="1005">
+		<startEvent>-8005</startEvent>
+		<endEvent>-1005</endEvent>
+		<textpath>Center/character</textpath>
+		<textpos>275;-140;0</textpos>
+		<content>点击进入自定义游戏，可以自己创建房间哦。</content>
+		<isshield>1</isshield>
+	</info>
+	<info id="1006">
+		<startEvent>-8006</startEvent>
+		<endEvent>-1006</endEvent>
+		<textpath>Center/character</textpath>
+		<textpos>-13;-95;0</textpos>
+		<content>点击初级场，选择游戏模式。</content>
+		<isshield>1</isshield>
+	</info>
+	<info id="1007">
+		<startEvent>-8007</startEvent>
+		<endEvent>-1007</endEvent>
+		<textpath>Center/character0</textpath>
+		<textpos>-5;-203;0</textpos>
+		<content>点击创建房间，准备进入游戏吧。</content>
+		<isshield>1</isshield>
+	</info>
+	<info id="1008">
+		<startEvent>-8008</startEvent>
+		<endEvent>-1008</endEvent>
+		<textpath>Center/character</textpath>
+		<textpos>-217;-185;0</textpos>
+		<content>现在点击返回按钮，返回到游戏大厅。</content>
+		<isshield>1</isshield>
+	</info>
+	<info id="1009">
+		<startEvent>-8009</startEvent>
+		<endEvent>-1009</endEvent>
+		<textpath>Center/character</textpath>
+		<textpos>-60;80;0</textpos>
+		<content>点击搜寻战场敌人，开始厮杀！</content>
+		<isshield>1</isshield>
+	</info>
+	<info id="1010">
+		<startEvent>-8010</startEvent>
+		<endEvent>-1010</endEvent>
+		<textpath>Center/character0</textpath>
+		<textpos>180;-185;0</textpos>
+		<content>准备好了吗？</content>
+		<isshield>1</isshield>
+	</info>
+	<info id="8001">
+		<startEvent>-8011</startEvent>
+		<endEvent>-1011</endEvent>
+		<textpath>Center/character7</textpath>
+		<textpos>336;270;0</textpos>
+		<content>点击英雄头像，选择英雄参加战斗吧！</content>
+		<isshield>0</isshield>
+	</info>
+	<info id="8002">
+		<startEvent>-8012</startEvent>
+		<endEvent>-1012</endEvent>
+		<textpath>Center/character10</textpath>
+		<textpos>275;-208;0</textpos>
+		<content>点击按钮，确定英雄。</content>
+		<isshield>0</isshield>
+	</info>
+</UiTaskEvent>

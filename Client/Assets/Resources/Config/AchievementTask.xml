@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AchievementTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info id="1001001">
+		<type>0</type>
+		<NextID>1001002</NextID>
+		<describe>累积完成10场普通对战</describe>
+		<task>5</task>
+		<amount>1</amount>
+		<params>1001</params>
+		<award>1</award>
+		<number>20</number>
+	</info>
+	<info id="1001002">
+		<type>0</type>
+		<NextID>1001003</NextID>
+		<describe>累积完成25场普通对战</describe>
+		<task>5</task>
+		<amount>2</amount>
+		<params>1001</params>
+		<award>1</award>
+		<number>40</number>
+	</info>
+	<info id="1001003">
+		<type>0</type>
+		<NextID>1001004</NextID>
+		<describe>累积完成50场普通对战</describe>
+		<task>5</task>
+		<amount>3</amount>
+		<params>1001</params>
+		<award>1</award>
+		<number>60</number>
+	</info>
+	<info id="1001004">
+		<type>0</type>
+		<NextID>1001005</NextID>
+		<describe>累积完成100场普通对战</describe>
+		<task>5</task>
+		<amount>4</amount>
+		<params>1001</params>
+		<award>1</award>
+		<number>80</number>
+	</info>
+	<info id="1001005">
+		<type>0</type>
+		<NextID>0</NextID>
+		<describe>累积完成150场普通对战</describe>
+		<task>5</task>
+		<amount>5</amount>
+		<params>1001</params>
+		<award>1</award>
+		<number>100</number>
+	</info>
+	<info id="1002001">
+		<type>0</type>
+		<NextID>1002002</NextID>
+		<describe>累积完成10场天梯对战</describe>
+		<task>5</task>
+		<amount>10</amount>
+		<params>1002</params>
+		<award>2</award>
+		<number>2</number>
+	</info>
+	<info id="1002002">
+		<type>0</type>
+		<NextID>1002003</NextID>
+		<describe>累积完成25场天梯对战</describe>
+		<task>5</task>
+		<amount>25</amount>
+		<params>1002</params>
+		<award>2</award>
+		<number>4</number>
+	</info>
+	<info id="1002003">
+		<type>0</type>
+		<NextID>1002004</NextID>
+		<describe>累积完成50场天梯对战</describe>
+		<task>5</task>
+		<amount>50</amount>
+		<params>1002</params>
+		<award>2</award>
+		<number>6</number>
+	</info>
+	<info id="1002004">
+		<type>0</type>
+		<NextID>1002005</NextID>
+		<describe>累积完成100场天梯对战</describe>
+		<task>5</task>
+		<amount>100</amount>
+		<params>1002</params>
+		<award>2</award>
+		<number>8</number>
+	</info>
+	<info id="1002005">
+		<type>0</type>
+		<NextID>0</NextID>
+		<describe>累积完成150场天梯对战</describe>
+		<task>5</task>
+		<amount>150</amount>
+		<params>1002</params>
+		<award>2</award>
+		<number>10</number>
+	</info>
+</AchievementTask>

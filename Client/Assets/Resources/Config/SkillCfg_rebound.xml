@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SkillCfg_rebound xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un32ID="2001">
+		<szName>被动-反弹</szName>
+		<n32BaseValue>0</n32BaseValue>
+		<n32HarmRate>850</n32HarmRate>
+		<n32TargetLifeRate>0</n32TargetLifeRate>
+		<n32SelfLifeRate>0</n32SelfLifeRate>
+	</info>
+	<info un32ID="2002">
+		<szName>石肤等级1</szName>
+		<n32BaseValue>0</n32BaseValue>
+		<n32HarmRate>150</n32HarmRate>
+		<n32TargetLifeRate>0</n32TargetLifeRate>
+		<n32SelfLifeRate>0</n32SelfLifeRate>
+	</info>
+	<info un32ID="2003">
+		<szName>石肤等级2</szName>
+		<n32BaseValue>0</n32BaseValue>
+		<n32HarmRate>250</n32HarmRate>
+		<n32TargetLifeRate>0</n32TargetLifeRate>
+		<n32SelfLifeRate>0</n32SelfLifeRate>
+	</info>
+	<info un32ID="2004">
+		<szName>石肤等级3</szName>
+		<n32BaseValue>0</n32BaseValue>
+		<n32HarmRate>350</n32HarmRate>
+		<n32TargetLifeRate>0</n32TargetLifeRate>
+		<n32SelfLifeRate>0</n32SelfLifeRate>
+	</info>
+</SkillCfg_rebound>

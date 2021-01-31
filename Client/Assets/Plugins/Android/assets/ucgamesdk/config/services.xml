@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<services>
+	<service name="App" value="cn.uc.gamesdk.bridge.service.App"/>
+    <service name="Storage" value="cn.uc.gamesdk.bridge.service.Storage"/>
+    <service name="PhoneService" value="cn.uc.gamesdk.service.PhoneService"/>
+    <service name="CommonService" value="cn.uc.gamesdk.service.CommonService"/>
+    <service name="LoginService" value="cn.uc.gamesdk.service.LoginService"/>
+    <service name="PayService" value="cn.uc.gamesdk.service.PayService"/>
+    <service name="SdkServerService" value="cn.uc.gamesdk.service.SdkServerService"/>
+</services>

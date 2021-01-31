@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DiscountsCfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<info un8GoodsType="1">
+		<un32GoodsID>1001</un32GoodsID>
+	</info>
+	<info un8GoodsType="1">
+		<un32GoodsID>1002</un32GoodsID>
+	</info>
+	<info un8GoodsType="1">
+		<un32GoodsID>1003</un32GoodsID>
+	</info>
+	<info un8GoodsType="1">
+		<un32GoodsID>1004</un32GoodsID>
+	</info>
+	<info un8GoodsType="2">
+		<un32GoodsID>0</un32GoodsID>
+	</info>
+	<info un8GoodsType="2">
+		<un32GoodsID>0</un32GoodsID>
+	</info>
+</DiscountsCfg>
