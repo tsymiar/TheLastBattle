@@ -1,0 +1,94 @@
+pool:
+  name: Hosted VS2017
+  demands:
+  - Cmd
+  - msbuild
+  - visualstudio
+
+#Your build pipeline references an undefined variable named ‘Parameters.solution’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
+
+steps:
+- task: BatchScript@1
+  displayName: 'Run script JunkClear.bat'
+  inputs:
+    filename: JunkClear.bat
+
+- script: |
+   set BATDIR=D:\a\1\s\
+   echo ----------------------------------------------------
+   echo Extract pthread files
+   echo ----------------------------------------------------
+   set PTHREAD="%BATDIR%ThirdFunc\pthread\Pre-built.2"
+   if not exist "%BATDIR%ThirdFunc\pthread\Pre-built.2\lib" (
+       cd lib-src
+       7za x pthreads-w32-2-9-1-release.zip -o%BATDIR%ThirdFunc\pthread -y
+       cd %BATDIR%
+   ) else (
+       echo pthread lib exist, skip extract pthread!
+   )
+   echo ----------------------------------------------------
+   echo Setup libmysql files
+   echo ----------------------------------------------------
+   if not exist "%BATDIR%ThirdFunc\libmysql\" (
+       md "%BATDIR%ThirdFunc\libmysql\"
+   )
+   if not exist "%BATDIR%ThirdFunc\libmysql\libmysql.lib" (
+       cd lib-src
+       7za x mysql-connector-c-6.1.11-win32.zip -o%BATDIR%ThirdFunc\libmysql -y
+       color e4
+       cd %BATDIR%ThirdFunc\libmysql
+       copy mysql-connector-c-6.1.11-win32\lib\* .
+       rd /s /q %BATDIR%ThirdFunc\libmysql\mysql-connector-c-6.1.11-win32
+       color 07
+       cd %BATDIR%
+   ) else (
+       echo libmysql.lib exist, skip setup mysql!
+   )
+   echo ----------------------------------------------------
+   echo Compile boost libraries
+   echo ----------------------------------------------------
+   set BOOST=%BATDIR%ThirdFunc\boost_1_60_0
+   set vcvars= "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvarsall.bat"
+   call %vcvars% x86
+   if not exist "%BOOST%\stage\lib" (
+       cd lib-src
+       7za x boost_1_60_0.7z -o"%BATDIR%ThirdFunc" -y
+       7za x boost_1_60_0.zip -o"%BATDIR%ThirdFunc" -y
+       cd %BATDIR%
+   ) else (
+       echo boost libraries exist, skip compile boost!
+   )
+   echo ----------------------------------------------------
+   echo Compile openssl libraries
+   echo ----------------------------------------------------
+   set SSLDIR=%BATDIR%ThirdFunc\openssl-1.1.1a
+   if not exist "%SSLDIR%lib\libcrypto.lib" (
+       cd lib-src
+       7za x openssl-1.1.1a.tar.gz -y
+       7za x openssl-1.1.1a.tar -o"%BATDIR%ThirdFunc" -y
+       if not exist "%SSLDIR%\lib\" (
+           md "%SSLDIR%\lib\"
+       )
+       copy /y libcrypto.lib "%SSLDIR%\lib\"
+       if not exist "%SSLDIR%\include\openssl\" (
+           md "%SSLDIR%\include\openssl\"
+       )
+       copy /y opensslconf.h "%SSLDIR%\include\openssl\"
+       cd %BATDIR%
+   ) else (
+       echo libcrypto exist, skip compile openssl!
+   )
+   if not exist "%BATDIR%Bin\" (
+       md "%BATDIR%Bin\"
+   )
+  displayName: 'Command Line Script'
+
+- task: VSBuild@1
+  displayName: 'Build solution'
+  inputs:
+    solution: '$(Parameters.solution)'
+    vsVersion: 15.0
+    msbuildArgs: /m
+    platform: Win32
+    configuration: Debug
+    maximumCpuCount: true
