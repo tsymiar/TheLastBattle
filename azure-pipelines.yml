@@ -9,9 +9,9 @@ pool:
 
 steps:
 - task: BatchScript@1
-  displayName: 'Run script JunkClear.bat'
+  displayName: 'Run script clean.bat'
   inputs:
-    filename: JunkClear.bat
+    filename: clean.bat
 
 - script: |
    set BATDIR=D:\a\1\s\
