@@ -22,7 +22,7 @@
     <ProjectGuid>{1EA99A92-D8F9-48B4-8A1C-8A23E16462DA}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>GSKernel</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.20348.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

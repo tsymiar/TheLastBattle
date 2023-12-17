@@ -444,7 +444,7 @@
     <ProjectGuid>{5F5105AE-91E4-47B2-ABDD-648961F9DB84}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>CSDataSource</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.20348.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

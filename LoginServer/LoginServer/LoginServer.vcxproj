@@ -22,7 +22,7 @@
     <ProjectGuid>{A4205769-2DEA-49BD-BE15-CA6F7A6AA7CF}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>LoginServer</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.20348.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

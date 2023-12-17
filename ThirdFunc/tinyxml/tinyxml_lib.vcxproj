@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectName>tinyxml</ProjectName>
     <ProjectGuid>{C406DAEC-0886-4771-8DEA-9D7329B46CC1}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.20348.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

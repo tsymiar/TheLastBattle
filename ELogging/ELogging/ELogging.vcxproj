@@ -22,7 +22,7 @@
     <ProjectGuid>{C5FF4E1B-23D5-42F9-91DA-063A3855618B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ELogging</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.20348.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

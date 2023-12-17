@@ -1,20 +1,20 @@
 ﻿
-   [![Build status](https://tsymiar.visualstudio.com/BattleServer/_apis/build/status/BattleServer-ASP.NET%20Core%20(.NET%20Framework)-CI)](https://tsymiar.visualstudio.com/BattleServer/_build/latest?definitionId=61)
-   [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7c414d19d53b4d6a9e30f741505f6dad)](https://www.codacy.com/app/tsymiar/BattleServer?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tsymiar/BattleServer&amp;utm_campaign=Badge_Grade)
+   [![Build Status](https://tsymiar.visualstudio.com/TheLastBattle/_apis/build/status/TheLastBattle-ASP.NET%20Core%20(.NET%20Framework)-CI?repoName=tsymiar%2FTheLastBattle&branchName=master)](https://tsymiar.visualstudio.com/TheLastBattle/_build/latest?definitionId=61&repoName=tsymiar%2FTheLastBattle&branchName=master)
+   [![Codacy Badge](https://app.codacy.com/project/badge/Grade/14f96c5374174585a1448b7ba1750db7)](https://app.codacy.com/gh/tsymiar/TheLastBattle/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
    [![MIT Licence](https://tsymiar.github.io/MyAutomatic/image/unlicense.svg)](https://unlicense.org/)
 
 -------
 ### Introduction
 
-   **BattleServer** is a MOBA game server, like `Srike of Kings`.
+   **TheLastBattle** is a MOBA game server, like `Arena of Valor`.
    
-   Below is the structure of this server project:
+   Below is the structure of this project:
 
    ![](https://github.com/tsymiar/BattleServer/blob/master/Document/image/LastBattle.jpg "LastBattle")
 
 ### Client
 
-   Source files include [Client](https://github.com/tsymiar/BattleServer/tree/client/Client), which is also a standalone project.
+   [Client](https://github.com/tsymiar/BattleServer/tree/master/Client) source files include a standalone project.
 
 -------
 ### Database
@@ -23,7 +23,7 @@
     
    `ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY '123321';`
 
-### PORTs used:
+### Ports used:
 
 * CSBattleMgr
 
@@ -40,5 +40,5 @@
 
   Listen Port | Server
   ------------: | ------------- 
-  1234 | database[FBAll_LogDB_1]
+  1234 | Database[*FBAll_LogDB_1*]
 -------

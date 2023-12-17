@@ -22,7 +22,7 @@
     <ProjectGuid>{BA3A1E20-EBAA-4437-8CFD-AB292A763DAC}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>BalanceServer</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.20348.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

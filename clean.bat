@@ -33,6 +33,3 @@ set/p=%ÍË¸ñ%<nul
 if errorlevel 1 (
 	goto :eof
 )
-
-
-
