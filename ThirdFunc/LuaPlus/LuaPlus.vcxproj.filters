@@ -1,132 +1,50 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include=".\LuaObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\LuaPlus.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\LuaPlusAddons.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\LuaPlus_Libs.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\LuaState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\LuaStateOutFile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\LuaState_DumpObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\LuaTableIterator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\lwstrlib.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\popen.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lapi.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lauxlib.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lbaselib.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lcode.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\ldblib.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\ldebug.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\ldo.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\ldump.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lfunc.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lgc.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\linit.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\liolib.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\llex.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lmathlib.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lmem.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\loadlib.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lobject.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lopcodes.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\loslib.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lparser.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lstate.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lstring.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lstrlib.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\ltable.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\ltablib.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\ltm.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lua.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lundump.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lvm.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\lzio.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include=".\src\print.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\LuaObject.cpp" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\LuaPlus.cpp" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\LuaPlusAddons.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\LuaPlus_Libs.cpp" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\LuaState.cpp" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\LuaStateOutFile.cpp" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\LuaState_DumpObject.cpp" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\LuaTableIterator.cpp" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\lwstrlib.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\popen.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lapi.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lauxlib.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lbaselib.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lcode.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\ldblib.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\ldebug.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\ldo.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\ldump.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lfunc.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lgc.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\linit.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\liolib.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\llex.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lmathlib.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lmem.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\loadlib.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lobject.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lopcodes.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\loslib.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lparser.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lstate.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lstring.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lstrlib.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\ltable.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\ltablib.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\ltm.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lua.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lundump.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lvm.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\lzio.c" />
+    <ClCompile Include="$(SolutionDir)ThirdFunc\LuaPlus\src\print.c" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include=".\CMakeLists.txt" />
+    <CustomBuild Include="$(SolutionDir)ThirdFunc\LuaPlus\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
