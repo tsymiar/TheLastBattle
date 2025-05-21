@@ -4,9 +4,9 @@
    [![MIT Licence](https://tsymiar.github.io/MyAutomatic/image/unlicense.svg)](https://unlicense.org/)
 
 -------
-### Introduction
+### Brief
 
-   **TheLastBattle** is a MOBA game server, like `Arena of Valor`.
+   **TheLastBattle** is a MOBA game system, like `Honor of Kings`.
    
    Below is the structure of this project:
 
